@@ -1,11 +1,15 @@
 <template>
   <div>
-    <h1>Home</h1>
+    <header-component />
   </div>
 </template>
 
 <script>
-export default {}
+import { HeaderComponent } from '../03-organisms'
+
+export default {
+  components: { HeaderComponent },
+}
 </script>
 
 <style lang="scss" scoped></style>
