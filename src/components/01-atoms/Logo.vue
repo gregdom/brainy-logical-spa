@@ -1,6 +1,6 @@
 <template>
   <router-link to="/">
-    <img :src="imageSrc" alt="Logo" />
+    <img :src="imageSrc" alt="Logo" class="logo-image" />
   </router-link>
 </template>
 
@@ -19,5 +19,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped></style>

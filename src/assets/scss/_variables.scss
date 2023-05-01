@@ -1,3 +1,10 @@
-// _variables.scss
-
+// font-size
 $root-font-size: 16px;
+
+// default spacing
+$default-spacing: 20px;
+
+%base-wrapper {
+  width: calc(100% - 16px);
+  margin: 0 auto;
+}

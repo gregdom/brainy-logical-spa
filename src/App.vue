@@ -18,8 +18,15 @@ export default {
   box-sizing: border-box;
 }
 
+// .grid {
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
+//   align-items: center;
+//   gap: 20px;
+// }
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
