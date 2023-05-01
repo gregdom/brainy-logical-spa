@@ -1,5 +1,7 @@
 <template>
-  <img :src="imageSrc" alt="Logo" />
+  <router-link to="/">
+    <img :src="imageSrc" alt="Logo" />
+  </router-link>
 </template>
 
 <script>
