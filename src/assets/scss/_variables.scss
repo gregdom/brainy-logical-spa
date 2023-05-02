@@ -5,6 +5,11 @@ $root-font-size: 16px;
 $default-spacing: 20px;
 
 %base-wrapper {
-  width: calc(100% - 16px);
+  width: calc(100% - 48px);
   margin: 0 auto;
 }
+
+// colors
+$color-branding: #712cf9;
+$color-text-dark: #000;
+$color-text-light: #fff;

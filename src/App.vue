@@ -1,5 +1,6 @@
 <template>
   <router-view />
+  <div class="modal"></div>
 </template>
 
 <script>
@@ -18,16 +19,20 @@ export default {
   box-sizing: border-box;
 }
 
-// .grid {
-//   display: grid;
-//   grid-template-columns: repeat(12, 1fr);
-//   align-items: center;
-//   gap: 20px;
-// }
-
 #app {
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
 }
 </style>

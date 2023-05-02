@@ -1,18 +1,23 @@
 <template>
   <header class="grid header">
     <div class="wrapper">
-      <span class="material-symbols-outlined icon-menu-open-close iconOpen">
+      <span
+        class="material-symbols-outlined icon-menu-open-close iconOpen"
+        @click="toggleMenu"
+      >
         menu
       </span>
       <logo class="logo" imageName="logo-full-black-brainy-logical.png" />
-      <nav class="nav">
+
+      <nav class="nav" :class="{ active: isMenuOpen }">
         <div class="top">
           <span
             class="material-symbols-outlined icon-menu-open-close iconClose"
+            @click="toggleMenu"
           >
             close
           </span>
-          <logo class="logo" imageName="logo-full-black-brainy-logical.png" />
+          <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
         </div>
         <router-link class="nav-link" to="/">Home</router-link>
         <router-link class="nav-link" to="/services">Serviços</router-link>
@@ -29,6 +34,16 @@ import { Logo } from '../01-atoms'
 
 export default {
   components: { Logo },
+  data() {
+    return {
+      isMenuOpen: false,
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen
+    },
+  },
 }
 </script>
 
@@ -53,7 +68,8 @@ export default {
     top: 50%;
     transform: translateY(-50%);
     left: 0;
-    font-size: 32px;
+    font-size: 24px;
+    cursor: pointer;
   }
 
   .logo {
@@ -71,29 +87,36 @@ export default {
     width: 100%;
     max-width: 90vw;
     height: 100%;
-    padding: 0 8px;
+    padding: 0 1.5rem;
     position: fixed;
     top: 0;
-    left: 0;
-    background: #fff;
+    left: -100%;
+    z-index: 20;
+    transition: left 0.3s ease;
+    background: $color-branding;
+
+    &.active {
+      left: 0;
+    }
 
     .top {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       width: 100%;
       height: auto;
       margin-bottom: 10px;
       padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       .icon-menu-open-close {
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
-        font-size: 32px;
+        color: $color-text-light;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
 
@@ -101,7 +124,7 @@ export default {
       text-decoration: none;
       display: block;
       padding: 10px 0;
-      color: #000;
+      color: $color-text-light;
     }
   }
 }
