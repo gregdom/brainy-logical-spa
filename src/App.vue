@@ -20,7 +20,7 @@ export default {
 }
 
 #app {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

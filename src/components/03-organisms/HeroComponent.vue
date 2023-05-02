@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <div class="wrapper">
-      <h1>Nós Criamos Soluções Para Impulsionar Sua Presença Online</h1>
+      <h1>Soluções Para Impulsionar Sua Presença Online</h1>
       <h2>
         Nossa equipe está pronta para criar soluções personalizadas e eficientes
         que se adaptam às necessidades do seu negócio.
@@ -26,7 +26,7 @@ export default {
   max-width: 1400px;
   height: auto;
   margin: 0 auto;
-  padding: 32px 0;
+  padding: 57px 0 64px 0;
   background: rgba($color-branding, 0.2);
 
   .wrapper {
@@ -37,18 +37,23 @@ export default {
     flex-direction: column;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: calc(1.525rem + 3.3vw);
+      font-weight: 700;
+      line-height: 1.4;
       text-align: center;
+      margin-bottom: 27px;
     }
 
     h2 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: normal;
+      line-height: 1.9rem;
       text-align: center;
+      margin-bottom: 37px;
     }
 
     & > * {
-      margin-bottom: 32px;
+      margin-bottom: 37px;
     }
 
     & > *:last-child {
