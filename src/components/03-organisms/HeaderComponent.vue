@@ -7,7 +7,7 @@
       >
         menu
       </span>
-      <logo class="logo" imageName="logo-full-black-brainy-logical.png" />
+      <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
 
       <nav class="nav" :class="{ active: isMenuOpen }">
         <div class="top">
@@ -52,6 +52,7 @@ export default {
   width: 100%;
   height: auto;
   padding: 20px 0;
+  background: $color-branding;
 
   .wrapper {
     @extend %base-wrapper;
@@ -70,6 +71,12 @@ export default {
     left: 0;
     font-size: 24px;
     cursor: pointer;
+    color: $color-text-light;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   .logo {
@@ -85,7 +92,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 90vw;
+    max-width: 400px;
     height: 100%;
     padding: 0 1.5rem;
     position: fixed;

@@ -1,14 +1,17 @@
 <template>
   <div>
     <header-component />
+    <main>
+      <hero-component />
+    </main>
   </div>
 </template>
 
 <script>
-import { HeaderComponent } from '../03-organisms'
+import { HeaderComponent, HeroComponent } from '../03-organisms'
 
 export default {
-  components: { HeaderComponent },
+  components: { HeaderComponent, HeroComponent },
 }
 </script>
 

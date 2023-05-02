@@ -6,6 +6,7 @@ $default-spacing: 20px;
 
 %base-wrapper {
   width: calc(100% - 48px);
+  max-width: 1400px;
   margin: 0 auto;
 }
 
