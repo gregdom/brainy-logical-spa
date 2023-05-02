@@ -18,19 +18,16 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import { Logo } from '../01-atoms'
 
 export default {
   components: { Logo },
-  data() {
-    return {
-      isMenuOpen: false,
-    }
+  computed: {
+    ...mapState(['isMenuOpen']),
   },
   methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
-    },
+    ...mapMutations(['toggleMenu']),
   },
 }
 </script>

@@ -15,11 +15,15 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import { Logo } from '../01-atoms'
 import { NavMenu } from '../02-molecules'
 
 export default {
   components: { Logo, NavMenu },
+  methods: {
+    ...mapMutations(['toggleMenu']),
+  },
 }
 </script>
 
