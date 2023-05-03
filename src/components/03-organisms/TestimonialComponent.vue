@@ -91,7 +91,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .testimonial {
   width: 100%;
   max-width: 1400px;
@@ -104,6 +104,7 @@ export default {
     width: calc(100% - 48px);
     height: auto;
     margin: 0 auto;
+    background: #fff;
 
     h3 {
       font-size: $section-title-size;
@@ -115,14 +116,14 @@ export default {
       width: 100%;
       max-width: auto;
       height: auto;
-      // padding: 0 0 20px 0;
+      padding: 0 0 20px 0;
       // display: flex;
       // flex-direction: column;
       // justify-content: center;
       // align-items: center;
       border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 10px;
-      box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
+      // box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
       background: #fff;
 
       .imageContainer {
@@ -146,33 +147,40 @@ export default {
         h4 {
           padding: 20px 0 15px 0;
           font-size: $general-title-size;
-          text-align: left;
+          text-align: center;
           color: $color-text-dark;
         }
 
         p {
           padding-bottom: 20px;
           line-height: 1.7rem;
+          font-style: italic;
+          text-align: center;
         }
 
         p.clientName {
           text-align: right;
-        }
-
-        a {
-          display: block;
-          text-decoration: none;
-          text-align: right;
-          color: $color-branding;
+          font-weight: 600;
         }
       }
     }
 
-    .block-cards {
-      margin-bottom: 20px;
+    .mySwiper {
+      background-color: #fff !important;
 
-      &:last-child {
-        margin-bottom: 0;
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #000 !important;
+        opacity: 0.4;
+        transition: opacity 0.2s ease-in-out;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .swiper-pagination-bullet-active {
+        background: $color-branding;
       }
     }
   }
