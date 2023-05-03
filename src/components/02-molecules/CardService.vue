@@ -45,13 +45,49 @@ export default {
   width: 100%;
   max-width: 300px;
   height: auto;
+  padding: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
   background: #fff;
 
-  h4 {
-    padding: 20px 0;
-    font-size: $general-title-size;
-    text-align: center;
-    color: $color-text-dark;
+  .iconContainer {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-branding;
+  }
+
+  .details {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+
+    h4 {
+      padding: 20px 0;
+      font-size: $general-title-size;
+      text-align: center;
+      color: $color-text-dark;
+    }
+
+    p {
+      padding-bottom: 20px;
+      line-height: 1.7rem;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      text-align: right;
+      color: $color-branding;
+    }
   }
 }
 </style>

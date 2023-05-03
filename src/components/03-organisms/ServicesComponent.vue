@@ -4,6 +4,7 @@
       <h3>Serviços</h3>
 
       <card-service
+        class="block-cards"
         v-for="(service, index) in services"
         :key="index"
         :icon="service.icon"
@@ -50,7 +51,7 @@ export default {
 .services {
   width: 100%;
   max-width: 1400px;
-  height: 500px;
+  height: auto;
   margin: 0 auto;
   padding: 57px 0 64px 0;
   background: $color-light;
@@ -59,12 +60,23 @@ export default {
     width: calc(100% - 48px);
     height: auto;
     margin: 0 auto;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h3 {
       font-size: $section-title-size;
       text-align: center;
-      margin-bottom: 27px;
+      margin-bottom: 92px;
+    }
+
+    .block-cards {
+      margin-bottom: 92px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
