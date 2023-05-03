@@ -4,6 +4,7 @@
     <main>
       <hero-component />
       <services-component />
+      <about-component />
     </main>
   </div>
 </template>
@@ -13,10 +14,16 @@ import {
   HeaderComponent,
   HeroComponent,
   ServicesComponent,
+  AboutComponent,
 } from '../03-organisms'
 
 export default {
-  components: { HeaderComponent, HeroComponent, ServicesComponent },
+  components: {
+    HeaderComponent,
+    HeroComponent,
+    ServicesComponent,
+    AboutComponent,
+  },
 }
 </script>
 
