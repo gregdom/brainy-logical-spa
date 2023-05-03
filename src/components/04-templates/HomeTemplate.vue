@@ -8,6 +8,7 @@
       <projects-component />
       <testimonial-component />
     </main>
+    <footer-component />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import {
   AboutComponent,
   ProjectsComponent,
   TestimonialComponent,
+  FooterComponent,
 } from '../03-organisms'
 
 export default {
@@ -29,6 +31,7 @@ export default {
     AboutComponent,
     ProjectsComponent,
     TestimonialComponent,
+    FooterComponent,
   },
 }
 </script>
