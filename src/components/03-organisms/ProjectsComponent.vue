@@ -74,7 +74,7 @@ export default {
     h3 {
       font-size: $section-title-size;
       text-align: center;
-      padding: 0 20px 64px 20px;
+      padding: 0 20px 32px 20px;
     }
 
     .block-cards {

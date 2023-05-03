@@ -6,6 +6,7 @@
       <services-component />
       <about-component />
       <projects-component />
+      <testimonial-component />
     </main>
   </div>
 </template>
@@ -17,6 +18,7 @@ import {
   ServicesComponent,
   AboutComponent,
   ProjectsComponent,
+  TestimonialComponent,
 } from '../03-organisms'
 
 export default {
@@ -26,6 +28,7 @@ export default {
     ServicesComponent,
     AboutComponent,
     ProjectsComponent,
+    TestimonialComponent,
   },
 }
 </script>
