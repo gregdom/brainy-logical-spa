@@ -27,7 +27,12 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 57px 0 64px 0;
-  background: rgba($color-branding, 0.2);
+  background: #212529;
+  background-image: linear-gradient(rgba(33, 37, 41, 0.01), rgb(33, 37, 41) 85%),
+    radial-gradient(at 0% 0%, rgba(117, 13, 253, 0.5), rgba(0, 0, 0, 0) 50%),
+    radial-gradient(at 100% 0%, rgba(214, 51, 132, 0.5), rgba(0, 0, 0, 0) 50%),
+    radial-gradient(at 100% 50%, rgba(113, 44, 249, 0.5), rgba(0, 0, 0, 0) 50%),
+    radial-gradient(at 0% 50%, rgba(255, 228, 132, 0.5), rgba(0, 0, 0, 0) 50%);
 
   .wrapper {
     width: calc(100% - 48px);
@@ -39,17 +44,19 @@ export default {
     h1 {
       font-size: calc(1.525rem + 3.3vw);
       font-weight: 700;
-      line-height: 1.4;
+      line-height: 48px;
       text-align: center;
-      margin-bottom: 27px;
+      margin-bottom: 16px;
+      color: #fff;
     }
 
     h2 {
       font-size: 1rem;
-      font-weight: normal;
-      line-height: 1.9rem;
+      font-weight: 400;
+      line-height: $general-line-height;
       text-align: center;
       margin-bottom: 37px;
+      color: #adb5bd;
     }
 
     & > * {

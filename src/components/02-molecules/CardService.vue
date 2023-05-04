@@ -40,7 +40,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .cardService {
   width: 100%;
   max-width: 300px;
@@ -50,6 +50,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
   background: #fff;

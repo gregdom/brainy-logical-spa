@@ -1,7 +1,7 @@
 <template>
   <router-link to="/" class="call-to-action">
     {{ buttonText }}
-    <span class="material-symbols-outlined"> expand_more </span>
+    <span class="material-symbols-outlined"> chevron_right </span>
   </router-link>
 </template>
 
