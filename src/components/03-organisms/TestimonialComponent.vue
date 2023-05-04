@@ -117,13 +117,8 @@ export default {
       max-width: auto;
       height: auto;
       padding: 0 0 20px 0;
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
       border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 10px;
-      // box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
       background: #fff;
 
       .imageContainer {
@@ -153,7 +148,8 @@ export default {
 
         p {
           padding-bottom: 20px;
-          line-height: 1.7rem;
+          font-size: $font-size-base;
+          line-height: $general-line-height;
           font-style: italic;
           text-align: center;
         }

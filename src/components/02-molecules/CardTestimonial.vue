@@ -88,13 +88,15 @@ export default {
 
     p {
       padding-bottom: 20px;
-      line-height: 1.7rem;
+      font-size: $font-size-base;
+      line-height: $general-line-height;
     }
 
     a {
       display: block;
-      text-decoration: none;
+      font-size: $font-size-base;
       text-align: right;
+      text-decoration: none;
       color: $color-branding;
     }
   }

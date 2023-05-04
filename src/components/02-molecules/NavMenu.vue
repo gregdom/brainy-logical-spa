@@ -73,9 +73,10 @@ export default {
   }
 
   &-link {
+    padding: 10px 0;
+    font-size: $font-size-base;
     text-decoration: none;
     display: block;
-    padding: 10px 0;
     color: $color-text-light;
   }
 }

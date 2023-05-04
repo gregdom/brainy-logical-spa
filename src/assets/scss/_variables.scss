@@ -1,9 +1,10 @@
-// font-size
-$root-font-size: 16px;
+// Font variables
+$font-size-base: 1rem;
 $section-title-size: 1.9rem;
 $general-title-size: 1.25rem;
+$general-line-height: 1.7rem;
 
-// default spacing
+// Gutter
 $default-spacing: 20px;
 
 %base-wrapper {

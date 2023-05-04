@@ -80,7 +80,8 @@ export default {
 
     p {
       padding-bottom: 20px;
-      line-height: 1.7rem;
+      font-size: $font-size-base;
+      line-height: $general-line-height;
     }
 
     a {

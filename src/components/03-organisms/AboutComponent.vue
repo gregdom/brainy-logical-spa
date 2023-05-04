@@ -82,8 +82,8 @@ export default {
 
       .description p {
         margin-bottom: 20px;
-        font-size: $root-font-size;
-        line-height: 1.7rem;
+        font-size: $font-size-base;
+        line-height: $general-line-height;
         color: $color-text-light;
       }
     }
