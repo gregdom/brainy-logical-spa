@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="footer">
     <div class="wrapper">
       <div class="blocks">
         <div class="top">
@@ -50,4 +50,107 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.footer {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  margin: 92px auto 0 auto;
+  padding: 57px 0 20px 0;
+  background: $color-branding;
+
+  .wrapper {
+    width: calc(100% - 48px);
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .top {
+      width: 100%;
+      height: auto;
+      padding: 20px;
+      margin-top: -50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
+      background: #fff;
+
+      p {
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .call-to-action {
+        width: auto;
+        font-size: 1rem;
+        margin-top: 20px;
+        padding: 20px;
+
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .bottom {
+      margin: 20px auto 0 auto;
+
+      .block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .social-media {
+          padding: 10px;
+          display: flex;
+
+          & > * {
+            margin-right: 0;
+            padding: 5px 10px;
+            font-size: 1.4rem;
+            color: #fff;
+          }
+
+          & > *:last-child {
+            margin-right: 0;
+          }
+        }
+
+        .menu-footer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          a {
+            font-size: 1rem;
+            text-decoration: none;
+            color: #fff;
+            margin-bottom: 10px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      margin-top: 32px;
+      font-size: 0.8125rem;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+</style>
