@@ -46,7 +46,7 @@ export default {
   // padding: 0 0 20px 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;

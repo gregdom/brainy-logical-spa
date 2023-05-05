@@ -109,13 +109,16 @@ export default {
         grid-template-columns: 1fr 1fr;
 
         .block-cards {
-          height: 460px;
           &:nth-child(2n) {
             margin-right: 0;
           }
 
           &:nth-child(2n + 1) {
             margin-right: 20px;
+          }
+
+          &:nth-last-child(-n + 2) {
+            margin-bottom: 0;
           }
         }
       }
