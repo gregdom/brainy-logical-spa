@@ -160,6 +160,9 @@ export default {
 @media (min-width: 600px) {
   .footer {
     .wrapper {
+      align-items: unset;
+      max-width: 940px;
+
       .blocks {
         .top {
           margin-top: -130px;
@@ -234,10 +237,6 @@ export default {
             font-size: 0.8125rem;
             text-align: left;
             color: #fff;
-
-            // p {
-            //   padding: 10px 0;
-            // }
           }
         }
       }
