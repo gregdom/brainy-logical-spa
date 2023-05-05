@@ -68,4 +68,31 @@ export default {
     }
   }
 }
+
+@media (min-width: 600px) {
+  .hero {
+    padding: 64px 0 84px 0;
+
+    .wrapper {
+      width: 500px;
+
+      h1 {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    .wrapper {
+      width: 668px;
+
+      .call-to-action {
+        width: 40%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
 </style>

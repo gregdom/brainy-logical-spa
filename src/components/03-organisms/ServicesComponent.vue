@@ -74,6 +74,7 @@ export default {
     }
 
     .block-cards {
+      max-width: 300px;
       margin-bottom: 92px;
 
       &:last-child {
@@ -83,20 +84,38 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
-  .block-cards {
-    margin-bottom: 0px !important;
-  }
+@media (min-width: 600px) {
+  .services {
+    .wrapper {
+      width: 500px;
 
-  .block-services {
-    display: flex;
-
-    & > * {
-      margin-right: 20px;
+      .block-cards {
+        max-width: inherit;
+      }
     }
+  }
+}
 
-    & > *:last-child {
-      margin-right: 0;
+@media (min-width: 768px) {
+  .services {
+    padding: 50px 0 64px 0;
+
+    .wrapper {
+      width: 90%;
+
+      .block-services {
+        display: flex;
+
+        .block-cards {
+          max-width: 300px;
+          margin-right: 20px;
+          margin-bottom: 0px !important;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
     }
   }
 }

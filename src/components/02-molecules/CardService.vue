@@ -43,13 +43,8 @@ export default {
 <style lang="scss">
 .cardService {
   width: 100%;
-  max-width: 300px;
   height: auto;
   padding: 0 0 32px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   // box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
@@ -58,7 +53,7 @@ export default {
   .iconContainer {
     width: 100px;
     height: 100px;
-    margin-top: -50px;
+    margin: -50px auto 0 auto;
     border-radius: 50px;
     display: flex;
     justify-content: center;
