@@ -4,7 +4,7 @@
       <h3>O Que Falam da Gente</h3>
 
       <swiper
-        :slidesPerView="1"
+        :slidesPerView="slidesPerView"
         :spaceBetween="20"
         :loop="true"
         :pagination="{
@@ -76,6 +76,7 @@ export default {
           clientName: 'Pedro Henrique',
         },
       ],
+      slidesPerView: 1,
     }
   },
   setup() {
@@ -86,6 +87,22 @@ export default {
   computed: {
     imageSrc() {
       return require(`../../assets/images/${this.image}`)
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      if (window.innerWidth >= 768) {
+        this.slidesPerView = 2
+      } else {
+        this.slidesPerView = 1
+      }
     },
   },
 }
@@ -179,6 +196,23 @@ export default {
       .swiper-pagination-bullet-active {
         background: $color-branding;
       }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .testimonial {
+    .wrapper {
+      width: 500px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .testimonial {
+    .wrapper {
+      width: 90%;
+      max-width: 940px;
     }
   }
 }

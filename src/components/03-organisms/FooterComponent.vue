@@ -8,33 +8,30 @@
         </div>
 
         <div class="bottom">
-          <div class="block">
-            <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
+          <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
 
-            <div class="social-media">
-              <router-link to="#"
-                ><i class="fa-solid fa-envelope"></i
-              ></router-link>
-              <router-link to="#"
-                ><i class="fa-brands fa-youtube"></i
-              ></router-link>
-              <router-link to="#"
-                ><i class="fa-brands fa-linkedin"></i
-              ></router-link>
-            </div>
+          <div class="social-media">
+            <router-link to="#"
+              ><i class="fa-solid fa-envelope"></i
+            ></router-link>
+            <router-link to="#"
+              ><i class="fa-brands fa-youtube"></i
+            ></router-link>
+            <router-link to="#"
+              ><i class="fa-brands fa-linkedin"></i
+            ></router-link>
           </div>
-          <div class="block">
-            <div class="menu-footer">
-              <router-link to="/">Home</router-link>
-              <router-link to="/services">Serviços</router-link>
-              <router-link to="/about">Sobre</router-link>
-              <router-link to="/projects">Projetos</router-link>
-              <router-link to="/contact">Contato</router-link>
-            </div>
 
-            <div class="copyright">
-              <p>© 2023 Brainy Logical - Direitos reservados.</p>
-            </div>
+          <div class="menu-footer">
+            <router-link to="/">Home</router-link>
+            <router-link to="/services">Serviços</router-link>
+            <router-link to="/about">Sobre</router-link>
+            <router-link to="/projects">Projetos</router-link>
+            <router-link to="/contact">Contato</router-link>
+          </div>
+
+          <div class="copyright">
+            <p>© 2023 Brainy Logical - Direitos reservados.</p>
           </div>
         </div>
       </div>
@@ -103,44 +100,49 @@ export default {
 
     .bottom {
       margin: 20px auto 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto;
+      align-items: center;
+      justify-content: center;
 
-      .block {
+      .logo {
+        display: flex;
+        justify-content: center;
+      }
+
+      .social-media {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > * {
+          margin-right: 0;
+          padding: 5px 10px;
+          font-size: 1.4rem;
+          color: #fff;
+        }
+
+        & > *:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .menu-footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        .social-media {
-          padding: 10px;
-          display: flex;
+        a {
+          font-size: 1rem;
+          text-decoration: none;
+          color: #fff;
+          margin-bottom: 10px;
 
-          & > * {
-            margin-right: 0;
-            padding: 5px 10px;
-            font-size: 1.4rem;
-            color: #fff;
-          }
-
-          & > *:last-child {
-            margin-right: 0;
-          }
-        }
-
-        .menu-footer {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-
-          a {
-            font-size: 1rem;
-            text-decoration: none;
-            color: #fff;
-            margin-bottom: 10px;
-
-            &:last-child {
-              margin-bottom: 0;
-            }
+          &:last-child {
+            margin-bottom: 0;
           }
         }
       }
@@ -151,6 +153,94 @@ export default {
       font-size: 0.8125rem;
       text-align: center;
       color: #fff;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .footer {
+    .wrapper {
+      .blocks {
+        .top {
+          margin-top: -130px;
+        }
+
+        .bottom {
+          margin: 20px auto 0 auto;
+          display: grid;
+          padding-bottom: 0;
+          grid-template-columns: 1fr;
+          grid-template-rows: 50px 100px;
+          grid-template-areas:
+            'logoFooter logoFooter menuFooter menuFooter'
+            'copyFooter copyFooter mediaFooter mediaFooter';
+          align-items: flex-end;
+
+          .logo {
+            grid-area: logoFooter;
+            display: flex;
+            justify-content: flex-start;
+          }
+
+          .social-media {
+            grid-area: mediaFooter;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            & > * {
+              margin-right: 0;
+              padding: 5px 10px;
+              font-size: 1.4rem;
+              color: #fff;
+            }
+
+            & > *:last-child {
+              padding-right: 0;
+              margin-right: 0;
+            }
+          }
+
+          .menu-footer {
+            grid-area: menuFooter;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+
+            a {
+              font-size: 1rem;
+              text-decoration: none;
+              color: #fff;
+              margin-right: 10px;
+              margin-bottom: 0;
+
+              &:last-child {
+                margin-right: 0;
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          .copyright {
+            grid-area: copyFooter;
+            width: max-content;
+            height: 41px;
+            margin-top: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 0.8125rem;
+            text-align: left;
+            color: #fff;
+
+            // p {
+            //   padding: 10px 0;
+            // }
+          }
+        }
+      }
     }
   }
 }
