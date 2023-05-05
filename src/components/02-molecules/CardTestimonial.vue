@@ -90,6 +90,7 @@ export default {
       padding-bottom: 20px;
       font-size: $font-size-base;
       line-height: $general-line-height;
+      color: $color-general-text;
     }
 
     a {

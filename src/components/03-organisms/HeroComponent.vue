@@ -44,7 +44,7 @@ export default {
     h1 {
       font-size: calc(1.525rem + 3.3vw);
       font-weight: 700;
-      line-height: 48px;
+      // line-height: ;
       text-align: center;
       margin-bottom: 16px;
       color: #fff;

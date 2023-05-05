@@ -54,7 +54,7 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 57px 0 64px 0;
-  background: $color-light;
+  background: #fff;
 
   .wrapper {
     width: calc(100% - 48px);

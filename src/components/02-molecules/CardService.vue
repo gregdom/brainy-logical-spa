@@ -52,7 +52,7 @@ export default {
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
+  // box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
   background: #fff;
 
   .iconContainer {
@@ -82,6 +82,8 @@ export default {
       padding-bottom: 20px;
       font-size: $font-size-base;
       line-height: $general-line-height;
+      font-weight: 400;
+      color: $color-general-text;
     }
 
     a {

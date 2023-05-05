@@ -152,6 +152,7 @@ export default {
           line-height: $general-line-height;
           font-style: italic;
           text-align: center;
+          color: $color-general-text;
         }
 
         p.clientName {
