@@ -3,14 +3,16 @@
     <div class="wrapper">
       <h3>Serviços</h3>
 
-      <card-service
-        class="block-cards"
-        v-for="(service, index) in services"
-        :key="index"
-        :icon="service.icon"
-        :title="service.title"
-        :description="service.description"
-      />
+      <div class="block-services">
+        <card-service
+          class="block-cards"
+          v-for="(service, index) in services"
+          :key="index"
+          :icon="service.icon"
+          :title="service.title"
+          :description="service.description"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -39,7 +41,7 @@ export default {
           icon: 'puzzle-48.png',
           title: 'Extensões Web',
           description:
-            'Personalize sua experiência de navegação com Extensões para Chrome e Firefox, que tornam seu dia online mais eficiente.',
+            'Personalize sua experiência de navegação com Extensões para Chrome e Firefox, que tornam seu dia online.',
         },
       ],
     }
@@ -77,6 +79,24 @@ export default {
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .block-cards {
+    margin-bottom: 0px !important;
+  }
+
+  .block-services {
+    display: flex;
+
+    & > * {
+      margin-right: 20px;
+    }
+
+    & > *:last-child {
+      margin-right: 0;
     }
   }
 }
