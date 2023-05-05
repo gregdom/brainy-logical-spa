@@ -3,14 +3,16 @@
     <div class="wrapper">
       <h3>Projetos Recentes</h3>
 
-      <card-project
-        class="block-cards"
-        v-for="(project, index) in projects"
-        :key="index"
-        :image="project.image"
-        :title="project.title"
-        :description="project.description"
-      />
+      <div class="blocks">
+        <card-project
+          class="block-cards"
+          v-for="(project, index) in projects"
+          :key="index"
+          :image="project.image"
+          :title="project.title"
+          :description="project.description"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -82,6 +84,40 @@ export default {
 
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .projects {
+    .wrapper {
+      width: 500px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .projects {
+    .wrapper {
+      width: 90%;
+      max-width: 940px;
+
+      .blocks {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .block-cards {
+          height: 460px;
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+
+          &:nth-child(2n + 1) {
+            margin-right: 20px;
+          }
+        }
       }
     }
   }

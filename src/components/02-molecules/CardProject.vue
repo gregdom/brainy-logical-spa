@@ -1,5 +1,5 @@
 <template>
-  <div class="cardService">
+  <div class="cardProject">
     <div class="imageContainer">
       <img :src="imageSrc" alt="Imagem de Projeto" />
     </div>
@@ -39,9 +39,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cardService {
-  width: 100%;
-  max-width: 300px;
+.cardProject {
+  // width: 100%;
+  // max-width: 300px;
   height: auto;
   // padding: 0 0 20px 0;
   display: flex;
@@ -56,13 +56,16 @@ export default {
   .imageContainer {
     width: 100%;
     height: auto;
+    padding: 20px 20px 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     img {
-      width: calc(100% - 40px);
-      margin-top: 20px;
+      // width: calc(100% - 40px);
+      width: 100%;
+      max-width: 460px;
+      // margin-top: 20px;
     }
   }
 

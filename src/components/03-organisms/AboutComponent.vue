@@ -89,4 +89,36 @@ export default {
     }
   }
 }
+
+@media (min-width: 600px) {
+  .about {
+    .wrapper {
+      width: 500px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    .wrapper {
+      width: 90%;
+      max-width: 940px;
+
+      .blocks {
+        display: flex;
+        flex-direction: row;
+
+        & > * {
+          width: 50%;
+          margin-right: 20px;
+        }
+
+        .decoration img {
+          width: 100%;
+          max-width: 458px;
+        }
+      }
+    }
+  }
+}
 </style>
