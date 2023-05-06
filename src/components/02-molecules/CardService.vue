@@ -11,7 +11,7 @@
         {{ description }}
       </p>
 
-      <a href="#">Saiba mais</a>
+      <a :href="link">Saiba mais</a>
     </div>
   </div>
 </template>
@@ -28,6 +28,10 @@ export default {
       required: true,
     },
     description: {
+      type: String,
+      required: true,
+    },
+    link: {
       type: String,
       required: true,
     },

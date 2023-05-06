@@ -11,6 +11,7 @@
           :icon="service.icon"
           :title="service.title"
           :description="service.description"
+          :link="service.link"
         />
       </div>
     </div>
@@ -19,32 +20,14 @@
 
 <script>
 import { CardService } from '../02-molecules'
+import { mapState } from 'vuex'
 
 export default {
   components: { CardService },
-  data() {
-    return {
-      services: [
-        {
-          icon: 'web-design-48.png',
-          title: 'Web Design',
-          description:
-            'Design atraente e responsivo para seu site, que engaja e encanta seus clientes. Crie uma presença online forte.',
-        },
-        {
-          icon: 'analystics-48.png',
-          title: 'Landing Page',
-          description:
-            'Aumente suas conversões com uma Landing Page otimizada, para gerar mais leads e vendas para seu negócio.',
-        },
-        {
-          icon: 'puzzle-48.png',
-          title: 'Extensões Web',
-          description:
-            'Personalize sua experiência de navegação com Extensões para Chrome e Firefox, que tornam seu dia online.',
-        },
-      ],
-    }
+  computed: {
+    ...mapState({
+      services: (state) => state.services,
+    }),
   },
 }
 </script>
