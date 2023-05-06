@@ -71,7 +71,54 @@ export default {
 
 @media (min-width: 768px) {
   .header {
-    background: lightblue;
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    .wrapper {
+      position: unset;
+      max-width: 940px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .nav {
+        all: unset;
+        display: flex;
+
+        .top {
+          display: none;
+        }
+
+        &-link {
+          margin-right: 20px;
+          padding: 10px 0;
+          font-size: $font-size-base;
+          text-decoration: none;
+          display: block;
+          color: $color-text-light;
+        }
+
+        &-link:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .icon-menu-open-close {
+      display: none;
+    }
+
+    .logo {
+      width: fit-content;
+
+      img {
+        display: block;
+        width: 160px;
+      }
+    }
   }
 }
 </style>
