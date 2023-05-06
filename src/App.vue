@@ -1,12 +1,15 @@
 <template>
   <router-view />
+  <button-scroll-to-top />
   <div class="modal"></div>
 </template>
 
 <script>
+import { ButtonScrollToTop } from './components/01-atoms'
+
 export default {
   name: 'App',
-  components: {},
+  components: { ButtonScrollToTop },
 }
 </script>
 
@@ -34,5 +37,11 @@ export default {
   left: 0;
   z-index: 10;
   background: rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 1280px) {
+  .buttonScrollTop {
+    right: calc(50vw - 624px);
+  }
 }
 </style>
