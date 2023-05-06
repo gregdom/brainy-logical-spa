@@ -8,6 +8,9 @@ const store = createStore({
   mutations: {
     toggleMenu(state) {
       state.isMenuOpen = !state.isMenuOpen
+    },
+    updateIsMenuOpen(state, isOpen) {
+      state.isMenuOpen = isOpen
     }
   }
 })

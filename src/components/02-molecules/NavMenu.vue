@@ -9,17 +9,31 @@
       </span>
       <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
     </div>
-    <router-link class="nav-link" to="/">Home</router-link>
-    <router-link class="nav-link" to="#services" v-scroll-to="'#services'"
+    <router-link class="nav-link" to="/" @click="closeMenu">Home</router-link>
+    <router-link
+      class="nav-link"
+      to="#services"
+      v-scroll-to="'#services'"
+      @click="closeMenu"
       >Serviços</router-link
     >
-    <router-link class="nav-link" to="#about" v-scroll-to="'#about'"
+    <router-link
+      class="nav-link"
+      to="#about"
+      v-scroll-to="'#about'"
+      @click="closeMenu"
       >Sobre</router-link
     >
-    <router-link class="nav-link" to="#projects" v-scroll-to="'#projects'"
+    <router-link
+      class="nav-link"
+      to="#projects"
+      v-scroll-to="'#projects'"
+      @click="closeMenu"
       >Projetos</router-link
     >
-    <router-link class="nav-link" to="/contact">Contato</router-link>
+    <router-link class="nav-link" to="/contact" @click="closeMenu"
+      >Contato</router-link
+    >
   </nav>
 </template>
 
@@ -34,6 +48,10 @@ export default {
   },
   methods: {
     ...mapMutations(['toggleMenu']),
+    closeMenu() {
+      this.toggleMenu()
+      this.$store.commit('updateIsMenuOpen', false)
+    },
   },
 }
 </script>
@@ -49,7 +67,7 @@ export default {
   position: fixed;
   top: 0;
   left: -100%;
-  z-index: 20;
+  z-index: 2000;
   transition: left 0.3s ease;
   background: $color-branding;
 

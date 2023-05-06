@@ -1,15 +1,34 @@
 <template>
   <router-view />
   <button-scroll-to-top />
-  <div class="modal"></div>
+  <modal-viewer v-if="isMenuOpen" />
 </template>
 
 <script>
-import { ButtonScrollToTop } from './components/01-atoms'
+import { ButtonScrollToTop, ModalViewer } from './components/01-atoms'
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
-  components: { ButtonScrollToTop },
+  components: { ButtonScrollToTop, ModalViewer },
+  computed: {
+    ...mapState({
+      isMenuOpen: (state) => state.isMenuOpen,
+    }),
+  },
+  methods: {
+    handleResize() {
+      if (window.innerWidth >= 768) {
+        this.$store.commit('updateIsMenuOpen', false)
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  },
 }
 </script>
 
@@ -26,17 +45,6 @@ export default {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.modal {
-  width: 100%;
-  height: 100%;
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.7);
 }
 
 @media (min-width: 1280px) {
