@@ -1,5 +1,5 @@
 <template>
-  <section class="services">
+  <section class="services" id="services">
     <div class="wrapper">
       <h3>Serviços</h3>
 

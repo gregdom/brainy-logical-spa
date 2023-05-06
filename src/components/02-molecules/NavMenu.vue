@@ -10,9 +10,15 @@
       <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
     </div>
     <router-link class="nav-link" to="/">Home</router-link>
-    <router-link class="nav-link" to="/services">Serviços</router-link>
-    <router-link class="nav-link" to="/about">Sobre</router-link>
-    <router-link class="nav-link" to="/projects">Projetos</router-link>
+    <router-link class="nav-link" to="#services" v-scroll-to="'#services'"
+      >Serviços</router-link
+    >
+    <router-link class="nav-link" to="#about" v-scroll-to="'#about'"
+      >Sobre</router-link
+    >
+    <router-link class="nav-link" to="#projects" v-scroll-to="'#projects'"
+      >Projetos</router-link
+    >
     <router-link class="nav-link" to="/contact">Contato</router-link>
   </nav>
 </template>
