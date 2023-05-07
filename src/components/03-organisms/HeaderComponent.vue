@@ -86,23 +86,64 @@ export default {
 
       .nav {
         all: unset;
-        display: flex;
+        // display: flex;
 
         .top {
           display: none;
         }
 
-        &-link {
-          margin-right: 20px;
-          padding: 10px 0;
-          font-size: $font-size-base;
-          text-decoration: none;
-          display: block;
-          color: $color-text-light;
-        }
+        .menu {
+          display: flex;
 
-        &-link:last-child {
-          margin-right: 0;
+          li {
+            margin-right: 20px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          .item-dropdown {
+            all: unset;
+
+            .iconExpand {
+              display: none;
+
+              &.active {
+                transform: rotate(-180deg);
+              }
+            }
+          }
+
+          .nav-link {
+            all: unset;
+            margin-right: 20px;
+            padding: 10px 0;
+            font-size: $font-size-base;
+            text-decoration: none;
+            display: block;
+            color: $color-text-light;
+          }
+
+          .nav-link:last-child {
+            margin-right: 0;
+          }
+
+          .submenu {
+            display: none;
+            overflow: visible;
+            max-height: 0;
+            transition: max-height 0.3s ease;
+
+            &.active {
+              max-height: 200px;
+            }
+
+            .nav-link {
+              font-size: 1.1rem;
+              margin-left: 10px;
+            }
+          }
         }
       }
     }

@@ -9,31 +9,84 @@
       </span>
       <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
     </div>
-    <router-link class="nav-link" to="/" @click="closeMenu">Home</router-link>
-    <router-link
-      class="nav-link"
-      to="#services"
-      v-scroll-to="'#services'"
-      @click="closeMenu"
-      >Serviços</router-link
-    >
-    <router-link
-      class="nav-link"
-      to="#about"
-      v-scroll-to="'#about'"
-      @click="closeMenu"
-      >Sobre</router-link
-    >
-    <router-link
-      class="nav-link"
-      to="#projects"
-      v-scroll-to="'#projects'"
-      @click="closeMenu"
-      >Projetos</router-link
-    >
-    <router-link class="nav-link" to="/contact" @click="closeMenu"
-      >Contato</router-link
-    >
+
+    <ul class="menu">
+      <li>
+        <router-link class="nav-link" to="/" @click="closeMenu"
+          >Home</router-link
+        >
+      </li>
+      <li class="item-dropdown">
+        <router-link class="nav-link" to="/services" @click="closeMenu"
+          >Serviços
+        </router-link>
+        <span
+          class="material-symbols-outlined iconExpand"
+          :class="{ active: isSubmenuOpen }"
+          @click="toggleSubmenu"
+        >
+          expand_more
+        </span>
+
+        <ul class="submenu" :class="{ active: isSubmenuOpen }">
+          <li>
+            <router-link
+              class="nav-link"
+              to="/services/website-development"
+              @click="closeMenu"
+              >Criação de Sites</router-link
+            >
+          </li>
+          <li>
+            <router-link
+              class="nav-link"
+              to="/services/corporate-website-development"
+              @click="closeMenu"
+              >Criação de Site Empresarial</router-link
+            >
+          </li>
+          <li>
+            <router-link
+              class="nav-link"
+              to="/services/startup-website-development"
+              @click="closeMenu"
+              >Criação de Sites para Startups</router-link
+            >
+          </li>
+          <li>
+            <router-link
+              class="nav-link"
+              to="/services/landing-page-website-development"
+              @click="closeMenu"
+              >Criação de Landing Pages</router-link
+            >
+          </li>
+          <li>
+            <router-link
+              class="nav-link"
+              to="/services/extension-development"
+              @click="closeMenu"
+              >Criação de Extensões Web</router-link
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        <router-link class="nav-link" to="/about" @click="closeMenu"
+          >Sobre</router-link
+        >
+      </li>
+      <li>
+        <router-link class="nav-link" to="/projects" @click="closeMenu"
+          >Projetos</router-link
+        >
+      </li>
+      <li>
+        <router-link class="nav-link" to="/contact" @click="closeMenu"
+          >Contato</router-link
+        >
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -44,13 +97,19 @@ import { Logo } from '../01-atoms'
 export default {
   components: { Logo },
   computed: {
-    ...mapState(['isMenuOpen']),
+    ...mapState({
+      isMenuOpen: (state) => state.isMenuOpen,
+      isSubmenuOpen: (state) => state.isSubmenuOpen,
+    }),
   },
   methods: {
     ...mapMutations(['toggleMenu']),
     closeMenu() {
       this.toggleMenu()
       this.$store.commit('updateIsMenuOpen', false)
+    },
+    toggleSubmenu() {
+      this.$store.commit('updateIsSubmenuOpen')
     },
   },
 }
@@ -70,9 +129,15 @@ export default {
   z-index: 2000;
   transition: left 0.3s ease;
   background: $color-branding;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   &.active {
     left: 0;
+  }
+
+  ul {
+    list-style: none;
   }
 
   .top {
@@ -96,12 +161,58 @@ export default {
     }
   }
 
-  &-link {
-    padding: 10px 0;
-    font-size: $font-size-base;
-    text-decoration: none;
-    display: block;
-    color: $color-text-light;
+  .menu {
+    width: 100%;
+    height: auto;
+
+    .item-dropdown {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .iconExpand {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        outline: none;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.1);
+
+        &.active {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    .nav-link {
+      height: 50px;
+      display: inline-block;
+      font-size: $font-size-base-mobile;
+      text-decoration: none;
+      line-height: 50px;
+      color: $color-text-light;
+    }
+
+    .submenu {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+
+      &.active {
+        max-height: 200px;
+      }
+
+      .nav-link {
+        font-size: 1.1rem;
+        margin-left: 10px;
+      }
+    }
   }
 }
 </style>

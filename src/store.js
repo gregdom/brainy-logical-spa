@@ -4,6 +4,7 @@ import { createStore } from 'vuex'
 const store = createStore({
   state: {
     isMenuOpen: false,
+    isSubmenuOpen: false,
     services: [
       {
         icon: 'web-design-48.png',
@@ -48,10 +49,17 @@ const store = createStore({
   mutations: {
     toggleMenu(state) {
       state.isMenuOpen = !state.isMenuOpen
+      if (!state.isMenuOpen) {
+        state.isSubmenuOpen = false
+      }
     },
     updateIsMenuOpen(state, isOpen) {
       state.isMenuOpen = isOpen
-    }
+      state.isSubmenuOpen = isOpen
+    },
+    updateIsSubmenuOpen(state) {
+      state.isSubmenuOpen = !state.isSubmenuOpen
+    },
   },
   getters: {
     getService: (state) => (serviceName) => {
