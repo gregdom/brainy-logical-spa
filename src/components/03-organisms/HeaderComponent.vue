@@ -105,6 +105,7 @@ export default {
 
           .item-dropdown {
             all: unset;
+            position: relative;
 
             .iconExpand {
               display: none;
@@ -130,18 +131,39 @@ export default {
           }
 
           .submenu {
-            display: none;
-            overflow: visible;
-            max-height: 0;
+            all: unset;
+            width: 250px;
+            height: auto;
+            display: block;
+            position: absolute;
+            top: 55px;
+            border-top: 3px solid #fff;
+            border-radius: 5px;
             transition: max-height 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 26px 21px rgba(14, 18, 29, 0.48);
+            background: $color-branding;
 
             &.active {
               max-height: 200px;
             }
 
             .nav-link {
-              font-size: 1.1rem;
-              margin-left: 10px;
+              all: unset;
+              cursor: pointer;
+              display: block;
+              width: 250px;
+              height: 40px;
+              line-height: 40px;
+              margin-left: 0;
+              padding-left: 20px;
+              font-size: 0.925rem;
+              color: #fff;
+              transition: 0.2s;
+
+              &:hover {
+                background: rgba(0, 0, 0, 0.1);
+              }
             }
           }
         }
