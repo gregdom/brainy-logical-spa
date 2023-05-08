@@ -8,10 +8,10 @@
       <h4>{{ title }}</h4>
 
       <p>
-        {{ description }}
+        {{ shortDescription }}
       </p>
 
-      <a :href="link">Saiba mais</a>
+      <router-link :to="`services/${link}`">Saiba mais</router-link>
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
       type: String,
       required: true,
     },
-    description: {
+    shortDescription: {
       type: String,
       required: true,
     },

@@ -118,6 +118,7 @@ export default {
 
           .nav-link {
             all: unset;
+            cursor: pointer;
             margin-right: 20px;
             padding: 10px 0;
             font-size: $font-size-base;

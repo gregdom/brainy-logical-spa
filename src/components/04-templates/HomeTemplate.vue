@@ -2,7 +2,11 @@
   <div>
     <header-component />
     <main>
-      <hero-component />
+      <hero-component
+        titleHero="Soluções Para Impulsionar Sua Presença Online"
+        subTitleHero="Nossa equipe está pronta para criar soluções personalizadas e eficientes
+        que se adaptam às necessidades do seu negócio."
+      />
       <services-component />
       <about-component />
       <projects-component />

@@ -1,26 +1,29 @@
 <template>
   <div>
     <header-component />
-    <div v-if="service">
-      <h1>{{ service.title }}</h1>
-      <p>{{ service.description }}</p>
+
+    <div class="services">
+      <div v-for="service in services" :key="service.id">
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.description }}</p>
+        <router-link :to="`/services/${service.link}`">Ver mais</router-link>
+      </div>
     </div>
-    <div v-else>
-      <p>Serviço não encontrado</p>
-    </div>
+
     <footer-component />
   </div>
 </template>
 
 <script>
 import { HeaderComponent, FooterComponent } from '../03-organisms'
+import { mapState } from 'vuex'
 
 export default {
   components: { HeaderComponent, FooterComponent },
   computed: {
-    service() {
-      return this.$store.getters.getService(this.$route.params.serviceName)
-    },
+    ...mapState({
+      services: (state) => state.services,
+    }),
   },
 }
 </script>

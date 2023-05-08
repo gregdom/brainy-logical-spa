@@ -1,11 +1,8 @@
 <template>
   <section class="hero">
     <div class="wrapper">
-      <h1>Soluções Para Impulsionar Sua Presença Online</h1>
-      <h2>
-        Nossa equipe está pronta para criar soluções personalizadas e eficientes
-        que se adaptam às necessidades do seu negócio.
-      </h2>
+      <h1>{{ titleHero }}</h1>
+      <h2>{{ subTitleHero }}</h2>
 
       <button-call-to-action buttonText="Nossos Projetos" />
     </div>
@@ -17,6 +14,16 @@ import { ButtonCallToAction } from '../01-atoms'
 
 export default {
   components: { ButtonCallToAction },
+  props: {
+    titleHero: {
+      type: String,
+      required: true,
+    },
+    subTitleHero: {
+      type: String,
+      required: true,
+    },
+  },
 }
 </script>
 

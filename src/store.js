@@ -7,44 +7,30 @@ const store = createStore({
     isSubmenuOpen: false,
     services: [
       {
+        link: 'website-development',
         icon: 'web-design-48.png',
         title: 'Web Design',
-        description:
+        shortDescription:
           'Design atraente e responsivo para seu site, que engaja e encanta seus clientes. Crie uma presença online forte.',
-        link: 'services/web-design',
+        longText: 'Texto Web Design',
       },
       {
+        link: 'landing-page-website-development',
         icon: 'analystics-48.png',
         title: 'Landing Page',
-        description:
+        shortDescription:
           'Aumente suas conversões com uma Landing Page otimizada, para gerar mais leads e vendas para seu negócio.',
-        link: 'services/landing-page',
+        longText: 'Texto Web Design',
       },
       {
+        link: 'extension-development',
         icon: 'puzzle-48.png',
         title: 'Extensões Web',
-        description:
+        shortDescription:
           'Personalize sua experiência de navegação com Extensões para Chrome e Firefox, que tornam seu dia online.',
-        link: 'services/web-extension',
+        longText: 'Texto Web Design',
       },
     ],
-    serviceDescription: [
-      {
-        link: 'services/web-design',
-        title: 'Web Design',
-        description: 'Serviço de web design'
-      },
-      {
-        link: 'services/landing-page',
-        title: 'Landing Page',
-        description: 'Serviço de landing page'
-      },
-      {
-        link: 'services/web-extension',
-        title: 'Extensões Chrome e Firefox',
-        description: 'Serviço de extensões web'
-      },
-    ]
   },
   mutations: {
     toggleMenu(state) {
@@ -61,12 +47,12 @@ const store = createStore({
       state.isSubmenuOpen = !state.isSubmenuOpen
     },
   },
-  getters: {
-    getService: (state) => (serviceName) => {
-      console.log('getService called with serviceName:', serviceName)
-      return state.serviceDescription.find((service) => service.link === `services/${serviceName}`)
-    }
-  }
+  // getters: {
+  //   getService: (state) => (serviceName) => {
+  //     console.log('getService called with serviceName:', serviceName)
+  //     return state.serviceDescription.find((service) => service.link === `services/${serviceName}`)
+  //   }
+  // }
 })
 
 export default store

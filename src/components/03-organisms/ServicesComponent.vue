@@ -10,7 +10,7 @@
           :key="index"
           :icon="service.icon"
           :title="service.title"
-          :description="service.description"
+          :shortDescription="service.shortDescription"
           :link="service.link"
         />
       </div>
