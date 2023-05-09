@@ -15,6 +15,22 @@ const store = createStore({
         longText: 'Texto Web Design',
       },
       {
+        link: 'corporate-website-development',
+        icon: 'analystics-48.png',
+        title: 'Corporate',
+        shortDescription:
+          'Aumente suas conversões com uma Landing Page otimizada, para gerar mais leads e vendas para seu negócio.',
+        longText: 'Texto Web Design',
+      },
+      {
+        link: 'startup-website-development',
+        icon: 'analystics-48.png',
+        title: 'Startup',
+        shortDescription:
+          'Aumente suas conversões com uma Landing Page otimizada, para gerar mais leads e vendas para seu negócio.',
+        longText: 'Texto Web Design',
+      },
+      {
         link: 'landing-page-website-development',
         icon: 'analystics-48.png',
         title: 'Landing Page',
@@ -47,12 +63,11 @@ const store = createStore({
       state.isSubmenuOpen = !state.isSubmenuOpen
     },
   },
-  // getters: {
-  //   getService: (state) => (serviceName) => {
-  //     console.log('getService called with serviceName:', serviceName)
-  //     return state.serviceDescription.find((service) => service.link === `services/${serviceName}`)
-  //   }
-  // }
+  getters: {
+    getServiceByLink: (state) => (link) => {
+      return state.services.find((service) => service.link === link)
+    }
+  }
 })
 
 export default store

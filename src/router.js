@@ -7,51 +7,67 @@ import Contact from '@/components/05-pages/ContactPage.vue'
 import NotFound from '@/components/05-pages/NotFound.vue'
 
 // Nested
-import WebDevelopment from '@/components/04-templates/ServiceNested/WebDevelopment.vue'
-import CorporateWebDevelopment from '@/components/04-templates/ServiceNested/CorporateWebDevelopment.vue'
-import StartupWebDevelopment from '@/components/04-templates/ServiceNested/StartupWebDevelopment.vue'
-import LandingPageWebDevelopment from '@/components/04-templates/ServiceNested/LandingPageWebDevelopment.vue'
-import ExtensionWebDevelopment from '@/components/04-templates/ServiceNested/ExtensionWebDevelopment.vue'
+// import WebDevelopment from '@/components/04-templates/ServiceNested/WebDevelopment.vue'
+// import CorporateWebDevelopment from '@/components/04-templates/ServiceNested/CorporateWebDevelopment.vue'
+// import StartupWebDevelopment from '@/components/04-templates/ServiceNested/StartupWebDevelopment.vue'
+// import LandingPageWebDevelopment from '@/components/04-templates/ServiceNested/LandingPageWebDevelopment.vue'
+// import ExtensionWebDevelopment from '@/components/04-templates/ServiceNested/ExtensionWebDevelopment.vue'
+import Teste from '@/components/04-templates/ServiceNested/Teste.vue'
 
 const routes = [
   {
     path: '/',
+    name: 'home',
     component: Home
   },
   {
     path: '/services',
+    name: 'services',
     component: Services,
   },
   {
-    path: '/services/website-development',
-    component: WebDevelopment
+    path: '/services/:serviceName',
+    name: 'website-dev',
+    props: true,
+    component: Teste
   },
   {
-    path: '/services/corporate-website-development',
-    component: CorporateWebDevelopment
+    path: '/services/:serviceName',
+    name: 'corporate-dev',
+    props: true,
+    component: Teste
   },
   {
-    path: '/services/startup-website-development',
-    component: StartupWebDevelopment
+    path: '/services/:serviceName',
+    name: 'startup-dev',
+    props: true,
+    component: Teste
   },
   {
-    path: '/services/landing-page-website-development',
-    component: LandingPageWebDevelopment
+    path: '/services/:serviceName',
+    name: 'landingpage-dev',
+    props: true,
+    component: Teste
   },
   {
-    path: '/services/extension-development',
-    component: ExtensionWebDevelopment
+    path: '/services/:serviceName',
+    name: 'extension-dev',
+    props: true,
+    component: Teste
   },
   {
     path: '/about',
+    name: 'about',
     component: About
   },
   {
     path: '/projects',
+    name: 'projects',
     component: Projects
   },
   {
     path: '/contact',
+    name: 'contact',
     component: Contact
   },
   {

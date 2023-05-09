@@ -12,12 +12,15 @@
 
     <ul class="menu">
       <li>
-        <router-link class="nav-link" to="/" @click="closeMenu"
+        <router-link class="nav-link" :to="{ name: 'home' }" @click="closeMenu"
           >Home</router-link
         >
       </li>
       <li class="item-dropdown">
-        <router-link class="nav-link" to="/services" @click="closeMenu"
+        <router-link
+          class="nav-link"
+          :to="{ name: 'services' }"
+          @click="closeMenu"
           >Serviços
         </router-link>
         <span
@@ -32,7 +35,10 @@
           <li>
             <router-link
               class="nav-link"
-              to="/services/website-development"
+              :to="{
+                name: 'website-dev',
+                params: { serviceName: 'website-development' },
+              }"
               @click="closeMenu"
               >Criação de Sites</router-link
             >
@@ -40,7 +46,10 @@
           <li>
             <router-link
               class="nav-link"
-              to="/services/corporate-website-development"
+              :to="{
+                name: 'corporate-dev',
+                params: { serviceName: 'corporate-website-development' },
+              }"
               @click="closeMenu"
               >Criação de Site Empresarial</router-link
             >
@@ -48,7 +57,10 @@
           <li>
             <router-link
               class="nav-link"
-              to="/services/startup-website-development"
+              :to="{
+                name: 'startup-dev',
+                params: { serviceName: 'startup-website-development' },
+              }"
               @click="closeMenu"
               >Criação de Sites para Startups</router-link
             >
@@ -56,7 +68,10 @@
           <li>
             <router-link
               class="nav-link"
-              to="/services/landing-page-website-development"
+              :to="{
+                name: 'landingpage-dev',
+                params: { serviceName: 'landing-page-website-development' },
+              }"
               @click="closeMenu"
               >Criação de Landing Pages</router-link
             >
@@ -64,7 +79,10 @@
           <li>
             <router-link
               class="nav-link"
-              to="/services/extension-development"
+              :to="{
+                name: 'extension-dev',
+                params: { serviceName: 'extension-development' },
+              }"
               @click="closeMenu"
               >Criação de Extensões Web</router-link
             >
@@ -72,17 +90,23 @@
         </ul>
       </li>
       <li>
-        <router-link class="nav-link" to="/about" @click="closeMenu"
+        <router-link class="nav-link" :to="{ name: 'about' }" @click="closeMenu"
           >Sobre</router-link
         >
       </li>
       <li>
-        <router-link class="nav-link" to="/projects" @click="closeMenu"
+        <router-link
+          class="nav-link"
+          :to="{ name: 'projects' }"
+          @click="closeMenu"
           >Projetos</router-link
         >
       </li>
       <li>
-        <router-link class="nav-link" to="/contact" @click="closeMenu"
+        <router-link
+          class="nav-link"
+          :to="{ name: 'contact' }"
+          @click="closeMenu"
           >Contato</router-link
         >
       </li>

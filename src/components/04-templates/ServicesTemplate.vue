@@ -1,6 +1,10 @@
 <template>
   <div>
     <header-component />
+    <hero-component
+      titleHero="Serviços"
+      subTitleHero="Veja os serviços que oferecemos"
+    />
 
     <div class="services">
       <div v-for="service in services" :key="service.id">
@@ -15,11 +19,15 @@
 </template>
 
 <script>
-import { HeaderComponent, FooterComponent } from '../03-organisms'
+import {
+  HeaderComponent,
+  HeroComponent,
+  FooterComponent,
+} from '../03-organisms'
 import { mapState } from 'vuex'
 
 export default {
-  components: { HeaderComponent, FooterComponent },
+  components: { HeaderComponent, HeroComponent, FooterComponent },
   computed: {
     ...mapState({
       services: (state) => state.services,
