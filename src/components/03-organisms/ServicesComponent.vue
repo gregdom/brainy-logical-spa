@@ -53,15 +53,23 @@ export default {
     h3 {
       font-size: $section-title-size;
       text-align: center;
-      margin-bottom: 92px;
+      margin-bottom: 20px;
     }
 
-    .block-cards {
-      max-width: 300px;
-      margin-bottom: 92px;
+    .block-services {
+      display: flex;
+      flex-wrap: wrap;
+      // flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-      &:last-child {
-        margin-bottom: 0;
+      .block-cards {
+        max-width: 300px;
+        margin-top: 92px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -88,11 +96,16 @@ export default {
 
       .block-services {
         display: flex;
+        margin-left: 20px;
 
         .block-cards {
           max-width: 300px;
           margin-right: 20px;
-          margin-bottom: 0px !important;
+          // margin-bottom: 0px !important;
+
+          // &:nth-child(2n) {
+          //   margin-right: 0;
+          // }
 
           &:last-child {
             margin-right: 0;
@@ -102,4 +115,32 @@ export default {
     }
   }
 }
+
+// @media (min-width: 1020px) {
+//   .services {
+//     padding: 50px 0 64px 0;
+
+//     .wrapper {
+//       width: 90%;
+
+//       .block-services {
+//         display: flex;
+
+//         .block-cards {
+//           max-width: 300px;
+//           margin-right: 20px;
+//           // margin-bottom: 0px !important;
+
+//           &:nth-child(2n) {
+//             margin-right: 20px;
+//           }
+
+//           &:last-child {
+//             margin-right: 0;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 </style>

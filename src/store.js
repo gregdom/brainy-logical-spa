@@ -9,7 +9,7 @@ const store = createStore({
       {
         link: 'website-development',
         icon: 'web-design-48.png',
-        title: 'Web Design',
+        title: 'Desenvolvimento Web',
         shortDescription:
           'Design atraente e responsivo para seu site, que engaja e encanta seus clientes. Crie uma presença online forte.',
         longText: 'Texto Web Design',
@@ -17,7 +17,7 @@ const store = createStore({
       {
         link: 'corporate-website-development',
         icon: 'analystics-48.png',
-        title: 'Corporate',
+        title: 'Site Empresarial',
         shortDescription:
           'Aumente suas conversões com uma Landing Page otimizada, para gerar mais leads e vendas para seu negócio.',
         longText: 'Texto Web Design',
@@ -25,7 +25,7 @@ const store = createStore({
       {
         link: 'startup-website-development',
         icon: 'analystics-48.png',
-        title: 'Startup',
+        title: 'Site para Startup',
         shortDescription:
           'Aumente suas conversões com uma Landing Page otimizada, para gerar mais leads e vendas para seu negócio.',
         longText: 'Texto Web Design',

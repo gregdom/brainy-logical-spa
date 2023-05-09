@@ -2,17 +2,24 @@
   <div>
     <header-component />
     <hero-component
-      titleHero="Serviços"
-      subTitleHero="Veja os serviços que oferecemos"
+      class="teste-hero"
+      titleHero="Desenvolvemos Seu Projeto Web Sob Medida"
+      subTitleHero="Soluções personalizadas para atender às suas necessidades, com uma equipe dedicada a oferecer serviços de desenvolvimento e programação de websites de qualidade."
     />
 
-    <div class="services">
-      <div v-for="service in services" :key="service.id">
-        <h2>{{ service.title }}</h2>
-        <p>{{ service.description }}</p>
-        <router-link :to="`/services/${service.link}`">Ver mais</router-link>
+    <main>
+      <div class="services">
+        <div
+          class="hexagon-container"
+          v-for="service in services"
+          :key="service.id"
+        >
+          <h2>{{ service.title }}</h2>
+          <p>{{ service.description }}</p>
+          <router-link :to="`/services/${service.link}`">Ver mais</router-link>
+        </div>
       </div>
-    </div>
+    </main>
 
     <footer-component />
   </div>
@@ -32,6 +39,10 @@ export default {
     ...mapState({
       services: (state) => state.services,
     }),
+  },
+  mounted() {
+    let callToAction = document.querySelector('.call-to-action')
+    callToAction.style.display = 'none'
   },
 }
 </script>
