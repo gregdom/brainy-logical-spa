@@ -63,6 +63,12 @@ export default {
     justify-content: center;
     align-items: center;
     background: $color-branding;
+
+    img {
+      padding: 20px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
   }
 
   .details {

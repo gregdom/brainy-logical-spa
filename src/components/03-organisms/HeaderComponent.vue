@@ -32,6 +32,7 @@ export default {
   width: 100%;
   height: auto;
   padding: 20px 0;
+  // position: fixed;
   background: $color-branding;
 
   .wrapper {
@@ -107,6 +108,12 @@ export default {
             all: unset;
             position: relative;
 
+            &:hover {
+              .submenu {
+                max-height: 250px;
+              }
+            }
+
             .iconExpand {
               display: none;
 
@@ -119,6 +126,7 @@ export default {
           .nav-link {
             all: unset;
             cursor: pointer;
+            height: 100%;
             margin-right: 20px;
             padding: 10px 0;
             font-size: $font-size-base;
@@ -134,16 +142,15 @@ export default {
           .submenu {
             all: unset;
             width: 250px;
-            height: auto;
+            max-height: 0;
             display: block;
             position: absolute;
-            top: 55px;
-            border-top: 3px solid #fff;
-            border-radius: 5px;
+            top: 61px;
+            border-left: 3px solid $color-branding;
             transition: max-height 0.3s ease;
             overflow: hidden;
             box-shadow: 0 26px 21px rgba(14, 18, 29, 0.48);
-            background: $color-branding;
+            background: #fff;
 
             &.active {
               max-height: 200px;
@@ -159,7 +166,7 @@ export default {
               margin-left: 0;
               padding-left: 20px;
               font-size: 0.925rem;
-              color: #fff;
+              color: #353535;
               transition: 0.2s;
 
               &:hover {

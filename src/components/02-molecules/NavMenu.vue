@@ -135,6 +135,9 @@ export default {
     toggleSubmenu() {
       this.$store.commit('updateIsSubmenuOpen')
     },
+    teste() {
+      alert('teste')
+    },
   },
 }
 </script>

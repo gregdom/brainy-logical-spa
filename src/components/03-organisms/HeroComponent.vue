@@ -34,12 +34,12 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 57px 0 64px 0;
-  background: #212529;
-  background-image: linear-gradient(rgba(33, 37, 41, 0.01), rgb(33, 37, 41) 85%),
-    radial-gradient(at 0% 0%, rgba(117, 13, 253, 0.5), rgba(0, 0, 0, 0) 50%),
-    radial-gradient(at 100% 0%, rgba(214, 51, 132, 0.5), rgba(0, 0, 0, 0) 50%),
-    radial-gradient(at 100% 50%, rgba(113, 44, 249, 0.5), rgba(0, 0, 0, 0) 50%),
-    radial-gradient(at 0% 50%, rgba(255, 228, 132, 0.5), rgba(0, 0, 0, 0) 50%);
+  background: $color-branding;
+  // background-image: linear-gradient(rgba(33, 37, 41, 0.01), rgb(33, 37, 41) 85%),
+  //   radial-gradient(at 0% 0%, rgba(117, 13, 253, 0.5), rgba(0, 0, 0, 0) 50%),
+  //   radial-gradient(at 100% 0%, rgba(214, 51, 132, 0.5), rgba(0, 0, 0, 0) 50%),
+  //   radial-gradient(at 100% 50%, rgba(113, 44, 249, 0.5), rgba(0, 0, 0, 0) 50%),
+  //   radial-gradient(at 0% 50%, rgba(255, 228, 132, 0.5), rgba(0, 0, 0, 0) 50%);
 
   .wrapper {
     width: calc(100% - 48px);
@@ -49,11 +49,13 @@ export default {
     flex-direction: column;
 
     h1 {
+      margin-bottom: 16px;
+      // padding-top: 80px;
       font-size: calc(1.525rem + 3.3vw);
       font-weight: 700;
       // line-height: ;
       text-align: center;
-      margin-bottom: 16px;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
       color: #fff;
     }
 
@@ -63,7 +65,7 @@ export default {
       line-height: $general-line-height;
       text-align: center;
       margin-bottom: 37px;
-      color: #adb5bd;
+      color: #ffffff;
     }
 
     & > * {
@@ -72,6 +74,12 @@ export default {
 
     & > *:last-child {
       margin-bottom: 0;
+    }
+
+    .call-to-action {
+      border: 2px solid #fff;
+      background: #fff;
+      color: #33373b;
     }
   }
 }
