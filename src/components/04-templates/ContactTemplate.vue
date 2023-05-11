@@ -25,7 +25,7 @@
               <div class="separator"></div>
 
               <div class="divLastName">
-                <label for="last-name">Sobrenome:</label>
+                <label for="last-name">Sobrenome</label>
                 <input
                   class="last-name"
                   type="text"
@@ -35,7 +35,7 @@
               </div>
 
               <div class="divEmail">
-                <label for="email">Email:</label>
+                <label for="email">Email</label>
                 <input
                   class="email"
                   type="email"
@@ -47,7 +47,7 @@
 
             <div class="business division">
               <div class="divCompany">
-                <label for="company-name">Nome da Empresa:</label>
+                <label for="company-name">Nome da Empresa</label>
                 <input
                   class="company-name"
                   type="text"
@@ -57,7 +57,7 @@
               </div>
 
               <div class="divSite">
-                <label for="company-site">Site da Empresa:</label>
+                <label for="company-site">Site da Empresa</label>
                 <input
                   class="company-site"
                   type="text"
@@ -69,7 +69,7 @@
 
             <div class="project-idea division">
               <div>
-                <label for="project-type">Tipo de Projeto:</label>
+                <label for="project-type">Tipo de Projeto</label>
                 <select id="project-type" v-model="projectType">
                   <option value="default">Escolher opção</option>
                   <option value="Desenvolvimento Web">
@@ -84,7 +84,7 @@
               </div>
 
               <div>
-                <label for="project-details">Fale sobre seu projeto:</label>
+                <label for="project-details">Fale sobre seu projeto</label>
                 <textarea
                   id="project-details"
                   v-model="projectDetails"
@@ -273,7 +273,7 @@ export default {
           justify-content: center;
           align-items: center;
           font-family: 'Open Sans', sans-serif;
-          font-size: 18px;
+          font-size: 1rem;
           font-weight: 700;
           text-decoration: none;
           border: none;
