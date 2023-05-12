@@ -10,6 +10,11 @@
         <div class="wrapper">
           <div class="block-desc">
             <h3>Serviço de Criação Web</h3>
+            <span class="subtitle">
+              HTML5/CSS3 - PHP (Laravel, CodeIgniter, Symfony, CakePHP, Yii) -
+              JavaScript (Angular.js, React.js, Vue.js, Node.js, Backbone.js) -
+              Python (Django)
+            </span>
           </div>
 
           <div class="block-cards">
@@ -70,7 +75,7 @@
                 </article>
               </a>
 
-              <a href="#">
+              <!-- <a href="#">
                 <article>
                   <img
                     src="../../../assets/images/web.png"
@@ -81,7 +86,7 @@
                     Find out how to create a high-quality corporate website
                   </p>
                 </article>
-              </a>
+              </a> -->
             </div>
           </div>
         </div>
@@ -90,7 +95,7 @@
       <section class="sub-services">
         <div class="wrapper">
           <div class="firstBlock">
-            <h3>What are F5 Studio's web development services?</h3>
+            <h3>What Are F5 Studio's Web Development Services?</h3>
 
             <span class="subtitle"
               >What is included in web development services?</span
@@ -149,13 +154,86 @@
           </div>
         </div>
       </section>
+
+      <section class="benefits">
+        <div class="wrapper">
+          <h3>Your Benefits. Our Key Expertise</h3>
+
+          <div class="cards">
+            <swiper
+              :slidesPerView="slidesPerView"
+              :spaceBetween="20"
+              :loop="true"
+              :pagination="{
+                clickable: true,
+              }"
+              :navigation="true"
+              :modules="modules"
+              class="mySwiper cardBenefits"
+            >
+              <swiper-slide class="elementSwiperSlide">
+                <div class="imageContainer">
+                  <img src="../../../assets/images/web.png" alt="" />
+                </div>
+
+                <div class="details">
+                  <h4>Optimize a marketing budget</h4>
+
+                  <p class="single-service-flip__text--full">
+                    The Internet is still affordable to promote your business
+                    compared to other marketing channels. F5 Studio’s approaches
+                    allow you to achieve your business goals cost-effectively.
+                  </p>
+                </div>
+              </swiper-slide>
+
+              <swiper-slide class="elementSwiperSlide">
+                <div class="imageContainer">
+                  <img src="../../../assets/images/web.png" alt="" />
+                </div>
+
+                <div class="details">
+                  <h4>Optimize a marketing budget</h4>
+
+                  <p class="single-service-flip__text--full">
+                    The Internet is still affordable to promote your business
+                    compared to other marketing channels. F5 Studio’s approaches
+                    allow you to achieve your business goals cost-effectively.
+                  </p>
+                </div>
+              </swiper-slide>
+
+              <swiper-slide class="elementSwiperSlide">
+                <div class="imageContainer">
+                  <img src="../../../assets/images/web.png" alt="" />
+                </div>
+
+                <div class="details">
+                  <h4>Optimize a marketing budget</h4>
+
+                  <p class="single-service-flip__text--full">
+                    The Internet is still affordable to promote your business
+                    compared to other marketing channels. F5 Studio’s approaches
+                    allow you to achieve your business goals cost-effectively.
+                  </p>
+                </div>
+              </swiper-slide>
+            </swiper>
+          </div>
+        </div>
+      </section>
     </main>
     <footer-component />
   </div>
 </template>
 
 <script>
-// import { CardService } from '../../02-molecules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import { Pagination, Navigation } from 'swiper'
+
 import {
   HeaderComponent,
   HeroComponent,
@@ -163,21 +241,52 @@ import {
 } from '../../03-organisms'
 
 export default {
-  components: { HeaderComponent, HeroComponent, FooterComponent },
+  components: {
+    Swiper,
+    SwiperSlide,
+    HeaderComponent,
+    HeroComponent,
+    FooterComponent,
+  },
   props: {
     serviceName: {
       type: String,
       required: true,
     },
   },
+  data() {
+    return {
+      slidesPerView: 1,
+    }
+  },
+  setup() {
+    return {
+      modules: [Pagination, Navigation],
+    }
+  },
   computed: {
     service() {
       return this.$store.getters.getServiceByLink(this.serviceName)
     },
   },
+  methods: {
+    handleResize() {
+      if (window.innerWidth >= 768) {
+        this.slidesPerView = 2
+      } else {
+        this.slidesPerView = 1
+      }
+    },
+  },
   mounted() {
     let callToAction = document.querySelector('.call-to-action')
     callToAction.style.display = 'none'
+
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize)
   },
 }
 </script>
@@ -204,6 +313,7 @@ export default {
       font-size: $section-title-size;
       text-align: center;
       margin: 0 0 32px 0;
+      // text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
       // text-transform: uppercase;
       // margin-bottom: 20px;
     }
@@ -213,7 +323,7 @@ export default {
         width: 100%;
         height: auto;
         margin-top: 20px;
-        padding: 30px 30px 64px 30px;
+        padding: 48px 30px 64px 30px;
         display: block;
         text-decoration: none;
         color: #fff;
@@ -239,6 +349,9 @@ export default {
 
         h4 {
           margin-bottom: 20px;
+          font-size: $general-title-size;
+          text-align: left;
+          color: #fff;
         }
 
         p {
@@ -313,5 +426,225 @@ export default {
       }
     }
   }
+}
+
+.benefits {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
+  padding: 64px 0 64px 0;
+  // background: $color-branding;
+
+  .wrapper {
+    width: calc(100% - 48px);
+    height: auto;
+    margin: 0 auto;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+
+    h3 {
+      font-size: $section-title-size;
+      text-align: center;
+      margin: 0 0 64px 0;
+      // text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+      color: #000;
+      // text-transform: uppercase;
+      // margin-bottom: 20px;
+    }
+
+    .cards {
+      .elementSwiperSlide {
+        width: 100%;
+        // max-width: auto;
+        height: auto;
+        padding: 0 0 64px 0;
+        // border: 1px solid rgba(0, 0, 0, 0.1);
+        // border-radius: 10px;
+        background: $color-branding;
+
+        .imageContainer {
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            display: block;
+            padding-top: 48px;
+          }
+        }
+
+        .details {
+          width: 100%;
+          height: auto;
+          padding: 0 20px;
+
+          h4 {
+            padding: 20px 0 15px 0;
+            font-size: $general-title-size;
+            text-align: center;
+            color: $color-text-light;
+          }
+
+          p {
+            padding-bottom: 20px;
+            font-size: $font-size-base;
+            line-height: $general-line-height;
+            // font-style: italic;
+            text-align: center;
+            color: $color-text-light;
+          }
+        }
+      }
+
+      .mySwiper {
+        background-color: #fff !important;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+          color: #000 !important;
+          opacity: 0.4;
+          transition: opacity 0.2s ease-in-out;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        .swiper-pagination-bullet-active {
+          background: $color-branding;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  // section
+  .single-service-init {
+    .wrapper {
+      width: 500px;
+
+      .block-cards {
+        width: 100%;
+      }
+    }
+  }
+
+  // section
+  .sub-services {
+    .wrapper {
+      width: 500px;
+    }
+  }
+
+  // section
+  .benefits {
+    .wrapper {
+      width: 500px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  // section
+  .single-service-init {
+    .wrapper {
+      width: 90%;
+      max-width: 940px;
+
+      .block-cards {
+        width: 100%;
+      }
+    }
+  }
+
+  // section
+  .sub-services {
+    .wrapper {
+      width: 90%;
+      max-width: 940px;
+    }
+  }
+
+  // section
+  .benefits {
+    .wrapper {
+      width: 90%;
+      max-width: 940px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  // section
+  .single-service-init {
+    .wrapper {
+      width: 90%;
+      max-width: 940px;
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      justify-content: center;
+      align-items: center;
+
+      .block-desc {
+        align-self: flex-start;
+        padding-right: 20px;
+
+        h3 {
+          text-align: left;
+          margin-bottom: 20px;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+          line-height: $general-line-height;
+          color: $color-general-text;
+        }
+      }
+
+      .block-cards {
+        width: 100%;
+        display: flex;
+        margin-top: 0;
+
+        .columns {
+          margin-right: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+            padding: 32px 20px;
+          }
+        }
+      }
+    }
+  }
+
+  // // section
+  // .sub-services {
+  //   .wrapper {
+  //     width: 90%;
+  //     max-width: 940px;
+  //   }
+  // }
+
+  // // section
+  // .benefits {
+  //   .wrapper {
+  //     width: 90%;
+  //     max-width: 940px;
+  //   }
+  // }
 }
 </style>
