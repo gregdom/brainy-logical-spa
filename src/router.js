@@ -7,7 +7,7 @@ import Contact from '@/components/05-pages/ContactPage.vue'
 import NotFound from '@/components/05-pages/NotFound.vue'
 
 // Nested
-// import WebDevelopment from '@/components/04-templates/ServiceNested/WebDevelopment.vue'
+import WebDevelopment from '@/components/04-templates/ServiceNested/WebDevelopment.vue'
 // import CorporateWebDevelopment from '@/components/04-templates/ServiceNested/CorporateWebDevelopment.vue'
 // import StartupWebDevelopment from '@/components/04-templates/ServiceNested/StartupWebDevelopment.vue'
 // import LandingPageWebDevelopment from '@/components/04-templates/ServiceNested/LandingPageWebDevelopment.vue'
@@ -29,7 +29,7 @@ const routes = [
     path: '/services/:serviceName',
     name: 'website-dev',
     props: true,
-    component: Teste
+    component: WebDevelopment
   },
   {
     path: '/services/:serviceName',
