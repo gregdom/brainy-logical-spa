@@ -34,6 +34,7 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 57px 0 64px 0;
+  // box-shadow: 0 12px 21px #8378b6;
   background: $color-branding;
   // background-image: linear-gradient(rgba(33, 37, 41, 0.01), rgb(33, 37, 41) 85%),
   //   radial-gradient(at 0% 0%, rgba(117, 13, 253, 0.5), rgba(0, 0, 0, 0) 50%),
