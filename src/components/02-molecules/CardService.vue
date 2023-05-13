@@ -51,13 +51,8 @@ export default {
   padding: 0 0 32px 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  // box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
+  transition: 0.2s;
   background: #fff;
-
-  &:hover {
-    color: #fff;
-    background: $color-branding;
-  }
 
   .iconContainer {
     width: 100px;
@@ -80,6 +75,10 @@ export default {
     width: 100%;
     height: auto;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h4 {
       padding: 20px 0;
@@ -97,11 +96,34 @@ export default {
     }
 
     a {
+      width: fit-content;
+      padding: 10px 16px;
+      border-radius: 5px;
       display: block;
       font-size: $font-size-base;
-      text-align: right;
       text-decoration: none;
       color: $color-branding;
+      justify-self: flex-end;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 12px 21px $color-branding;
+    background: $color-branding;
+
+    h4,
+    p {
+      color: #fff;
+    }
+
+    a {
+      color: #33373b;
+      background: $color-highlight;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }
