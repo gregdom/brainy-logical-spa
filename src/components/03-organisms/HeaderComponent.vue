@@ -32,8 +32,10 @@ export default {
   width: 100%;
   height: auto;
   padding: 20px 0;
-  // position: fixed;
-  background: $color-branding;
+  position: absolute;
+  z-index: 2000;
+  // background: blue;
+  // background: $color-branding-gradient;
 
   .wrapper {
     @extend %base-wrapper;

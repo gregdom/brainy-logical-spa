@@ -1,12 +1,15 @@
 <template>
-  <section class="hero">
-    <div class="wrapper">
-      <h1>{{ titleHero }}</h1>
-      <h2>{{ subTitleHero }}</h2>
+  <div class="envolt">
+    <section class="hero">
+      <div class="wrapper">
+        <h1>{{ titleHero }}</h1>
+        <h2>{{ subTitleHero }}</h2>
 
-      <button-call-to-action buttonText="Nossos Projetos" />
-    </div>
-  </section>
+        <button-call-to-action buttonText="Nossos Projetos" />
+      </div>
+    </section>
+    <div class="shadow"></div>
+  </div>
 </template>
 
 <script>
@@ -24,23 +27,113 @@ export default {
       required: true,
     },
   },
+  methods: {
+    highlightText() {
+      let palavra1 = document.querySelector('h1')
+      let texto = palavra1.textContent
+
+      // Define a palavra a ser destacada com uma classe de destaque
+      let palavraDestaque = 'Impulsionar'
+      let palavraDestaqueComSpan =
+        '<span class="highlightColorText">' + palavraDestaque + '</span>'
+
+      // Define a palavra animada com uma classe de animação
+      let palavraAnimada = 'Presença'
+      let palavraAnimadaComSpan =
+        '<span class="animated-word">' + palavraAnimada + '</span>'
+
+      // Substitui a palavra destacada e animada pelo texto original com os spans adicionados
+      texto = texto.replace(palavraDestaque, palavraDestaqueComSpan)
+      texto = texto.replace(palavraAnimada, palavraAnimadaComSpan)
+
+      // Atualiza o conteúdo do elemento H1 com o novo texto
+      palavra1.innerHTML = texto
+      setTimeout(() => {
+        this.animation()
+      }, 1000)
+    },
+    animation() {
+      let teste = document.querySelector('.animated-word')
+      teste.classList.add('active')
+    },
+  },
+  mounted() {
+    this.highlightText()
+  },
 }
 </script>
 
 <style lang="scss">
+.highlightColorText {
+  color: $color-highlight;
+}
+
+.animated-word {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-word::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: $color-highlight;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease-in-out;
+}
+
+.animated-word.active::after {
+  transform: scaleX(1);
+}
+
+// Start
+.envolt {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
+
+  &::before {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    bottom: 10px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width: 300px;
+    background: #aaa;
+    box-shadow: 0 15px 10px rgba(170, 170, 170, 0.9);
+    transform: rotate(-4deg);
+  }
+
+  &::after {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    bottom: 10px;
+    right: 10px;
+    width: 50%;
+    top: 80%;
+    max-width: 300px;
+    background: #aaa;
+    box-shadow: 0 15px 10px rgba(170, 170, 170, 0.9);
+    transform: rotate(4deg);
+  }
+}
+
 .hero {
   width: 100%;
   max-width: 1400px;
   height: auto;
   margin: 0 auto;
-  padding: 57px 0 64px 0;
-  // box-shadow: 0 12px 21px #8378b6;
-  background: $color-branding;
-  // background-image: linear-gradient(rgba(33, 37, 41, 0.01), rgb(33, 37, 41) 85%),
-  //   radial-gradient(at 0% 0%, rgba(117, 13, 253, 0.5), rgba(0, 0, 0, 0) 50%),
-  //   radial-gradient(at 100% 0%, rgba(214, 51, 132, 0.5), rgba(0, 0, 0, 0) 50%),
-  //   radial-gradient(at 100% 50%, rgba(113, 44, 249, 0.5), rgba(0, 0, 0, 0) 50%),
-  //   radial-gradient(at 0% 50%, rgba(255, 228, 132, 0.5), rgba(0, 0, 0, 0) 50%);
+  padding: 137px 0 64px 0;
+  background: $color-branding-gradient;
 
   .wrapper {
     width: calc(100% - 48px);
@@ -50,7 +143,7 @@ export default {
     flex-direction: column;
 
     h1 {
-      margin-bottom: 16px;
+      margin-bottom: 32px;
       // padding-top: 80px;
       font-size: calc(1.525rem + 3.3vw);
       font-weight: 700;
@@ -78,8 +171,8 @@ export default {
     }
 
     .call-to-action {
-      border: 2px solid #fff;
-      background: #fff;
+      // border: 2px solid #fff;
+      background: $color-highlight;
       color: #33373b;
     }
   }
@@ -87,7 +180,7 @@ export default {
 
 @media (min-width: 600px) {
   .hero {
-    padding: 64px 0 84px 0;
+    padding: 137px 0 84px 0;
 
     .wrapper {
       width: 500px;

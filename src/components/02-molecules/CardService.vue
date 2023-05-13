@@ -54,6 +54,11 @@ export default {
   // box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
   background: #fff;
 
+  &:hover {
+    color: #fff;
+    background: $color-branding;
+  }
+
   .iconContainer {
     width: 100px;
     height: 100px;
@@ -62,7 +67,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $color-branding;
+    background: $color-branding-gradient;
 
     img {
       padding: 20px;
