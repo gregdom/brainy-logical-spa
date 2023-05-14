@@ -145,25 +145,26 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 57px 0 64px 0;
-  background: #fff;
+  background: $color-branding-gradient;
 
   .wrapper {
     width: calc(100% - 48px);
     height: auto;
     margin: 0 auto;
     padding: 0 20px 20px 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    // border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    // background: #fff;
 
     h3 {
       font-size: $section-title-size;
       text-align: center;
-      margin: 20px 0 32px 0;
+      margin: 0 0 64px 0;
+      color: #fff;
       // margin-bottom: 20px;
     }
 
@@ -185,12 +186,12 @@ export default {
           margin-bottom: 20px;
 
           label {
-            color: #1c074d;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 24px;
-            display: block;
             margin-bottom: 10px;
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 24px;
+            color: #fff;
           }
 
           input[type='text'],
@@ -198,21 +199,33 @@ export default {
           textarea {
             width: 100%;
             padding: 13px 22px;
-            border-radius: 5px;
-            border: 1px solid #dde3ec;
+            border-top: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            border-bottom: 1px solid $color-highlight;
             font-size: 1rem;
-            color: #675387;
-            // color: #5d5075;
             outline: none;
+            color: #ffffff;
+            background: transparent;
 
             &:focus {
               outline: none;
-              color: #5d5075;
-              border: 1px solid #ad84fd;
+              color: #ffffff;
+              border: 1px solid $color-highlight;
+            }
+
+            &::placeholder {
+              color: #e2edff; /* Define a cor do placeholder como vermelho */
+            }
+
+            /* Estiliza o placeholder para o input com ID "email" */
+            &::-webkit-input-placeholder {
+              color: #c1d6ff; /* Define a cor do placeholder como azul em navegadores que suportam o prefixo "-webkit-" */
             }
           }
 
           textarea {
+            border: 1px solid $color-highlight;
             min-height: 200px;
             padding: 10px;
           }
@@ -223,13 +236,13 @@ export default {
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             font-size: 1rem;
-            color: #675387;
-            background-color: #fff;
+            color: #fff;
+            background-color: $color-branding;
 
             &:focus {
               outline: none;
-              border: 1px solid rgba(0, 0, 0, 0.3);
-              color: #5d5075;
+              border: 1px solid $color-branding;
+              color: #fff;
             }
           }
         }
@@ -245,6 +258,7 @@ export default {
         margin-top: 20px;
 
         button[type='submit'] {
+          cursor: pointer;
           width: 100%;
           padding: 10px 25px;
           display: flex;
@@ -256,12 +270,9 @@ export default {
           text-decoration: none;
           border: none;
           border-radius: 5px;
-          color: $color-text-light;
-          background: $color-branding;
-
-          &:hover {
-            background-color: darken($color-branding, 10%);
-          }
+          transition: 0.2s;
+          color: #33373b;
+          background: $color-highlight;
         }
       }
     }
@@ -286,6 +297,10 @@ export default {
         .division {
           all: unset;
           width: 80%;
+
+          // label {
+          //   color: #fff;
+          // }
         }
 
         .personal {

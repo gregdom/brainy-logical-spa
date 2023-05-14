@@ -52,9 +52,9 @@ export default {
   width: 100%;
   max-width: 1400px;
   height: auto;
-  margin: 92px auto 0 auto;
+  // margin: 92px auto 0 auto;
   padding: 57px 0 20px 0;
-  background: $color-branding;
+  background: $color-general-text;
 
   .wrapper {
     width: calc(100% - 48px);
@@ -70,7 +70,8 @@ export default {
       height: auto;
       padding: 20px;
       margin-top: -50%;
-      display: flex;
+      // display: flex;
+      display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
