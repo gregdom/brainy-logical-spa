@@ -6,7 +6,7 @@
       <div class="blocks">
         <div class="block decoration">
           <img
-            src="../../assets/images/illustration-about.png"
+            src="../../assets/images/illustration-about-2.png"
             alt="Ilustração"
           />
         </div>
@@ -51,6 +51,7 @@ export default {
   background: $color-branding;
 
   .wrapper {
+    position: relative;
     width: calc(100% - 48px);
     height: auto;
     margin: 0 auto;
@@ -59,11 +60,16 @@ export default {
     justify-content: center;
     align-items: center;
 
+    .title-parallax {
+      display: none;
+    }
+
     h3 {
       margin-bottom: 64px;
       font-size: $section-title-size;
       text-align: center;
       color: $color-text-light;
+      border-bottom: 3px solid $color-highlight;
     }
 
     .blocks {
@@ -118,6 +124,60 @@ export default {
           max-width: 458px;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 1171px) {
+  .about {
+    position: relative;
+
+    .wrapper {
+      position: static;
+
+      .title-parallax.dark {
+        color: rgba(0, 11, 50, 0.06);
+      }
+      .title-parallax {
+        display: block;
+        text-shadow: none;
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        -webkit-transition: top 1s linear;
+        transition: top 1s linear;
+        z-index: 1;
+        top: -25%;
+
+        p {
+          display: block;
+          font-size: 370px;
+          text-transform: uppercase;
+          text-align: center;
+          font-family: BebasNeue, Helvetica, Arial, sans-serif;
+          font-weight: 700;
+          z-index: 0;
+        }
+      }
+
+      // .text-wy-6460e1a96fce0::before {
+      //   content: 'Sobre';
+      //   font-size: 200px;
+      //   transform: translate(0, -25%);
+      //   animation: title-parallax-move-why-us 8s infinite both;
+      // }
+      // .title-parallax::before {
+      //   height: auto;
+      //   line-height: 1;
+      //   display: block;
+      //   text-transform: uppercase;
+      //   text-align: center;
+      //   font-family: BebasNeue, Helvetica, Arial, sans-serif;
+      //   font-weight: 700;
+      //   z-index: 0;
+      //   width: 95%;
+      //   margin: 0 auto;
+      // }
     }
   }
 }
