@@ -2,66 +2,58 @@
   <section class="contact">
     <div class="wrapper">
       <h3>{{ mainTitle }}</h3>
+      <span class="subtitle">Fale para nós o que você precisa</span>
       <form @submit.prevent="submitForm">
         <div class="personal division">
-          <div class="divFirstName">
-            <label for="first-name">Nome</label>
+          <div class="divFirstName inner">
             <input
-              class="first-name"
+              class="first-name fieldEntry"
               type="text"
               v-model="firstName"
-              placeholder="Nome"
             />
+            <label for="first-name">Nome</label>
           </div>
 
           <div class="separator"></div>
 
-          <div class="divLastName">
-            <label for="last-name">Sobrenome</label>
+          <div class="divLastName inner">
             <input
-              class="last-name"
+              class="last-name fieldEntry"
               type="text"
               v-model="lastName"
-              placeholder="Sobrenome"
             />
+            <label for="last-name">Sobrenome</label>
           </div>
 
-          <div class="divEmail">
+          <div class="divEmail inner">
+            <input class="email fieldEntry" type="email" v-model="email" />
             <label for="email">Email</label>
-            <input
-              class="email"
-              type="email"
-              v-model="email"
-              placeholder="Email"
-            />
           </div>
         </div>
 
         <div class="business division">
-          <div class="divCompany">
-            <label for="company-name">Nome da Empresa</label>
+          <div class="divCompany inner">
             <input
-              class="company-name"
+              class="company-name fieldEntry"
               type="text"
               v-model="companyName"
-              placeholder="Nome da Empresa"
             />
+            <label for="company-name">Nome da Empresa</label>
           </div>
 
-          <div class="divSite">
-            <label for="company-site">Site da Empresa</label>
+          <div class="divSite inner">
             <input
-              class="company-site"
+              class="company-site fieldEntry"
               type="text"
               v-model="companySite"
-              placeholder="Link do site atual"
             />
+            <label for="company-site">Site da Empresa</label>
           </div>
         </div>
 
         <div class="project-idea division">
           <div>
-            <label for="project-type">Tipo de Projeto</label>
+            <label class="labelInit" for="project-type">Tipo de Projeto</label>
             <select id="project-type" v-model="projectType">
               <option value="default">Escolher opção</option>
               <option value="Desenvolvimento Web">Desenvolvimento Web</option>
@@ -74,7 +66,9 @@
           </div>
 
           <div>
-            <label for="project-details">Fale sobre seu projeto</label>
+            <label class="labelInit" for="project-details"
+              >Fale sobre seu projeto</label
+            >
             <textarea id="project-details" v-model="projectDetails"></textarea>
           </div>
         </div>
@@ -163,9 +157,16 @@ export default {
     h3 {
       font-size: $section-title-size;
       text-align: center;
-      margin: 0 0 64px 0;
+      margin: 0 0 16px 0;
       color: $color-text-dark;
       // margin-bottom: 20px;
+    }
+
+    .subtitle {
+      margin-bottom: 64px;
+      font-size: 1rem;
+      color: #686f74;
+      text-align: center;
     }
 
     form {
@@ -175,57 +176,81 @@ export default {
       flex-direction: column;
       align-items: center;
 
+      .separator {
+        display: none;
+      }
+
       .division {
         width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
         margin-bottom: 22px;
+        position: relative;
+
+        .inner {
+          position: relative;
+        }
 
         & > div {
           margin-bottom: 20px;
 
           label {
-            margin-bottom: 10px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            pointer-events: none;
             display: block;
             font-size: 14px;
             font-weight: 600;
             line-height: 24px;
-            color: #fff;
+            color: #89949e;
+            z-index: 9999;
+            transition: 0.2s;
+          }
+
+          .labelInit {
+            all: unset;
+            margin-bottom: 10px;
+            padding: 0 5px;
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 24px;
+            color: #89949e;
           }
 
           input[type='text'],
           input[type='email'],
           textarea {
             width: 100%;
-            padding: 13px 22px;
+            padding: 13px 5px;
             border-top: 1px solid transparent;
             border-left: 1px solid transparent;
             border-right: 1px solid transparent;
-            border-bottom: 1px solid $color-highlight;
+            border-bottom: 1px solid #a1b0bf;
             font-size: 1rem;
             outline: none;
-            color: #ffffff;
+            color: #89949e;
             background: transparent;
 
             &:focus {
               outline: none;
-              color: #ffffff;
-              border: 1px solid $color-highlight;
-            }
+              color: #89949e;
 
-            &::placeholder {
-              color: #e2edff; /* Define a cor do placeholder como vermelho */
-            }
-
-            /* Estiliza o placeholder para o input com ID "email" */
-            &::-webkit-input-placeholder {
-              color: #c1d6ff; /* Define a cor do placeholder como azul em navegadores que suportam o prefixo "-webkit-" */
+              ~ label {
+                top: 0;
+                left: 0;
+                color: $color-branding;
+              }
             }
           }
 
           textarea {
-            border: 1px solid $color-highlight;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            border: 1px solid #a1b0bf;
             min-height: 200px;
             padding: 10px;
           }
@@ -233,16 +258,17 @@ export default {
           select {
             width: 100%;
             padding: 13px 22px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid #a1b0bf;
             border-radius: 5px;
             font-size: 1rem;
-            color: #fff;
-            background-color: $color-branding;
+            outline: none;
+            color: #89949e;
+            background-color: #fff;
 
             &:focus {
               outline: none;
               border: 1px solid $color-branding;
-              color: #fff;
+              color: #89949e;
             }
           }
         }
@@ -271,8 +297,8 @@ export default {
           border: none;
           border-radius: 5px;
           transition: 0.2s;
-          color: #33373b;
-          background: $color-highlight;
+          color: #fff;
+          background: $color-branding;
         }
       }
     }
@@ -294,6 +320,10 @@ export default {
       max-width: 940px;
 
       form {
+        .separator {
+          display: unset;
+        }
+
         .division {
           all: unset;
           width: 80%;

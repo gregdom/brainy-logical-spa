@@ -112,7 +112,14 @@ export default {
 
             &:hover {
               .submenu {
-                max-height: 250px;
+                // height: 200px;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(-20px);
+
+                // .nav-link {
+                //   opacity: 1;
+                // }
               }
             }
 
@@ -144,18 +151,19 @@ export default {
           .submenu {
             all: unset;
             width: 250px;
-            max-height: 0;
-            display: block;
+            height: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
             position: absolute;
-            top: 61px;
-            border-left: 3px solid $color-branding;
-            transition: max-height 0.3s ease;
+            top: 71px;
+            border-left: 3px solid $color-highlight;
             overflow: hidden;
             box-shadow: 0 26px 21px rgba(14, 18, 29, 0.48);
             background: #fff;
 
             &.active {
-              max-height: 200px;
+              height: 200px;
             }
 
             .nav-link {
@@ -167,9 +175,10 @@ export default {
               line-height: 40px;
               margin-left: 0;
               padding-left: 20px;
+              // opacity: 0;
               font-size: 0.925rem;
               color: #353535;
-              transition: 0.2s;
+              // transition: 0.2s;
 
               &:hover {
                 background: rgba(0, 0, 0, 0.1);
