@@ -33,6 +33,8 @@ export default {
 
 <style lang="scss">
 .buttonScrollTop {
+  width: 38px;
+  height: 38px;
   padding: 10px 7px;
   display: flex;
   justify-content: center;
@@ -43,8 +45,8 @@ export default {
   cursor: pointer;
   font-size: 1rem;
   color: #fff;
-  border-radius: 5px;
-  border: 0.1rem solid rgb(35, 39, 48);
+  border-radius: 50%;
+  border: 0.1rem solid rgb(74, 80, 95);
   opacity: 0.7;
   background-color: #242830;
 }
