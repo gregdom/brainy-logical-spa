@@ -6,6 +6,9 @@
         <h2>{{ subTitleHero }}</h2>
 
         <button-call-to-action buttonText="Nossos Projetos" />
+        <div class="arrow-bottom">
+          <span class="material-symbols-outlined"> arrow_drop_down </span>
+        </div>
       </div>
     </section>
     <div class="shadow"></div>
@@ -58,7 +61,13 @@ export default {
     },
   },
   mounted() {
-    this.highlightText()
+    if (this.$route.path === '/') {
+      this.highlightText()
+
+      let arrowBottom = document.querySelector('.arrow-bottom')
+
+      arrowBottom.style.display = 'none'
+    }
   },
 }
 </script>
@@ -174,6 +183,25 @@ export default {
       // border: 2px solid #fff;
       background: $color-highlight;
       color: #33373b;
+    }
+
+    .arrow-bottom {
+      position: absolute;
+      z-index: 9999;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -24px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+      color: $color-general-text;
+      background: $color-highlight;
     }
   }
 }

@@ -145,7 +145,7 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 57px 0 64px 0;
-  background: $color-branding-gradient;
+  background: #fff;
 
   .wrapper {
     width: calc(100% - 48px);
@@ -164,7 +164,7 @@ export default {
       font-size: $section-title-size;
       text-align: center;
       margin: 0 0 64px 0;
-      color: #fff;
+      color: $color-text-dark;
       // margin-bottom: 20px;
     }
 
@@ -255,17 +255,17 @@ export default {
       .divButton {
         width: 100%;
         height: auto;
-        margin-top: 20px;
+        margin-top: 0;
 
         button[type='submit'] {
           cursor: pointer;
           width: 100%;
-          padding: 10px 25px;
+          padding: 15px 25px;
           display: flex;
           justify-content: center;
           align-items: center;
           font-family: 'Open Sans', sans-serif;
-          font-size: 1rem;
+          font-size: 1.1rem;
           font-weight: 700;
           text-decoration: none;
           border: none;
@@ -298,9 +298,10 @@ export default {
           all: unset;
           width: 80%;
 
-          // label {
-          //   color: #fff;
-          // }
+          select {
+            width: 100%;
+            max-width: 48%;
+          }
         }
 
         .personal {
@@ -357,6 +358,7 @@ export default {
 
           button[type='submit'] {
             width: fit-content;
+            font-size: 1rem;
           }
         }
       }

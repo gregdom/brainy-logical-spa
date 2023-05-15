@@ -115,18 +115,21 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 57px 0 64px 0;
-  background: #fff;
+  background: $color-branding;
 
   .wrapper {
     width: calc(100% - 48px);
     height: auto;
     margin: 0 auto;
-    background: #fff;
+    // background: #fff;
 
     h3 {
+      margin: 0 auto 32px auto;
+      padding-bottom: 5px;
+      width: fit-content;
       font-size: $section-title-size;
       text-align: center;
-      padding: 0 20px 32px 20px;
+      color: #fff;
     }
 
     .elementSwiperSlide {
@@ -134,7 +137,7 @@ export default {
       max-width: auto;
       height: auto;
       padding: 0 0 20px 0;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      // border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       background: #fff;
 
@@ -157,10 +160,13 @@ export default {
         padding: 0 20px;
 
         h4 {
-          padding: 20px 0 15px 0;
+          margin: 20px auto 15px auto;
+          padding: 5px 10px;
+          width: fit-content;
           font-size: $general-title-size;
           text-align: center;
           color: $color-text-dark;
+          background: $color-highlight;
         }
 
         p {
@@ -180,7 +186,7 @@ export default {
     }
 
     .mySwiper {
-      background-color: #fff !important;
+      // background-color: #fff !important;
 
       .swiper-button-next,
       .swiper-button-prev {
