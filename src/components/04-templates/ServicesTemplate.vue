@@ -8,6 +8,7 @@
 
     <main>
       <services-component />
+      <gallery-component />
       <testimonial-component />
     </main>
 
@@ -20,6 +21,7 @@ import {
   HeaderComponent,
   HeroComponent,
   ServicesComponent,
+  GalleryComponent,
   TestimonialComponent,
   FooterComponent,
 } from '../03-organisms'
@@ -31,6 +33,7 @@ export default {
     HeaderComponent,
     HeroComponent,
     ServicesComponent,
+    GalleryComponent,
     TestimonialComponent,
     FooterComponent,
   },
