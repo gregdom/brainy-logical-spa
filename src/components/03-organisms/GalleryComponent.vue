@@ -142,16 +142,16 @@ export default {
   }
 }
 
-@media (min-width: 1171px) {
-  // section
-  .gallery {
-    .wrapper {
-      width: 100%;
-      max-width: 1170px;
-      margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-}
+// @media (min-width: 1171px) {
+//   // section
+//   .gallery {
+//     .wrapper {
+//       width: 100%;
+//       max-width: 1170px;
+//       margin: 0 auto;
+//       padding-left: 20px;
+//       padding-right: 20px;
+//     }
+//   }
+// }
 </style>

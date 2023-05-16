@@ -19,7 +19,7 @@
 
           <div class="block-cards">
             <div class="columns">
-              <a href="#">
+              <a href="#" class="link1">
                 <article>
                   <img
                     src="../../../assets/images/web.png"
@@ -34,7 +34,7 @@
             </div>
 
             <div class="columns">
-              <a href="#">
+              <a href="#" class="link2">
                 <article>
                   <img
                     src="../../../assets/images/web.png"
@@ -47,7 +47,7 @@
                 </article>
               </a>
 
-              <a href="#">
+              <a href="#" class="link3">
                 <article>
                   <img
                     src="../../../assets/images/web.png"
@@ -62,7 +62,7 @@
             </div>
 
             <div class="columns">
-              <a href="#">
+              <a href="#" class="link4">
                 <article>
                   <img
                     src="../../../assets/images/web.png"
@@ -95,7 +95,10 @@
       <section class="sub-services">
         <div class="wrapper">
           <div class="firstBlock">
-            <h3>What Are F5 Studio's Web Development Services?</h3>
+            <h3>
+              Quais são os serviços de desenvolvimento Web da
+              <span>Brainy</span>?
+            </h3>
 
             <span class="subtitle"
               >What is included in web development services?</span
@@ -171,7 +174,7 @@
               :modules="modules"
               class="mySwiper cardBenefits"
             >
-              <swiper-slide class="elementSwiperSlide">
+              <swiper-slide class="elementSwiperSlide benefit1">
                 <div class="imageContainer">
                   <img src="../../../assets/images/web.png" alt="" />
                 </div>
@@ -187,7 +190,7 @@
                 </div>
               </swiper-slide>
 
-              <swiper-slide class="elementSwiperSlide">
+              <swiper-slide class="elementSwiperSlide benefit2">
                 <div class="imageContainer">
                   <img src="../../../assets/images/web.png" alt="" />
                 </div>
@@ -203,7 +206,7 @@
                 </div>
               </swiper-slide>
 
-              <swiper-slide class="elementSwiperSlide">
+              <swiper-slide class="elementSwiperSlide benefit3">
                 <div class="imageContainer">
                   <img src="../../../assets/images/web.png" alt="" />
                 </div>
@@ -328,21 +331,28 @@ export default {
         padding: 48px 30px 64px 30px;
         display: block;
         text-decoration: none;
+        // border-top: 5px solid $color-highlight;
+        transition: 0.2s;
         color: #fff;
-        // box-shadow: 0 12px 21px $color-branding;
         background: $color-branding;
-        // background-image: radial-gradient(
-        //   circle 195px at center,
-        //   #8b52fd 0,
-        //   #8b52fd 24%,
-        //   #8b52fd 32%,
-        //   #7939f8 91%,
-        //   #712cf9 100%
-        // );
 
-        // &:first-child {
-        //   margin-top: 0;
-        // }
+        &.link3,
+        &.link4 {
+          color: $color-general-text;
+          background: #d6ec43;
+
+          h4 {
+            color: $color-general-text;
+          }
+
+          &:hover {
+            box-shadow: 0 12px 21px #b1c531;
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 12px 21px $color-branding;
+        }
 
         img {
           width: 48px;
@@ -390,11 +400,19 @@ export default {
       h3 {
         font-size: $section-title-size;
         text-align: center;
-        margin: 0 0 10px 0;
+        margin: 0 0 20px 0;
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
         color: #fff;
         // text-transform: uppercase;
         // margin-bottom: 20px;
+
+        span {
+          padding: 0 5px;
+          margin-right: 5px;
+          color: $color-general-text;
+          text-shadow: none;
+          background: $color-highlight;
+        }
       }
 
       .subtitle {
@@ -500,6 +518,14 @@ export default {
             text-align: center;
             color: $color-text-light;
           }
+        }
+
+        &.benefit2 {
+          background: #429ffc;
+        }
+
+        &.benefit3 {
+          background: #98aa22;
         }
       }
 
