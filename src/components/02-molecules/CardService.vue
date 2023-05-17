@@ -11,7 +11,13 @@
         {{ shortDescription }}
       </p>
 
-      <router-link :to="`services/${link}`">Saiba mais</router-link>
+      <router-link
+        :to="{
+          name: `${name}`,
+          params: { serviceName: `${link}` },
+        }"
+        >Saiba mais</router-link
+      >
     </div>
   </div>
 </template>
@@ -32,6 +38,10 @@ export default {
       required: true,
     },
     link: {
+      type: String,
+      required: true,
+    },
+    name: {
       type: String,
       required: true,
     },

@@ -12,6 +12,7 @@
           :title="service.title"
           :shortDescription="service.shortDescription"
           :link="service.link"
+          :name="service.name"
         />
       </div>
     </div>

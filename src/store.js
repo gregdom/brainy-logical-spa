@@ -8,6 +8,7 @@ const store = createStore({
     services: [
       {
         link: 'website-development',
+        name: 'website-dev',
         icon: 'web-design-48.png',
         title: 'Desenvolvimento Web',
         shortDescription:
@@ -16,6 +17,7 @@ const store = createStore({
       },
       {
         link: 'corporate-website-development',
+        name: 'corporate-dev',
         icon: 'analystics-48.png',
         title: 'Site Empresarial',
         shortDescription:
@@ -24,6 +26,7 @@ const store = createStore({
       },
       {
         link: 'startup-website-development',
+        name: 'startup-dev',
         icon: 'analystics-48.png',
         title: 'Site para Startup',
         shortDescription:
@@ -32,6 +35,7 @@ const store = createStore({
       },
       {
         link: 'landing-page-website-development',
+        name: 'landingpage-dev',
         icon: 'analystics-48.png',
         title: 'Landing Page',
         shortDescription:
@@ -40,6 +44,7 @@ const store = createStore({
       },
       {
         link: 'extension-development',
+        name: 'extension-dev',
         icon: 'puzzle-48.png',
         title: 'Extensões Web',
         shortDescription:
