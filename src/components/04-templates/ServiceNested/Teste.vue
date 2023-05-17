@@ -116,9 +116,41 @@
           <h3>Veja os Pacotes de Preços</h3>
 
           <div class="blocks">
-            <div class="fixed-price-col"></div>
+            <div class="fixed-price-col">
+              <div class="top">
+                <div class="imageContainer"><img src="" alt="" /></div>
+                <h4>Pacote Starter</h4>
+              </div>
 
-            <div class="fixed-price-col"></div>
+              <div class="price"><span>R$</span>599,00</div>
+
+              <div class="details">
+                <h5>O Que Está Incluso</h5>
+
+                <ul>
+                  <li>Acima de 3 páginas</li>
+                  <li>Blog</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="fixed-price-col">
+              <div class="top">
+                <div class="imageContainer"><img src="" alt="" /></div>
+                <h4>Pacote Empresarial</h4>
+              </div>
+
+              <div class="price"><span>R$</span>997,00</div>
+
+              <div class="details">
+                <h5>O Que Está Incluso</h5>
+
+                <ul>
+                  <li>Acima de 5 páginas</li>
+                  <li>Blog</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
