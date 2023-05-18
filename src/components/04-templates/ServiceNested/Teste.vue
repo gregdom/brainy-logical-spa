@@ -14,7 +14,7 @@
           <h3>O Que é Um Site Empresarial</h3>
 
           <div class="blocks">
-            <div class="what-is-col">
+            <div class="what-is-col col1">
               <p>
                 A corporate website represents the company it was built for. It
                 conveys the company’s image and concept to the world and,
@@ -26,6 +26,14 @@
                 business development executive that a company owner hires to
                 work 24/7 without days off. Design, functionality, and content
                 should be thoroughly thought out.
+              </p>
+
+              <p>
+                That is why developing great corporate websites requires
+                extensive experience and skills. In short, the corporate website
+                is like a company’s personal assistant or business development
+                executive that a company owner hires to work 24/7 without days
+                off.
               </p>
             </div>
 
@@ -118,13 +126,23 @@
                 <h5>O Que Está Incluso</h5>
 
                 <ul>
-                  <li>Acima de 3 páginas</li>
-                  <li>Blog</li>
+                  <li>
+                    <span class="material-symbols-outlined check">
+                      check_circle
+                    </span>
+                    Acima de 3 páginas
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined block"> block </span>
+                    Blog
+                  </li>
                 </ul>
               </div>
+
+              <button-call-to-action buttonText="Começar Projeto" />
             </div>
 
-            <div class="fixed-price-col">
+            <div class="fixed-price-col corporate">
               <div class="top">
                 <div class="imageContainer"><img src="" alt="" /></div>
                 <h4>Pacote Empresarial</h4>
@@ -136,10 +154,22 @@
                 <h5>O Que Está Incluso</h5>
 
                 <ul>
-                  <li>Acima de 5 páginas</li>
-                  <li>Blog</li>
+                  <li>
+                    <span class="material-symbols-outlined check">
+                      check_circle
+                    </span>
+                    Acima de 5 páginas
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined check">
+                      check_circle
+                    </span>
+                    Blog
+                  </li>
                 </ul>
               </div>
+
+              <button-call-to-action buttonText="Começar Projeto" />
             </div>
           </div>
         </div>
@@ -150,6 +180,7 @@
 </template>
 
 <script>
+import { ButtonCallToAction } from '../../01-atoms'
 import {
   HeaderComponent,
   HeroComponent,
@@ -157,7 +188,12 @@ import {
 } from '../../03-organisms'
 
 export default {
-  components: { HeaderComponent, HeroComponent, FooterComponent },
+  components: {
+    ButtonCallToAction,
+    HeaderComponent,
+    HeroComponent,
+    FooterComponent,
+  },
   props: {
     serviceName: {
       type: String,
@@ -170,8 +206,13 @@ export default {
     },
   },
   mounted() {
-    let callToAction = document.querySelector('.call-to-action')
+    let callToAction = document.querySelector('.hero .call-to-action')
     callToAction.style.display = 'none'
+
+    let c2 = document.querySelectorAll('.fixed-price .call-to-action')
+    c2.forEach((element) => {
+      element.style.display = 'flex'
+    })
   },
 }
 </script>
@@ -329,7 +370,7 @@ section.fixed-price {
   height: auto;
   margin: 0 auto;
   padding: 64px 0 64px 0;
-  background: #fff;
+  background: #f6f9ff;
 
   .wrapper {
     width: calc(100% - 48px);
@@ -343,7 +384,7 @@ section.fixed-price {
     h3 {
       font-size: $section-title-size;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 54px;
     }
 
     .blocks {
@@ -355,28 +396,112 @@ section.fixed-price {
         width: 100%;
         height: auto;
         margin-bottom: 20px;
-        padding: 48px 20px;
-        background: $color-branding;
+        padding: 20px 20px;
+        border-radius: 10px;
+        color: $color-general-text;
+        box-shadow: 0 12px 21px #c4c4c4;
+        background: #fff;
 
         .top {
-          padding: 0 0 20px 0;
+          padding: 0 0 5px 0;
 
           img {
-            display: block;
+            display: none;
             margin: 0 auto 20px auto;
           }
-        }
-      }
 
-      p {
-        margin-bottom: 20px;
-        font-size: $font-size-base;
-        line-height: $general-line-height;
-        color: $color-general-text;
-
-        &:last-child {
-          margin-bottom: 0;
+          h4 {
+            font-size: $general-title-size;
+            text-align: center;
+          }
         }
+
+        .price {
+          margin-bottom: 20px;
+          font-size: 3rem;
+          font-weight: 600;
+          text-align: center;
+
+          span {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+          }
+        }
+
+        .details {
+          width: 100%;
+
+          h5 {
+            font-size: 1rem;
+            text-align: left;
+            display: none;
+          }
+
+          span {
+            // width: 28px;
+            // height: 28px;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // color: #fff;
+            opacity: 0.7;
+
+            &.check {
+              color: green;
+            }
+
+            &.block {
+              color: red;
+            }
+          }
+
+          ul {
+            li {
+              display: flex;
+              padding: 16px;
+              border-top: 1px solid #eaebee;
+
+              &:last-child {
+                border-bottom: 1px solid #eaebee;
+              }
+
+              span {
+                margin-right: 8px;
+              }
+            }
+          }
+
+          .call-to-action {
+            display: flex;
+          }
+        }
+
+        p {
+          margin-bottom: 20px;
+          font-size: $font-size-base;
+          line-height: $general-line-height;
+          color: $color-general-text;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        // &.corporate {
+        //   color: #fff;
+        //   background: $color-branding;
+
+        //   ul {
+        //     li {
+        //       border-top: 1px solid #658bff;
+
+        //       &:last-child {
+        //         border-bottom: 1px solid #658bff;
+        //       }
+        //     }
+        //   }
+        // }
       }
     }
   }
@@ -388,13 +513,106 @@ section.fixed-price {
       width: 500px;
     }
   }
+
+  section.work-process {
+    .wrapper {
+      width: 500px;
+    }
+  }
 }
 
 @media (min-width: 768px) {
   section.whatIs {
     .wrapper {
       width: 90%;
-      max-width: 940px;
+      max-width: 660px;
+    }
+  }
+
+  section.work-process {
+    .wrapper {
+      width: 90%;
+      max-width: 660px;
+    }
+  }
+}
+
+@media (min-width: 1171px) {
+  section.whatIs {
+    .wrapper {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+
+      .blocks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        p {
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+
+  section.work-process {
+    .wrapper {
+      width: 100%;
+      max-width: 1170px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+
+      .firstBlock {
+        padding-right: 50px;
+
+        h3 {
+          margin: 0 0 10px 0;
+          padding-right: 50px;
+          font-size: 40px;
+          text-align: left;
+          text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+          color: #fff;
+          // text-transform: uppercase;
+          // margin-bottom: 20px;
+        }
+
+        .subtitle {
+          padding-right: 50px;
+          font-size: 1rem;
+          color: #fff;
+          text-align: left;
+        }
+      }
+
+      .secondBlock {
+        .cell {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 0;
+          padding-right: 50px;
+
+          .num {
+            margin-right: 10px;
+            font-size: 130px;
+            font-weight: 700;
+            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+            color: #fff;
+          }
+
+          .desc {
+            p {
+              line-height: $general-line-height;
+              color: #fff;
+            }
+          }
+        }
+      }
     }
   }
 }
