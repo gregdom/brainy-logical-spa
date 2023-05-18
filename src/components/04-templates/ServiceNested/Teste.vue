@@ -11,7 +11,7 @@
 
       <section class="whatIs">
         <div class="wrapper">
-          <h3>O Que é Um Site Corporativo</h3>
+          <h3>O Que é Um Site Empresarial</h3>
 
           <div class="blocks">
             <div class="what-is-col">
@@ -95,18 +95,6 @@
                 </p>
               </div>
             </div>
-
-            <div class="cell">
-              <div class="num">4</div>
-              <div class="desc">
-                <p>
-                  Ecommerce development services. F5 Studio brings your
-                  e-commerce business to life with professional UI/UX design, a
-                  responsive online store, and custom functionality. We provide
-                  e-commerce site development, site migration, and integrations.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -118,7 +106,9 @@
           <div class="blocks">
             <div class="fixed-price-col">
               <div class="top">
-                <div class="imageContainer"><img src="" alt="" /></div>
+                <div class="imageContainer">
+                  <img src="../../../assets/images/web.png" alt="" />
+                </div>
                 <h4>Pacote Starter</h4>
               </div>
 
@@ -189,5 +179,223 @@ export default {
 <style lang="scss" scoped>
 .call-to-action {
   display: none;
+}
+
+section.whatIs {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
+  padding: 64px 0 64px 0;
+  background: #fff;
+
+  .wrapper {
+    width: calc(100% - 48px);
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      font-size: $section-title-size;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .blocks {
+      display: flex;
+      flex-direction: column;
+
+      .what-is-col {
+        margin-bottom: 20px;
+
+        ul {
+          list-style: none; /* Remove default bullets */
+
+          li {
+            margin-bottom: 20px;
+            margin-left: 20px;
+            line-height: $general-line-height;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            &::before {
+              content: '\2022';
+              width: 1em;
+              margin-left: -1em;
+              display: inline-block;
+              font-weight: bold;
+              color: $color-branding;
+            }
+          }
+        }
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: $font-size-base;
+        line-height: $general-line-height;
+        color: $color-general-text;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+section.work-process {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
+  padding: 64px 0 64px 0;
+  background: $color-branding;
+
+  .wrapper {
+    width: calc(100% - 48px);
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .firstBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 64px;
+
+      h3 {
+        font-size: $section-title-size;
+        text-align: center;
+        margin: 0;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+        color: #fff;
+        // text-transform: uppercase;
+        // margin-bottom: 20px;
+
+        span {
+          padding: 0 5px;
+          margin-right: 5px;
+          color: $color-general-text;
+          text-shadow: none;
+          background: $color-highlight;
+        }
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        color: #fff;
+        text-align: center;
+      }
+    }
+
+    .secondBlock {
+      .cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 32px;
+
+        .num {
+          margin-right: 10px;
+          font-size: 92px;
+          font-weight: 700;
+          text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+          color: #fff;
+        }
+
+        .desc {
+          p {
+            line-height: $general-line-height;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.fixed-price {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
+  padding: 64px 0 64px 0;
+  background: #fff;
+
+  .wrapper {
+    width: calc(100% - 48px);
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      font-size: $section-title-size;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .blocks {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .fixed-price-col {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        padding: 48px 20px;
+        background: $color-branding;
+
+        .top {
+          padding: 0 0 20px 0;
+
+          img {
+            display: block;
+            margin: 0 auto 20px auto;
+          }
+        }
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: $font-size-base;
+        line-height: $general-line-height;
+        color: $color-general-text;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  section.whatIs {
+    .wrapper {
+      width: 500px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  section.whatIs {
+    .wrapper {
+      width: 90%;
+      max-width: 940px;
+    }
+  }
 }
 </style>
