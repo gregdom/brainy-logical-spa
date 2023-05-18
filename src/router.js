@@ -12,7 +12,7 @@ import WebDevelopment from '@/components/04-templates/ServiceNested/WebDevelopme
 // import StartupWebDevelopment from '@/components/04-templates/ServiceNested/StartupWebDevelopment.vue'
 // import LandingPageWebDevelopment from '@/components/04-templates/ServiceNested/LandingPageWebDevelopment.vue'
 // import ExtensionWebDevelopment from '@/components/04-templates/ServiceNested/ExtensionWebDevelopment.vue'
-import Teste from '@/components/04-templates/ServiceNested/Teste.vue'
+import DisplayService from '@/components/04-templates/ServiceNested/DisplayService.vue'
 
 const routes = [
   {
@@ -35,25 +35,25 @@ const routes = [
     path: '/services/corporate-website-development',
     name: 'corporate-dev',
     props: true,
-    component: Teste
+    component: DisplayService
   },
   {
     path: '/services/startup-website-development',
     name: 'startup-dev',
     props: true,
-    component: Teste
+    component: DisplayService
   },
   {
     path: '/services/landing-page-website-development',
     name: 'landingpage-dev',
     props: true,
-    component: Teste
+    component: DisplayService
   },
   {
     path: '/services/extension-development',
     name: 'extension-dev',
     props: true,
-    component: Teste
+    component: DisplayService
   },
   {
     path: '/about',
