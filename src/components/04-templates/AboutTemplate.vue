@@ -47,6 +47,8 @@
           </p>
         </div>
       </section>
+
+      <contact-form-component mainTitle="A Gente Faz Seu Projeto" />
     </main>
 
     <footer-component />
@@ -57,6 +59,7 @@
 import {
   HeaderComponent,
   HeroComponent,
+  ContactFormComponent,
   FooterComponent,
 } from '../03-organisms'
 
@@ -64,6 +67,7 @@ export default {
   components: {
     HeaderComponent,
     HeroComponent,
+    ContactFormComponent,
     FooterComponent,
   },
   mounted() {

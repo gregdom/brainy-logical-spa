@@ -8,10 +8,6 @@ import NotFound from '@/components/05-pages/NotFound.vue'
 
 // Nested
 import WebDevelopment from '@/components/04-templates/ServiceNested/WebDevelopment.vue'
-// import CorporateWebDevelopment from '@/components/04-templates/ServiceNested/CorporateWebDevelopment.vue'
-// import StartupWebDevelopment from '@/components/04-templates/ServiceNested/StartupWebDevelopment.vue'
-// import LandingPageWebDevelopment from '@/components/04-templates/ServiceNested/LandingPageWebDevelopment.vue'
-// import ExtensionWebDevelopment from '@/components/04-templates/ServiceNested/ExtensionWebDevelopment.vue'
 import DisplayService from '@/components/04-templates/ServiceNested/DisplayService.vue'
 
 const routes = [
