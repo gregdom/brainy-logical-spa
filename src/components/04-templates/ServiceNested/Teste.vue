@@ -194,18 +194,24 @@ export default {
     HeroComponent,
     FooterComponent,
   },
-  props: {
-    serviceName: {
-      type: String,
-      required: true,
-    },
+  data() {
+    return {
+      serviceName: this.$route.path.split('/services/')[1],
+    }
   },
   computed: {
     service() {
       return this.$store.getters.getServiceByLink(this.serviceName)
     },
   },
+  watch: {
+    $route(to) {
+      const serviceName = to.path.split('/services/')[1]
+      this.serviceName = serviceName
+    },
+  },
   mounted() {
+    console.log(this.serviceName)
     let callToAction = document.querySelector('.hero .call-to-action')
     callToAction.style.display = 'none'
 

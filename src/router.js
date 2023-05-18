@@ -26,31 +26,31 @@ const routes = [
     component: Services,
   },
   {
-    path: '/services/:serviceName',
+    path: '/services/website-development',
     name: 'website-dev',
     props: true,
     component: WebDevelopment
   },
   {
-    path: '/services/:serviceName',
+    path: '/services/corporate-website-development',
     name: 'corporate-dev',
     props: true,
     component: Teste
   },
   {
-    path: '/services/:serviceName',
+    path: '/services/startup-website-development',
     name: 'startup-dev',
     props: true,
     component: Teste
   },
   {
-    path: '/services/:serviceName',
+    path: '/services/landing-page-website-development',
     name: 'landingpage-dev',
     props: true,
     component: Teste
   },
   {
-    path: '/services/:serviceName',
+    path: '/services/extension-development',
     name: 'extension-dev',
     props: true,
     component: Teste

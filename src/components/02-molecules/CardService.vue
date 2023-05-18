@@ -11,13 +11,7 @@
         {{ shortDescription }}
       </p>
 
-      <router-link
-        :to="{
-          name: `${name}`,
-          params: { serviceName: `${link}` },
-        }"
-        >Saiba mais</router-link
-      >
+      <router-link :to="{ name: `${name}` }">Saiba mais</router-link>
     </div>
   </div>
 </template>

@@ -37,7 +37,6 @@
               class="nav-link"
               :to="{
                 name: 'website-dev',
-                params: { serviceName: 'website-development' },
               }"
               @click="closeMenu"
               >Criação de Sites</router-link
@@ -48,7 +47,6 @@
               class="nav-link"
               :to="{
                 name: 'corporate-dev',
-                params: { serviceName: 'corporate-website-development' },
               }"
               @click="closeMenu"
               >Criação de Site Empresarial</router-link
@@ -59,7 +57,6 @@
               class="nav-link"
               :to="{
                 name: 'startup-dev',
-                params: { serviceName: 'startup-website-development' },
               }"
               @click="closeMenu"
               >Criação de Sites para Startups</router-link
@@ -70,7 +67,6 @@
               class="nav-link"
               :to="{
                 name: 'landingpage-dev',
-                params: { serviceName: 'landing-page-website-development' },
               }"
               @click="closeMenu"
               >Criação de Landing Pages</router-link
@@ -81,7 +77,6 @@
               class="nav-link"
               :to="{
                 name: 'extension-dev',
-                params: { serviceName: 'extension-development' },
               }"
               @click="closeMenu"
               >Criação de Extensões Web</router-link

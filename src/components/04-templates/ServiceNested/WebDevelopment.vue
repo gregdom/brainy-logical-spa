@@ -251,12 +251,12 @@ export default {
     HeroComponent,
     FooterComponent,
   },
-  props: {
-    serviceName: {
-      type: String,
-      required: true,
-    },
-  },
+  // props: {
+  //   serviceName: {
+  //     type: String,
+  //     required: true,
+  //   },
+  // },
   data() {
     return {
       slidesPerView: 1,
@@ -269,7 +269,7 @@ export default {
   },
   computed: {
     service() {
-      return this.$store.getters.getServiceByLink(this.serviceName)
+      return this.$store.getters.getServiceByLink('website-development')
     },
   },
   methods: {
