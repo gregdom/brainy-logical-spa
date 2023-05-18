@@ -519,6 +519,13 @@ section.fixed-price {
       width: 500px;
     }
   }
+
+  section.fixed-price {
+    .wrapper {
+      width: 90%;
+      max-width: 500px;
+    }
+  }
 }
 
 @media (min-width: 768px) {
@@ -533,6 +540,38 @@ section.fixed-price {
     .wrapper {
       width: 90%;
       max-width: 660px;
+    }
+  }
+
+  section.fixed-price {
+    .wrapper {
+      width: 90%;
+      max-width: 768px;
+
+      .blocks {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        & > * {
+          margin-right: 20px;
+        }
+
+        & > *:last-child {
+          margin-right: 0;
+        }
+
+        .fixed-price-col {
+          width: 100%;
+          height: auto;
+          margin-bottom: 20px;
+          padding: 32px 20px;
+          border-radius: 10px;
+          color: $color-general-text;
+          box-shadow: 0 12px 21px #c4c4c4;
+          background: #fff;
+        }
+      }
     }
   }
 }
