@@ -11,23 +11,23 @@
           <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
 
           <div class="social-media">
-            <router-link to="#"
+            <a href="mailto:brainylogical@hotmail.com"
               ><i class="fa-solid fa-envelope"></i
-            ></router-link>
-            <router-link to="#"
+            ></a>
+            <a href="https://www.youtube.com/@brainylogical" target="_blank"
               ><i class="fa-brands fa-youtube"></i
-            ></router-link>
-            <router-link to="#"
+            ></a>
+            <a href="https://www.linkedin.com/brainylogical" target="_blank"
               ><i class="fa-brands fa-linkedin"></i
-            ></router-link>
+            ></a>
           </div>
 
           <div class="menu-footer">
-            <router-link to="/">Home</router-link>
-            <router-link to="/services">Serviços</router-link>
-            <router-link to="/about">Sobre</router-link>
-            <router-link to="/projects">Projetos</router-link>
-            <router-link to="/contact">Contato</router-link>
+            <a href="/">Home</a>
+            <a href="/services">Serviços</a>
+            <a href="/about">Sobre</a>
+            <a href="/projects">Projetos</a>
+            <a href="/contact">Contato</a>
           </div>
 
           <div class="copyright">

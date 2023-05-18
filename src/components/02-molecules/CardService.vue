@@ -11,7 +11,7 @@
         {{ shortDescription }}
       </p>
 
-      <router-link :to="{ name: `${name}` }">Saiba mais</router-link>
+      <a :href="`/services/${link}`">Saiba mais</a>
     </div>
   </div>
 </template>

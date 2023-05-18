@@ -1,7 +1,7 @@
 <template>
-  <router-link to="/">
+  <a href="/">
     <img :src="imageSrc" alt="Logo" class="logo-image" @click="closeMenu" />
-  </router-link>
+  </a>
 </template>
 
 <script>

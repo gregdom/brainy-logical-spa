@@ -12,17 +12,10 @@
 
     <ul class="menu">
       <li>
-        <router-link class="nav-link" :to="{ name: 'home' }" @click="closeMenu"
-          >Home</router-link
-        >
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="item-dropdown">
-        <router-link
-          class="nav-link"
-          :to="{ name: 'services' }"
-          @click="closeMenu"
-          >Serviços
-        </router-link>
+        <a class="nav-link" href="/services">Serviços </a>
         <span
           class="material-symbols-outlined iconExpand"
           :class="{ active: isSubmenuOpen }"
@@ -33,77 +26,42 @@
 
         <ul class="submenu" :class="{ active: isSubmenuOpen }">
           <li>
-            <router-link
-              class="nav-link"
-              :to="{
-                name: 'website-dev',
-              }"
-              @click="closeMenu"
-              >Criação de Sites</router-link
+            <a class="nav-link" href="/services/website-development"
+              >Criação de Sites</a
             >
           </li>
           <li>
-            <router-link
-              class="nav-link"
-              :to="{
-                name: 'corporate-dev',
-              }"
-              @click="closeMenu"
-              >Criação de Site Empresarial</router-link
+            <a class="nav-link" href="/services/corporate-website-development"
+              >Criação de Site Empresarial</a
             >
           </li>
           <li>
-            <router-link
-              class="nav-link"
-              :to="{
-                name: 'startup-dev',
-              }"
-              @click="closeMenu"
-              >Criação de Sites para Startups</router-link
+            <a class="nav-link" href="/services/startup-website-development"
+              >Criação de Sites para Startups</a
             >
           </li>
           <li>
-            <router-link
+            <a
               class="nav-link"
-              :to="{
-                name: 'landingpage-dev',
-              }"
-              @click="closeMenu"
-              >Criação de Landing Pages</router-link
+              href="/services/landing-page-website-development"
+              >Criação de Landing Pages</a
             >
           </li>
           <li>
-            <router-link
-              class="nav-link"
-              :to="{
-                name: 'extension-dev',
-              }"
-              @click="closeMenu"
-              >Criação de Extensões Web</router-link
+            <a class="nav-link" href="/services/extension-development"
+              >Criação de Extensões Web</a
             >
           </li>
         </ul>
       </li>
       <li>
-        <router-link class="nav-link" :to="{ name: 'about' }" @click="closeMenu"
-          >Sobre</router-link
-        >
+        <a class="nav-link" href="/about">Sobre</a>
       </li>
       <li>
-        <router-link
-          class="nav-link"
-          :to="{ name: 'projects' }"
-          @click="closeMenu"
-          >Projetos</router-link
-        >
+        <a class="nav-link" href="/projects">Projetos</a>
       </li>
       <li>
-        <router-link
-          class="nav-link"
-          :to="{ name: 'contact' }"
-          @click="closeMenu"
-          >Contato</router-link
-        >
+        <a class="nav-link" href="contact">Contato</a>
       </li>
     </ul>
   </nav>
