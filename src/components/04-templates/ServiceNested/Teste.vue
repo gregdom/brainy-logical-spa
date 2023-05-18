@@ -212,6 +212,10 @@ export default {
     let c2 = document.querySelectorAll('.fixed-price .call-to-action')
     c2.forEach((element) => {
       element.style.display = 'flex'
+      let spans = element.querySelectorAll('span')
+      spans.forEach((span) => {
+        span.style.display = 'none'
+      })
     })
   },
 }
@@ -459,10 +463,11 @@ section.fixed-price {
           ul {
             li {
               display: flex;
-              padding: 16px;
+              padding: 16px 8px;
               border-top: 1px solid #eaebee;
 
               &:last-child {
+                margin-bottom: 20px;
                 border-bottom: 1px solid #eaebee;
               }
 
