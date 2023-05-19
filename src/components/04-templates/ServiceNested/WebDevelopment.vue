@@ -42,7 +42,7 @@
                   />
                   <h4 class="card-title">Site para Startup</h4>
                   <p class="card-descr">
-                    Find out how to create a high-quality corporate website
+                    Find out how to create a high-quality corporate websitee
                   </p>
                 </article>
               </a>
