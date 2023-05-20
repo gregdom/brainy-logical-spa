@@ -10,7 +10,7 @@ const store = createStore({
         link: 'website-development',
         name: 'website-dev',
         icon: 'web-design-48.png',
-        title: 'Desenvolvimento Web',
+        title: 'Criação Web',
         shortDescription:
           'Design atraente e responsivo para seu site, que engaja e encanta seus clientes. Crie uma presença online forte.',
         longText: 'Texto Web Design',
