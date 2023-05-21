@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "serve": "./src/server.js",
+    "serve": "nodemon node ./src/shared/http/server.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
