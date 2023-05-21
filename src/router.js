@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/components/05-pages/HomePage.vue'
-import Services from '@/components/05-pages/ServicesPage.vue'
-import About from '@/components/05-pages/AboutPage.vue'
-import Projects from '@/components/05-pages/ProjectsPage.vue'
-import Contact from '@/components/05-pages/ContactPage.vue'
-import NotFound from '@/components/05-pages/NotFound.vue'
+const Home = () => import(/* webpackChunkName: "Home" */ '@/components/05-pages/HomePage.vue')
+const Services = () => import(/* webpackChunkName: "Services" */ '@/components/05-pages/ServicesPage.vue')
+const About = () => import(/* webpackChunkName: "About" */ '@/components/05-pages/AboutPage.vue')
+const Projects = () => import(/* webpackChunkName: "Projects" */ '@/components/05-pages/ProjectsPage.vue')
+const Contact = () => import(/* webpackChunkName: "Contact" */ '@/components/05-pages/ContactPage.vue')
+const NotFound = () => import(/* webpackChunkName: "NotFound" */ '@/components/05-pages/NotFound.vue')
 
 // Nested
-import WebDevelopment from '@/components/04-templates/ServiceNested/WebDevelopment.vue'
-import DisplayService from '@/components/04-templates/ServiceNested/DisplayService.vue'
+const WebDevelopment = () => import(/* webpackChunkName: "WebDevelopment" */ '@/components/04-templates/ServiceNested/WebDevelopment.vue')
+const DisplayService = () => import(/* webpackChunkName: "DisplayService" */ '@/components/04-templates/ServiceNested/DisplayService.vue')
 
 const routes = [
   {

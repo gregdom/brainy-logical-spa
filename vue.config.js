@@ -15,6 +15,11 @@ module.exports = defineConfig({
       alias: {
         '@': path.resolve(__dirname, 'src')
       }
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
+      }
     }
   }
 })

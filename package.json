@@ -2,8 +2,9 @@
   "name": "brainy-logical",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "./src/server.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
