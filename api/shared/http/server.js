@@ -3,7 +3,7 @@ import cookieParser from "cookie-parser"
 import cors from 'cors'
 import routes from "./routes/index.routes.js"
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8081
 const app = express()
 
 app.use(express.urlencoded({ extended: true }))
@@ -13,7 +13,7 @@ app.use(cors())
 app.use(routes)
 
 app.get('/', function (req, res) {
-  res.json({ message: 'Bem-vindo ao site da Brainy Logical' })
+  res.json({ message: 'Bem-vindo ao site da Brainy Logical (API)' })
 })
 
 app.listen(port, () => {
