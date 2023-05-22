@@ -1,14 +1,18 @@
-import HomeService from "../services/HomeService.js";
+import HomeModel from "../models/HomeModel.js"
 
 class HomeController {
 
   async index(req, res) {
-    const service = new HomeService();
-    const result = await service.index();
-
-    return res.render("./home/pages/index.ejs", { data: result });
+    const model = new HomeModel()
+    await model.getHome((err, results) => {
+      if (err) {
+        res.send(err)
+      } else {
+        res.json(results)
+      }
+    })
   }
 
 }
 
-export default HomeController;
+export default HomeController

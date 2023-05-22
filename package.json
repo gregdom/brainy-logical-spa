@@ -2,12 +2,14 @@
   "name": "brainy-logical",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "serve": "nodemon node ./src/shared/http/server.js",
+    "serve": "nodemon node ./api/shared/http/server.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
     "dompurify": "^3.0.3",
