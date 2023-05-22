@@ -12,9 +12,9 @@ app.use(express.json())
 app.use(cors())
 app.use(routes)
 
-app.get('/', function (req, res) {
-  res.json({ message: 'Bem-vindo ao site da Brainy Logical (API)' })
-})
+// app.get('/', function (req, res) {
+//   res.json({ message: 'Bem-vindo ao site da Brainy Logical (API)' })
+// })
 
 app.listen(port, () => {
   console.log(

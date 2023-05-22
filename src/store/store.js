@@ -22,15 +22,15 @@ const store = createStore({
     updateIsSubmenuOpen(state) {
       state.isSubmenuOpen = !state.isSubmenuOpen
     },
-    setServicesData(state, payload) {
-      state.services = payload;
+    setStoreData(state, payload) {
+      state.services = payload.services;
     },
   },
   actions: {
-    async populateServicesArr({ commit }) {
+    async populateStoreArr({ commit }) {
       await axios.get('/')
         .then(function (response) {
-          commit("setServicesData", response.data);
+          commit("setStoreData", response.data);
         })
         .catch(function (error) {
           console.log(error);
@@ -43,5 +43,5 @@ const store = createStore({
     }
   }
 })
-
+console.log(store.state)
 export default store

@@ -10,7 +10,7 @@
           :key="index"
           :icon="service.icon"
           :title="service.title"
-          :shortDescription="service.shortDescription"
+          :description_short="service.description_short"
           :link="service.link"
           :name="service.name"
         />

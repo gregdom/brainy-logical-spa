@@ -8,7 +8,7 @@
       <h4>{{ title }}</h4>
 
       <p>
-        {{ shortDescription }}
+        {{ description_short }}
       </p>
 
       <a :href="`/services/${link}`">Saiba mais</a>
@@ -27,7 +27,7 @@ export default {
       type: String,
       required: true,
     },
-    shortDescription: {
+    description_short: {
       type: String,
       required: true,
     },

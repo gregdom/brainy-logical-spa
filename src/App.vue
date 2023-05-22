@@ -6,7 +6,7 @@
 
 <script>
 import { ButtonScrollToTop, ModalViewer } from './components/01-atoms'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'App',
@@ -17,11 +17,16 @@ export default {
     }),
   },
   methods: {
+    ...mapActions(['populateStoreArr']),
+
     handleResize() {
       if (window.innerWidth >= 768) {
         this.$store.commit('updateIsMenuOpen', false)
       }
     },
+  },
+  created() {
+    this.populateStoreArr()
   },
   mounted() {
     window.addEventListener('resize', this.handleResize)

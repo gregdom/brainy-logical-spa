@@ -31,6 +31,7 @@ class HomeModel {
 
                 // Após buscar as informações da tabela "portfolio", retornar os resultados combinados
                 result(null, homeData)
+                console.log(homeData)
               }
             })
           }
