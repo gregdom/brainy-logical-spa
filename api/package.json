@@ -2,20 +2,19 @@
   "name": "brainy-logical",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "nodemon node ./shared/http/server.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "dompurify": "^3.0.3",
-    "nprogress": "^0.2.0",
-    "swiper": "^9.2.4",
-    "vue": "^3.2.13",
-    "vue-router": "^4.1.6",
-    "vue-scrollto": "^2.20.0",
-    "vuex": "^4.1.0"
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^3.3.1",
+    "sequelize": "^6.31.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
