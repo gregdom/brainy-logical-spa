@@ -7,6 +7,7 @@ const store = createStore({
     isMenuOpen: false,
     isSubmenuOpen: false,
     services: [],
+    about: '',
   },
   mutations: {
     toggleMenu(state) {
@@ -24,6 +25,7 @@ const store = createStore({
     },
     setStoreData(state, payload) {
       state.services = payload.services;
+      state.about = payload.about[0].description;
     },
   },
   actions: {

@@ -11,33 +11,28 @@
           />
         </div>
 
-        <div class="block description">
-          <p>
-            A Brainy Logical é uma empresa de tecnologia que se dedica a
-            fornecer soluções inovadoras e de alta qualidade para empresas de
-            todos os tamanhos.
-          </p>
-
-          <p>
-            A empresa se destaca pela excelência em seus serviços e pela atenção
-            aos detalhes em cada projeto.
-          </p>
-
-          <p>
-            Com uma visão voltada para o futuro, a Brainy Logical está sempre em
-            busca das mais recentes tecnologias e tendências de mercado para
-            garantir que seus clientes obtenham o máximo de sucesso em seus
-            negócios.
-          </p>
-        </div>
+        <div class="block description" v-html="sanitizedAboutProp"></div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import DOMPurify from 'dompurify'
+
 export default {
+  props: {
+    aboutProp: {
+      type: String,
+      required: true,
+    },
+  },
   components: {},
+  computed: {
+    sanitizedAboutProp() {
+      return DOMPurify.sanitize(this.aboutProp)
+    },
+  },
 }
 </script>
 

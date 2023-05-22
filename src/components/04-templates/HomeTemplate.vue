@@ -8,7 +8,7 @@
         que se adaptam às necessidades do seu negócio."
       />
       <services-component />
-      <about-component />
+      <about-component :aboutProp="about" />
       <projects-component />
       <testimonial-component />
       <contact-form-component mainTitle="A Brainy Faz Seu Projeto" />
@@ -29,6 +29,8 @@ import {
   FooterComponent,
 } from '../03-organisms'
 
+import { mapState, mapActions } from 'vuex'
+
 export default {
   components: {
     HeaderComponent,
@@ -39,6 +41,15 @@ export default {
     TestimonialComponent,
     ContactFormComponent,
     FooterComponent,
+  },
+  computed: {
+    ...mapState(['about']),
+  },
+  methods: {
+    ...mapActions(['populateStoreArr']),
+  },
+  created() {
+    this.populateStoreArr()
   },
 }
 </script>
