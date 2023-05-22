@@ -2,7 +2,6 @@
   "name": "brainy-logical",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "serve": "nodemon node ./src/shared/http/server.js",
     "build": "vue-cli-service build",
@@ -10,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "cors": "^2.8.5",
     "dompurify": "^3.0.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
