@@ -6,7 +6,9 @@ class HomeModel {
     const homeData = {}
 
     // Buscar informações da tabela "about"
-    await query("SELECT * FROM about", (err, aboutResults) => {
+    await query(
+      `SELECT about.description, image_about.path FROM about
+    JOIN image_about ON about.id = image_about.fk_about_id`, (err, aboutResults) => {
       if (err) {
         console.log(err)
         result(err, null)
@@ -22,7 +24,9 @@ class HomeModel {
             homeData.services = servicesResults
 
             // Buscar informações da tabela "portfolio"
-            query("SELECT * FROM portfolio", (err, portfolioResults) => {
+            query(
+              `SELECT portfolio.title, portfolio.description, image_portfolio.path FROM portfolio
+            JOIN image_portfolio ON portfolio.id = image_portfolio.fk_portfolio_id`, (err, portfolioResults) => {
               if (err) {
                 console.log(err)
                 result(err, null)

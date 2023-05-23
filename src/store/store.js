@@ -7,7 +7,8 @@ const store = createStore({
     isMenuOpen: false,
     isSubmenuOpen: false,
     services: [],
-    about: '',
+    about: [],
+    projects: [],
   },
   mutations: {
     toggleMenu(state) {
@@ -25,7 +26,8 @@ const store = createStore({
     },
     setStoreData(state, payload) {
       state.services = payload.services;
-      state.about = payload.about[0].description;
+      state.about = payload.about;
+      state.projects = payload.portfolio;
     },
   },
   actions: {

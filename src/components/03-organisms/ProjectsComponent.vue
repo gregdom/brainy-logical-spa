@@ -6,9 +6,9 @@
       <div class="blocks">
         <card-project
           class="block-cards"
-          v-for="(project, index) in projects"
+          v-for="(project, index) in projectsArr"
           :key="index"
-          :image="project.image"
+          :image="project.path"
           :title="project.title"
           :description="project.description"
         />
@@ -19,38 +19,18 @@
 
 <script>
 import { CardProject } from '../02-molecules'
+import { mapState } from 'vuex'
 
 export default {
   components: { CardProject },
-  data() {
-    return {
-      projects: [
-        {
-          image: 'gamestore-projects-brainy-logical.png',
-          title: 'GameStore',
-          description:
-            'Marketplace de jogos eletrônicos integrada ao sistema de pagamento Mercado Pago.',
-        },
-        {
-          image: 'blog-santa-catarina-projects-brainy-logical.png',
-          title: 'SCViagens',
-          description:
-            'Apresenta cidades de Santa Catarina. Possui uma agenda online para contratar guia turísticos.',
-        },
-        {
-          image: 'cassino-da-ruiva-projects-brainy-logical.png',
-          title: 'Cassino da Ruiva',
-          description:
-            'Site de afiliado que lista plataformas de cassino seguras e confiáveis aos visitantes.',
-        },
-        {
-          image: 'brainy-logical-projects-brainy-logical.png',
-          title: 'Brainy Logical',
-          description:
-            'O site foi desenvolvido com o objetivo de oferecer soluções para fortalecer sua presença online.',
-        },
-      ],
-    }
+  computed: {
+    ...mapState(['projects']),
+    projectsArr() {
+      if (this.projects.length > 0) {
+        return this.projects
+      }
+      return ''
+    },
   },
 }
 </script>

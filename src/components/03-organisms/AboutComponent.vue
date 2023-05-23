@@ -5,13 +5,10 @@
 
       <div class="blocks">
         <div class="block decoration">
-          <img
-            src="../../assets/images/illustration-about-2.png"
-            alt="Ilustração"
-          />
+          <img :src="imageSrc" alt="Ilustração" />
         </div>
 
-        <div class="block description" v-html="sanitizedAboutProp"></div>
+        <div class="block description" v-html="text"></div>
       </div>
     </div>
   </section>
@@ -19,20 +16,26 @@
 
 <script>
 import DOMPurify from 'dompurify'
+import { mapState } from 'vuex'
 
 export default {
-  props: {
-    aboutProp: {
-      type: String,
-      required: true,
-    },
-  },
   components: {},
   computed: {
-    sanitizedAboutProp() {
-      return DOMPurify.sanitize(this.aboutProp)
+    ...mapState(['about']),
+    text() {
+      if (this.about.length > 0) {
+        return DOMPurify.sanitize(this.about[0].description)
+      }
+      return ''
+    },
+    imageSrc() {
+      if (this.about.length > 0) {
+        return require(`../../assets/images/${this.about[0].path}`)
+      }
+      return ''
     },
   },
+  methods: {},
 }
 </script>
 
