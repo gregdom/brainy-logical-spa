@@ -65,7 +65,7 @@ export default {
       align-items: center;
 
       .block-cards {
-        max-width: 300px;
+        max-width: 100%;
         margin-top: 92px;
 
         &:last-child {

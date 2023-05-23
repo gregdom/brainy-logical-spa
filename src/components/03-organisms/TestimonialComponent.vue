@@ -16,26 +16,21 @@
       >
         <swiper-slide
           class="elementSwiperSlide"
-          v-for="(testimonial, index) in testimonials"
+          v-for="(testimonial, index) in testimonialsArr"
           :key="index"
         >
           <div class="imageContainer">
             <img
-              :src="require(`../../assets/images/${testimonial.image}`)"
+              :src="require(`../../assets/images/${testimonial.image_path}`)"
               alt="Imagem de Projeto"
             />
           </div>
 
           <div class="details">
-            <h4>{{ testimonial.businessName }}</h4>
+            <h4>{{ testimonial.title }}</h4>
 
-            <p>
-              {{ testimonial.description }}
-            </p>
-
-            <p class="clientName">
-              {{ testimonial.clientName }}
-            </p>
+            <p>{{ testimonial.description }}</p>
+            <p class="clientName">{{ testimonial.name }}</p>
           </div>
         </swiper-slide>
       </swiper>
@@ -50,7 +45,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { Pagination, Navigation } from 'swiper'
 
-// import { CardTestimonial } from '../02-molecules'
+import { mapState } from 'vuex'
 
 export default {
   components: {
@@ -60,22 +55,6 @@ export default {
   },
   data() {
     return {
-      testimonials: [
-        {
-          image: 'testimonial-face-1.png',
-          businessName: 'GameStore',
-          description:
-            '“Estou muito satisfeito com a loja de jogos eletrônicos GameStore desenvolvida pela equipe. O design é incrível e a usabilidade é perfeita para nossos clientes. Agora, nossas vendas online aumentaram significativamente e o feedback dos clientes é excelente. O desafio de fazer o Marketplace foi cumprido no prazo. Obrigado pelo excelente trabalho!”',
-          clientName: 'Eduardo Mitt',
-        },
-        {
-          image: 'testimonial-face-2.png',
-          businessName: 'SCViagens',
-          description:
-            '"A equipe da Brainy Logical fez um trabalho incrível no desenvolvimento do nosso site de turismo. A plataforma é fácil de usar, as informações são completas e a experiência do usuário é fantástica. Agora, estamos recebendo mais reservas online e nossos clientes estão felizes. Sempre vou recomendar a Brainy para quem precisar de um site.”',
-          clientName: 'Pedro Henrique',
-        },
-      ],
       slidesPerView: 1,
     }
   },
@@ -85,8 +64,12 @@ export default {
     }
   },
   computed: {
-    imageSrc() {
-      return require(`../../assets/images/${this.image}`)
+    ...mapState(['testimonials']),
+    testimonialsArr() {
+      if (this.testimonials.length > 0) {
+        return this.testimonials
+      }
+      return ''
     },
   },
   mounted() {
