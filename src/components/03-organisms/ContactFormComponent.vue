@@ -111,12 +111,7 @@ export default {
         projectType: this.projectType,
         projectDetails: this.projectDetails,
       }
-
       console.log(formData)
-
-      // Faça o que desejar com os dados do formulário aqui
-
-      this.resetForm()
     },
 
     resetForm() {
