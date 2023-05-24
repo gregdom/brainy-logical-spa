@@ -3,7 +3,7 @@
     <header-component />
     <hero-component
       titleHero="Criamos Projetos Para A Web"
-      :subTitleHero="service.shortDescription"
+      :subTitleHero="service ? service.description_short : ''"
     />
     <main>
       <section class="single-service-init">
@@ -243,6 +243,8 @@ import {
   FooterComponent,
 } from '../../03-organisms'
 
+import { mapActions, mapState } from 'vuex'
+
 export default {
   components: {
     Swiper,
@@ -268,11 +270,14 @@ export default {
     }
   },
   computed: {
+    ...mapState(['services']),
     service() {
       return this.$store.getters.getServiceByLink('website-development')
     },
   },
   methods: {
+    ...mapActions(['populateStoreArr']),
+
     handleResize() {
       if (window.innerWidth > 1170) {
         this.slidesPerView = 3
@@ -282,6 +287,9 @@ export default {
         this.slidesPerView = 1
       }
     },
+  },
+  created() {
+    this.populateStoreArr()
   },
   mounted() {
     let callToAction = document.querySelector('.call-to-action')

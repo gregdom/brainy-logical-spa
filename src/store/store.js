@@ -34,7 +34,7 @@ const store = createStore({
   },
   actions: {
     async populateStoreArr({ commit }) {
-      await axios.get('/')
+      await axios.get('/api')
         .then(function (response) {
           commit("setStoreData", response.data);
         })

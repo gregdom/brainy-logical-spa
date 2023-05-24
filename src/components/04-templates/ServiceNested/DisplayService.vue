@@ -2,8 +2,8 @@
   <div>
     <header-component />
     <hero-component
-      :titleHero="service.title"
-      :subTitleHero="service.shortDescription"
+      :titleHero="service ? service.title : ''"
+      :subTitleHero="service ? service.description_short : ''"
     />
     <main>
       <!-- <h1>{{ service.title }}</h1>
@@ -11,7 +11,7 @@
 
       <section class="whatIs">
         <div class="wrapper">
-          <h3>O Que é Um Site Empresarial</h3>
+          <h3>O Que é {{ service ? service.title : '' }}</h3>
 
           <div class="blocks">
             <div class="what-is-col col1">
@@ -63,7 +63,10 @@
       <section class="work-process">
         <div class="wrapper">
           <div class="firstBlock">
-            <h3>Como é nosso processo de criação de um site corporativo?</h3>
+            <h3>
+              Como é nosso processo de criação de
+              {{ service ? service.title : '' }}
+            </h3>
           </div>
 
           <div class="secondBlock">
@@ -187,6 +190,8 @@ import {
   FooterComponent,
 } from '../../03-organisms'
 
+import { mapActions, mapState } from 'vuex'
+
 export default {
   components: {
     ButtonCallToAction,
@@ -200,15 +205,25 @@ export default {
     }
   },
   computed: {
+    // service() {
+    //   return this.$store.getters.getServiceByLink(this.serviceName)
+    // },
+    ...mapState(['services']),
     service() {
       return this.$store.getters.getServiceByLink(this.serviceName)
     },
+  },
+  methods: {
+    ...mapActions(['populateStoreArr']),
   },
   watch: {
     $route(to) {
       const serviceName = to.path.split('/services/')[1]
       this.serviceName = serviceName
     },
+  },
+  created() {
+    this.populateStoreArr()
   },
   mounted() {
     console.log(this.serviceName)
