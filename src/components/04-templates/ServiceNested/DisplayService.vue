@@ -14,30 +14,12 @@
           <h3>O Que é {{ service ? service.title : '' }}</h3>
 
           <div class="blocks">
-            <div class="what-is-col col1">
-              <p>
-                A corporate website represents the company it was built for. It
-                conveys the company’s image and concept to the world and,
-                therefore, must be convenient for all segments of the audience:
-                clients, shareholders, employees, investors, suppliers, and
-                local communities. That is why developing great corporate
-                websites requires extensive experience and skills. In short, the
-                corporate website is like a company’s personal assistant or
-                business development executive that a company owner hires to
-                work 24/7 without days off. Design, functionality, and content
-                should be thoroughly thought out.
-              </p>
+            <div
+              class="what-is-col"
+              v-html="service ? service.description_long : ''"
+            ></div>
 
-              <p>
-                That is why developing great corporate websites requires
-                extensive experience and skills. In short, the corporate website
-                is like a company’s personal assistant or business development
-                executive that a company owner hires to work 24/7 without days
-                off.
-              </p>
-            </div>
-
-            <div class="what-is-col">
+            <!-- <div class="what-is-col">
               <p>
                 Corporate website development is a challenging task. Several
                 basic principles help to build a successful business site:
@@ -55,7 +37,7 @@
                 </li>
                 <li>SEO-friendly</li>
               </ul>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -242,7 +224,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .call-to-action {
   display: none;
 }
@@ -271,11 +253,19 @@ section.whatIs {
     }
 
     .blocks {
-      display: flex;
-      flex-direction: column;
-
       .what-is-col {
         margin-bottom: 20px;
+
+        p {
+          margin-bottom: 20px;
+          font-size: $font-size-base;
+          line-height: $general-line-height;
+          color: $color-general-text;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
 
         ul {
           list-style: none; /* Remove default bullets */
@@ -298,17 +288,6 @@ section.whatIs {
               color: $color-branding;
             }
           }
-        }
-      }
-
-      p {
-        margin-bottom: 20px;
-        font-size: $font-size-base;
-        line-height: $general-line-height;
-        color: $color-general-text;
-
-        &:last-child {
-          margin-bottom: 0;
         }
       }
     }
@@ -610,11 +589,12 @@ section.fixed-price {
       margin: 0 auto;
 
       .blocks {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        .what-is-col {
+          column-count: 2;
 
-        p {
-          padding-right: 20px;
+          p {
+            padding-right: 20px;
+          }
         }
       }
     }
