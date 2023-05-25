@@ -12,6 +12,9 @@
               v-model="contactForm.firstName"
             />
             <label for="first-name">Nome</label>
+            <span v-if="this.v$.contactForm.firstName.$error" class="error"
+              >Não pode estar vazio</span
+            >
           </div>
 
           <div class="separator"></div>
@@ -90,6 +93,9 @@
 
 <script>
 import { useReCaptcha } from 'vue-recaptcha-v3'
+import { reactive } from 'vue'
+import { useVuelidate } from '@vuelidate/core'
+import { required, email } from '@vuelidate/validators'
 // import axios from 'axios'
 
 export default {
@@ -101,7 +107,7 @@ export default {
   },
   data() {
     return {
-      contactForm: {
+      contactForm: reactive({
         firstName: '',
         lastName: '',
         email: '',
@@ -109,12 +115,24 @@ export default {
         companySite: '',
         projectType: 'default',
         projectDetails: '',
-      },
+      }),
       recaptchaToken: '',
     }
   },
+  validations: {
+    contactForm: {
+      firstName: { required },
+      lastName: {},
+      email: { required, email },
+      companyName: {},
+      companySite: { required },
+      projectType: { required },
+      projectDetails: { required },
+    },
+  },
   setup() {
     const { executeRecaptcha, recaptchaLoaded } = useReCaptcha()
+    const v$ = useVuelidate()
 
     const recaptcha = async () => {
       await recaptchaLoaded()
@@ -125,46 +143,35 @@ export default {
     }
 
     return {
+      v$,
       recaptcha,
     }
   },
-  methods: {
-    async startSubmit() {
-      this.recaptchaToken = await this.recaptcha()
-    },
-    submitForm() {
-      const formData = {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        email: this.email,
-        companyName: this.companyName,
-        companySite: this.companySite,
-        projectType: this.projectType,
-        projectDetails: this.projectDetails,
-      }
-      console.log(formData)
-    },
 
-    resetForm() {
-      this.firstName = ''
-      this.lastName = ''
-      this.email = ''
-      this.companyName = ''
-      this.companySite = ''
-      this.projectType = ''
-      this.projectDetails = ''
+  methods: {
+    submitForm() {
+      this.v$.$touch()
+      if (!this.v$.$invalid) {
+        // Lógica para enviar o formulário
+        console.log('Formulário válido. Enviar dados:', this.contactForm)
+      } else {
+        console.log('Formulário inválido. Corrija os erros.')
+      }
     },
   },
   watch: {
     recaptchaToken() {
       console.log('oi')
-      this.submitForm()
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+.error {
+  color: red;
+}
+
 .contact {
   width: 100%;
   max-width: 1400px;
