@@ -9,7 +9,7 @@
             <input
               class="first-name fieldEntry"
               type="text"
-              v-model="firstName"
+              v-model="contactForm.firstName"
             />
             <label for="first-name">Nome</label>
           </div>
@@ -20,13 +20,17 @@
             <input
               class="last-name fieldEntry"
               type="text"
-              v-model="lastName"
+              v-model="contactForm.lastName"
             />
             <label for="last-name">Sobrenome</label>
           </div>
 
           <div class="divEmail inner">
-            <input class="email fieldEntry" type="email" v-model="email" />
+            <input
+              class="email fieldEntry"
+              type="email"
+              v-model="contactForm.email"
+            />
             <label for="email">Email</label>
           </div>
         </div>
@@ -36,7 +40,7 @@
             <input
               class="company-name fieldEntry"
               type="text"
-              v-model="companyName"
+              v-model="contactForm.companyName"
             />
             <label for="company-name">Nome da Empresa</label>
           </div>
@@ -45,7 +49,7 @@
             <input
               class="company-site fieldEntry"
               type="text"
-              v-model="companySite"
+              v-model="contactForm.companySite"
             />
             <label for="company-site">Site da Empresa</label>
           </div>
@@ -54,7 +58,7 @@
         <div class="project-idea division">
           <div>
             <label class="labelInit" for="project-type">Tipo de Projeto</label>
-            <select id="project-type" v-model="projectType">
+            <select id="project-type" v-model="contactForm.projectType">
               <option value="default">Escolher opção</option>
               <option value="Desenvolvimento Web">Desenvolvimento Web</option>
               <option value="empresarial">Site Empresarial</option>
@@ -69,12 +73,15 @@
             <label class="labelInit" for="project-details"
               >Fale sobre seu projeto</label
             >
-            <textarea id="project-details" v-model="projectDetails"></textarea>
+            <textarea
+              id="project-details"
+              v-model="contactForm.projectDetails"
+            ></textarea>
           </div>
         </div>
 
         <div class="divButton">
-          <button type="submit" @click="recaptcha">Enviar</button>
+          <button type="submit">Enviar</button>
         </div>
       </form>
     </div>
@@ -83,6 +90,7 @@
 
 <script>
 import { useReCaptcha } from 'vue-recaptcha-v3'
+// import axios from 'axios'
 
 export default {
   props: {
@@ -93,27 +101,27 @@ export default {
   },
   data() {
     return {
-      firstName: '',
-      lastName: '',
-      email: '',
-      companyName: '',
-      companySite: '',
-      projectType: 'default',
-      projectDetails: '',
+      contactForm: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        companyName: '',
+        companySite: '',
+        projectType: 'default',
+        projectDetails: '',
+      },
+      recaptchaToken: '',
     }
   },
   setup() {
     const { executeRecaptcha, recaptchaLoaded } = useReCaptcha()
 
     const recaptcha = async () => {
-      // (optional) Wait until recaptcha has been loaded.
       await recaptchaLoaded()
-
-      // Execute reCAPTCHA with action "form_contact_projects".
       const token = await executeRecaptcha('form_contact_projects')
       console.log(token)
 
-      // Do stuff with the received token.
+      return token
     }
 
     return {
@@ -121,6 +129,9 @@ export default {
     }
   },
   methods: {
+    async startSubmit() {
+      this.recaptchaToken = await this.recaptcha()
+    },
     submitForm() {
       const formData = {
         firstName: this.firstName,
@@ -142,6 +153,12 @@ export default {
       this.companySite = ''
       this.projectType = ''
       this.projectDetails = ''
+    },
+  },
+  watch: {
+    recaptchaToken() {
+      console.log('oi')
+      this.submitForm()
     },
   },
 }
