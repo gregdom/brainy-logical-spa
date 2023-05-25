@@ -5741,6 +5741,11 @@
   dependencies:
     "picomatch" "^2.2.1"
 
+"recaptcha-v3@^1.8.0":
+  "integrity" "sha512-aGTxYSk3FFNKnXeKDbLpgRDRyIHRZNBF5HyaXXAN1Aj4TSyyZvmoAn9CylvpqLV3pYpIQavwc+2rzhNFn5SsLQ=="
+  "resolved" "https://registry.npmjs.org/recaptcha-v3/-/recaptcha-v3-1.10.0.tgz"
+  "version" "1.10.0"
+
 "redent@^3.0.0":
   "integrity" "sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg=="
   "resolved" "https://registry.npmjs.org/redent/-/redent-3.0.0.tgz"
@@ -6772,6 +6777,13 @@
     "hash-sum" "^2.0.0"
     "watchpack" "^2.4.0"
 
+"vue-recaptcha-v3@^2.0.1":
+  "integrity" "sha512-isEDtOfHU4wWRrZZuxciAELtQmPOeEEdicPNa0f1AOyLPy3sCcBEcpFt+FOcO3RQv5unJ3Yn5NlsWtXv9rXqjg=="
+  "resolved" "https://registry.npmjs.org/vue-recaptcha-v3/-/vue-recaptcha-v3-2.0.1.tgz"
+  "version" "2.0.1"
+  dependencies:
+    "recaptcha-v3" "^1.8.0"
+
 "vue-router@^4.1.6":
   "integrity" "sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ=="
   "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-4.1.6.tgz"
@@ -6799,7 +6811,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@*", "vue@^2 || ^3.2.13", "vue@^3.2.0", "vue@^3.2.13", "vue@3.2.47":
+"vue@*", "vue@^2 || ^3.2.13", "vue@^3.0.11", "vue@^3.2.0", "vue@^3.2.13", "vue@3.2.47":
   "integrity" "sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.47.tgz"
   "version" "3.2.47"

@@ -74,7 +74,7 @@
         </div>
 
         <div class="divButton">
-          <button type="submit">Enviar</button>
+          <button type="submit" @click="recaptcha">Enviar</button>
         </div>
       </form>
     </div>
@@ -82,6 +82,8 @@
 </template>
 
 <script>
+import { useReCaptcha } from 'vue-recaptcha-v3'
+
 export default {
   props: {
     mainTitle: {
@@ -98,6 +100,24 @@ export default {
       companySite: '',
       projectType: 'default',
       projectDetails: '',
+    }
+  },
+  setup() {
+    const { executeRecaptcha, recaptchaLoaded } = useReCaptcha()
+
+    const recaptcha = async () => {
+      // (optional) Wait until recaptcha has been loaded.
+      await recaptchaLoaded()
+
+      // Execute reCAPTCHA with action "form_contact_projects".
+      const token = await executeRecaptcha('form_contact_projects')
+      console.log(token)
+
+      // Do stuff with the received token.
+    }
+
+    return {
+      recaptcha,
     }
   },
   methods: {
