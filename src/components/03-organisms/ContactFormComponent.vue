@@ -8,10 +8,13 @@
           <div class="divFirstName inner">
             <input
               class="first-name fieldEntry"
+              :class="{ error: v$.contactForm.firstName.$error }"
               type="text"
-              v-model="contactForm.firstName"
+              v-model.trim="contactForm.firstName"
             />
-            <label for="first-name">Nome</label>
+            <label :class="{ active: contactForm.firstName }" for="first-name"
+              >Nome</label
+            >
             <span v-if="v$.contactForm.firstName.$error">
               {{ v$.contactForm.firstName.$errors[0].$message }}
             </span>
@@ -23,18 +26,26 @@
             <input
               class="last-name fieldEntry"
               type="text"
-              v-model="contactForm.lastName"
+              v-model.trim="contactForm.lastName"
             />
-            <label for="last-name">Sobrenome</label>
+            <label :class="{ active: contactForm.lastName }" for="last-name"
+              >Sobrenome</label
+            >
           </div>
 
           <div class="divEmail inner">
             <input
               class="email fieldEntry"
+              :class="{ error: v$.contactForm.email.$error }"
               type="email"
-              v-model="contactForm.email"
+              v-model.trim="contactForm.email"
             />
-            <label for="email">Email</label>
+            <label :class="{ active: contactForm.email }" for="email"
+              >Email</label
+            >
+            <span v-if="v$.contactForm.email.$error">
+              {{ v$.contactForm.email.$errors[0].$message }}
+            </span>
           </div>
         </div>
 
@@ -43,18 +54,26 @@
             <input
               class="company-name fieldEntry"
               type="text"
-              v-model="contactForm.companyName"
+              v-model.trim="contactForm.companyName"
             />
-            <label for="company-name">Nome da Empresa</label>
+            <label
+              :class="{ active: contactForm.companyName }"
+              for="company-name"
+              >Nome da Empresa</label
+            >
           </div>
 
           <div class="divSite inner">
             <input
               class="company-site fieldEntry"
               type="text"
-              v-model="contactForm.companySite"
+              v-model.trim="contactForm.companySite"
             />
-            <label for="company-site">Site da Empresa</label>
+            <label
+              :class="{ active: contactForm.companySite }"
+              for="company-site"
+              >Site da Empresa</label
+            >
           </div>
         </div>
 
@@ -62,7 +81,7 @@
           <div>
             <label class="labelInit" for="project-type">Tipo de Projeto</label>
             <select id="project-type" v-model="contactForm.projectType">
-              <option value="default">Escolher opção</option>
+              <option disabled value="">-- Selecione</option>
               <option value="Desenvolvimento Web">Desenvolvimento Web</option>
               <option value="empresarial">Site Empresarial</option>
               <option value="startup">Site para Startup</option>
@@ -80,6 +99,10 @@
               id="project-details"
               v-model="contactForm.projectDetails"
             ></textarea>
+
+            <span v-if="v$.contactForm.projectDetails.$error">
+              {{ v$.contactForm.projectDetails.$errors[0].$message }}
+            </span>
           </div>
         </div>
 
@@ -113,7 +136,7 @@ export default {
         email: '',
         companyName: '',
         companySite: '',
-        projectType: 'default',
+        projectType: '',
         projectDetails: '',
       }),
       recaptchaToken: '',
@@ -126,11 +149,17 @@ export default {
         maxLength: helpers.withMessage('Max. 5 caracteres', maxLength(25)),
       },
       lastName: {},
-      email: { required, email },
+      email: {
+        required: helpers.withMessage('Não pode estar vazio', required),
+        email: helpers.withMessage('Não parece um email válido', email),
+      },
       companyName: {},
-      companySite: { required },
+      companySite: {},
       projectType: { required },
-      projectDetails: { required },
+      projectDetails: {
+        required: helpers.withMessage('Não pode estar vazio', required),
+        maxLength: helpers.withMessage('Max. 1500 caracteres', maxLength(1500)),
+      },
     },
   },
   setup() {
@@ -172,7 +201,7 @@ export default {
 
 <style lang="scss" scoped>
 .error {
-  color: red;
+  border-bottom: 1px solid #bb3838 !important;
 }
 
 .contact {
@@ -232,6 +261,21 @@ export default {
 
         .inner {
           position: relative;
+
+          span {
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            pointer-events: none;
+            display: block;
+            font-size: 10px;
+            color: #fff;
+            z-index: 9999;
+            transition: 0.2s;
+            background: #bb3838;
+            padding: 1px 4px;
+            text-transform: uppercase;
+          }
         }
 
         & > div {
@@ -250,6 +294,12 @@ export default {
             color: #89949e;
             z-index: 9999;
             transition: 0.2s;
+
+            &.active {
+              top: 0;
+              left: 0;
+              color: $color-branding;
+            }
           }
 
           .labelInit {
