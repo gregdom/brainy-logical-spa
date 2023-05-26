@@ -12,9 +12,9 @@
               v-model="contactForm.firstName"
             />
             <label for="first-name">Nome</label>
-            <span v-if="this.v$.contactForm.firstName.$error" class="error"
-              >Não pode estar vazio</span
-            >
+            <span v-if="v$.contactForm.firstName.$error">
+              {{ v$.contactForm.firstName.$errors[0].$message }}
+            </span>
           </div>
 
           <div class="separator"></div>
@@ -95,7 +95,7 @@
 import { useReCaptcha } from 'vue-recaptcha-v3'
 import { reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
-import { required, email } from '@vuelidate/validators'
+import { required, email, maxLength, helpers } from '@vuelidate/validators'
 // import axios from 'axios'
 
 export default {
@@ -121,7 +121,10 @@ export default {
   },
   validations: {
     contactForm: {
-      firstName: { required },
+      firstName: {
+        required: helpers.withMessage('Não pode estar vazio', required),
+        maxLength: helpers.withMessage('Max. 5 caracteres', maxLength(25)),
+      },
       lastName: {},
       email: { required, email },
       companyName: {},
