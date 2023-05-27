@@ -21,17 +21,18 @@ homeRouter.post("/contact-projects", async (req, res) => {
       }
     });
 
-    console.log(response)
+    console.log(response.data)
 
     if (response.data.success) {
       // Token válido, o usuário passou na verificação do reCAPTCHA
       // Realize as ações desejadas com os dados recebidos do formulário
       console.log(formData);
+      console.log('Ta certo! Dããããã...')
 
-      res.status(200).json({ message: 'Formulário enviado com sucesso' });
+      return res.status(200).json({ message: 'Formulário enviado com sucesso' });
     } else {
       // Token inválido, o usuário não passou na verificação do reCAPTCHA
-      res.status(400).json({ error: 'Falha na verificação do reCAPTCHA' });
+      return res.status(400).json({ error: 'Falha na verificação do reCAPTCHA' });
     }
   } catch (error) {
     console.error(error);

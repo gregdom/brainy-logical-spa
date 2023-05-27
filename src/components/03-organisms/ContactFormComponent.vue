@@ -226,7 +226,10 @@ export default {
             formData,
             token,
           })
-          return response.data
+
+          // Resposta recebida com sucesso
+          const responseData = response.data
+          console.log(responseData.message)
         } catch (error) {
           console.log(error, 'Erro ao processar o formulário')
         }
