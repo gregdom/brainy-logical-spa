@@ -1,6 +1,6 @@
 <template>
   <section class="contact">
-    <div class="wrapper">
+    <div class="wrapper wrapperForm">
       <h3>{{ mainTitle }}</h3>
       <span class="subtitle">Fale para nós o que você precisa</span>
       <form @submit.prevent="submitForm">
@@ -13,8 +13,8 @@
               v-model.trim="contactForm.firstName"
             />
             <label :class="{ active: contactForm.firstName }" for="first-name"
-              >Nome</label
-            >
+              >Nome<small>*</small>
+            </label>
             <span v-if="v$.contactForm.firstName.$error">
               {{ v$.contactForm.firstName.$errors[0].$message }}
             </span>
@@ -41,8 +41,8 @@
               v-model.trim="contactForm.email"
             />
             <label :class="{ active: contactForm.email }" for="email"
-              >Email</label
-            >
+              >Email<small>*</small>
+            </label>
             <span v-if="v$.contactForm.email.$error">
               {{ v$.contactForm.email.$errors[0].$message }}
             </span>
@@ -79,7 +79,9 @@
 
         <div class="project-idea division">
           <div class="innerSelect">
-            <label class="labelInit" for="project-type">Tipo de Projeto</label>
+            <label class="labelInit" for="project-type"
+              >Tipo de Projeto<small>*</small>
+            </label>
             <select id="project-type" v-model="contactForm.projectType">
               <option disabled value="">-- Selecione</option>
               <option value="Desenvolvimento Web">Desenvolvimento Web</option>
@@ -96,8 +98,8 @@
 
           <div class="innerTextArea">
             <label class="labelInit" for="project-details"
-              >Fale sobre seu projeto</label
-            >
+              >Fale sobre seu projeto<small>*</small>
+            </label>
             <textarea
               id="project-details"
               v-model="contactForm.projectDetails"
@@ -243,6 +245,26 @@ export default {
       console.log('oi')
     },
   },
+  mounted() {
+    let attempts = 0
+
+    const moveGrecaptchaBadge = () => {
+      let grecaptchaBadge = document.querySelector('.grecaptcha-badge')
+      let containerWrapper = document.querySelector('.wrapperForm')
+
+      if (grecaptchaBadge && containerWrapper) {
+        containerWrapper.appendChild(grecaptchaBadge)
+      } else {
+        attempts++
+
+        if (attempts < 10) {
+          setTimeout(moveGrecaptchaBadge, 1000) // Tenta novamente após 1 segundo
+        }
+      }
+    }
+
+    moveGrecaptchaBadge()
+  },
 }
 </script>
 
@@ -339,7 +361,7 @@ export default {
             font-weight: 600;
             line-height: 24px;
             color: #89949e;
-            z-index: 9999;
+            z-index: 1000;
             transition: 0.2s;
 
             &.active {
@@ -475,6 +497,7 @@ export default {
         width: 100%;
         height: auto;
         margin-top: 0;
+        margin-bottom: 20px;
 
         button[type='submit'] {
           cursor: pointer;

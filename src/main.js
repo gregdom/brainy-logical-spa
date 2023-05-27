@@ -10,5 +10,13 @@ const Vue = createApp(App)
 Vue.use(router)
 Vue.use(store)
 Vue.use(VueScrollTo)
-Vue.use(VueReCaptcha, { siteKey: '6LdwfzUmAAAAAH4ZK5NtLDhW_apfE1-oef2Ky0Ta' })
+Vue.use(VueReCaptcha, {
+  siteKey: '6LdwfzUmAAAAAH4ZK5NtLDhW_apfE1-oef2Ky0Ta', loaderOptions: {
+    autoHideBadge: false,
+    explicitRenderParameters: {
+      badge: 'inline',
+      // size: 'invisible'
+    }
+  }
+})
 Vue.mount('#app')

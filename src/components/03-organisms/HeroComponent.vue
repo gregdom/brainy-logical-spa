@@ -63,9 +63,7 @@ export default {
   mounted() {
     if (this.$route.path === '/') {
       this.highlightText()
-
       let arrowBottom = document.querySelector('.arrow-bottom')
-
       arrowBottom.style.display = 'none'
     }
   },
@@ -187,7 +185,7 @@ export default {
 
     .arrow-bottom {
       position: absolute;
-      z-index: 9999;
+      z-index: 1000;
       left: 50%;
       transform: translateX(-50%);
       bottom: -24px;
