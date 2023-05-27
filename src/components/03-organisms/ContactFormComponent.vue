@@ -84,12 +84,13 @@
             </label>
             <select id="project-type" v-model="contactForm.projectType">
               <option disabled value="">-- Selecione</option>
-              <option value="Desenvolvimento Web">Desenvolvimento Web</option>
-              <option value="empresarial">Site Empresarial</option>
-              <option value="startup">Site para Startup</option>
-              <option value="landing-page">Landing Page</option>
-              <option value="extensao">Extensões Web</option>
-              <option value="outros">Outros</option>
+              <option
+                v-for="(category, index) in categoriesArr"
+                :key="index"
+                :value="category.id"
+              >
+                {{ category.name }}
+              </option>
             </select>
             <span v-if="v$.contactForm.projectType.$error">
               {{ v$.contactForm.projectType.$errors[0].$message }}
@@ -131,6 +132,7 @@ import {
   minLength,
 } from '@vuelidate/validators'
 import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
   props: {
@@ -174,6 +176,15 @@ export default {
         minLength: helpers.withMessage('Descrição muito curta', minLength(10)),
         maxLength: helpers.withMessage('Max. 1500 caracteres', maxLength(1500)),
       },
+    },
+  },
+  computed: {
+    ...mapState(['categories']),
+    categoriesArr() {
+      if (this.categories.length > 0) {
+        return this.categories
+      }
+      return ''
     },
   },
   setup() {

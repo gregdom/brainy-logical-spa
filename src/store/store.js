@@ -10,6 +10,7 @@ const store = createStore({
     about: [],
     projects: [],
     testimonials: [],
+    categories: [],
   },
   mutations: {
     toggleMenu(state) {
@@ -30,6 +31,7 @@ const store = createStore({
       state.about = payload.about;
       state.projects = payload.portfolio;
       state.testimonials = payload.testimonials;
+      state.categories = payload.categories;
     },
   },
   actions: {

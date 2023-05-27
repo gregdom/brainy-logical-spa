@@ -42,9 +42,34 @@ class HomeModel {
                     } else {
                       homeData.testimonials = testimonialsResults
 
-                      // Após buscar as informações da tabela "portfolio", retornar os resultados combinados
-                      result(null, homeData)
-                      // console.log(homeData)
+                      // Buscar informações da tabela "portfolio"
+                      query(
+                        `SELECT portfolio.title, portfolio.description, image_portfolio.path FROM portfolio
+                JOIN image_portfolio ON portfolio.id = image_portfolio.fk_portfolio_id`, (err, portfolioResults) => {
+                        if (err) {
+                          console.log(err)
+                          result(err, null)
+                        } else {
+                          homeData.portfolio = portfolioResults
+
+                          // Buscar informações da tabela "categories"
+                          query(
+                            `SELECT * FROM categories`, (err, categoriesResults) => {
+                              if (err) {
+                                console.log(err)
+                                result(err, null)
+                              } else {
+                                homeData.categories = categoriesResults
+
+                                result(null, homeData)
+                                // console.log(homeData)
+                              }
+                            }
+                          )
+
+                        }
+                      }
+                      )
                     }
                   }
                 )
@@ -59,6 +84,35 @@ class HomeModel {
     }
     )
   }
+
+  async saveForm(formData) {
+    const sql_query = 'INSERT INTO brainylogicaldb.visitors (id, name, lastname, email, business, website, descriptionProject, created_at, fk_visitor_status_id, fk_category_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)';
+
+    const values = [
+      formData.firstName,
+      formData.lastName !== '' ? formData.lastName : null,
+      formData.email,
+      formData.companyName !== '' ? formData.companyName : null,
+      formData.companySite !== '' ? formData.companySite : null,
+      formData.projectDetails,
+      '1',
+      formData.projectType
+    ];
+
+    console.log('----------')
+    console.log(values)
+    console.log('----------')
+
+    try {
+      const insert = await query(sql_query, values);
+      console.log(insert, 'INSERT');
+      return insert;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+
 }
 
 export default HomeModel
