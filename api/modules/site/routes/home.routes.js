@@ -1,14 +1,16 @@
 import { Router } from "express"
 import HomeController from "../controllers/HomeController.js"
+import axios from 'axios'
 
 const homeRouter = Router()
 const HomeControllerInit = new HomeController()
-import axios from 'axios'
 
 homeRouter.get("/", HomeControllerInit.index)
 
 homeRouter.post("/contact-projects", async (req, res) => {
   const { token, ...formData } = req.body;
+
+  console.log('chamou o backend')
 
   try {
     // Verificar o token do reCAPTCHA com o serviço reCAPTCHA
@@ -18,6 +20,8 @@ homeRouter.post("/contact-projects", async (req, res) => {
         response: token
       }
     });
+
+    console.log(response)
 
     if (response.data.success) {
       // Token válido, o usuário passou na verificação do reCAPTCHA

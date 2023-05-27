@@ -78,7 +78,7 @@
         </div>
 
         <div class="project-idea division">
-          <div>
+          <div class="innerSelect">
             <label class="labelInit" for="project-type">Tipo de Projeto</label>
             <select id="project-type" v-model="contactForm.projectType">
               <option disabled value="">-- Selecione</option>
@@ -89,9 +89,12 @@
               <option value="extensao">Extensões Web</option>
               <option value="outros">Outros</option>
             </select>
+            <span v-if="v$.contactForm.projectType.$error">
+              {{ v$.contactForm.projectType.$errors[0].$message }}
+            </span>
           </div>
 
-          <div>
+          <div class="innerTextArea">
             <label class="labelInit" for="project-details"
               >Fale sobre seu projeto</label
             >
@@ -118,8 +121,14 @@
 import { useReCaptcha } from 'vue-recaptcha-v3'
 import { reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
-import { required, email, maxLength, helpers } from '@vuelidate/validators'
-// import axios from 'axios'
+import {
+  required,
+  email,
+  maxLength,
+  helpers,
+  minLength,
+} from '@vuelidate/validators'
+import axios from 'axios'
 
 export default {
   props: {
@@ -155,9 +164,12 @@ export default {
       },
       companyName: {},
       companySite: {},
-      projectType: { required },
+      projectType: {
+        required: helpers.withMessage('Não pode estar vazio', required),
+      },
       projectDetails: {
         required: helpers.withMessage('Não pode estar vazio', required),
+        minLength: helpers.withMessage('Descrição muito curta', minLength(10)),
         maxLength: helpers.withMessage('Max. 1500 caracteres', maxLength(1500)),
       },
     },
@@ -169,7 +181,7 @@ export default {
     const recaptcha = async () => {
       await recaptchaLoaded()
       const token = await executeRecaptcha('form_contact_projects')
-      console.log(token)
+      // console.log(token)
 
       return token
     }
@@ -184,11 +196,43 @@ export default {
     submitForm() {
       this.v$.$touch()
       if (!this.v$.$invalid) {
-        // Lógica para enviar o formulário
-        console.log('Formulário válido. Enviar dados:', this.contactForm)
+        console.log('Formulário válido')
+        this.recaptcha().then((token) => {
+          this.recaptchaToken = token
+          this.sendForm() // Chama sendForm após obter o token
+        })
       } else {
         console.log('Formulário inválido. Corrija os erros.')
       }
+    },
+
+    sendForm() {
+      const formData = {
+        firstName: this.contactForm.firstName,
+        lastName: this.contactForm.lastName,
+        email: this.contactForm.email,
+        companyName: this.contactForm.companyName,
+        companySite: this.contactForm.companySite,
+        projectType: this.contactForm.projectType,
+        projectDetails: this.contactForm.projectDetails,
+      }
+
+      const token = this.recaptchaToken
+      console.log(formData, token)
+
+      const execute = async (formData, token) => {
+        try {
+          const response = await axios.post('/api/contact-projects', {
+            formData,
+            token,
+          })
+          return response.data
+        } catch (error) {
+          console.log(error, 'Erro ao processar o formulário')
+        }
+      }
+
+      execute(formData, token)
     },
   },
   watch: {
@@ -256,7 +300,7 @@ export default {
         height: auto;
         display: flex;
         flex-direction: column;
-        margin-bottom: 22px;
+        margin-bottom: 30px;
         position: relative;
 
         .inner {
@@ -279,7 +323,7 @@ export default {
         }
 
         & > div {
-          margin-bottom: 20px;
+          margin-bottom: 30px;
 
           label {
             position: absolute;
@@ -314,8 +358,7 @@ export default {
           }
 
           input[type='text'],
-          input[type='email'],
-          textarea {
+          input[type='email'] {
             width: 100%;
             padding: 13px 5px;
             border-top: 1px solid transparent;
@@ -338,14 +381,14 @@ export default {
               }
             }
           }
+        }
 
-          textarea {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 14px;
-            border: 1px solid #a1b0bf;
-            min-height: 200px;
-            padding: 10px;
-          }
+        & > div:last-child {
+          margin-bottom: 0;
+        }
+
+        .innerSelect {
+          position: relative;
 
           select {
             width: 100%;
@@ -363,10 +406,65 @@ export default {
               color: #89949e;
             }
           }
+
+          span {
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            pointer-events: none;
+            display: block;
+            font-size: 10px;
+            color: #fff;
+            z-index: 9999;
+            transition: 0.2s;
+            background: #bb3838;
+            padding: 1px 4px;
+            text-transform: uppercase;
+          }
         }
 
-        & > div:last-child {
-          margin-bottom: 0;
+        .innerTextArea {
+          position: relative;
+
+          textarea {
+            width: 100%;
+            padding: 13px 5px;
+            font-size: 1rem;
+            outline: none;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            border: 1px solid #a1b0bf;
+            min-height: 200px;
+            padding: 10px;
+            color: #89949e;
+            background: transparent;
+
+            &:focus {
+              outline: none;
+              color: #89949e;
+
+              ~ label {
+                top: 0;
+                left: 0;
+                color: $color-branding;
+              }
+            }
+          }
+
+          span {
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            pointer-events: none;
+            display: block;
+            font-size: 10px;
+            color: #fff;
+            z-index: 9999;
+            transition: 0.2s;
+            background: #bb3838;
+            padding: 1px 4px;
+            text-transform: uppercase;
+          }
         }
       }
 
