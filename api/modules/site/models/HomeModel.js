@@ -85,8 +85,8 @@ class HomeModel {
     )
   }
 
-  async saveForm(formData) {
-    const sql_query = 'INSERT INTO brainylogicaldb.visitors (id, name, lastname, email, business, website, descriptionProject, created_at, fk_visitor_status_id, fk_category_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)';
+  async saveFormSQL(formData) {
+    const sql_query = 'INSERT INTO brainylogicaldb.visitors (id, name, lastname, email, business, website, descriptionProject, created_at, fk_visitor_status_id, fk_category_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)'
 
     const values = [
       formData.firstName,
@@ -97,19 +97,13 @@ class HomeModel {
       formData.projectDetails,
       '1',
       formData.projectType
-    ];
-
-    console.log('----------')
-    console.log(values)
-    console.log('----------')
+    ]
 
     try {
-      const insert = await query(sql_query, values);
-      console.log(insert, 'INSERT');
-      return insert;
+      await query(sql_query, values)
+      return true
     } catch (error) {
-      console.error(error);
-      throw error;
+      return false
     }
   }
 

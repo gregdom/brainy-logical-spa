@@ -1,12 +1,11 @@
-import { Router } from "express"
-import HomeController from "../controllers/HomeController.js"
-// import axios from 'axios'
+import { Router } from "express";
+import HomeController from "../controllers/HomeController.js";
 
-const homeRouter = Router()
-const HomeControllerInit = new HomeController()
+const homeRouter = Router();
+const HomeControllerInit = new HomeController();
 
-homeRouter.get("/", HomeControllerInit.index)
+homeRouter.get("/", HomeControllerInit.index);
 
-homeRouter.post("/contact-projects", HomeControllerInit.saveForm)
+homeRouter.post("/contact-projects", HomeControllerInit.saveForm);
 
-export default homeRouter
+export default homeRouter;

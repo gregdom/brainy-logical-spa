@@ -131,6 +131,7 @@ import {
   helpers,
   minLength,
 } from '@vuelidate/validators'
+import DOMPurify from 'dompurify'
 import axios from 'axios'
 import { mapState } from 'vuex'
 
@@ -221,13 +222,13 @@ export default {
 
     sendForm() {
       const formData = {
-        firstName: this.contactForm.firstName,
-        lastName: this.contactForm.lastName,
-        email: this.contactForm.email,
-        companyName: this.contactForm.companyName,
-        companySite: this.contactForm.companySite,
-        projectType: this.contactForm.projectType,
-        projectDetails: this.contactForm.projectDetails,
+        firstName: DOMPurify.sanitize(this.contactForm.firstName),
+        lastName: DOMPurify.sanitize(this.contactForm.lastName),
+        email: DOMPurify.sanitize(this.contactForm.email),
+        companyName: DOMPurify.sanitize(this.contactForm.companyName),
+        companySite: DOMPurify.sanitize(this.contactForm.companySite),
+        projectType: DOMPurify.sanitize(this.contactForm.projectType),
+        projectDetails: DOMPurify.sanitize(this.contactForm.projectDetails),
       }
 
       const token = this.recaptchaToken
