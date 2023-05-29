@@ -77,16 +77,15 @@ class HomeController {
         const result = await model.saveFormSQL(sanitizedFormData);
 
         if (result) {
-          return res.status(200).json({ message: 'Recaptcha seguro' });
+          return res.status(200).json({ statusCode: 200, message: 'Mensagem enviada com sucesso!' });
         } else {
-          return res.status(400).json({ error: 'Erro ao salvar no banco de dados' });
+          return res.status(400).json({ statusCode: 400, message: 'Houve um erro #S4002 - Tente enviar sua mensagem através do chat online se o erro persistir!' });
         }
       } else {
-        return res.status(400).json({ error: 'Falha na verificação do reCAPTCHA' });
+        return res.status(400).json({ statusCode: 400, message: 'Erro #T4002 -  Sua mensagem não foi enviada! Tente enviar sua mensagem através do chat online se o erro persistir!' });
       }
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Erro interno do servidor' });
+    } catch {
+      return res.status(500).json({ statusCode: 500, message: 'Erro interno! Sua mensagem não foi enviada! Tente enviar sua mensagem através do chat online se o erro persistir!' });
     }
   }
 

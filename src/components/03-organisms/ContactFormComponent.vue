@@ -1,6 +1,6 @@
 <template>
   <section class="contact">
-    <div class="wrapper wrapperForm">
+    <div v-show="!submitSituation" class="wrapper wrapperForm">
       <h3>{{ mainTitle }}</h3>
       <span class="subtitle">Fale para nós o que você precisa</span>
       <form @submit.prevent="submitForm">
@@ -117,6 +117,16 @@
         </div>
       </form>
     </div>
+    <div v-show="submitSituation" class="formNotification">
+      <div class="container-wrapper">
+        <div
+          class="text-status-submit"
+          :class="{ active: submitSituation.statusCode !== 200 }"
+        >
+          {{ submitSituation.message }}
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -154,6 +164,7 @@ export default {
         projectDetails: '',
       }),
       recaptchaToken: '',
+      submitSituation: false,
     }
   },
   validations: {
@@ -207,6 +218,17 @@ export default {
   },
 
   methods: {
+    reset() {
+      this.contactForm.firstName = ''
+      this.contactForm.lastName = ''
+      this.contactForm.email = ''
+      this.contactForm.companyName = ''
+      this.contactForm.companySite = ''
+      this.contactForm.projectType = ''
+      this.contactForm.projectDetails = ''
+      this.recaptchaToken = ''
+    },
+
     submitForm() {
       this.v$.$touch()
       if (!this.v$.$invalid) {
@@ -243,9 +265,17 @@ export default {
 
           // Resposta recebida com sucesso
           const responseData = response.data
-          console.log(responseData.message)
-        } catch (error) {
-          console.log(error, 'Erro ao processar o formulário')
+          console.log(responseData)
+          console.log(responseData.message, responseData.statusCode)
+          this.submitSituation = responseData
+          this.reset()
+        } catch {
+          const responseData = {
+            message:
+              'Houve um erro! Tente enviar sua mensagem através do chat online se o erro persistir!',
+            statusCode: 400,
+          }
+          this.submitSituation = responseData
         }
       }
 
@@ -283,6 +313,36 @@ export default {
 <style lang="scss" scoped>
 .error {
   border-bottom: 1px solid #bb3838 !important;
+}
+
+.container-wrapper {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .text-status-submit {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1c914e;
+    width: fit-content;
+    max-width: 500px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #4fdb8a;
+    border-left: 7px solid #4fdb8a;
+    border-radius: 5px;
+    background: #c2f3d6;
+
+    &.active {
+      color: #ee3546;
+      border: 1px solid #f55160;
+      border-left: 7px solid #f55160;
+      background: #ffe1e3;
+    }
+  }
 }
 
 .contact {
