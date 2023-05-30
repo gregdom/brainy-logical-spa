@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios"
 
 window.axios = axios
 axios.defaults.withCredentials = false

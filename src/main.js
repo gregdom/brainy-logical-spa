@@ -15,7 +15,6 @@ Vue.use(VueReCaptcha, {
     autoHideBadge: false,
     explicitRenderParameters: {
       badge: 'inline',
-      // size: 'invisible'
     }
   }
 })

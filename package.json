@@ -14,7 +14,6 @@
     "core-js": "^3.8.3",
     "dompurify": "^3.0.3",
     "express-validator": "^7.0.1",
-    "nprogress": "^0.2.0",
     "swiper": "^9.2.4",
     "validator": "^13.9.0",
     "vue": "^3.2.13",
