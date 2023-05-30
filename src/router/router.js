@@ -67,8 +67,12 @@ const routes = [
     component: Contact
   },
   {
-    path: '/:pathMatch(.*)',
+    path: '/notfound',
     component: NotFound
+  },
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/notfound'
   },
 ]
 

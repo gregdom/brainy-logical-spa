@@ -27,7 +27,7 @@ export default {
     ...mapState(['projects']),
     projectsArr() {
       if (this.projects.length > 0) {
-        return this.projects
+        return this.projects.slice(0, 4)
       }
       return ''
     },
