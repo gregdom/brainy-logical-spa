@@ -37,13 +37,14 @@ class HomeController {
         const validateFormFields = [
           body('formData.firstName')
             .notEmpty().withMessage('Não pode estar vazio')
-            .isLength({ max: 25 }).withMessage('Max. 5 caracteres'),
-          body('formData.lastName'),
+            .isLength({ max: 25 }).withMessage('Max. 25 caracteres'),
+          body('formData.lastName').isLength({ max: 45 }).withMessage('Max. 45 caracteres'),
           body('formData.email')
             .notEmpty().withMessage('Não pode estar vazio')
-            .isEmail().withMessage('Não parece um email válido'),
-          body('formData.companyName'),
-          body('formData.companySite'),
+            .isEmail().withMessage('Não parece um email válido')
+            .isLength({ max: 45 }).withMessage('Max. 45 caracteres'),
+          body('formData.companyName').isLength({ max: 45 }).withMessage('Max. 45 caracteres'),
+          body('formData.companySite').isLength({ max: 45 }).withMessage('Max. 45 caracteres'),
           body('formData.projectType')
             .notEmpty().withMessage('Não pode estar vazio'),
           body('formData.projectDetails')

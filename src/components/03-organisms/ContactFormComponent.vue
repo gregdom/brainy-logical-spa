@@ -29,8 +29,11 @@
               v-model.trim="contactForm.lastName"
             />
             <label :class="{ active: contactForm.lastName }" for="last-name"
-              >Sobrenome</label
-            >
+              >Sobrenome
+            </label>
+            <span v-if="v$.contactForm.lastName.$error">
+              {{ v$.contactForm.lastName.$errors[0].$message }}
+            </span>
           </div>
 
           <div class="divEmail inner">
@@ -59,8 +62,11 @@
             <label
               :class="{ active: contactForm.companyName }"
               for="company-name"
-              >Nome da Empresa</label
-            >
+              >Nome da Empresa
+            </label>
+            <span v-if="v$.contactForm.companyName.$error">
+              {{ v$.contactForm.companyName.$errors[0].$message }}
+            </span>
           </div>
 
           <div class="divSite inner">
@@ -72,8 +78,11 @@
             <label
               :class="{ active: contactForm.companySite }"
               for="company-site"
-              >Site da Empresa</label
-            >
+              >Site da Empresa
+            </label>
+            <span v-if="v$.contactForm.companySite.$error">
+              {{ v$.contactForm.companySite.$errors[0].$message }}
+            </span>
           </div>
         </div>
 
@@ -171,15 +180,22 @@ export default {
     contactForm: {
       firstName: {
         required: helpers.withMessage('Não pode estar vazio', required),
-        maxLength: helpers.withMessage('Max. 5 caracteres', maxLength(25)),
+        maxLength: helpers.withMessage('Max. 25 caracteres', maxLength(25)),
       },
-      lastName: {},
+      lastName: {
+        maxLength: helpers.withMessage('Max. 45 caracteres', maxLength(45)),
+      },
       email: {
         required: helpers.withMessage('Não pode estar vazio', required),
         email: helpers.withMessage('Não parece um email válido', email),
+        maxLength: helpers.withMessage('Max. 45 caracteres', maxLength(45)),
       },
-      companyName: {},
-      companySite: {},
+      companyName: {
+        maxLength: helpers.withMessage('Max. 45 caracteres', maxLength(45)),
+      },
+      companySite: {
+        maxLength: helpers.withMessage('Max. 45 caracteres', maxLength(45)),
+      },
       projectType: {
         required: helpers.withMessage('Não pode estar vazio', required),
       },
@@ -206,8 +222,6 @@ export default {
     const recaptcha = async () => {
       await recaptchaLoaded()
       const token = await executeRecaptcha('form_contact_projects')
-      // console.log(token)
-
       return token
     }
 
@@ -232,13 +246,12 @@ export default {
     submitForm() {
       this.v$.$touch()
       if (!this.v$.$invalid) {
-        console.log('Formulário válido')
         this.recaptcha().then((token) => {
           this.recaptchaToken = token
-          this.sendForm() // Chama sendForm após obter o token
+          this.sendForm()
         })
       } else {
-        console.log('Formulário inválido. Corrija os erros.')
+        return
       }
     },
 
@@ -265,8 +278,6 @@ export default {
 
           // Resposta recebida com sucesso
           const responseData = response.data
-          console.log(responseData)
-          console.log(responseData.message, responseData.statusCode)
           this.submitSituation = responseData
           this.reset()
         } catch {
