@@ -267,7 +267,6 @@ export default {
       }
 
       const token = this.recaptchaToken
-      console.log(formData, token)
 
       const execute = async (formData, token) => {
         try {
@@ -291,11 +290,6 @@ export default {
       }
 
       execute(formData, token)
-    },
-  },
-  watch: {
-    recaptchaToken() {
-      console.log('oi')
     },
   },
   mounted() {

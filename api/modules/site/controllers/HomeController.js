@@ -17,8 +17,6 @@ class HomeController {
   }
 
   async saveForm(req, res) {
-    console.log('chamou o backend controller');
-
     try {
       const { token } = req.body;
 
@@ -29,7 +27,6 @@ class HomeController {
           response: token
         }
       });
-      console.log(response.data);
 
       if (response.data.success && response.data.score > 0.5) {
         const { formData } = req.body;
@@ -73,20 +70,35 @@ class HomeController {
           projectDetails: formData.projectDetails ? validator.escape(formData.projectDetails) : '',
         };
 
-        console.log('Batatinha', sanitizedFormData);
         const model = new HomeModel();
         const result = await model.saveFormSQL(sanitizedFormData);
 
         if (result) {
-          return res.status(200).json({ statusCode: 200, message: 'Mensagem enviada com sucesso!' });
+          return res.status(200).json(
+            {
+              statusCode: 200,
+              message: 'Mensagem enviada com sucesso!'
+            });
         } else {
-          return res.status(400).json({ statusCode: 400, message: 'Houve um erro #S4002 - Tente enviar sua mensagem através do chat online se o erro persistir!' });
+          return res.status(400).json(
+            {
+              statusCode: 400,
+              message: 'Houve um erro #S4002 - Tente enviar sua mensagem através do chat online se o erro persistir!'
+            });
         }
       } else {
-        return res.status(400).json({ statusCode: 400, message: 'Erro #T4002 -  Sua mensagem não foi enviada! Tente enviar sua mensagem através do chat online se o erro persistir!' });
+        return res.status(400).json(
+          {
+            statusCode: 400,
+            message: 'Erro #T4002 -  Sua mensagem não foi enviada! Tente enviar sua mensagem através do chat online se o erro persistir!'
+          });
       }
     } catch {
-      return res.status(500).json({ statusCode: 500, message: 'Erro interno! Sua mensagem não foi enviada! Tente enviar sua mensagem através do chat online se o erro persistir!' });
+      return res.status(500).json(
+        {
+          statusCode: 500,
+          message: 'Erro interno! Sua mensagem não foi enviada! Tente enviar sua mensagem através do chat online se o erro persistir!'
+        });
     }
   }
 

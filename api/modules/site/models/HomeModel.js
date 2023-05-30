@@ -10,7 +10,6 @@ class HomeModel {
       `SELECT about.description, image_about.path FROM about
       JOIN image_about ON about.id = image_about.fk_about_id`, (err, aboutResults) => {
       if (err) {
-        console.log(err)
         result(err, null)
       } else {
         homeData.about = aboutResults
@@ -18,7 +17,6 @@ class HomeModel {
         // Buscar informações da tabela "services"
         query("SELECT * FROM services", (err, servicesResults) => {
           if (err) {
-            console.log(err)
             result(err, null)
           } else {
             homeData.services = servicesResults
@@ -28,7 +26,6 @@ class HomeModel {
               `SELECT portfolio.title, portfolio.description, image_portfolio.path FROM portfolio
                 JOIN image_portfolio ON portfolio.id = image_portfolio.fk_portfolio_id`, (err, portfolioResults) => {
               if (err) {
-                console.log(err)
                 result(err, null)
               } else {
                 homeData.portfolio = portfolioResults
@@ -37,7 +34,6 @@ class HomeModel {
                 query(
                   `SELECT testimonials.title, testimonials.description, testimonials.name, testimonials.image_path FROM testimonials`, (err, testimonialsResults) => {
                     if (err) {
-                      console.log(err)
                       result(err, null)
                     } else {
                       homeData.testimonials = testimonialsResults
@@ -47,7 +43,6 @@ class HomeModel {
                         `SELECT portfolio.title, portfolio.description, image_portfolio.path FROM portfolio
                 JOIN image_portfolio ON portfolio.id = image_portfolio.fk_portfolio_id`, (err, portfolioResults) => {
                         if (err) {
-                          console.log(err)
                           result(err, null)
                         } else {
                           homeData.portfolio = portfolioResults
@@ -56,13 +51,10 @@ class HomeModel {
                           query(
                             `SELECT * FROM categories`, (err, categoriesResults) => {
                               if (err) {
-                                console.log(err)
                                 result(err, null)
                               } else {
                                 homeData.categories = categoriesResults
-
                                 result(null, homeData)
-                                // console.log(homeData)
                               }
                             }
                           )
