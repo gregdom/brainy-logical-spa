@@ -6,9 +6,6 @@
       :subTitleHero="service ? service.description_short : ''"
     />
     <main>
-      <!-- <h1>{{ service.title }}</h1>
-      <p>{{ service.longText }}</p> -->
-
       <section class="whatIs">
         <div class="wrapper">
           <h3>O Que é {{ service ? service.title : '' }}</h3>
@@ -18,26 +15,6 @@
               class="what-is-col"
               v-html="service ? service.description_long : ''"
             ></div>
-
-            <!-- <div class="what-is-col">
-              <p>
-                Corporate website development is a challenging task. Several
-                basic principles help to build a successful business site:
-              </p>
-
-              <ul>
-                <li>Starting from a marketing audit, depth UX research</li>
-                <li>Creating clear site structure, easy to navigate</li>
-                <li>Creating professional UI/UX design for a website</li>
-                <li>Using elements of the corporate Identity</li>
-                <li>A site must be safe, reliable, stable, and scalable</li>
-                <li>Providing accurate information to visitors</li>
-                <li>
-                  A site should inform, engage, and convert the right audience
-                </li>
-                <li>SEO-friendly</li>
-              </ul>
-            </div> -->
           </div>
         </div>
       </section>
@@ -187,9 +164,6 @@ export default {
     }
   },
   computed: {
-    // service() {
-    //   return this.$store.getters.getServiceByLink(this.serviceName)
-    // },
     ...mapState(['services']),
     service() {
       return this.$store.getters.getServiceByLink(this.serviceName)
@@ -208,7 +182,6 @@ export default {
     this.populateStoreArr()
   },
   mounted() {
-    console.log(this.serviceName)
     let callToAction = document.querySelector('.hero .call-to-action')
     callToAction.style.display = 'none'
 
@@ -268,7 +241,7 @@ section.whatIs {
         }
 
         ul {
-          list-style: none; /* Remove default bullets */
+          list-style: none;
 
           li {
             margin-bottom: 20px;
@@ -323,8 +296,6 @@ section.work-process {
         margin: 0;
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
         color: #fff;
-        // text-transform: uppercase;
-        // margin-bottom: 20px;
 
         span {
           padding: 0 5px;
@@ -443,12 +414,6 @@ section.fixed-price {
           }
 
           span {
-            // width: 28px;
-            // height: 28px;
-            // display: flex;
-            // justify-content: center;
-            // align-items: center;
-            // color: #fff;
             opacity: 0.7;
 
             &.check {
@@ -492,21 +457,6 @@ section.fixed-price {
             margin-bottom: 0;
           }
         }
-
-        // &.corporate {
-        //   color: #fff;
-        //   background: $color-branding;
-
-        //   ul {
-        //     li {
-        //       border-top: 1px solid #658bff;
-
-        //       &:last-child {
-        //         border-bottom: 1px solid #658bff;
-        //       }
-        //     }
-        //   }
-        // }
       }
     }
   }
@@ -622,8 +572,6 @@ section.fixed-price {
           text-align: left;
           text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
           color: #fff;
-          // text-transform: uppercase;
-          // margin-bottom: 20px;
         }
 
         .subtitle {

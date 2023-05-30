@@ -40,7 +40,6 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 57px 0 64px 0;
-  // background: #fff;
 
   .wrapper {
     width: calc(100% - 48px);
@@ -60,7 +59,6 @@ export default {
     .block-services {
       display: flex;
       flex-wrap: wrap;
-      // flex-direction: column;
       justify-content: center;
       align-items: center;
 
@@ -102,11 +100,6 @@ export default {
         .block-cards {
           max-width: 300px;
           margin-right: 20px;
-          // margin-bottom: 0px !important;
-
-          // &:nth-child(2n) {
-          //   margin-right: 0;
-          // }
 
           &:last-child {
             margin-right: 0;
@@ -116,32 +109,4 @@ export default {
     }
   }
 }
-
-// @media (min-width: 1020px) {
-//   .services {
-//     padding: 50px 0 64px 0;
-
-//     .wrapper {
-//       width: 90%;
-
-//       .block-services {
-//         display: flex;
-
-//         .block-cards {
-//           max-width: 300px;
-//           margin-right: 20px;
-//           // margin-bottom: 0px !important;
-
-//           &:nth-child(2n) {
-//             margin-right: 20px;
-//           }
-
-//           &:last-child {
-//             margin-right: 0;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
 </style>

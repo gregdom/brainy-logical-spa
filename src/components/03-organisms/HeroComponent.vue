@@ -151,10 +151,8 @@ export default {
 
     h1 {
       margin-bottom: 32px;
-      // padding-top: 80px;
       font-size: calc(1.525rem + 3.3vw);
       font-weight: 700;
-      // line-height: ;
       text-align: center;
       text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
       color: #fff;
@@ -178,7 +176,6 @@ export default {
     }
 
     .call-to-action {
-      // border: 2px solid #fff;
       background: $color-highlight;
       color: #33373b;
     }

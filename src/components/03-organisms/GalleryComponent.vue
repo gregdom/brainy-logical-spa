@@ -29,8 +29,6 @@
 </template>
 
 <script>
-// import { CardProject } from '../02-molecules'
-
 export default {
   components: {},
   data() {
@@ -88,7 +86,6 @@ export default {
       .details {
         width: 100%;
         height: auto;
-        // padding: 0 20px;
 
         h4 {
           padding: 20px 0 15px 0;
@@ -141,17 +138,4 @@ export default {
     }
   }
 }
-
-// @media (min-width: 1171px) {
-//   // section
-//   .gallery {
-//     .wrapper {
-//       width: 100%;
-//       max-width: 1170px;
-//       margin: 0 auto;
-//       padding-left: 20px;
-//       padding-right: 20px;
-//     }
-//   }
-// }
 </style>

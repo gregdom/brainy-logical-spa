@@ -157,25 +157,6 @@ export default {
           z-index: 0;
         }
       }
-
-      // .text-wy-6460e1a96fce0::before {
-      //   content: 'Sobre';
-      //   font-size: 200px;
-      //   transform: translate(0, -25%);
-      //   animation: title-parallax-move-why-us 8s infinite both;
-      // }
-      // .title-parallax::before {
-      //   height: auto;
-      //   line-height: 1;
-      //   display: block;
-      //   text-transform: uppercase;
-      //   text-align: center;
-      //   font-family: BebasNeue, Helvetica, Arial, sans-serif;
-      //   font-weight: 700;
-      //   z-index: 0;
-      //   width: 95%;
-      //   margin: 0 auto;
-      // }
     }
   }
 }

@@ -34,8 +34,6 @@ export default {
   padding: 20px 0;
   position: absolute;
   z-index: 2000;
-  // background: blue;
-  // background: $color-branding-gradient;
 
   .wrapper {
     @extend %base-wrapper;
@@ -89,7 +87,6 @@ export default {
 
       .nav {
         all: unset;
-        // display: flex;
 
         .top {
           display: none;
@@ -116,10 +113,6 @@ export default {
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(-20px);
-
-                // .nav-link {
-                //   opacity: 1;
-                // }
               }
             }
 
@@ -175,10 +168,8 @@ export default {
               line-height: 40px;
               margin-left: 0;
               padding-left: 20px;
-              // opacity: 0;
               font-size: 0.925rem;
               color: #353535;
-              // transition: 0.2s;
 
               &:hover {
                 background: rgba(0, 0, 0, 0.1);

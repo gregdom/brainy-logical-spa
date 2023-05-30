@@ -363,20 +363,17 @@ export default {
     height: auto;
     margin: 0 auto;
     padding: 0 20px 20px 20px;
-    // border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // background: #fff;
 
     h3 {
       font-size: $section-title-size;
       text-align: center;
       margin: 0 0 16px 0;
       color: $color-text-dark;
-      // margin-bottom: 20px;
     }
 
     .subtitle {

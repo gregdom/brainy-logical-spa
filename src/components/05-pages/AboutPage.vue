@@ -11,5 +11,3 @@ export default {
   components: { AboutTemplate },
 }
 </script>
-
-<style lang="scss" scoped></style>

@@ -12,8 +12,6 @@ export default {
     const recaptcha = async () => {
       await recaptchaLoaded()
       const token = await executeRecaptcha('form_contact_projects')
-      // console.log(token)
-
       return token
     }
 

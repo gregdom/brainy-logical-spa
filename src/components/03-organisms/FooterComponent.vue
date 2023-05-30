@@ -52,7 +52,6 @@ export default {
   width: 100%;
   max-width: 1400px;
   height: auto;
-  // margin: 92px auto 0 auto;
   margin: 0 auto;
   padding: 57px 0 20px 0;
   background: $color-general-text;
@@ -71,7 +70,6 @@ export default {
       height: auto;
       padding: 20px;
       margin-top: -50%;
-      // display: flex;
       display: none;
       flex-direction: column;
       justify-content: center;

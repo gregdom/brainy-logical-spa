@@ -74,19 +74,6 @@
                   </p>
                 </article>
               </a>
-
-              <!-- <a href="#">
-                <article>
-                  <img
-                    src="../../../assets/images/web.png"
-                    alt="Imagem ilustrativa serviço web"
-                  />
-                  <h4 class="card-title">Site para Afiliados</h4>
-                  <p class="card-descr">
-                    Find out how to create a high-quality corporate website
-                  </p>
-                </article>
-              </a> -->
             </div>
           </div>
         </div>
@@ -253,12 +240,6 @@ export default {
     HeroComponent,
     FooterComponent,
   },
-  // props: {
-  //   serviceName: {
-  //     type: String,
-  //     required: true,
-  //   },
-  // },
   data() {
     return {
       slidesPerView: 1,
@@ -326,9 +307,6 @@ export default {
       font-size: $section-title-size;
       text-align: center;
       margin: 0 0 32px 0;
-      // text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-      // text-transform: uppercase;
-      // margin-bottom: 20px;
     }
 
     .block-cards {
@@ -339,7 +317,6 @@ export default {
         padding: 48px 30px 64px 30px;
         display: block;
         text-decoration: none;
-        // border-top: 5px solid $color-highlight;
         transition: 0.2s;
         color: #fff;
         background: $color-branding;
@@ -411,8 +388,6 @@ export default {
         margin: 0 0 20px 0;
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
         color: #fff;
-        // text-transform: uppercase;
-        // margin-bottom: 20px;
 
         span {
           padding: 0 5px;
@@ -462,35 +437,24 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 64px 0 64px 0;
-  // background: $color-branding;
 
   .wrapper {
     width: calc(100% - 48px);
     height: auto;
     margin: 0 auto;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
 
     h3 {
       font-size: $section-title-size;
       text-align: center;
       margin: 0 0 64px 0;
-      // text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
       color: #000;
-      // text-transform: uppercase;
-      // margin-bottom: 20px;
     }
 
     .cards {
       .elementSwiperSlide {
         width: 100%;
-        // max-width: auto;
         height: auto;
         padding: 0 0 64px 0;
-        // border: 1px solid rgba(0, 0, 0, 0.1);
-        // border-radius: 10px;
         background: $color-branding;
 
         .imageContainer {
@@ -522,7 +486,6 @@ export default {
             padding-bottom: 20px;
             font-size: $font-size-base;
             line-height: $general-line-height;
-            // font-style: italic;
             text-align: center;
             color: $color-text-light;
           }
@@ -713,8 +676,6 @@ export default {
           text-align: left;
           text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
           color: #fff;
-          // text-transform: uppercase;
-          // margin-bottom: 20px;
         }
 
         .subtitle {

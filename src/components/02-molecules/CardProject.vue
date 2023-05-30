@@ -40,13 +40,9 @@ export default {
 
 <style lang="scss" scoped>
 .cardProject {
-  // width: 100%;
-  // max-width: 300px;
   height: auto;
-  // padding: 0 0 20px 0;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -62,10 +58,8 @@ export default {
     align-items: center;
 
     img {
-      // width: calc(100% - 40px);
       width: 100%;
       max-width: 460px;
-      // margin-top: 20px;
     }
   }
 

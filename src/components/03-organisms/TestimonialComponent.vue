@@ -51,7 +51,6 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    // CardTestimonial,
   },
   data() {
     return {
@@ -104,7 +103,6 @@ export default {
     width: calc(100% - 48px);
     height: auto;
     margin: 0 auto;
-    // background: #fff;
 
     h3 {
       margin: 0 auto 32px auto;
@@ -120,7 +118,6 @@ export default {
       max-width: auto;
       height: auto;
       padding: 0 0 20px 0;
-      // border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       background: #fff;
 
@@ -169,8 +166,6 @@ export default {
     }
 
     .mySwiper {
-      // background-color: #fff !important;
-
       .swiper-button-next,
       .swiper-button-prev {
         color: #000 !important;

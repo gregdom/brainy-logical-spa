@@ -51,11 +51,6 @@ export default {
   width: 100%;
   max-width: 300px;
   height: auto;
-  // padding: 0 0 20px 0;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
@@ -64,9 +59,6 @@ export default {
   .imageContainer {
     width: 100%;
     height: auto;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
 
     img {
       width: calc(100% - 40px);

@@ -53,9 +53,6 @@ export default {
       }
 
       console.log(formData)
-
-      // Faça o que desejar com os dados do formulário aqui
-
       this.resetForm()
     },
 

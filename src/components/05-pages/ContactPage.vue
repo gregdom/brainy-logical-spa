@@ -11,5 +11,3 @@ export default {
   components: { ContactTemplate },
 }
 </script>
-
-<style lang="scss" scoped></style>
