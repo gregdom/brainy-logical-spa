@@ -212,6 +212,8 @@
           </div>
         </div>
       </section>
+
+      <contact-form-component :mainTitle="'A Brainy Faz Seu Projeto'" />
     </main>
     <footer-component />
   </div>
@@ -227,6 +229,7 @@ import { Pagination, Navigation } from 'swiper'
 import {
   HeaderComponent,
   HeroComponent,
+  ContactFormComponent,
   FooterComponent,
 } from '../../03-organisms'
 
@@ -238,6 +241,7 @@ export default {
     SwiperSlide,
     HeaderComponent,
     HeroComponent,
+    ContactFormComponent,
     FooterComponent,
   },
   data() {

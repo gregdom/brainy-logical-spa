@@ -7,6 +7,7 @@
     />
     <main>
       <projects-component />
+      <contact-form-component :mainTitle="'A Brainy Faz Seu Projeto'" />
     </main>
     <footer-component />
   </div>
@@ -17,6 +18,7 @@ import {
   HeaderComponent,
   HeroComponent,
   ProjectsComponent,
+  ContactFormComponent,
   FooterComponent,
 } from '../03-organisms'
 
@@ -25,6 +27,7 @@ export default {
     HeaderComponent,
     HeroComponent,
     ProjectsComponent,
+    ContactFormComponent,
     FooterComponent,
   },
   mounted() {
@@ -36,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
-  padding-bottom: 132px;
+  padding-bottom: 100px;
 }
 
 .footer {

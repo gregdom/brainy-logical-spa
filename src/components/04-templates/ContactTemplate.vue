@@ -29,43 +29,6 @@ export default {
     ContactFormComponent,
     FooterComponent,
   },
-  data() {
-    return {
-      firstName: '',
-      lastName: '',
-      email: '',
-      companyName: '',
-      companySite: '',
-      projectType: 'default',
-      projectDetails: '',
-    }
-  },
-  methods: {
-    submitForm() {
-      const formData = {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        email: this.email,
-        companyName: this.companyName,
-        companySite: this.companySite,
-        projectType: this.projectType,
-        projectDetails: this.projectDetails,
-      }
-
-      console.log(formData)
-      this.resetForm()
-    },
-
-    resetForm() {
-      this.firstName = ''
-      this.lastName = ''
-      this.email = ''
-      this.companyName = ''
-      this.companySite = ''
-      this.projectType = ''
-      this.projectDetails = ''
-    },
-  },
   mounted() {
     let callToAction = document.querySelector('.call-to-action')
     callToAction.style.display = 'none'
