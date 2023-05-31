@@ -33,10 +33,11 @@
               <div class="num">1</div>
               <div class="desc">
                 <p>
-                  Professional website development services. Custom website
-                  development that is responsive to your needs. Our team creates
-                  user-friendly, mobile-friendly, SEO-friendly websites that
-                  maximize revenue and help grow your business.
+                  Nossa equipe realiza uma análise aprofundada das necessidades
+                  do cliente, compreendendo seus objetivos e público-alvo. Com
+                  base nisso, criamos conceitos de
+                  <b>Design centrados no usuário (UX/UI)</b> para garantir uma
+                  experiência atraente e intuitiva.
                 </p>
               </div>
             </div>
@@ -45,10 +46,11 @@
               <div class="num">2</div>
               <div class="desc">
                 <p>
-                  Web application development services. F5 Studio builds web
-                  apps that solve manufacturing, healthcare, retail,
-                  telecommunications, logistics, professional services, and
-                  education business challenges.
+                  Após a criação do Design, começamos o processo de codificação.
+                  Utilizamos linguagens modernas para implementar a solução web.
+                  Seguimos as melhores práticas de desenvolvimento e otimização
+                  para os mecanismos de busca (SEO), visando melhorar a
+                  visibilidade online.
                 </p>
               </div>
             </div>
@@ -57,11 +59,12 @@
               <div class="num">3</div>
               <div class="desc">
                 <p>
-                  WordPress development services. WordPress is an excellent
-                  platform for building ROI-driven business websites that are
-                  SEO-friendly and deliver control and security. F5 Studio’s
-                  expertise is in providing cost-effective WordPress development
-                  services for business needs.
+                  Ao finalizarmos o projeto, realizamos a implantação do
+                  site/aplicação em um ambiente de produção. Nesse momento seu
+                  projeto estará no ar disponível para o mundo. E para que você
+                  saiba usar o produto final fornecemos treinamento e suporte
+                  para garantir que você esteja confortável no uso da solução
+                  web.
                 </p>
               </div>
             </div>
@@ -591,7 +594,7 @@ section.fixed-price {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-bottom: 0;
+          margin-bottom: 32px;
           padding-right: 50px;
 
           .num {

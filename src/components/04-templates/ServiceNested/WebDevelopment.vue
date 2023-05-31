@@ -114,7 +114,7 @@
                   Nossa equipe cria projetos web sob medida, ouvindo as
                   necessidades que você tem e os objetivos que deseja alcançar.
                   Assim conseguimos criar um laço de confiança com você e
-                  refletir isso na projeto final.
+                  refletir isso no projeto final.
                 </p>
               </div>
             </div>
