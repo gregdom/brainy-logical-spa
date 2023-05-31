@@ -1,7 +1,9 @@
 <template>
   <div class="cardService">
     <div class="iconContainer">
-      <img :src="imageSrc" alt="Icon" />
+      <div class="divBorder">
+        <img :src="imageSrc" alt="Icon" />
+      </div>
     </div>
 
     <div class="details">
@@ -68,10 +70,18 @@ export default {
     align-items: center;
     background: $color-branding-gradient;
 
-    img {
-      padding: 20px;
+    .divBorder {
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       border: 2px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 48px;
+      }
     }
   }
 

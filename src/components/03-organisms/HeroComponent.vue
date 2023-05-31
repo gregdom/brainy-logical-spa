@@ -36,7 +36,7 @@ export default {
       let texto = palavra1.textContent
 
       // Define a palavra a ser destacada com uma classe de destaque
-      let palavraDestaque = 'Impulsionar'
+      let palavraDestaque = 'Transformar'
       let palavraDestaqueComSpan =
         '<span class="highlightColorText">' + palavraDestaque + '</span>'
 
@@ -218,7 +218,7 @@ export default {
 @media (min-width: 768px) {
   .hero {
     .wrapper {
-      width: 668px;
+      width: 680px;
 
       .call-to-action {
         width: 40%;
