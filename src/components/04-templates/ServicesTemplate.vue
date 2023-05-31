@@ -2,8 +2,8 @@
   <div>
     <header-component />
     <hero-component
-      titleHero="Seu Projeto Web Sob Medida"
-      subTitleHero="Soluções personalizadas para atender às suas necessidades, com uma equipe dedicada a oferecer serviços de desenvolvimento e programação de websites de qualidade."
+      titleHero="Construimos Projetos Incríveis Para A Web"
+      subTitleHero="Soluções personalizadas para atender às suas necessidades, com uma equipe dedicada a oferecer serviços de Desenvolvimento Web de qualidade."
     />
 
     <main>

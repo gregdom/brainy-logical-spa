@@ -94,7 +94,11 @@ export default {
           }
 
           &:nth-child(2n + 1) {
-            margin-right: 20px;
+            margin-right: 10px;
+          }
+
+          &:nth-child(2n + 0) {
+            margin-left: 10px;
           }
 
           &:nth-last-child(-n + 2) {

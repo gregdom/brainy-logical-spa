@@ -2,7 +2,7 @@
   <div>
     <header-component />
     <hero-component
-      titleHero="Criamos Projetos Para A Web"
+      titleHero="Serviço de Criação Web"
       :subTitleHero="service ? service.description_short : ''"
     />
     <main>
@@ -11,15 +11,15 @@
           <div class="block-desc">
             <h3>Serviço de Criação Web</h3>
             <span class="subtitle">
-              HTML5/CSS3 - PHP (Laravel, CodeIgniter, Symfony, CakePHP, Yii) -
-              JavaScript (Angular.js, React.js, Vue.js, Node.js, Backbone.js) -
-              Python (Django)
+              Utilizando as tecnologias HTML5/CSS3 (Sass/SCSS), JavaScript
+              (Vue.js, Node.js, Express), MySQL entre outras, construimos Sites
+              e Extensões Web de alto desempenho e interativos.
             </span>
           </div>
 
           <div class="block-cards">
             <div class="columns">
-              <a href="#" class="link1">
+              <a href="corporate-website-development" class="link1">
                 <article>
                   <img
                     src="../../../assets/images/web.png"
@@ -27,14 +27,14 @@
                   />
                   <h4 class="card-title">Site Empresarial</h4>
                   <p class="card-descr">
-                    Find out how to create a high-quality corporate website
+                    Sua empresa em um espaço online 24 horas por dia
                   </p>
                 </article>
               </a>
             </div>
 
             <div class="columns">
-              <a href="#" class="link2">
+              <a href="startup-website-development" class="link2">
                 <article>
                   <img
                     src="../../../assets/images/web.png"
@@ -42,12 +42,12 @@
                   />
                   <h4 class="card-title">Site para Startup</h4>
                   <p class="card-descr">
-                    Find out how to create a high-quality corporate websitee
+                    Potencialize sua startup com um site inovador e escalável.
                   </p>
                 </article>
               </a>
 
-              <a href="#" class="link3">
+              <a href="landing-page-website-development" class="link3">
                 <article>
                   <img
                     src="../../../assets/images/web.png"
@@ -55,14 +55,15 @@
                   />
                   <h4 class="card-title">Landing Pages</h4>
                   <p class="card-descr">
-                    Find out how to create a high-quality corporate website
+                    Tenha uma Landing Page funcional para capturar leads e fazer
+                    vendas.
                   </p>
                 </article>
               </a>
             </div>
 
             <div class="columns">
-              <a href="#" class="link4">
+              <a href="extension-development" class="link4">
                 <article>
                   <img
                     src="../../../assets/images/web.png"
@@ -70,7 +71,8 @@
                   />
                   <h4 class="card-title">Extensões Web</h4>
                   <p class="card-descr">
-                    Find out how to create a high-quality corporate website
+                    Explore novas funções e personalize o seu navegador com
+                    extensões.
                   </p>
                 </article>
               </a>
@@ -624,7 +626,8 @@ export default {
 
       .block-cards {
         width: 100%;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         margin-top: 0;
 
         .columns {
@@ -641,7 +644,7 @@ export default {
           a {
             padding: 32px 32px;
             position: relative;
-            transition: transform 0.3s ease;
+            transition: 0.2s;
 
             &:hover {
               transform: translateY(-10px);
