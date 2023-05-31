@@ -99,10 +99,10 @@
               <div class="num">1</div>
               <div class="desc">
                 <p>
-                  Professional website development services. Custom website
-                  development that is responsive to your needs. Our team creates
-                  user-friendly, mobile-friendly, SEO-friendly websites that
-                  maximize revenue and help grow your business.
+                  Construimos sites personalizados e responsivos, utilizando as
+                  melhores práticas de desenvolvimento, tecnologias modernas e
+                  SEO amigável para impulsionar sua presença online e trazer
+                  visibilidade para o seu negócio.
                 </p>
               </div>
             </div>
@@ -111,10 +111,10 @@
               <div class="num">2</div>
               <div class="desc">
                 <p>
-                  Web application development services. F5 Studio builds web
-                  apps that solve manufacturing, healthcare, retail,
-                  telecommunications, logistics, professional services, and
-                  education business challenges.
+                  Nossa equipe cria projetos web sob medida, ouvindo as
+                  necessidades que você tem e os objetivos que deseja alcançar.
+                  Assim conseguimos criar um laço de confiança com você e
+                  refletir isso na projeto final.
                 </p>
               </div>
             </div>
@@ -123,11 +123,11 @@
               <div class="num">3</div>
               <div class="desc">
                 <p>
-                  WordPress development services. WordPress is an excellent
-                  platform for building ROI-driven business websites that are
-                  SEO-friendly and deliver control and security. F5 Studio’s
-                  expertise is in providing cost-effective WordPress development
-                  services for business needs.
+                  Sabemos que seus clientes podem estar em vários lugares e que
+                  o seu negócio deve estar preparado para entregar uma boa
+                  experiência tanto no mobile quanto no desktop. Por isso
+                  entregamos apenas sites e aplicações responsivas, que se
+                  adaptam a todas as telas.
                 </p>
               </div>
             </div>
@@ -136,10 +136,10 @@
               <div class="num">4</div>
               <div class="desc">
                 <p>
-                  Ecommerce development services. F5 Studio brings your
-                  e-commerce business to life with professional UI/UX design, a
-                  responsive online store, and custom functionality. We provide
-                  e-commerce site development, site migration, and integrations.
+                  Garantimos que seu site seja rápido, moderno, responsivo e
+                  tenha SEO amigável, seguindo as melhores práticas de
+                  desenvolvimento atuais, para que você obtenha melhores
+                  resultados e alcance seu público-alvo de forma eficaz.
                 </p>
               </div>
             </div>
@@ -310,9 +310,13 @@ export default {
     align-items: center;
 
     h3 {
+      margin: 0 0 32px 0;
       font-size: $section-title-size;
       text-align: center;
-      margin: 0 0 32px 0;
+    }
+
+    .subtitle {
+      line-height: $general-line-height;
     }
 
     .block-cards {
