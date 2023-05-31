@@ -85,8 +85,8 @@
         <div class="wrapper">
           <div class="firstBlock">
             <h3>
-              Quais são os serviços de desenvolvimento Web da
-              <span>Brainy</span>?
+              O que faz a <span>Brainy</span> ser a melhor escolha para criar
+              seu projeto?
             </h3>
 
             <span class="subtitle"
@@ -149,7 +149,7 @@
 
       <section class="benefits">
         <div class="wrapper">
-          <h3>Your Benefits. Our Key Expertise</h3>
+          <h3>Seu sucesso. Nossa especialização.</h3>
 
           <div class="cards">
             <swiper
@@ -165,48 +165,59 @@
             >
               <swiper-slide class="elementSwiperSlide benefit1">
                 <div class="imageContainer">
-                  <img src="../../../assets/images/web.png" alt="" />
+                  <img
+                    src="../../../assets/images/icons8-conversa-64.png"
+                    alt=""
+                  />
                 </div>
 
                 <div class="details">
-                  <h4>Optimize a marketing budget</h4>
+                  <h4>Proximidade com seu cliente</h4>
 
                   <p class="single-service-flip__text--full">
-                    The Internet is still affordable to promote your business
-                    compared to other marketing channels. F5 Studio’s approaches
-                    allow you to achieve your business goals cost-effectively.
+                    Com um site você permite uma comunicação direta e imediata
+                    dos seus clientes com seu negócio, criando um canal de
+                    interação e facilitando o atendimento personalizado.
                   </p>
                 </div>
               </swiper-slide>
 
               <swiper-slide class="elementSwiperSlide benefit2">
                 <div class="imageContainer">
-                  <img src="../../../assets/images/web.png" alt="" />
+                  <img
+                    width="75"
+                    src="../../../assets/images/icons8-homem-conversando-80.png"
+                    alt=""
+                  />
                 </div>
 
                 <div class="details">
-                  <h4>Optimize a marketing budget</h4>
+                  <h4>Relacionamento com a marca</h4>
 
                   <p class="single-service-flip__text--full">
-                    The Internet is still affordable to promote your business
-                    compared to other marketing channels. F5 Studio’s approaches
-                    allow you to achieve your business goals cost-effectively.
+                    Construa um relacionamento sólido e duradouro com seus
+                    clientes por meio do seu site. Através dele é possível
+                    captar leads interessados na sua marca e fornecer novidades.
                   </p>
                 </div>
               </swiper-slide>
 
               <swiper-slide class="elementSwiperSlide benefit3">
                 <div class="imageContainer">
-                  <img src="../../../assets/images/web.png" alt="" />
+                  <img
+                    src="../../../assets/images/icons8-gostar-64.png"
+                    alt=""
+                  />
                 </div>
 
                 <div class="details">
-                  <h4>Optimize a marketing budget</h4>
+                  <h4>Visibilidade do negócio</h4>
 
                   <p class="single-service-flip__text--full">
-                    The Internet is still affordable to promote your business
-                    compared to other marketing channels. F5 Studio’s approaches
-                    allow you to achieve your business goals cost-effectively.
+                    Um website traz visibilidade para seu negócio, garantindo
+                    presença online, acesso global e destaque frente à
+                    concorrência. Estar na web é essencial para qualquer negócio
+                    atual!
                   </p>
                 </div>
               </swiper-slide>
@@ -401,7 +412,6 @@ export default {
 
         span {
           padding: 0 5px;
-          margin-right: 5px;
           color: $color-general-text;
           text-shadow: none;
           background: $color-highlight;
@@ -412,6 +422,7 @@ export default {
         font-size: 1rem;
         color: #fff;
         text-align: center;
+        display: none;
       }
     }
 
@@ -469,7 +480,7 @@ export default {
 
         .imageContainer {
           width: 100%;
-          height: auto;
+          height: 120px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -483,7 +494,7 @@ export default {
         .details {
           width: 100%;
           height: auto;
-          padding: 0 20px;
+          padding: 0 25px;
 
           h4 {
             padding: 20px 0 15px 0;
@@ -502,11 +513,11 @@ export default {
         }
 
         &.benefit2 {
-          background: #429ffc;
+          background: $color-branding;
         }
 
         &.benefit3 {
-          background: #98aa22;
+          background: $color-branding;
         }
       }
 
