@@ -78,7 +78,7 @@ class HomeModel {
   }
 
   async saveFormSQL(formData) {
-    const sql_query = 'INSERT INTO brainylogicaldb.visitors (id, name, lastname, email, business, website, descriptionProject, created_at, fk_visitor_status_id, fk_category_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)'
+    const sql_query = 'INSERT INTO brainylogicaldb.visitors (id, name, lastname, email, business, website, descriptionProject, addressIP, created_at, fk_visitor_status_id, fk_category_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)'
 
     const values = [
       formData.firstName,
@@ -87,6 +87,7 @@ class HomeModel {
       formData.companyName !== '' ? formData.companyName : null,
       formData.companySite !== '' ? formData.companySite : null,
       formData.projectDetails,
+      formData.userIP,
       '1',
       formData.projectType
     ]
@@ -96,6 +97,35 @@ class HomeModel {
       return true
     } catch (error) {
       return false
+    }
+  }
+
+  async findIP(addressIP) {
+    const sql_query = `SELECT created_at FROM brainylogicaldb.visitors WHERE addressIP = ? ORDER BY created_at DESC LIMIT 1`
+
+    try {
+      const result = await query(sql_query, [addressIP])
+
+      if (result.length > 0) {
+        const lastAccessTime = result[0].created_at
+        const currentTime = new Date()
+
+        const diffInMinutes = Math.floor((currentTime - lastAccessTime) / (1000 * 60))
+
+        if (diffInMinutes >= 30) {
+          console.log('Tudo certo. Passou o tempo necessário!')
+          return 200 // Se passaram 30 minutos, retorna 'tudo certo'
+        } else {
+          console.log('Aguarde alguns minutos antes de fazer outro envio!')
+          return 400 // Caso contrário, retorna 'não pode continuar'
+        }
+      } else {
+        console.log('Nenhum acesso anterior')
+        return 200 // Se não encontrou nenhum acesso anterior, retorna 'tudo certo'
+      }
+    } catch (error) {
+      console.error('Erro ao verificar o IP:', error)
+      return 400 // Em caso de erro, retorne 'erro' ou trate-o de acordo com suas necessidades
     }
   }
 

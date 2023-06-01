@@ -61,7 +61,7 @@
         <a class="nav-link" href="/projects">Projetos</a>
       </li>
       <li>
-        <a class="nav-link" href="contact">Contato</a>
+        <a class="nav-link" href="/contact">Contato</a>
       </li>
     </ul>
   </nav>
