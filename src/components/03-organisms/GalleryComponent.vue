@@ -7,20 +7,23 @@
         <div class="imageGallery">
           <img
             src="../../assets/images/gamestore-servico-desenvolvimento-web.png"
-            alt=""
+            alt="Imagem do projeto"
           />
         </div>
 
         <div class="details">
           <h4>Loja Virtual GameStore</h4>
           <p>
-            ARCO Group is a customer focussed commercial construction firm set a
-            task to update their website. F5 Studio redesigned the website is by
-            approaching it with customers in mind. Our specialists started with
-            an analysis to create a website redesign strategy. We changed an
-            information architecture of a website. Our designers created a
-            modern design with improved UX. F5 Studio web developers correctly
-            built a WordPress site with customizations.
+            A GameStore é um marketplace de jogos online. Como uma loja virtual
+            especializada na venda de jogos, oferece uma plataforma para
+            empresas da área de games comercializarem seus produtos. Integrada
+            ao sistema de pagamento do Mercado Pago, a GameStore proporciona
+            transações seguras e confiáveis. <br />
+            Além disso, conta com um sistema de cadastro de empresas, permitindo
+            que elas inscrevam seus jogos na plataforma e acompanhem suas vendas
+            por meio de um dashboard intuitivo. Com essa funcionalidade, as
+            empresas podem gerenciar seus catálogos, monitorar o desempenho das
+            vendas e obter insights valiosos para impulsionar seus negócios.
           </p>
         </div>
       </div>

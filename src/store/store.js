@@ -41,7 +41,7 @@ const store = createStore({
           commit("setStoreData", response.data);
         })
         .catch(function (error) {
-          console.log(error);
+          return error
         });
     },
   },

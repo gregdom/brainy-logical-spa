@@ -80,7 +80,7 @@
             <div class="fixed-price-col">
               <div class="top">
                 <div class="imageContainer">
-                  <img src="../../../assets/images/web.png" alt="" />
+                  <img src="../../../assets/images/web.png" alt="Icon" />
                 </div>
                 <h4>Pacote Starter</h4>
               </div>
@@ -109,7 +109,7 @@
 
             <div class="fixed-price-col corporate">
               <div class="top">
-                <div class="imageContainer"><img src="" alt="" /></div>
+                <div class="imageContainer"><img src="" alt="Icon" /></div>
                 <h4>Pacote Empresarial</h4>
               </div>
 

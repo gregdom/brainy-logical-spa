@@ -22,7 +22,7 @@
               <a href="corporate-website-development" class="link1">
                 <article>
                   <img
-                    src="../../../assets/images/web.png"
+                    src="../../../assets/images/website-statistics-64.png"
                     alt="Imagem ilustrativa serviço web"
                   />
                   <h4 class="card-title">Site Empresarial</h4>
@@ -37,7 +37,7 @@
               <a href="startup-website-development" class="link2">
                 <article>
                   <img
-                    src="../../../assets/images/web.png"
+                    src="../../../assets/images/startup-48.png"
                     alt="Imagem ilustrativa serviço web"
                   />
                   <h4 class="card-title">Site para Startup</h4>
@@ -50,7 +50,7 @@
               <a href="landing-page-website-development" class="link3">
                 <article>
                   <img
-                    src="../../../assets/images/web.png"
+                    src="../../../assets/images/landing-page-64-black.png"
                     alt="Imagem ilustrativa serviço web"
                   />
                   <h4 class="card-title">Landing Pages</h4>
@@ -66,7 +66,7 @@
               <a href="extension-development" class="link4">
                 <article>
                   <img
-                    src="../../../assets/images/web.png"
+                    src="../../../assets/images/icons8-puzzle-64-black.png"
                     alt="Imagem ilustrativa serviço web"
                   />
                   <h4 class="card-title">Extensões Web</h4>
@@ -167,7 +167,7 @@
                 <div class="imageContainer">
                   <img
                     src="../../../assets/images/icons8-conversa-64.png"
-                    alt=""
+                    alt="Icon"
                   />
                 </div>
 
@@ -187,7 +187,7 @@
                   <img
                     width="75"
                     src="../../../assets/images/icons8-homem-conversando-80.png"
-                    alt=""
+                    alt="Icon"
                   />
                 </div>
 
@@ -206,7 +206,7 @@
                 <div class="imageContainer">
                   <img
                     src="../../../assets/images/icons8-gostar-64.png"
-                    alt=""
+                    alt="Icon"
                   />
                 </div>
 

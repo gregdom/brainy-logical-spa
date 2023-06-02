@@ -19,11 +19,9 @@ class HomeController {
   async saveForm(req, res) {
     try {
       const clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress
-      console.log(clientIP)
 
       const model = new HomeModel();
       const result = await model.findIP(clientIP)
-      console.log(result, 'UM RESULTADO')
 
       if (result === 400) {
         return res.status(400).json(

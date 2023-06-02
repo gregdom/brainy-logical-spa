@@ -12,7 +12,6 @@ const CONNECTION = mysql.createConnection({
 
 CONNECTION.connect(error => {
   if (error) throw error
-  console.log("Conectado ao banco de dados!")
 })
 
 export default CONNECTION

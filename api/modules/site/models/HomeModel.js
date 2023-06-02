@@ -113,18 +113,14 @@ class HomeModel {
         const diffInMinutes = Math.floor((currentTime - lastAccessTime) / (1000 * 60))
 
         if (diffInMinutes >= 30) {
-          console.log('Tudo certo. Passou o tempo necessário!')
           return 200 // Se passaram 30 minutos, retorna 'tudo certo'
         } else {
-          console.log('Aguarde alguns minutos antes de fazer outro envio!')
           return 400 // Caso contrário, retorna 'não pode continuar'
         }
       } else {
-        console.log('Nenhum acesso anterior')
         return 200 // Se não encontrou nenhum acesso anterior, retorna 'tudo certo'
       }
     } catch (error) {
-      console.error('Erro ao verificar o IP:', error)
       return 400 // Em caso de erro, retorne 'erro' ou trate-o de acordo com suas necessidades
     }
   }
