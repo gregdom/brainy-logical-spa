@@ -11,13 +11,9 @@
           <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
 
           <div class="social-media">
-            <a href="mailto:brainylogical@hotmail.com"
-              ><i class="fa-solid fa-envelope"></i
-            ></a>
-            <a href="https://www.youtube.com/@brainylogical" target="_blank"
-              ><i class="fa-brands fa-youtube"></i
-            ></a>
-            <a href="https://www.linkedin.com/brainylogical" target="_blank"
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" target="_blank"
               ><i class="fa-brands fa-linkedin"></i
             ></a>
           </div>

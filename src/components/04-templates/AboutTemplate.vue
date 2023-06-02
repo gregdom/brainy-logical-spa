@@ -11,39 +11,56 @@
         <div class="wrapper">
           <h4></h4>
           <p>
-            Começamos a desenvolver software corporativo e trazemos esse nível
-            de experiência para todos os projetos que realizamos. Nossos
-            cofundadores Nick e Mike tiveram a ideia da The Gnar Company
-            enquanto trabalhavam juntos em uma organização empresarial de
-            tecnologia da saúde, onde construíram produtos de software de última
-            geração. Eles começaram pequenos com projetos de desenvolvimento de
-            software contratados à noite e nos fins de semana e, em 2015,
-            lançaram o The Gnar em tempo integral. Eles nunca olharam para trás.
+            A Brainy Logical é uma empresa de desenvolvimento de softwares, web
+            e aplicações localizada em Santa Catarina, estado do sul do Brasil.
+            Com nossa paixão pela tecnologia e expertise no setor, estamos
+            prontos para transformar suas ideias em soluções digitais inovadoras
+            e eficientes.
           </p>
 
           <p>
-            Nossa equipe é unida e muitos de nós passamos anos trabalhando e
-            desenvolvendo software juntos. Após os primeiros meses, Nick e Mike
-            trouxeram outro ex-colega de trabalho, Pete Whiting, para se juntar
-            a Gnar como chefe de crescimento e atendimento ao cliente. A coesão
-            de nossa equipe nos ajuda a resolver os problemas de software mais
-            complicados de nossos clientes na velocidade da luz. Todos nós
-            contamos uns com os outros para dar uma mão ou uma ideia quando é
-            necessário. Por exemplo, cada linha de código escrita por um
-            engenheiro Gnar é revisada por outro, a fim de garantir a alta
-            qualidade consistente de todo o nosso código.
+            Nosso objetivo é fornecer serviços de desenvolvimento personalizados
+            que atendam às necessidades exclusivas de cada cliente. Com uma
+            equipe altamente qualificada e experiente, combinamos conhecimento
+            técnico avançado com criatividade para entregar produtos de alta
+            qualidade.
           </p>
 
           <p>
-            Se criar produtos de software personalizados confiáveis e bem
-            projetados que as empresas e os usuários adoram é o nosso pão com
-            manteiga, então criar parcerias positivas com nossos clientes é o
-            nosso molho secreto. Temos orgulho de nossa reputação de sermos
-            trabalhadores e despreocupados. Estamos no nosso melhor quando
-            aplicamos nosso profundo amor pelo código e nossos anos de
-            experiência em engenharia às necessidades e visões de nossos
-            clientes. Nenhum desafio é muito assustador; nenhum projeto muito
-            complicado. Quando estamos com você no gnar, é quando prosperamos.
+            Oferecemos uma ampla gama de serviços, incluindo desenvolvimento de
+            software personalizado, criação de sites responsivos e intuitivos,
+            desenvolvimento de aplicativos móveis, e muito mais. Trabalhamos de
+            perto com nossos clientes, entendendo suas metas e requisitos, para
+            criar soluções sob medida que impulsionem o crescimento e o sucesso
+            de seus negócios.
+          </p>
+
+          <p>
+            Nossa abordagem é centrada no cliente, colocando suas necessidades e
+            objetivos em primeiro lugar. Acreditamos na comunicação transparente
+            e no trabalho colaborativo para garantir que as expectativas sejam
+            atendidas e superadas. Combinamos as melhores práticas da indústria
+            com nossa criatividade e know-how tecnológico para criar produtos
+            funcionais, intuitivos e visualmente atraentes.
+          </p>
+
+          <p>
+            Além disso, estamos sempre atualizados com as últimas tendências e
+            avanços tecnológicos. Utilizamos ferramentas e linguagens modernas
+            para garantir que nossos projetos sejam desenvolvidos com as
+            melhores práticas de desenvolvimento, segurança e desempenho. Também
+            estamos atentos às necessidades de SEO, para que seus produtos
+            digitais estejam prontos para alcançar um público mais amplo e
+            melhorar sua visibilidade online.
+          </p>
+
+          <p>
+            Se você está procurando uma agência de desenvolvimento confiável,
+            criativa e orientada para resultados, a Brainy Logical é a escolha
+            certa. Estamos prontos para trabalhar em parceria com você,
+            fornecendo soluções digitais que impulsionam o sucesso do seu
+            negócio. Entre em contato conosco hoje mesmo para discutir suas
+            ideias e iniciar uma jornada tecnológica emocionante!
           </p>
         </div>
       </section>
