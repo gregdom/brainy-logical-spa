@@ -31,9 +31,10 @@ class HomeController {
           });
       } else {
         const { token } = req.body;
+        const secret = process.env.RECAPTCHA_SECRET
         const response = await axios.post('https://www.google.com/recaptcha/api/siteverify', null, {
           params: {
-            secret: '6LdwfzUmAAAAAD5JkA-sQFwpwHEAjYA0arpzkXxq',
+            secret: secret,
             response: token
           }
         });
