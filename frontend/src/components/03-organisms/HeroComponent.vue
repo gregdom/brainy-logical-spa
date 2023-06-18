@@ -5,7 +5,7 @@
         <h1>{{ titleHero }}</h1>
         <h2>{{ subTitleHero }}</h2>
 
-        <button-call-to-action buttonText="Nossos Projetos" />
+        <button-call-to-action link="/projects" buttonText="Nossos Projetos" />
         <div class="arrow-bottom">
           <span class="material-symbols-outlined"> arrow_drop_down </span>
         </div>

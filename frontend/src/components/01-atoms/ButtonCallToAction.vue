@@ -1,5 +1,5 @@
 <template>
-  <a href="/" class="call-to-action">
+  <a :href="link" class="call-to-action">
     {{ buttonText }}
     <span class="material-symbols-outlined"> chevron_right </span>
   </a>
@@ -8,6 +8,10 @@
 <script>
 export default {
   props: {
+    link: {
+      type: String,
+      required: true,
+    },
     buttonText: {
       type: String,
       required: true,

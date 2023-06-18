@@ -3,7 +3,7 @@
     <div class="wrapper">
       <h2>404</h2>
       <h3>Você procurou algo que não existe no site!</h3>
-      <button-call-to-action :buttonText="'Voltar ao Início'" />
+      <button-call-to-action link="/" :buttonText="'Voltar ao Início'" />
     </div>
   </section>
 </template>

@@ -4,7 +4,7 @@
       <div class="blocks">
         <div class="top">
           <p>Precisa de um projeto só seu?</p>
-          <button-call-to-action buttonText="Fale Conosco" />
+          <button-call-to-action link="/" buttonText="Fale Conosco" />
         </div>
 
         <div class="bottom">
