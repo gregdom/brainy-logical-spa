@@ -6,15 +6,15 @@
 
 <script>
 import { ContactTemplate } from '../04-templates'
-import { mapActions } from 'vuex'
+// import { mapActions } from 'vuex'
 
 export default {
   components: { ContactTemplate },
-  methods: {
-    ...mapActions(['populateStoreArr']),
-  },
-  created() {
-    this.populateStoreArr()
-  },
+  // methods: {
+  //   ...mapActions(['populateStoreArr']),
+  // },
+  // created() {
+  //   this.populateStoreArr()
+  // },
 }
 </script>

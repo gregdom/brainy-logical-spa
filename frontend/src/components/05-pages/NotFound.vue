@@ -13,23 +13,23 @@ import { ButtonCallToAction } from '../01-atoms'
 
 export default {
   components: { ButtonCallToAction },
-  mounted() {
-    let attemptsCaptcha = 0
+  // mounted() {
+  //   let attemptsCaptcha = 0
 
-    const hideCaptcha = () => {
-      let grecaptchaBadge = document.querySelector('.grecaptcha-badge')
-      if (grecaptchaBadge) {
-        grecaptchaBadge.style.display = 'none'
-      } else {
-        attemptsCaptcha++
-        if (attemptsCaptcha < 10) {
-          setTimeout(hideCaptcha, 1000)
-        }
-      }
-    }
+  //   const hideCaptcha = () => {
+  //     let grecaptchaBadge = document.querySelector('.grecaptcha-badge')
+  //     if (grecaptchaBadge) {
+  //       grecaptchaBadge.style.display = 'none'
+  //     } else {
+  //       attemptsCaptcha++
+  //       if (attemptsCaptcha < 10) {
+  //         setTimeout(hideCaptcha, 1000)
+  //       }
+  //     }
+  //   }
 
-    hideCaptcha()
-  },
+  //   hideCaptcha()
+  // },
 }
 </script>
 

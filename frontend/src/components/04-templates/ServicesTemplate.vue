@@ -10,7 +10,7 @@
       <services-component />
       <gallery-component />
       <testimonial-component />
-      <contact-form-component mainTitle="A Brainy Faz Seu Projeto" />
+      <!-- <contact-form-component mainTitle="A Brainy Faz Seu Projeto" /> -->
     </main>
 
     <footer-component />
@@ -24,7 +24,7 @@ import {
   ServicesComponent,
   GalleryComponent,
   TestimonialComponent,
-  ContactFormComponent,
+  // ContactFormComponent,
   FooterComponent,
 } from '../03-organisms'
 
@@ -37,7 +37,7 @@ export default {
     ServicesComponent,
     GalleryComponent,
     TestimonialComponent,
-    ContactFormComponent,
+    // ContactFormComponent,
     FooterComponent,
   },
   computed: {

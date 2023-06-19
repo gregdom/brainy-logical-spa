@@ -7,7 +7,7 @@
     />
 
     <main>
-      <contact-form-component mainTitle="Envie sua mensagem" />
+      <!-- <contact-form-component mainTitle="Envie sua mensagem" /> -->
     </main>
 
     <footer-component />
@@ -18,7 +18,7 @@
 import {
   HeaderComponent,
   HeroComponent,
-  ContactFormComponent,
+  // ContactFormComponent,
   FooterComponent,
 } from '../03-organisms'
 
@@ -26,7 +26,7 @@ export default {
   components: {
     HeaderComponent,
     HeroComponent,
-    ContactFormComponent,
+    // ContactFormComponent,
     FooterComponent,
   },
   mounted() {

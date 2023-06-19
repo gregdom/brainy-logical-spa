@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <header-component />
     <main>
       <hero-component
@@ -11,7 +11,7 @@
       <about-component />
       <projects-component />
       <testimonial-component />
-      <contact-form-component mainTitle="A Brainy Faz Seu Projeto" />
+      <!-- <contact-form-component mainTitle="A Brainy Faz Seu Projeto" /> -->
     </main>
     <footer-component />
   </div>
@@ -25,7 +25,7 @@ import {
   AboutComponent,
   ProjectsComponent,
   TestimonialComponent,
-  ContactFormComponent,
+  // ContactFormComponent,
   FooterComponent,
 } from '../03-organisms'
 
@@ -37,7 +37,7 @@ export default {
     AboutComponent,
     ProjectsComponent,
     TestimonialComponent,
-    ContactFormComponent,
+    // ContactFormComponent,
     FooterComponent,
   },
 }
