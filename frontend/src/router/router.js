@@ -20,6 +20,23 @@ const routes = [
     path: '/services',
     name: 'services',
     component: Services,
+    children: [
+      {
+        path: 'browser-extension',
+        name: 'browser-extension',
+        component: Services
+      },
+      {
+        path: 'business-website',
+        name: 'business-website',
+        component: Services
+      },
+      {
+        path: 'landing-page-website',
+        name: 'landing-page-website',
+        component: Services
+      }
+    ]
   },
   {
     path: '/services/website-development',
