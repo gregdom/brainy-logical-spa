@@ -80,7 +80,17 @@ export default {
       color: #fff;
       z-index: 1000;
       transition: transform 0.3s ease;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
       background: $color-branding;
+
+      &:hover {
+        outline: none;
+      }
+
+      &:active {
+        outline: none;
+      }
 
       &.open {
         transform: rotate(90deg);
@@ -99,8 +109,13 @@ export default {
     transform: translateX(100%);
     transition: transform 0.3s ease;
 
+    // Actions
     &.open {
       transform: translateX(0);
+    }
+
+    .nav {
+      padding-top: 100px;
     }
   }
 
@@ -123,11 +138,17 @@ export default {
       padding-right: 24px;
       padding-left: 24px;
 
+      a.logo {
+        font-size: 18px;
+      }
+
       span.header-menu-button {
         width: 45px;
         height: 45px;
         min-width: 45px;
         padding: 10px;
+        font-size: 30px;
+        font-weight: 300;
       }
     }
   }
@@ -144,10 +165,6 @@ export default {
         height: 50px;
         min-width: 50px;
         padding: 10px;
-      }
-
-      a.logo {
-        font-size: 18px;
       }
     }
   }
