@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ active: isMenuOpen }">
     <div class="container-header">
       <router-link to="/" class="logo">BRAINY<span>LOGICAL</span></router-link>
 
@@ -28,11 +28,42 @@ export default {
   data() {
     return {
       isMenuOpen: false,
+      sizeWidth: null,
     }
   },
+
+  created() {
+    this.isMenuOpen = false
+    window.addEventListener('resize', this.handleResize)
+  },
+
+  mounted() {
+    if (window.innerWidth >= 992) {
+      let navOverlay = document.querySelector('.nav-overlay')
+      let containerHeader = document.querySelector('.container-header')
+      containerHeader.appendChild(navOverlay)
+    }
+  },
+
+  unmounted() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+
   methods: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
+    },
+
+    handleResize() {
+      this.sizeWidth = window.innerWidth >= 992
+
+      if (this.sizeWidth) {
+        this.isMenuOpen = false
+
+        let navOverlay = document.querySelector('.nav-overlay')
+        let containerHeader = document.querySelector('.container-header')
+        containerHeader.appendChild(navOverlay)
+      }
     },
   },
 }
@@ -42,6 +73,13 @@ export default {
 .header {
   padding-top: 15px;
   padding-bottom: 15px;
+
+  &.active {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 900;
+  }
 
   .container-header {
     max-width: 1257px;
@@ -105,6 +143,7 @@ export default {
     top: 0;
     left: 0;
     z-index: 900;
+    overflow-y: auto;
     background: #fff;
     transform: translateX(100%);
     transition: transform 0.3s ease;
@@ -179,6 +218,14 @@ export default {
     .container-header {
       span.header-menu-button {
         display: none;
+      }
+    }
+
+    .nav-overlay {
+      all: unset;
+
+      .nav {
+        padding-top: 0;
       }
     }
   }

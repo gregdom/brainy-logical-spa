@@ -6,34 +6,35 @@
       </li>
       <li class="nav-item item-container-sub-menu">
         <div>
-          <router-link class="nav-link" :to="{ name: 'services' }"
-            >Services</router-link
-          >
+          <div class="fake-link-item" @click="toggleSubMenu">Services</div>
           <span
             class="material-symbols-outlined"
             :class="{ active: isSubMenuOpen }"
-            @click="toggleSubMenu"
           >
             keyboard_arrow_down
           </span>
         </div>
-        <div class="sub-menu" :class="{ active: isSubMenuOpen }">
-          <ul class="sub-list">
-            <li class="sub-nav-item">
-              <router-link class="nav-link" :to="{ name: 'browser-extension' }"
-                >Extensão Chrome e Firefox</router-link
-              >
-              <router-link class="nav-link" :to="{ name: 'business-website' }"
-                >Site Empresarial</router-link
-              >
-              <router-link
-                class="nav-link"
-                :to="{ name: 'landing-page-website' }"
-                >Landing Pages</router-link
-              >
-            </li>
-          </ul>
-        </div>
+        <transition name="fade">
+          <div class="sub-menu" :class="{ active: isSubMenuOpen }">
+            <ul class="sub-list">
+              <li class="sub-nav-item">
+                <router-link
+                  class="nav-link"
+                  :to="{ name: 'browser-extension' }"
+                  >Extensão Chrome e Firefox</router-link
+                >
+                <router-link class="nav-link" :to="{ name: 'business-website' }"
+                  >Site Empresarial</router-link
+                >
+                <router-link
+                  class="nav-link"
+                  :to="{ name: 'landing-page-website' }"
+                  >Landing Pages</router-link
+                >
+              </li>
+            </ul>
+          </div>
+        </transition>
       </li>
       <li class="nav-item">
         <router-link class="nav-link" :to="{ name: 'about' }"
@@ -82,6 +83,12 @@ export default {
       this.isSubMenuOpen = !this.isSubMenuOpen
     },
   },
+
+  // mounted() {
+  //   if (window.innerWidth >= 992) {
+  //     this.isSubMenuOpen = true
+  //   }
+  // },
 }
 </script>
 
@@ -97,12 +104,15 @@ export default {
       padding-bottom: 13px;
       line-height: 2rem;
 
-      a.nav-link {
+      a.nav-link,
+      .fake-link-item {
         text-decoration: none;
         font-size: 28px;
         font-weight: 500;
         color: #000;
         transition: color 0.3s ease;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
 
         // Actions
         &:hover {
@@ -127,9 +137,10 @@ export default {
             color: $color-branding;
             cursor: pointer;
             transition: transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
 
             &.active {
-              transform: rotate(180deg);
+              transform: rotate(-180deg);
             }
           }
         }
@@ -175,7 +186,7 @@ export default {
 
 @media screen and (min-width: 480px) {
   .nav {
-    ul {
+    ul.main-list {
       list-style: none;
       padding-left: 24px;
       padding-right: 24px;
@@ -185,9 +196,9 @@ export default {
 
 @media screen and (min-width: 768px) {
   .nav {
-    ul {
-      .nav-item {
-        a {
+    ul.main-list {
+      li.nav-item {
+        a.nav-link {
           font-size: 30px;
         }
       }
@@ -196,11 +207,96 @@ export default {
 }
 
 @media screen and (min-width: 992px) {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
   .nav {
-    ul {
-      .nav-item {
-        a {
-          font-size: 32px;
+    ul.main-list {
+      display: flex;
+      padding-left: 0;
+      padding-right: 0;
+
+      li.nav-item {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-right: 32px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a.nav-link,
+        .fake-link-item {
+          font-size: 16px;
+        }
+
+        &.item-container-sub-menu {
+          position: relative;
+
+          div:first-child {
+            span {
+              margin-top: 5px;
+              margin-left: 4px;
+              color: $color-branding;
+              cursor: pointer;
+              font-size: 22px;
+            }
+          }
+
+          .sub-menu {
+            width: 270px;
+            max-height: fit-content;
+            padding: 8px 24px;
+            border-radius: 25px;
+            border-style: solid;
+            border-width: 0.5px;
+            border-color: #cecddd;
+            position: absolute;
+            top: 42px;
+            left: -50px;
+            z-index: 1000;
+            overflow: hidden;
+            background: #fff;
+
+            ul.sub-list {
+              list-style: none;
+              padding-top: 0;
+
+              li.sub-nav-item {
+                padding: 0;
+                line-height: 2.5rem;
+
+                a.nav-link {
+                  display: block;
+                  font-size: 16px;
+                  color: #566688;
+                  transition: color 0.3s ease;
+
+                  // Actions
+                  &:hover {
+                    color: $color-branding;
+                  }
+
+                  &.router-link-active {
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+
+            // &.active {
+            //   max-height: fit-content;
+            //   padding: 8px 24px;
+            //   opacity: 1;
+            // }
+          }
         }
       }
     }
