@@ -30,43 +30,43 @@ export default {
       required: true,
     },
   },
-  methods: {
-    highlightText() {
-      let palavra1 = document.querySelector('h1')
-      let texto = palavra1.textContent
+  // methods: {
+  //   highlightText() {
+  //     let palavra1 = document.querySelector('h1')
+  //     let texto = palavra1.textContent
 
-      // Define a palavra a ser destacada com uma classe de destaque
-      let palavraDestaque = 'Transformar'
-      let palavraDestaqueComSpan =
-        '<span class="highlightColorText">' + palavraDestaque + '</span>'
+  //     // Define a palavra a ser destacada com uma classe de destaque
+  //     let palavraDestaque = 'Transformar'
+  //     let palavraDestaqueComSpan =
+  //       '<span class="highlightColorText">' + palavraDestaque + '</span>'
 
-      // Define a palavra animada com uma classe de animação
-      let palavraAnimada = 'Presença'
-      let palavraAnimadaComSpan =
-        '<span class="animated-word">' + palavraAnimada + '</span>'
+  //     // Define a palavra animada com uma classe de animação
+  //     let palavraAnimada = 'Presença'
+  //     let palavraAnimadaComSpan =
+  //       '<span class="animated-word">' + palavraAnimada + '</span>'
 
-      // Substitui a palavra destacada e animada pelo texto original com os spans adicionados
-      texto = texto.replace(palavraDestaque, palavraDestaqueComSpan)
-      texto = texto.replace(palavraAnimada, palavraAnimadaComSpan)
+  //     // Substitui a palavra destacada e animada pelo texto original com os spans adicionados
+  //     texto = texto.replace(palavraDestaque, palavraDestaqueComSpan)
+  //     texto = texto.replace(palavraAnimada, palavraAnimadaComSpan)
 
-      // Atualiza o conteúdo do elemento H1 com o novo texto
-      palavra1.innerHTML = texto
-      setTimeout(() => {
-        this.animation()
-      }, 1000)
-    },
-    animation() {
-      let teste = document.querySelector('.animated-word')
-      teste.classList.add('active')
-    },
-  },
-  mounted() {
-    if (this.$route.path === '/') {
-      this.highlightText()
-      let arrowBottom = document.querySelector('.arrow-bottom')
-      arrowBottom.style.display = 'none'
-    }
-  },
+  //     // Atualiza o conteúdo do elemento H1 com o novo texto
+  //     palavra1.innerHTML = texto
+  //     setTimeout(() => {
+  //       this.animation()
+  //     }, 1000)
+  //   },
+  //   animation() {
+  //     let teste = document.querySelector('.animated-word')
+  //     teste.classList.add('active')
+  //   },
+  // },
+  // mounted() {
+  //   if (this.$route.path === '/') {
+  //     this.highlightText()
+  //     let arrowBottom = document.querySelector('.arrow-bottom')
+  //     arrowBottom.style.display = 'none'
+  //   }
+  // },
 }
 </script>
 
