@@ -4,10 +4,12 @@
     <divider-horizontal />
     <main>
       <hero-component
-        titleHero="Nós criamos a sua presença online"
+        titleHero="Nós criamos a sua presença online."
         descHero="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus ante velit nunc morbi pretium. Ut nullam dolor, pulvinar proin viverra ullamcorper ac, eget."
       />
-      <services-component />
+      <services-component
+        titleServices="We are development experts on all technologies & platforms."
+      />
       <about-component />
       <projects-component />
       <testimonial-component />
