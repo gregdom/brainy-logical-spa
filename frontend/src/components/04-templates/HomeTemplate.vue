@@ -5,8 +5,7 @@
     <main>
       <hero-component
         titleHero="Nós criamos a sua presença online"
-        descHero="Nossa equipe está pronta para criar soluções personalizadas e eficientes
-        que se adaptam às necessidades do seu negócio."
+        descHero="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus ante velit nunc morbi pretium. Ut nullam dolor, pulvinar proin viverra ullamcorper ac, eget."
       />
       <services-component />
       <about-component />

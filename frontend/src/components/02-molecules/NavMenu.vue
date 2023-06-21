@@ -46,16 +46,22 @@
           >Projects</router-link
         >
       </li>
+      <li class="nav-item nav-item-contact">
+        <router-link class="nav-link nav-link-contact" :to="{ name: 'contact' }"
+          >Contact us</router-link
+        >
+      </li>
     </ul>
   </nav>
 </template>
 
 <script>
 // import { mapState, mapMutations } from 'vuex'
-// import { Logo } from '../01-atoms'
+// import { ButtonPrimary } from '../01-atoms'
 
 export default {
   name: 'NavMenu',
+  components: {},
   data() {
     return {
       isSubMenuOpen: false,
@@ -235,6 +241,30 @@ export default {
         a.nav-link,
         .fake-link-item {
           font-size: 16px;
+          line-height: 48px;
+
+          &.nav-link-contact {
+            padding: 16px 22px;
+            display: block;
+            border-radius: 10px;
+            transition: transform 350ms ease, box-shadow 350ms ease,
+              background-color 350ms ease, -webkit-transform 350ms ease;
+            line-height: 1em;
+            text-align: center;
+            font-weight: 600;
+            color: #fff;
+            background: $color-branding;
+
+            &:hover {
+              &:hover {
+                background: darken($color-branding, 20%);
+                box-shadow: 0 0 0 0 rgba(48, 44, 255, 0.1);
+                -webkit-transform: scale3d(0.95, 0.95, 1.01);
+                transform: scale3d(0.95, 0.95, 1.01);
+                color: #fff;
+              }
+            }
+          }
         }
 
         &.item-container-sub-menu {
@@ -259,7 +289,7 @@ export default {
             border-width: 0.5px;
             border-color: #cecddd;
             position: absolute;
-            top: 42px;
+            top: 50px;
             left: -50px;
             z-index: 1000;
             overflow: hidden;

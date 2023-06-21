@@ -3,19 +3,18 @@
     <div class="wrapper">
       <h2>404</h2>
       <h3>Você procurou algo que não existe no site!</h3>
-      <button-call-to-action link="/" :buttonText="'Voltar ao Início'" />
+      <!-- <button-call-to-action link="/" :buttonText="'Voltar ao Início'" /> -->
     </div>
   </section>
 </template>
 
 <script>
-import { ButtonCallToAction } from '../01-atoms'
+// import { ButtonCallToAction } from '../01-atoms'
 
 export default {
-  components: { ButtonCallToAction },
+  // components: { ButtonCallToAction },
   // mounted() {
   //   let attemptsCaptcha = 0
-
   //   const hideCaptcha = () => {
   //     let grecaptchaBadge = document.querySelector('.grecaptcha-badge')
   //     if (grecaptchaBadge) {
@@ -27,7 +26,6 @@ export default {
   //       }
   //     }
   //   }
-
   //   hideCaptcha()
   // },
 }

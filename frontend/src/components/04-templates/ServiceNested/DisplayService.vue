@@ -104,7 +104,7 @@
                 </ul>
               </div>
 
-              <button-call-to-action buttonText="Começar Projeto" />
+              <!-- <button-call-to-action buttonText="Começar Projeto" /> -->
             </div>
 
             <div class="fixed-price-col corporate">
@@ -134,7 +134,7 @@
                 </ul>
               </div>
 
-              <button-call-to-action buttonText="Começar Projeto" />
+              <!-- <button-call-to-action buttonText="Começar Projeto" /> -->
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@
 </template>
 
 <script>
-import { ButtonCallToAction } from '../../01-atoms'
+// import { ButtonCallToAction } from '../../01-atoms'
 import {
   HeaderComponent,
   HeroComponent,
@@ -159,7 +159,6 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
   components: {
-    ButtonCallToAction,
     HeaderComponent,
     HeroComponent,
     ContactFormComponent,

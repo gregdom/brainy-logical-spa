@@ -14,13 +14,13 @@ export default {
 .divider {
   max-width: 1257px;
   height: auto;
+  margin-right: auto;
+  margin-left: auto;
   padding-right: 16px;
   padding-left: 16px;
 
   .inner-divider {
     height: 1px;
-    margin-right: auto;
-    margin-left: auto;
     background-color: #cecddd;
   }
 }

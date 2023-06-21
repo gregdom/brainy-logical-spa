@@ -14,7 +14,7 @@
       </div>
 
       <div class="home-hero-image">
-        <img src="https://placehold.co/600x500" alt="Image" />
+        <img src="../../assets/images/static-website-cuate.svg" alt="Image" />
       </div>
     </div>
   </section>
@@ -188,8 +188,8 @@ export default {
     padding-bottom: 80px;
 
     .container-default {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 480px auto;
       justify-content: space-between;
 
       .home-hero-content {
@@ -205,8 +205,13 @@ export default {
       }
 
       .home-hero-image {
+        display: flex;
+        justify-content: flex-end;
+
         img {
-          width: 100%;
+          width: 700px;
+          margin-top: -30px;
+          display: block;
         }
       }
     }

@@ -1,7 +1,10 @@
 <template>
   <header class="header" :class="{ active: isMenuOpen }">
     <div class="container-header">
-      <router-link to="/" class="logo">BRAINY<span>LOGICAL</span></router-link>
+      <router-link to="/" class="logo">
+        <div></div>
+        BRAINY<span>LOGICAL</span>
+      </router-link>
 
       <span
         class="material-symbols-outlined header-menu-button"
@@ -92,6 +95,9 @@ export default {
     align-items: center;
 
     a.logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-decoration: none;
       font-size: 16px;
       font-weight: 800;
@@ -100,7 +106,15 @@ export default {
       z-index: 1000;
 
       span {
-        font-weight: 700;
+        color: $color-branding;
+      }
+
+      div {
+        display: none;
+        width: 15px;
+        height: 15px;
+        margin-right: 2px;
+        background: $color-branding;
       }
     }
 
