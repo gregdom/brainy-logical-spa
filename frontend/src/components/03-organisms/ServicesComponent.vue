@@ -7,18 +7,26 @@
       </div>
 
       <div class="slide-services">
-        <div class="block-services">
-          <card-service
-            class="block-cards"
-            v-for="(service, index) in services"
-            :key="index"
-            :icon="service.icon"
-            :title="service.title"
-            :description_short="service.description_short"
-            :link="service.link"
-            :name="service.name"
-          />
-        </div>
+        <swiper
+          :slidesPerView="'auto'"
+          :spaceBetween="27"
+          :pagination="{
+            clickable: true,
+          }"
+          :modules="modules"
+          class="mySwiper"
+        >
+          <swiper-slide v-for="(service, index) in services" :key="index">
+            <card-service
+              class="block-cards"
+              :icon="service.icon"
+              :title="service.title"
+              :description_short="service.description_short"
+              :link="service.link"
+              :name="service.name"
+            />
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
   </section>
@@ -27,10 +35,17 @@
 <script>
 import {} from '../01-atoms'
 import { CardService } from '../02-molecules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+import '../../assets/styles/style-swiper.css'
+
+import { Pagination } from 'swiper'
 
 export default {
   name: 'HeroComponent',
-  components: { CardService },
+  components: { CardService, Swiper, SwiperSlide },
 
   props: {
     titleServices: {
@@ -67,6 +82,12 @@ export default {
           name: 'landing-pages',
         },
       ],
+    }
+  },
+
+  setup() {
+    return {
+      modules: [Pagination],
     }
   },
 

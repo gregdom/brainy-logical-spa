@@ -111,7 +111,7 @@ export default {
   }
 
   a.button-secondary {
-    width: 60%;
+    width: fit-content;
   }
 }
 </style>
