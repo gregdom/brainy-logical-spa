@@ -4,7 +4,6 @@
       <div class="blocks">
         <div class="top">
           <p>Precisa de um projeto só seu?</p>
-          <button-call-to-action link="/" buttonText="Fale Conosco" />
         </div>
 
         <div class="bottom">
@@ -36,10 +35,10 @@
 </template>
 
 <script>
-import { Logo, ButtonCallToAction } from '../01-atoms'
+import { Logo } from '../01-atoms'
 
 export default {
-  components: { Logo, ButtonCallToAction },
+  components: { Logo },
 }
 </script>
 

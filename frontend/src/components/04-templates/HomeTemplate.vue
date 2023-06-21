@@ -1,6 +1,7 @@
 <template>
   <div class="main-container">
     <header-component />
+    <divider-horizontal />
     <main>
       <hero-component
         titleHero="Soluções Para Transformar Sua Presença Online"
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import { DividerHorizontal } from '../01-atoms'
 import {
   HeaderComponent,
   HeroComponent,
@@ -37,6 +39,7 @@ export default {
     AboutComponent,
     ProjectsComponent,
     TestimonialComponent,
+    DividerHorizontal,
     // ContactFormComponent,
     FooterComponent,
   },

@@ -15,7 +15,6 @@
     <div class="nav-overlay" :class="{ open: isMenuOpen }">
       <nav-menu />
     </div>
-    <div class="divider"></div>
   </header>
 </template>
 
@@ -156,15 +155,6 @@ export default {
     .nav {
       padding-top: 100px;
     }
-  }
-
-  .divider {
-    position: absolute;
-    bottom: 0;
-    left: 16px;
-    width: calc(100% - 32px);
-    height: 1px;
-    background-color: #cecddd;
   }
 }
 
