@@ -34,7 +34,7 @@ export default {
   &.button-secondary {
     font-weight: 500;
     color: $color-branding;
-    border: 0.5px solid $color-branding;
+    border: 1px solid $color-branding;
     background: transparent;
 
     &:hover {

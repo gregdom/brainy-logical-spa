@@ -2,17 +2,20 @@
   <section class="section home-hero">
     <div class="container-default">
       <div class="home-hero-content">
-        <div class="subtitle">Development Agency</div>
+        <div class="subtitle">Somos a Brainy</div>
         <h1>{{ titleHero }}</h1>
-        <p class="paragraph home-hero">{{ subTitleHero }}</p>
+        <p class="paragraph home-hero">{{ descHero }}</p>
 
         <div class="buttons-wrapper">
-          <button-primary link="/contact" buttonText="Contato" />
+          <button-primary link="/contact" buttonText="Fale Conosco" />
+          <div class="inner-space"></div>
           <button-secondary link="/services" buttonText="Nossos Serviços" />
         </div>
       </div>
 
-      <img src="image.png" alt="Image" />
+      <div class="home-hero-image">
+        <img src="https://placehold.co/600x500" alt="Image" />
+      </div>
     </div>
   </section>
 </template>
@@ -28,7 +31,7 @@ export default {
       type: String,
       required: true,
     },
-    subTitleHero: {
+    descHero: {
       type: String,
       required: true,
     },
@@ -38,71 +41,173 @@ export default {
 </script>
 
 <style lang="scss">
-.hero {
+.home-hero {
   width: 100%;
-  max-width: 1400px;
   height: auto;
   margin: 0 auto;
-  padding: 137px 0 64px 0;
-  background: $color-branding-gradient;
+  padding-top: 30px;
+  padding-bottom: 40px;
 
-  .wrapper {
-    width: calc(100% - 48px);
-    height: auto;
-    margin: 0 auto;
+  .container-default {
+    max-width: 1257px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
     display: flex;
     flex-direction: column;
 
-    h1 {
-      margin-bottom: 32px;
-      font-size: calc(1.525rem + 3.3vw);
-      font-weight: 700;
-      text-align: center;
-      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-      color: #fff;
-    }
+    .home-hero-content {
+      max-width: 575px;
+      margin-bottom: 20px;
 
-    h2 {
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: $general-line-height;
-      text-align: center;
-      margin-bottom: 37px;
-      color: #ffffff;
-    }
-
-    & > * {
-      margin-bottom: 37px;
-    }
-
-    & > *:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-@media (min-width: 600px) {
-  .hero {
-    padding: 137px 0 84px 0;
-
-    .wrapper {
-      width: 500px;
+      div.subtitle {
+        margin-bottom: 8px;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        line-height: 1em;
+        color: $color-branding;
+      }
 
       h1 {
-        font-size: 50px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 28px;
+        line-height: 1.291em;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
+        color: #070721;
+      }
+
+      p.paragraph.home-hero {
+        max-width: none;
+        margin-bottom: 30px;
+        padding: 0;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.687em;
+        letter-spacing: -0.01em;
+        color: #46526b;
+      }
+
+      .buttons-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .inner-space {
+          width: 27px;
+          height: 20px;
+        }
+      }
+    }
+
+    .home-hero-image {
+      img {
+        width: 100%;
       }
     }
   }
 }
 
-@media (min-width: 768px) {
-  .hero {
-    .wrapper {
-      width: 680px;
+@media screen and (min-width: 480px) {
+  .home-hero {
+    padding-top: 40px;
+    padding-bottom: 40px;
 
-      .call-to-action {
-        width: 40%;
-        margin: 0 auto;
+    .container-default {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      .home-hero-content {
+        div.subtitle {
+          margin-bottom: 10px;
+        }
+
+        h1 {
+          font-size: 33px;
+        }
+
+        .buttons-wrapper {
+          display: flex;
+          flex-direction: row;
+
+          .inner-space {
+            width: 27px;
+            height: 20px;
+          }
+        }
+      }
+
+      .home-hero-image {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home-hero {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .container-default {
+      .home-hero-content {
+        margin-bottom: 20px;
+        max-width: 480px;
+
+        div.subtitle {
+          margin-bottom: 16px;
+        }
+
+        h1 {
+          font-size: 40px;
+        }
+
+        p.paragraph.home-hero {
+          max-width: none;
+          margin-bottom: 39px;
+        }
+      }
+
+      .home-hero-image {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home-hero {
+    padding-top: 68px;
+    padding-bottom: 80px;
+
+    .container-default {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .home-hero-content {
+        margin-bottom: 20px;
+
+        div.subtitle {
+          margin-bottom: 16px;
+        }
+
+        h1 {
+          font-size: 48px;
+        }
+      }
+
+      .home-hero-image {
+        img {
+          width: 100%;
+        }
       }
     }
   }

@@ -4,8 +4,8 @@
     <divider-horizontal />
     <main>
       <hero-component
-        titleHero="Soluções Para Transformar Sua Presença Online"
-        subTitleHero="Nossa equipe está pronta para criar soluções personalizadas e eficientes
+        titleHero="Nós criamos a sua presença online"
+        descHero="Nossa equipe está pronta para criar soluções personalizadas e eficientes
         que se adaptam às necessidades do seu negócio."
       />
       <services-component />
