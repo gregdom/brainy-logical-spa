@@ -185,7 +185,7 @@ export default {
 @media screen and (min-width: 992px) {
   .home-hero {
     padding-top: 68px;
-    padding-bottom: 80px;
+    padding-bottom: 30px;
 
     .container-default {
       display: grid;

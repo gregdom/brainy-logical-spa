@@ -114,4 +114,39 @@ export default {
     width: fit-content;
   }
 }
+
+@media screen and (min-width: 480px) {
+  .card-service {
+    .icon-container {
+      width: 105px;
+      height: 105px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: center;
+
+    h3 {
+      font-size: 24px;
+    }
+
+    a.button-secondary {
+      width: 95%;
+    }
+  }
+}
 </style>

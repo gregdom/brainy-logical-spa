@@ -126,49 +126,39 @@ export default {
       h2 {
         margin-top: 0px;
         margin-bottom: 25px;
-        font-size: 28px;
-        line-height: 1.291em;
+        font-size: 26px;
+        line-height: 1.368em;
         font-weight: 900;
         letter-spacing: -0.02em;
         text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-        color: #070721;
+        color: #071221;
       }
     }
   }
 }
 
 @media screen and (min-width: 480px) {
-  .home-hero {
-    padding-top: 40px;
+  .home-services {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
     padding-bottom: 40px;
 
     .container-default {
       padding-left: 24px;
       padding-right: 24px;
 
-      .home-hero-content {
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
+
         div.subtitle {
           margin-bottom: 10px;
         }
 
-        h1 {
-          font-size: 33px;
-        }
-
-        .buttons-wrapper {
-          display: flex;
-          flex-direction: row;
-
-          .inner-space {
-            width: 27px;
-            height: 20px;
-          }
-        }
-      }
-
-      .home-hero-image {
-        img {
-          width: 100%;
+        h2 {
+          font-size: 31px;
         }
       }
     }
@@ -176,32 +166,24 @@ export default {
 }
 
 @media screen and (min-width: 768px) {
-  .home-hero {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  .home-services {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
 
     .container-default {
-      .home-hero-content {
+      .top {
+        max-width: 575px;
         margin-bottom: 20px;
-        max-width: 480px;
 
         div.subtitle {
           margin-bottom: 16px;
         }
 
-        h1 {
-          font-size: 40px;
-        }
-
-        p.paragraph.home-hero {
-          max-width: none;
-          margin-bottom: 39px;
-        }
-      }
-
-      .home-hero-image {
-        img {
-          width: 100%;
+        h2 {
+          font-size: 38px;
         }
       }
     }
@@ -209,36 +191,17 @@ export default {
 }
 
 @media screen and (min-width: 992px) {
-  .home-hero {
-    padding-top: 68px;
-    padding-bottom: 80px;
+  .home-services {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
 
     .container-default {
-      display: grid;
-      grid-template-columns: 480px auto;
-      justify-content: space-between;
-
-      .home-hero-content {
+      .top {
+        max-width: 575px;
         margin-bottom: 20px;
-
-        div.subtitle {
-          margin-bottom: 16px;
-        }
-
-        h1 {
-          font-size: 48px;
-        }
-      }
-
-      .home-hero-image {
-        display: flex;
-        justify-content: flex-end;
-
-        img {
-          width: 700px;
-          margin-top: -30px;
-          display: block;
-        }
       }
     }
   }
