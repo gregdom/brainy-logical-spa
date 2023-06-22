@@ -4,7 +4,7 @@
     <divider-horizontal />
     <main>
       <hero-component
-        titleHero="Nós criamos a sua presença online."
+        titleHero="We are a top-notch development agency."
         descHero="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus ante velit nunc morbi pretium. Ut nullam dolor, pulvinar proin viverra ullamcorper ac, eget."
       />
       <services-component

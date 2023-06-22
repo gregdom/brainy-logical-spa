@@ -13,6 +13,7 @@
           :pagination="{
             clickable: true,
           }"
+          :navigation="false"
           :modules="modules"
           class="mySwiper"
         >
@@ -39,9 +40,10 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 import '../../assets/styles/style-swiper.css'
 
-import { Pagination } from 'swiper'
+import { Pagination, Navigation } from 'swiper'
 
 export default {
   name: 'HeroComponent',
@@ -87,7 +89,7 @@ export default {
 
   setup() {
     return {
-      modules: [Pagination],
+      modules: [Pagination, Navigation],
     }
   },
 
@@ -134,6 +136,12 @@ export default {
         color: #071221;
       }
     }
+
+    .slide-services {
+      .swiper-slide {
+        max-width: 385px;
+      }
+    }
   }
 }
 
@@ -171,7 +179,7 @@ export default {
     height: auto;
     margin: 0 auto;
     padding-top: 30px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
 
     .container-default {
       .top {
@@ -196,7 +204,7 @@ export default {
     height: auto;
     margin: 0 auto;
     padding-top: 30px;
-    padding-bottom: 40px;
+    padding-bottom: 130px;
 
     .container-default {
       .top {

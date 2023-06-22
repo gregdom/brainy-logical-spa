@@ -92,7 +92,7 @@ export default {
   h3 {
     margin-top: 0px;
     margin-bottom: 11px;
-    color: #070721;
+    color: #071221;
     font-size: 20px;
     line-height: 1.416em;
     font-weight: 700;

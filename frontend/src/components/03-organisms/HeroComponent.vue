@@ -58,6 +58,7 @@ export default {
     flex-direction: column;
 
     .home-hero-content {
+      width: 100%;
       max-width: 575px;
       margin-bottom: 20px;
 
@@ -78,7 +79,7 @@ export default {
         font-weight: 900;
         letter-spacing: -0.02em;
         text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-        color: #070721;
+        color: #071221;
       }
 
       p.paragraph.home-hero {
@@ -157,7 +158,6 @@ export default {
     .container-default {
       .home-hero-content {
         margin-bottom: 20px;
-        max-width: 480px;
 
         div.subtitle {
           margin-bottom: 16px;
@@ -182,6 +182,37 @@ export default {
   }
 }
 
+@media screen and (min-width: 900px) {
+  .home-hero {
+    .container-default {
+      display: grid;
+      grid-template-columns: 480px auto;
+      justify-content: space-between;
+
+      .home-hero-content {
+        width: 100%;
+
+        h1 {
+          font-size: 40px;
+        }
+      }
+
+      .home-hero-image {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+          width: 420px;
+          margin-top: 0;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 992px) {
   .home-hero {
     padding-top: 68px;
@@ -189,11 +220,13 @@ export default {
 
     .container-default {
       display: grid;
-      grid-template-columns: 480px auto;
+      grid-template-columns: 520px auto;
       justify-content: space-between;
 
       .home-hero-content {
+        width: 100%;
         margin-bottom: 20px;
+        overflow: unset;
 
         div.subtitle {
           margin-bottom: 16px;
@@ -211,6 +244,7 @@ export default {
         img {
           width: 700px;
           margin-top: -30px;
+          margin-right: -20px;
           display: block;
         }
       }

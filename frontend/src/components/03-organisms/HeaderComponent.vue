@@ -102,7 +102,7 @@ export default {
       font-size: 16px;
       font-weight: 800;
       border-radius: 0;
-      color: #000;
+      color: #071221;
       z-index: 1000;
 
       span {

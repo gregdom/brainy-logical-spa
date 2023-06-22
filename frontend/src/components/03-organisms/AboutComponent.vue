@@ -1,5 +1,5 @@
 <template>
-  <section class="about" id="about">
+  <section class="section home-about">
     <div class="wrapper">
       <h3>Sobre Nós</h3>
 
@@ -46,7 +46,7 @@ export default {
   height: auto;
   margin: 0 auto;
   padding: 64px 0 64px 0;
-  background: $color-branding;
+  background: darken($color-branding, 30%);
 
   .wrapper {
     position: relative;
