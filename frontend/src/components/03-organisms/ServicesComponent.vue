@@ -102,8 +102,8 @@ export default {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  padding-top: 30px;
-  padding-bottom: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
   .container-default {
     max-width: 1257px;
@@ -130,7 +130,7 @@ export default {
         margin-bottom: 25px;
         font-size: 26px;
         line-height: 1.368em;
-        font-weight: 900;
+        font-weight: 800;
         letter-spacing: -0.02em;
         text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
         color: #071221;
