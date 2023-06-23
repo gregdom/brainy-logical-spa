@@ -1,7 +1,10 @@
 <template>
-  <section class="projects" id="projects">
-    <div class="wrapper">
-      <h3>Projetos Recentes</h3>
+  <section class="section home-projects">
+    <div class="container-default">
+      <div class="top">
+        <div class="subtitle">Projetos Recentes</div>
+        <h2>Discover how we had helped world class companies in the past</h2>
+      </div>
 
       <div class="blocks">
         <card-project
@@ -19,92 +22,158 @@
 
 <script>
 import { CardProject } from '../02-molecules'
-import { mapState } from 'vuex'
+// import { mapState } from 'vuex'
 
 export default {
+  name: 'ProjectsComponent',
   components: { CardProject },
-  computed: {
-    ...mapState(['projects']),
-    projectsArr() {
-      if (this.projects.length > 0) {
-        return this.projects.slice(0, 4)
-      }
-      return ''
-    },
+  // computed: {
+  //   ...mapState(['projects']),
+  //   projectsArr() {
+  //     if (this.projects.length > 0) {
+  //       return this.projects.slice(0, 4)
+  //     }
+  //     return ''
+  //   },
+  // },
+
+  data() {
+    return {
+      projectsArr: [
+        {
+          path: 'gamestore-projects-brainy-logical.png',
+          title: 'GameStore',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
+        },
+        {
+          path: 'blog-santa-catarina-projects-brainy-logical.png',
+          title: 'SCViagens',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
+        },
+      ],
+    }
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.projects {
+.home-projects {
   width: 100%;
-  max-width: 1400px;
   height: auto;
   margin: 0 auto;
-  padding: 57px 0 64px 0;
-  background: $color-bg-light;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
-  .wrapper {
-    width: calc(100% - 48px);
-    height: auto;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .container-default {
+    max-width: 1257px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 
-    h3 {
-      font-size: $section-title-size;
-      text-align: center;
-      padding: 0 20px 32px 20px;
-    }
-
-    .block-cards {
+    .top {
+      max-width: 575px;
       margin-bottom: 20px;
 
-      &:last-child {
-        margin-bottom: 0;
+      div.subtitle {
+        margin-bottom: 8px;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        line-height: 1em;
+        color: $color-branding;
+      }
+
+      h2 {
+        margin-top: 0px;
+        margin-bottom: 25px;
+        font-size: 26px;
+        line-height: 1.368em;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
+        color: #071221;
+      }
+    }
+
+    .blocks {
+      .block-cards {
+        img {
+          width: 100%;
+          max-width: 460px;
+        }
       }
     }
   }
 }
 
-@media (min-width: 600px) {
-  .projects {
-    .wrapper {
-      width: 500px;
+@media screen and (min-width: 480px) {
+  .home-projects {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+    .container-default {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
+
+        div.subtitle {
+          margin-bottom: 10px;
+        }
+
+        h2 {
+          font-size: 31px;
+        }
+      }
     }
   }
 }
 
-@media (min-width: 768px) {
-  .projects {
-    .wrapper {
-      width: 90%;
-      max-width: 940px;
+@media screen and (min-width: 768px) {
+  .home-services {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 60px;
 
-      .blocks {
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    .container-default {
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
 
-        .block-cards {
-          &:nth-child(2n) {
-            margin-right: 0;
-          }
-
-          &:nth-child(2n + 1) {
-            margin-right: 10px;
-          }
-
-          &:nth-child(2n + 0) {
-            margin-left: 10px;
-          }
-
-          &:nth-last-child(-n + 2) {
-            margin-bottom: 0;
-          }
+        div.subtitle {
+          margin-bottom: 16px;
         }
+
+        h2 {
+          font-size: 38px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home-services {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 130px;
+
+    .container-default {
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
       }
     }
   }
