@@ -1,5 +1,5 @@
 <template>
-  <router-link class="card-project" :to="`/services/${link}`">
+  <router-link class="card-project" :to="`/projects/${link}`">
     <div
       :style="{ backgroundImage: 'url(' + imageSrc + ')' }"
       class="image-container"
@@ -10,7 +10,7 @@
     <div class="details">
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
-      <button-secondary :link="`/services/${link}`" buttonText="Saiba mais" />
+      <button-secondary :link="`/projects/${link}`" buttonText="Ver projeto" />
     </div>
   </router-link>
 </template>
@@ -31,6 +31,10 @@ export default {
       required: true,
     },
     description: {
+      type: String,
+      required: true,
+    },
+    link: {
       type: String,
       required: true,
     },
@@ -64,10 +68,10 @@ export default {
     -webkit-transform: scale3d(0.95, 0.95, 1.01);
     transform: scale3d(0.95, 0.95, 1.01);
 
-    // a.button-secondary {
-    //   color: #fff;
-    //   background: $color-branding;
-    // }
+    a.button-secondary {
+      color: #fff;
+      background: $color-branding;
+    }
   }
 
   .image-container {
@@ -111,7 +115,7 @@ export default {
     h3 {
       margin-top: 0px;
       margin-bottom: 11px;
-      color: #071221;
+      color: $color-branding;
       font-size: 20px;
       line-height: 1.416em;
       font-weight: 700;
@@ -127,6 +131,77 @@ export default {
       line-height: 1.687em;
       letter-spacing: -0.01em;
       color: #46526b;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .card-project {
+    .image-container {
+      width: 100%;
+      height: 300px;
+
+      .overlay-card-project {
+        font-size: 30px;
+      }
+    }
+
+    .details {
+      width: 100%;
+      height: auto;
+      padding: 24px 40px 50px 40px;
+
+      h3 {
+        font-size: 22px;
+        margin-bottom: 13px;
+      }
+
+      a.button-secondary {
+        width: fit-content;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-project {
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'divContent divImage';
+
+    .image-container {
+      grid-area: divImage;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: unset;
+      border-bottom-left-radius: unset;
+      border-top-right-radius: 23px;
+      border-bottom-right-radius: 23px;
+
+      .overlay-card-project {
+        font-size: 40px;
+      }
+    }
+
+    .details {
+      grid-area: divContent;
+      width: 100%;
+      height: auto;
+      padding: 24px 40px 24px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h3 {
+        font-size: 22px;
+        margin-bottom: 13px;
+      }
+
+      a.button-secondary {
+        width: fit-content;
+      }
     }
   }
 }

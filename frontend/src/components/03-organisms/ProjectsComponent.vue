@@ -3,7 +3,10 @@
     <div class="container-default">
       <div class="top">
         <div class="subtitle">Projetos Recentes</div>
-        <h2>Discover how we had helped world class companies in the past</h2>
+
+        <div class="main-title">
+          <h2>Discover how we had helped world class companies in the past</h2>
+        </div>
       </div>
 
       <div class="blocks">
@@ -13,6 +16,7 @@
           :key="index"
           :image="project.path"
           :title="project.title"
+          :link="project.link"
           :description="project.description"
         />
       </div>
@@ -43,14 +47,16 @@ export default {
         {
           path: 'gamestore-projects-brainy-logical.png',
           title: 'GameStore',
+          link: '/projects/gamestore',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
         },
         {
           path: 'blog-santa-catarina-projects-brainy-logical.png',
           title: 'SCViagens',
+          link: '/projects/scviagens',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
         },
       ],
     }
@@ -74,7 +80,6 @@ export default {
     padding-right: 16px;
 
     .top {
-      max-width: 575px;
       margin-bottom: 20px;
 
       div.subtitle {
@@ -86,23 +91,27 @@ export default {
         color: $color-branding;
       }
 
-      h2 {
-        margin-top: 0px;
-        margin-bottom: 25px;
-        font-size: 26px;
-        line-height: 1.368em;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-        color: #071221;
+      .main-title {
+        width: 100%;
+        max-width: 630px;
+
+        h2 {
+          font-size: 26px;
+          line-height: 1.368em;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
+          color: #071221;
+        }
       }
     }
 
     .blocks {
       .block-cards {
-        img {
-          width: 100%;
-          max-width: 460px;
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
         }
       }
     }
@@ -111,26 +120,24 @@ export default {
 
 @media screen and (min-width: 480px) {
   .home-projects {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 40px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     .container-default {
       padding-left: 24px;
       padding-right: 24px;
 
       .top {
-        max-width: 575px;
         margin-bottom: 20px;
 
         div.subtitle {
           margin-bottom: 10px;
         }
 
-        h2 {
-          font-size: 31px;
+        .main-title {
+          h2 {
+            font-size: 31px;
+          }
         }
       }
     }
@@ -138,24 +145,20 @@ export default {
 }
 
 @media screen and (min-width: 768px) {
-  .home-services {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 60px;
+  .home-projects {
+    padding-top: 120px;
+    padding-bottom: 120px;
 
     .container-default {
       .top {
-        max-width: 575px;
-        margin-bottom: 20px;
-
         div.subtitle {
-          margin-bottom: 16px;
+          margin-bottom: 10px;
         }
 
-        h2 {
-          font-size: 38px;
+        .main-title {
+          h2 {
+            font-size: 38px;
+          }
         }
       }
     }
@@ -163,17 +166,17 @@ export default {
 }
 
 @media screen and (min-width: 992px) {
-  .home-services {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 130px;
+  .home-projects {
+    padding-top: 160px;
+    padding-bottom: 160px;
 
     .container-default {
       .top {
-        max-width: 575px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+
+        div.subtitle {
+          margin-bottom: 16px;
+        }
       }
     }
   }
