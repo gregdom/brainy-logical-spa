@@ -1,33 +1,36 @@
 <template>
-  <footer class="footer">
-    <div class="wrapper">
-      <div class="blocks">
-        <div class="top">
-          <p>Precisa de um projeto só seu?</p>
+  <footer class="section home-footer">
+    <div class="container-default">
+      <div class="top">
+        <router-link to="/" class="logo">
+          BRAINY<span>LOGICAL</span>
+        </router-link>
+
+        <div class="menu-footer">
+          <h3>Menu</h3>
+
+          <a href="/">Home</a>
+          <a href="/services">Serviços</a>
+          <a href="/about">Sobre</a>
+          <a href="/projects">Projetos</a>
+          <a href="/contact">Contato</a>
         </div>
+      </div>
 
-        <div class="bottom">
-          <logo class="logo" imageName="logo-full-white-brainy-logical.png" />
-
-          <div class="social-media">
-            <a href="#"><i class="fa-solid fa-envelope"></i></a>
-            <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#" target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-          </div>
-
-          <div class="menu-footer">
-            <a href="/">Home</a>
-            <a href="/services">Serviços</a>
-            <a href="/about">Sobre</a>
-            <a href="/projects">Projetos</a>
-            <a href="/contact">Contato</a>
-          </div>
-
-          <div class="copyright">
-            <p>© 2023 Brainy Logical - Direitos reservados.</p>
-          </div>
+      <div class="bottom">
+        <div class="social-media">
+          <a href="#" target="_blank"
+            ><img src="../../assets/images/icon-youtube.svg" alt="Icon"
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="../../assets/images/icon-linkedin.svg" alt="Icon"
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="../../assets/images/icon-email.svg" alt="Icon"
+          /></a>
+        </div>
+        <div class="copyright">
+          <p>© 2023 Brainy Logical - Direitos reservados.</p>
         </div>
       </div>
     </div>
@@ -35,204 +38,115 @@
 </template>
 
 <script>
-import { Logo } from '../01-atoms'
+import {} from '../01-atoms'
 
 export default {
-  components: { Logo },
+  name: 'FooterComponent',
+  components: {},
 }
 </script>
 
 <style lang="scss">
-.footer {
+.home-footer {
   width: 100%;
-  max-width: 1400px;
   height: auto;
   margin: 0 auto;
-  padding: 57px 0 20px 0;
-  background: $color-general-text;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  border-top: 10px solid $color-branding;
+  background: darken($color-branding, 40%);
 
-  .wrapper {
-    width: calc(100% - 48px);
-    height: auto;
-    margin: 0 auto;
+  .container-default {
+    max-width: 1257px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     .top {
-      width: 100%;
-      height: auto;
-      padding: 20px;
-      margin-top: -50%;
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 8px 130px 1px rgba(0, 0, 0, 0.07);
-      background: #fff;
+      margin-bottom: 20px;
 
-      p {
-        font-size: 1.25rem;
-        font-weight: 600;
-        text-align: center;
-        color: $color-general-text;
-      }
-
-      .call-to-action {
-        width: auto;
-        font-size: 1rem;
-        margin-top: 20px;
-        padding: 20px;
+      a.logo {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 800;
+        border-radius: 0;
+        color: #fff;
+        z-index: 1000;
 
         span {
-          display: none;
+          color: lighten($color-branding, 30%);
+        }
+      }
+
+      .menu-footer {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          margin-bottom: 20px;
+          color: #fafafd;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 1em;
+        }
+
+        a {
+          margin-bottom: 15px;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+          color: lighten($color-branding, 30%);
+          transition: color 350ms ease;
+
+          &:hover {
+            color: #fafafd;
+          }
         }
       }
     }
 
     .bottom {
-      margin: 20px auto 0 auto;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto auto;
-      align-items: center;
-      justify-content: center;
-
-      .logo {
-        display: flex;
-        justify-content: center;
-      }
+      padding-top: 30px;
+      border-top: 1px solid lighten(#071738, 20%);
 
       .social-media {
-        padding: 10px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-
-        & > * {
-          margin-right: 0;
-          padding: 5px 10px;
-          font-size: 1.4rem;
-          color: #fff;
-        }
-
-        & > *:last-child {
-          margin-right: 0;
-        }
-      }
-
-      .menu-footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
         a {
-          font-size: 1rem;
-          text-decoration: none;
-          color: #fff;
-          margin-bottom: 10px;
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 25px;
+          transition: transform 350ms ease, background-color 350ms ease,
+            -webkit-transform 350ms ease;
+          background: lighten(#071738, 20%);
 
-          &:last-child {
-            margin-bottom: 0;
+          &:hover {
+            transform: scale3d(0.9, 0.9, 1.01);
+            background: $color-branding;
+          }
+
+          img {
+            width: 18px;
           }
         }
       }
-    }
 
-    .copyright {
-      margin-top: 32px;
-      font-size: 0.8125rem;
-      text-align: center;
-      color: #fff;
-    }
-  }
-}
-
-@media (min-width: 600px) {
-  .footer {
-    .wrapper {
-      align-items: unset;
-      max-width: 940px;
-
-      .blocks {
-        .top {
-          margin-top: -130px;
-        }
-
-        .bottom {
-          margin: 20px auto 0 auto;
-          display: grid;
-          padding-bottom: 0;
-          grid-template-columns: 1fr;
-          grid-template-rows: 50px 100px;
-          grid-template-areas:
-            'logoFooter logoFooter menuFooter menuFooter'
-            'copyFooter copyFooter mediaFooter mediaFooter';
-          align-items: flex-end;
-
-          .logo {
-            grid-area: logoFooter;
-            display: flex;
-            justify-content: flex-start;
-          }
-
-          .social-media {
-            grid-area: mediaFooter;
-            padding: 0;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-
-            & > * {
-              margin-right: 0;
-              padding: 5px 10px;
-              font-size: 1.4rem;
-              color: #fff;
-            }
-
-            & > *:last-child {
-              padding-right: 0;
-              margin-right: 0;
-            }
-          }
-
-          .menu-footer {
-            grid-area: menuFooter;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-
-            a {
-              font-size: 1rem;
-              text-decoration: none;
-              color: #fff;
-              margin-right: 10px;
-              margin-bottom: 0;
-
-              &:last-child {
-                margin-right: 0;
-                margin-bottom: 0;
-              }
-            }
-          }
-
-          .copyright {
-            grid-area: copyFooter;
-            width: max-content;
-            height: 41px;
-            margin-top: 0;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            font-size: 0.8125rem;
-            text-align: left;
-            color: #fff;
-          }
+      .copyright {
+        p {
+          margin-top: 30px;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1.687em;
+          letter-spacing: -0.01em;
+          color: lighten($color-branding, 30%);
         }
       }
     }
