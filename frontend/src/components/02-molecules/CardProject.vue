@@ -103,7 +103,8 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgba($color-branding, 0.9);
+      background: $color-branding;
+      // background: rgba($color-branding, 0.9);
     }
   }
 
@@ -166,7 +167,7 @@ export default {
 @media screen and (min-width: 768px) {
   .card-project {
     width: 100%;
-    height: 400px;
+    height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'divContent divImage';
@@ -189,7 +190,7 @@ export default {
       grid-area: divContent;
       width: 100%;
       height: auto;
-      padding: 24px 40px 24px 40px;
+      padding: 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;

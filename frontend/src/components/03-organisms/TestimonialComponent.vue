@@ -8,7 +8,7 @@
 
       <div class="slide-testimonials">
         <swiper
-          :slidesPerView="2"
+          :slidesPerView="slidesPerView"
           :spaceBetween="27"
           :pagination="{
             clickable: true,
@@ -54,6 +54,7 @@ export default {
 
   data() {
     return {
+      slidesPerView: 1,
       testimonials: [
         {
           path: 'testimonial-face-1.png',
@@ -81,7 +82,24 @@ export default {
     }
   },
 
-  methods: {},
+  mounted() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+
+  methods: {
+    handleResize() {
+      if (window.innerWidth >= 768) {
+        this.slidesPerView = 2
+      } else {
+        this.slidesPerView = 1
+      }
+    },
+  },
 }
 </script>
 
