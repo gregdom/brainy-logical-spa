@@ -1,202 +1,204 @@
 <template>
-  <section class="testimonial" id="testimonial">
-    <div class="wrapper">
-      <h3>O Que Falam da Gente</h3>
+  <section class="section home-testimonials">
+    <div class="container-default">
+      <div class="top">
+        <div class="subtitle">Testimonials</div>
+        <h2>Don’t take our word for it. See what our past clients say.</h2>
+      </div>
 
-      <swiper
-        :slidesPerView="slidesPerView"
-        :spaceBetween="20"
-        :loop="true"
-        :pagination="{
-          clickable: true,
-        }"
-        :navigation="true"
-        :modules="modules"
-        class="mySwiper cardTestimonial"
-      >
-        <swiper-slide
-          class="elementSwiperSlide"
-          v-for="(testimonial, index) in testimonialsArr"
-          :key="index"
+      <div class="slide-testimonials">
+        <swiper
+          :slidesPerView="2"
+          :spaceBetween="27"
+          :pagination="{
+            clickable: true,
+          }"
+          :navigation="false"
+          :modules="modules"
+          class="mySwiper"
         >
-          <div class="imageContainer">
-            <img
-              :src="require(`../../assets/images/${testimonial.image_path}`)"
-              alt="Imagem de Projeto"
+          <swiper-slide
+            v-for="(testimonial, index) in testimonials"
+            :key="index"
+          >
+            <card-testimonial
+              class="block-cards"
+              :path="testimonial.path"
+              :highlight="testimonial.highlight"
+              :description="testimonial.description"
+              :name="testimonial.name"
+              :work="testimonial.work"
             />
-          </div>
-
-          <div class="details">
-            <h4>{{ testimonial.title }}</h4>
-
-            <p>{{ testimonial.description }}</p>
-            <p class="clientName">{{ testimonial.name }}</p>
-          </div>
-        </swiper-slide>
-      </swiper>
+          </swiper-slide>
+        </swiper>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import {} from '../01-atoms'
+import { CardTestimonial } from '../02-molecules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
+
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import '../../assets/styles/style-swiper.css'
+
 import { Pagination, Navigation } from 'swiper'
 
-import { mapState } from 'vuex'
-
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
+  name: 'TestimonialComponent',
+  components: { CardTestimonial, Swiper, SwiperSlide },
+
   data() {
     return {
-      slidesPerView: 1,
+      testimonials: [
+        {
+          path: 'testimonial-face-1.png',
+          highlight: '“Best Development Agency”',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et erile tortor. Dignissim eu faucibus et, congue. Tempus commodo vitae consequat eget et quis non tincidunt idert.',
+          name: 'John Carter',
+          work: 'Head of Product',
+        },
+        {
+          path: 'testimonial-face-2.png',
+          highlight: '“Best Development Agency”',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et erile tortor. Dignissim eu faucibus et, congue. Tempus commodo vitae consequat eget et quis non tincidunt idert.',
+          name: 'Will Spark',
+          work: 'Engineering VP at Google',
+        },
+      ],
     }
   },
+
   setup() {
     return {
       modules: [Pagination, Navigation],
     }
   },
-  computed: {
-    ...mapState(['testimonials']),
-    testimonialsArr() {
-      if (this.testimonials.length > 0) {
-        return this.testimonials
-      }
-      return ''
-    },
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleResize)
-    this.handleResize()
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize)
-  },
-  methods: {
-    handleResize() {
-      if (window.innerWidth >= 768) {
-        this.slidesPerView = 2
-      } else {
-        this.slidesPerView = 1
-      }
-    },
-  },
+
+  methods: {},
 }
 </script>
 
 <style lang="scss">
-.testimonial {
+.home-testimonials {
   width: 100%;
-  max-width: 1400px;
   height: auto;
   margin: 0 auto;
-  padding: 57px 0 64px 0;
-  background: $color-branding;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
-  .wrapper {
-    width: calc(100% - 48px);
+  .container-default {
+    max-width: 1257px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    .top {
+      max-width: 575px;
+      margin-bottom: 20px;
+
+      div.subtitle {
+        margin-bottom: 8px;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        line-height: 1em;
+        color: $color-branding;
+      }
+
+      h2 {
+        margin-top: 0px;
+        margin-bottom: 25px;
+        font-size: 26px;
+        line-height: 1.368em;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
+        color: #071221;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .home-testimonials {
+    width: 100%;
     height: auto;
     margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
-    h3 {
-      margin: 0 auto 32px auto;
-      padding-bottom: 5px;
-      width: fit-content;
-      font-size: $section-title-size;
-      text-align: center;
-      color: #fff;
+    .container-default {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
+
+        div.subtitle {
+          margin-bottom: 10px;
+        }
+
+        h2 {
+          font-size: 31px;
+        }
+      }
     }
+  }
+}
 
-    .elementSwiperSlide {
+@media screen and (min-width: 768px) {
+  .home-testimonials {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    .container-default {
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
+
+        div.subtitle {
+          margin-bottom: 16px;
+        }
+
+        h2 {
+          font-size: 38px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home-testimonials {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 160px;
+    padding-bottom: 160px;
+
+    .container-default {
       width: 100%;
-      max-width: auto;
-      height: auto;
-      padding: 0 0 20px 0;
-      border-radius: 10px;
-      background: #fff;
 
-      .imageContainer {
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
+      }
+
+      .slide-testimonials {
         width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          display: block;
-          margin-top: 20px;
-        }
       }
-
-      .details {
-        width: 100%;
-        height: auto;
-        padding: 0 20px;
-
-        h4 {
-          margin: 20px auto 15px auto;
-          padding: 5px 10px;
-          width: fit-content;
-          font-size: $general-title-size;
-          text-align: center;
-          color: $color-text-dark;
-          background: $color-highlight;
-        }
-
-        p {
-          padding-bottom: 20px;
-          font-size: $font-size-base;
-          line-height: $general-line-height;
-          font-style: italic;
-          text-align: center;
-          color: $color-general-text;
-        }
-
-        p.clientName {
-          text-align: right;
-          font-weight: 600;
-        }
-      }
-    }
-
-    .mySwiper {
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: #000 !important;
-        opacity: 0.4;
-        transition: opacity 0.2s ease-in-out;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-
-      .swiper-pagination-bullet-active {
-        background: $color-branding;
-      }
-    }
-  }
-}
-
-@media (min-width: 600px) {
-  .testimonial {
-    .wrapper {
-      width: 500px;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .testimonial {
-    .wrapper {
-      width: 90%;
-      max-width: 940px;
     }
   }
 }

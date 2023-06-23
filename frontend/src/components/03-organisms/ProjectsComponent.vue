@@ -172,10 +172,19 @@ export default {
 
     .container-default {
       .top {
-        margin-bottom: 30px;
+        margin-bottom: 50px;
 
         div.subtitle {
           margin-bottom: 16px;
+          text-align: center;
+        }
+
+        .main-title {
+          margin: 0 auto;
+
+          h2 {
+            text-align: center;
+          }
         }
       }
     }

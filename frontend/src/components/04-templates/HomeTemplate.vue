@@ -12,6 +12,7 @@
       />
       <about-component />
       <projects-component />
+      <divider-horizontal />
       <testimonial-component />
       <!-- <contact-form-component mainTitle="A Brainy Faz Seu Projeto" /> -->
     </main>
