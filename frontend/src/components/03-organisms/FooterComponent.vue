@@ -152,4 +152,147 @@ export default {
     }
   }
 }
+
+@media screen and (min-width: 480px) {
+  .home-footer {
+    padding-top: 60px;
+    padding-bottom: 30px;
+
+    .container-default {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      .top {
+        margin-bottom: 40px;
+
+        a.logo {
+          font-size: 20px;
+        }
+
+        .menu-footer {
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+
+          a {
+            margin-bottom: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home-footer {
+    padding-top: 80px;
+
+    .container-default {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      .top {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a.logo {
+          font-size: 20px;
+        }
+
+        .menu-footer {
+          margin-top: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          h3 {
+            display: none;
+          }
+
+          a {
+            margin-bottom: 0;
+            margin-right: 20px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      .bottom {
+        padding-top: 30px;
+        border-top: 1px solid lighten(#071738, 20%);
+
+        .copyright {
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home-footer {
+    padding-top: 107px;
+    padding-bottom: 36px;
+
+    .container-default {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      .top {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a.logo {
+          font-size: 20px;
+        }
+
+        .menu-footer {
+          margin-top: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          h3 {
+            display: none;
+          }
+
+          a {
+            margin-bottom: 0;
+            margin-right: 20px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      .bottom {
+        padding-top: 30px;
+        border-top: 1px solid lighten(#071738, 20%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .copyright {
+          p {
+            margin-top: 0;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
