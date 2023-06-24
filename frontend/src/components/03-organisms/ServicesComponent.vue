@@ -64,7 +64,7 @@ export default {
           title: 'Extensão para Browsers',
           description_short:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id integer ut faucibus sem risus. Praesent sagittis, ut diam diam odio faucibus lorem. Sollicitudin faucibus.',
-          link: 'link',
+          link: 'browser-extension',
           name: 'extension',
         },
         {
@@ -72,7 +72,7 @@ export default {
           title: 'Criação de Sites',
           description_short:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id integer ut faucibus sem risus. Praesent sagittis, ut diam diam odio faucibus lorem. Sollicitudin faucibus.',
-          link: 'link',
+          link: 'business-website',
           name: 'sites',
         },
         {
@@ -80,7 +80,7 @@ export default {
           title: 'Landing Pages',
           description_short:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id integer ut faucibus sem risus. Praesent sagittis, ut diam diam odio faucibus lorem. Sollicitudin faucibus.',
-          link: 'link',
+          link: 'landing-page-website',
           name: 'landing-pages',
         },
       ],

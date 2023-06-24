@@ -18,19 +18,22 @@
           <div class="sub-menu" :class="{ active: isSubMenuOpen }">
             <ul class="sub-list">
               <li class="sub-nav-item">
+                <router-link class="nav-link" :to="{ name: 'services' }"
+                  >Página de Serviços
+                </router-link>
                 <router-link
                   class="nav-link"
                   :to="{ name: 'browser-extension' }"
-                  >Extensão Chrome e Firefox</router-link
-                >
+                  >Extensão Chrome e Firefox
+                </router-link>
                 <router-link class="nav-link" :to="{ name: 'business-website' }"
-                  >Site Empresarial</router-link
-                >
+                  >Site Empresarial
+                </router-link>
                 <router-link
                   class="nav-link"
                   :to="{ name: 'landing-page-website' }"
-                  >Landing Pages</router-link
-                >
+                  >Landing Pages
+                </router-link>
               </li>
             </ul>
           </div>
@@ -294,6 +297,7 @@ export default {
             z-index: 1000;
             overflow: hidden;
             background: #fff;
+            pointer-events: none;
 
             ul.sub-list {
               list-style: none;
@@ -321,11 +325,9 @@ export default {
               }
             }
 
-            // &.active {
-            //   max-height: fit-content;
-            //   padding: 8px 24px;
-            //   opacity: 1;
-            // }
+            &.active {
+              pointer-events: unset;
+            }
           }
         }
       }

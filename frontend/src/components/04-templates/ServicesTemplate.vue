@@ -1,53 +1,38 @@
 <template>
   <div>
     <header-component />
-    <hero-component
-      titleHero="Construimos Projetos Incríveis Para A Web"
-      subTitleHero="Soluções personalizadas para atender às suas necessidades, com uma equipe dedicada a oferecer serviços de Desenvolvimento Web de qualidade."
-    />
-
-    <main>
-      <services-component />
-      <gallery-component />
-      <testimonial-component />
-      <!-- <contact-form-component mainTitle="A Brainy Faz Seu Projeto" /> -->
-    </main>
-
+    <divider-horizontal />
+    <transition name="fade">
+      <main>
+        <router-view />
+      </main>
+    </transition>
     <footer-component />
   </div>
 </template>
 
 <script>
-import {
-  HeaderComponent,
-  HeroComponent,
-  ServicesComponent,
-  GalleryComponent,
-  TestimonialComponent,
-  // ContactFormComponent,
-  FooterComponent,
-} from '../03-organisms'
-
-import { mapState } from 'vuex'
+import { DividerHorizontal } from '../01-atoms'
+import { HeaderComponent, FooterComponent } from '../03-organisms'
 
 export default {
+  name: 'ServicesTemplate',
   components: {
+    DividerHorizontal,
     HeaderComponent,
-    HeroComponent,
-    ServicesComponent,
-    GalleryComponent,
-    TestimonialComponent,
-    // ContactFormComponent,
     FooterComponent,
-  },
-  computed: {
-    ...mapState({
-      services: (state) => state.services,
-    }),
-  },
-  mounted() {
-    let callToAction = document.querySelector('.call-to-action')
-    callToAction.style.display = 'none'
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

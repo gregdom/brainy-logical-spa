@@ -9,11 +9,11 @@
         <div class="menu-footer">
           <h3>Menu</h3>
 
-          <a href="/">Home</a>
-          <a href="/services">Serviços</a>
-          <a href="/about">Sobre</a>
-          <a href="/projects">Projetos</a>
-          <a href="/contact">Contato</a>
+          <router-link :to="{ name: 'home' }">Home</router-link>
+          <router-link :to="{ name: 'services' }">Serviços</router-link>
+          <router-link :to="{ name: 'about' }">Sobre</router-link>
+          <router-link :to="{ name: 'projects' }">Projetos</router-link>
+          <router-link :to="{ name: 'contact' }">Contato</router-link>
         </div>
       </div>
 

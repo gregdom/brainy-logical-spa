@@ -1,91 +1,61 @@
 import { createRouter, createWebHistory } from 'vue-router'
-const Home = () => import(/* webpackChunkName: "Home" */ '@/components/05-pages/HomePage.vue')
-const Services = () => import(/* webpackChunkName: "Services" */ '@/components/05-pages/ServicesPage.vue')
-const About = () => import(/* webpackChunkName: "About" */ '@/components/05-pages/AboutPage.vue')
-const Projects = () => import(/* webpackChunkName: "Projects" */ '@/components/05-pages/ProjectsPage.vue')
-const Contact = () => import(/* webpackChunkName: "Contact" */ '@/components/05-pages/ContactPage.vue')
-const NotFound = () => import(/* webpackChunkName: "NotFound" */ '@/components/05-pages/NotFound.vue')
+const HomePage = () => import(/* webpackChunkName: "Home" */ '@/components/05-pages/HomePage.vue')
+const ServicesPage = () => import(/* webpackChunkName: "Services" */ '@/components/05-pages/ServicesPage.vue')
+const AboutPage = () => import(/* webpackChunkName: "About" */ '@/components/05-pages/AboutPage.vue')
+const ProjectsPage = () => import(/* webpackChunkName: "Projects" */ '@/components/05-pages/ProjectsPage.vue')
+const ContactPage = () => import(/* webpackChunkName: "Contact" */ '@/components/05-pages/ContactPage.vue')
+const NotFoundPage = () => import(/* webpackChunkName: "NotFound" */ '@/components/05-pages/NotFound.vue')
 
-// Nested
-const WebDevelopment = () => import(/* webpackChunkName: "WebDevelopment" */ '@/components/04-templates/ServiceNested/WebDevelopment.vue')
-const DisplayService = () => import(/* webpackChunkName: "DisplayService" */ '@/components/04-templates/ServiceNested/DisplayService.vue')
+// Views Principais
+const ServicesView = () => import(/* webpackChunkName: "ServicesView" */ '@/components/04-templates/views/ServicesView.vue')
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: HomePage
   },
   {
     path: '/services',
-    name: 'services',
-    component: Services,
+    component: ServicesPage,
     children: [
+      {
+        path: '',
+        name: 'services',
+        component: ServicesView
+      },
       {
         path: 'browser-extension',
         name: 'browser-extension',
-        component: Services
       },
       {
         path: 'business-website',
         name: 'business-website',
-        component: Services
       },
       {
         path: 'landing-page-website',
         name: 'landing-page-website',
-        component: Services
       }
     ]
   },
   {
-    path: '/services/website-development',
-    name: 'website-dev',
-    props: true,
-    component: WebDevelopment
-  },
-  {
-    path: '/services/corporate-website-development',
-    name: 'corporate-dev',
-    props: true,
-    component: DisplayService
-  },
-  {
-    path: '/services/startup-website-development',
-    name: 'startup-dev',
-    props: true,
-    component: DisplayService
-  },
-  {
-    path: '/services/landing-page-website-development',
-    name: 'landingpage-dev',
-    props: true,
-    component: DisplayService
-  },
-  {
-    path: '/services/extension-development',
-    name: 'extension-dev',
-    props: true,
-    component: DisplayService
-  },
-  {
     path: '/about',
     name: 'about',
-    component: About
+    component: AboutPage
   },
   {
     path: '/projects',
     name: 'projects',
-    component: Projects
+    component: ProjectsPage
   },
   {
     path: '/contact',
     name: 'contact',
-    component: Contact
+    component: ContactPage
   },
   {
     path: '/notfound',
-    component: NotFound
+    component: NotFoundPage
   },
   {
     path: '/:pathMatch(.*)',
