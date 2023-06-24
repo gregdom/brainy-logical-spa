@@ -1,11 +1,6 @@
 <template>
   <div>
     <header-component />
-    <hero-component
-      titleHero="Quem Somos? Conheça a Brainy Logical"
-      subTitleHero="Soluções personalizadas para atender às suas necessidades, com uma equipe dedicada a oferecer serviços de desenvolvimento e programação de websites de qualidade."
-    />
-
     <main>
       <section class="about-page">
         <div class="wrapper">
@@ -64,8 +59,6 @@
           </p>
         </div>
       </section>
-
-      <contact-form-component mainTitle="A Gente Faz Seu Projeto" />
     </main>
 
     <footer-component />
@@ -73,24 +66,15 @@
 </template>
 
 <script>
-import {
-  HeaderComponent,
-  HeroComponent,
-  ContactFormComponent,
-  FooterComponent,
-} from '../03-organisms'
+import { HeaderComponent, FooterComponent } from '../03-organisms'
 
 export default {
+  name: 'AboutTemplate',
   components: {
     HeaderComponent,
-    HeroComponent,
-    ContactFormComponent,
     FooterComponent,
   },
-  mounted() {
-    let callToAction = document.querySelector('.call-to-action')
-    callToAction.style.display = 'none'
-  },
+  mounted() {},
 }
 </script>
 

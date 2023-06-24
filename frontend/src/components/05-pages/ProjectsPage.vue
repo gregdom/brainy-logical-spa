@@ -6,15 +6,9 @@
 
 <script>
 import { ProjectsTemplate } from '../04-templates'
-// import { mapActions } from 'vuex'
 
 export default {
+  name: 'ProjectsPage',
   components: { ProjectsTemplate },
-  // methods: {
-  //   ...mapActions(['populateStoreArr']),
-  // },
-  // created() {
-  //   this.populateStoreArr()
-  // },
 }
 </script>

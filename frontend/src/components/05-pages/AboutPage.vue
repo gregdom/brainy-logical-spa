@@ -8,6 +8,7 @@
 import { AboutTemplate } from '../04-templates'
 
 export default {
+  name: 'AboutPage',
   components: { AboutTemplate },
 }
 </script>
