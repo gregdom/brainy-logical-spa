@@ -15,23 +15,27 @@ import { mapState } from 'vuex'
 export default {
   name: 'App',
   components: { ButtonScrollToTop, ModalViewer },
+
   computed: {
     ...mapState({
       isMenuOpen: (state) => state.isMenuOpen,
     }),
   },
+
+  mounted() {
+    window.addEventListener('resize', this.handleResize)
+  },
+
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+
   methods: {
     handleResize() {
       if (window.innerWidth >= 768) {
         this.$store.commit('updateIsMenuOpen', false)
       }
     },
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleResize)
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize)
   },
 }
 </script>

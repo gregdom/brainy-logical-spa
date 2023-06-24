@@ -6,7 +6,11 @@
       </li>
       <li class="nav-item item-container-sub-menu">
         <div>
-          <div class="fake-link-item" @click="toggleSubMenu">Services</div>
+          <div class="fake-link-item" @click="toggleSubMenu">
+            <div class="bold-link" :class="{ bold: isServicesRoute }">
+              Services
+            </div>
+          </div>
           <span
             class="material-symbols-outlined"
             :class="{ active: isSubMenuOpen }"
@@ -65,43 +69,37 @@
 export default {
   name: 'NavMenu',
   components: {},
+
   data() {
     return {
       isSubMenuOpen: false,
     }
   },
-  // computed: {
-  //   ...mapState({
-  //     isMenuOpen: (state) => state.isMenuOpen,
-  //     isSubmenuOpen: (state) => state.isSubmenuOpen,
-  //   }),
-  // },
+
+  computed: {
+    isServicesRoute() {
+      const currentRoute = this.$route
+      return currentRoute.matched.some((record) =>
+        record.path.includes('/services')
+      )
+    },
+  },
+
+  mounted() {},
+
   methods: {
-    // ...mapMutations(['toggleMenu']),
-    // closeMenu() {
-    //   this.toggleMenu()
-    //   this.$store.commit('updateIsMenuOpen', false)
-    // },
-    // toggleSubmenu() {
-    //   this.$store.commit('updateIsSubmenuOpen')
-    // },
-    // teste() {
-    //   alert('teste')
-    // },
     toggleSubMenu() {
       this.isSubMenuOpen = !this.isSubMenuOpen
     },
   },
-
-  // mounted() {
-  //   if (window.innerWidth >= 992) {
-  //     this.isSubMenuOpen = true
-  //   }
-  // },
 }
 </script>
 
 <style lang="scss">
+.bold {
+  font-weight: 700;
+}
+
 .nav {
   ul.main-list {
     list-style: none;
@@ -129,7 +127,7 @@ export default {
         }
 
         &.router-link-active {
-          font-weight: 600;
+          font-weight: 700;
         }
       }
 
