@@ -2,11 +2,11 @@
   <div>
     <header-component />
     <divider-horizontal />
-    <transition name="fade">
-      <main>
-        <router-view />
-      </main>
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
     <footer-component />
   </div>
 </template>
@@ -28,10 +28,10 @@ export default {
 <style lang="scss" scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 2s ease;
+  transition: opacity 0.5s ease;
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
