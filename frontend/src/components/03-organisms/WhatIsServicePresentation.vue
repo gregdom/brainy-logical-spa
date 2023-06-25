@@ -26,10 +26,7 @@
           mais eficiente e adaptada às necessidades específicas.
         </p>
 
-        <p>
-          Alguns dos motivos pelos quais uma empresa ou pessoa pode se
-          beneficiar ao ter uma extensão são:
-        </p>
+        <p class="benefits">Benefícios</p>
 
         <ul>
           <li>
@@ -79,8 +76,6 @@
 </template>
 
 <script>
-import {} from '../01-atoms'
-
 export default {
   name: 'WhatIsServicePresentation',
   components: {},
@@ -142,6 +137,13 @@ export default {
         line-height: 1.687em;
         letter-spacing: -0.01em;
         color: #46526b;
+
+        &.benefits {
+          margin-top: 20px;
+          margin-bottom: 5px;
+          font-size: 18px;
+          color: $color-branding;
+        }
       }
 
       ul {
@@ -221,7 +223,7 @@ export default {
     height: auto;
     margin: 0 auto;
     padding-top: 130px;
-    padding-bottom: 160px;
+    padding-bottom: 120px;
 
     .container-default {
       .top {

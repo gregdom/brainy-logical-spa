@@ -2,18 +2,27 @@
   <div>
     <hero-service-presentation />
     <what-is-service-presentation />
+    <divider-horizontal />
+    <testimonial-component />
   </div>
 </template>
 
 <script>
+import { DividerHorizontal } from '../../01-atoms'
 import {
   HeroServicePresentation,
   WhatIsServicePresentation,
+  TestimonialComponent,
 } from '../../03-organisms'
 
 export default {
   name: 'ServicePresentation',
-  components: { HeroServicePresentation, WhatIsServicePresentation },
+  components: {
+    HeroServicePresentation,
+    WhatIsServicePresentation,
+    TestimonialComponent,
+    DividerHorizontal,
+  },
   // props: {
   //   titleHero: {
   //     type: String,
@@ -28,4 +37,11 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@media screen and (min-width: 992px) {
+  .home-testimonials {
+    padding-top: 130px;
+    padding-bottom: 160px;
+  }
+}
+</style>
