@@ -1,6 +1,7 @@
 <template>
   <div>
     <header-component />
+    <divider-horizontal />
 
     <main>
       <projects-component />
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import { DividerHorizontal } from '../01-atoms'
 import {
   HeaderComponent,
   ProjectsComponent,
@@ -20,6 +22,7 @@ import {
 export default {
   name: 'ProjectsTemplate',
   components: {
+    DividerHorizontal,
     HeaderComponent,
     ProjectsComponent,
     FooterComponent,
@@ -29,11 +32,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.projects {
-  padding-bottom: 100px;
-}
+@media screen and (min-width: 992px) {
+  .home-projects {
+    padding-top: 110px;
+    padding-bottom: 160px;
 
-.footer {
-  margin-top: 0;
+    // .container-default {
+    //   .top {
+    //     margin-bottom: 50px;
+
+    //     div.subtitle {
+    //       margin-bottom: 16px;
+    //       text-align: center;
+    //     }
+
+    //     .main-title {
+    //       margin: 0 auto;
+
+    //       h2 {
+    //         text-align: center;
+    //       }
+    //     }
+    //   }
+    // }
+  }
 }
 </style>

@@ -2,19 +2,27 @@
   <div>
     <header-component />
     <main>
-      <!-- <contact-form-component mainTitle="Envie sua mensagem" /> -->
+      <hero-contact />
+      <contact-form-component mainTitle="Envie sua mensagem" />
     </main>
     <footer-component />
   </div>
 </template>
 
 <script>
-import { HeaderComponent, FooterComponent } from '../03-organisms'
+import {
+  HeaderComponent,
+  HeroContact,
+  ContactFormComponent,
+  FooterComponent,
+} from '../03-organisms'
 
 export default {
   name: 'ContactTemplate',
   components: {
     HeaderComponent,
+    HeroContact,
+    ContactFormComponent,
     FooterComponent,
   },
   mounted() {},

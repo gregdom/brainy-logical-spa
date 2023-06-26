@@ -1,93 +1,79 @@
 <template>
-  <section class="contact">
-    <div v-show="!submitSituation" class="wrapper wrapperForm">
-      <h3>{{ mainTitle }}</h3>
-      <span class="subtitle">Fale para nós o que você precisa</span>
+  <section class="contact contact-form">
+    <div v-show="!submitSituation" class="container-default">
+      <div class="subtitle">Queremos ouvir você</div>
+
+      <h2>{{ mainTitle }}</h2>
+
       <form @submit.prevent="submitForm">
-        <div class="personal division">
-          <div class="divFirstName inner">
-            <input
-              class="first-name fieldEntry"
-              :class="{ error: v$.contactForm.firstName.$error }"
-              type="text"
-              v-model.trim="contactForm.firstName"
-            />
-            <label :class="{ active: contactForm.firstName }" for="first-name"
-              >Nome<small>*</small>
-            </label>
-            <span v-if="v$.contactForm.firstName.$error">
-              {{ v$.contactForm.firstName.$errors[0].$message }}
-            </span>
-          </div>
+        <div class="divFirstName wrapper-input">
+          <label :class="{ active: contactForm.firstName }" for="first-name"
+            >Nome<small>*</small>
+          </label>
+          <input
+            class="first-name fieldEntry"
+            :class="{ error: v$.contactForm.firstName.$error }"
+            type="text"
+            v-model.trim="contactForm.firstName"
+            placeholder="Qual é o seu nome?"
+          />
 
-          <div class="separator"></div>
-
-          <div class="divLastName inner">
-            <input
-              class="last-name fieldEntry"
-              type="text"
-              v-model.trim="contactForm.lastName"
-            />
-            <label :class="{ active: contactForm.lastName }" for="last-name"
-              >Sobrenome
-            </label>
-            <span v-if="v$.contactForm.lastName.$error">
-              {{ v$.contactForm.lastName.$errors[0].$message }}
-            </span>
-          </div>
-
-          <div class="divEmail inner">
-            <input
-              class="email fieldEntry"
-              :class="{ error: v$.contactForm.email.$error }"
-              type="email"
-              v-model.trim="contactForm.email"
-            />
-            <label :class="{ active: contactForm.email }" for="email"
-              >Email<small>*</small>
-            </label>
-            <span v-if="v$.contactForm.email.$error">
-              {{ v$.contactForm.email.$errors[0].$message }}
-            </span>
-          </div>
+          <span v-if="v$.contactForm.firstName.$error">
+            {{ v$.contactForm.firstName.$errors[0].$message }}
+          </span>
         </div>
 
-        <div class="business division">
-          <div class="divCompany inner">
-            <input
-              class="company-name fieldEntry"
-              type="text"
-              v-model.trim="contactForm.companyName"
-            />
-            <label
-              :class="{ active: contactForm.companyName }"
-              for="company-name"
-              >Nome da Empresa
-            </label>
-            <span v-if="v$.contactForm.companyName.$error">
-              {{ v$.contactForm.companyName.$errors[0].$message }}
-            </span>
-          </div>
+        <div class="divEmail wrapper-input">
+          <label :class="{ active: contactForm.email }" for="email"
+            >Email<small>*</small>
+          </label>
+          <input
+            class="email fieldEntry"
+            :class="{ error: v$.contactForm.email.$error }"
+            type="email"
+            v-model.trim="contactForm.email"
+            placeholder="Qual é o seu email?"
+          />
 
-          <div class="divSite inner">
-            <input
-              class="company-site fieldEntry"
-              type="text"
-              v-model.trim="contactForm.companySite"
-            />
-            <label
-              :class="{ active: contactForm.companySite }"
-              for="company-site"
-              >Site da Empresa
-            </label>
-            <span v-if="v$.contactForm.companySite.$error">
-              {{ v$.contactForm.companySite.$errors[0].$message }}
-            </span>
-          </div>
+          <span v-if="v$.contactForm.email.$error">
+            {{ v$.contactForm.email.$errors[0].$message }}
+          </span>
         </div>
 
-        <div class="project-idea division">
-          <div class="innerSelect">
+        <div class="divCompany wrapper-input">
+          <label :class="{ active: contactForm.companyName }" for="company-name"
+            >Empresa
+          </label>
+          <input
+            class="company-name fieldEntry"
+            type="text"
+            v-model.trim="contactForm.companyName"
+            placeholder="Nome da empresa"
+          />
+
+          <span v-if="v$.contactForm.companyName.$error">
+            {{ v$.contactForm.companyName.$errors[0].$message }}
+          </span>
+        </div>
+
+        <div class="divSite wrapper-input">
+          <label :class="{ active: contactForm.companySite }" for="company-site"
+            >Site
+          </label>
+          <input
+            class="company-site fieldEntry"
+            type="text"
+            v-model.trim="contactForm.companySite"
+            placeholder="Seu site (opcional)"
+          />
+
+          <span v-if="v$.contactForm.companySite.$error">
+            {{ v$.contactForm.companySite.$errors[0].$message }}
+          </span>
+        </div>
+
+        <div class="project-idea wrapper-input">
+          <div class="wrapper-inputSelect wrapper-input">
             <label class="labelInit" for="project-type"
               >Tipo de Projeto<small>*</small>
             </label>
@@ -106,13 +92,14 @@
             </span>
           </div>
 
-          <div class="innerTextArea">
+          <div class="wrapper-inputTextArea">
             <label class="labelInit" for="project-details"
               >Fale sobre seu projeto<small>*</small>
             </label>
             <textarea
               id="project-details"
               v-model="contactForm.projectDetails"
+              placeholder="Digite sua mensagem aqui..."
             ></textarea>
 
             <span v-if="v$.contactForm.projectDetails.$error">
@@ -320,367 +307,178 @@ export default {
   border-bottom: 1px solid #bb3838 !important;
 }
 
-.container-wrapper {
+.contact-form {
   width: 100%;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  .text-status-submit {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #1c914e;
-    width: fit-content;
-    max-width: 500px;
-    height: auto;
-    padding: 20px;
-    border: 1px solid #4fdb8a;
-    border-left: 7px solid #4fdb8a;
-    border-radius: 5px;
-    background: #c2f3d6;
-
-    &.active {
-      color: #ee3546;
-      border: 1px solid #f55160;
-      border-left: 7px solid #f55160;
-      background: #ffe1e3;
-    }
-  }
-}
-
-.contact {
-  width: 100%;
-  max-width: 1400px;
   height: auto;
   margin: 0 auto;
-  padding: 57px 0 64px 0;
-  background: #fff;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
-  .wrapper {
-    width: calc(100% - 48px);
-    height: auto;
-    margin: 0 auto;
-    padding: 0 20px 20px 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .container-default {
+    max-width: 1257px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 
-    h3 {
-      font-size: $section-title-size;
-      text-align: center;
-      margin: 0 0 16px 0;
-      color: $color-text-dark;
+    div.subtitle {
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1em;
+      color: $color-branding;
     }
 
-    .subtitle {
-      margin-bottom: 64px;
-      font-size: 1rem;
-      color: #686f74;
-      text-align: center;
+    h2 {
+      margin-bottom: 25px;
+      font-size: 26px;
+      line-height: 1.368em;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
+      color: #071221;
     }
 
     form {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 30px 20px 40px;
+      border: 1px solid #cecdcc;
+      border-radius: 28px;
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-rows: auto;
+      font-family: 'Plus Jakarta Sans', sans-serif;
 
-      .separator {
-        display: none;
-      }
-
-      .division {
+      .wrapper-input {
         width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 30px;
-        position: relative;
-
-        .inner {
-          position: relative;
-
-          span {
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            pointer-events: none;
-            display: block;
-            font-size: 10px;
-            color: #fff;
-            z-index: 9999;
-            transition: 0.2s;
-            background: #bb3838;
-            padding: 1px 4px;
-            text-transform: uppercase;
-          }
-        }
-
-        & > div {
-          margin-bottom: 30px;
-
-          label {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            pointer-events: none;
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 24px;
-            color: #89949e;
-            z-index: 1000;
-            transition: 0.2s;
-
-            &.active {
-              top: 0;
-              left: 0;
-              color: $color-branding;
-            }
-          }
-
-          .labelInit {
-            all: unset;
-            margin-bottom: 10px;
-            padding: 0 5px;
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 24px;
-            color: #89949e;
-          }
-
-          input[type='text'],
-          input[type='email'] {
-            width: 100%;
-            padding: 13px 5px;
-            border-top: 1px solid transparent;
-            border-left: 1px solid transparent;
-            border-right: 1px solid transparent;
-            border-bottom: 1px solid #a1b0bf;
-            font-size: 1rem;
-            outline: none;
-            color: #89949e;
-            background: transparent;
-
-            &:focus {
-              outline: none;
-              color: #89949e;
-
-              ~ label {
-                top: 0;
-                left: 0;
-                color: $color-branding;
-              }
-            }
-          }
-        }
-
-        & > div:last-child {
-          margin-bottom: 0;
-        }
-
-        .innerSelect {
-          position: relative;
-
-          select {
-            width: 100%;
-            padding: 13px 22px;
-            border: 1px solid #a1b0bf;
-            border-radius: 5px;
-            font-size: 1rem;
-            outline: none;
-            color: #89949e;
-            background-color: #fff;
-
-            &:focus {
-              outline: none;
-              border: 1px solid $color-branding;
-              color: #89949e;
-            }
-          }
-
-          span {
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            pointer-events: none;
-            display: block;
-            font-size: 10px;
-            color: #fff;
-            z-index: 9999;
-            transition: 0.2s;
-            background: #bb3838;
-            padding: 1px 4px;
-            text-transform: uppercase;
-          }
-        }
-
-        .innerTextArea {
-          position: relative;
-
-          textarea {
-            width: 100%;
-            padding: 13px 5px;
-            font-size: 1rem;
-            outline: none;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 14px;
-            border: 1px solid #a1b0bf;
-            min-height: 200px;
-            padding: 10px;
-            color: #89949e;
-            background: transparent;
-
-            &:focus {
-              outline: none;
-              color: #89949e;
-
-              ~ label {
-                top: 0;
-                left: 0;
-                color: $color-branding;
-              }
-            }
-          }
-
-          span {
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            pointer-events: none;
-            display: block;
-            font-size: 10px;
-            color: #fff;
-            z-index: 9999;
-            transition: 0.2s;
-            background: #bb3838;
-            padding: 1px 4px;
-            text-transform: uppercase;
-          }
-        }
-      }
-
-      .divButton {
-        width: 100%;
-        height: auto;
-        margin-top: 0;
         margin-bottom: 20px;
 
-        button[type='submit'] {
-          cursor: pointer;
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: 600;
+          color: #071221;
+        }
+
+        input {
           width: 100%;
-          padding: 15px 25px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-family: 'Open Sans', sans-serif;
-          font-size: 1.1rem;
-          font-weight: 700;
-          text-decoration: none;
-          border: none;
-          border-radius: 5px;
-          transition: 0.2s;
-          color: #fff;
-          background: $color-branding;
+          height: 62px;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          margin-bottom: 0px;
+          padding-right: 16px;
+          padding-left: 16px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #f6f8fb;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px 0 rgba(44, 143, 255, 0.01),
+            0 1px 3px 0 rgba(7, 16, 33, 0.06);
+          -webkit-transition: border-color 350ms ease, color 350ms ease;
+          transition: border-color 350ms ease, color 350ms ease;
+          color: #46526b;
+          font-size: 16px;
+          font-weight: 500;
+          outline: none;
+
+          &:hover {
+            border: 1px solid $color-branding;
+          }
+        }
+
+        textarea {
+          width: 100%;
+          min-height: 200px;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          margin-bottom: 0px;
+          padding: 16px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #f6f8fb;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px 0 rgba(44, 143, 255, 0.01),
+            0 1px 3px 0 rgba(7, 16, 33, 0.06);
+          -webkit-transition: border-color 350ms ease, color 350ms ease;
+          transition: border-color 350ms ease, color 350ms ease;
+          color: #46526b;
+          font-size: 16px;
+          font-weight: 500;
+          outline: none;
         }
       }
     }
   }
 }
 
-@media (min-width: 600px) {
-  .contact {
-    .wrapper {
-      width: 500px;
+@media screen and (min-width: 480px) {
+  .contact-form {
+    .container-default {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      div.subtitle {
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 31px;
+        margin-bottom: 30px;
+      }
+
+      form {
+        padding: 40px 40px 60px;
+
+        .wrapper-input {
+          margin-bottom: 30px;
+        }
+      }
     }
   }
 }
 
-@media (min-width: 768px) {
-  .contact {
-    .wrapper {
-      width: 90%;
-      max-width: 940px;
+@media screen and (min-width: 768px) {
+  .contact-form {
+    .container-default {
+      div.subtitle {
+        margin-bottom: 16px;
+      }
+
+      h2 {
+        font-size: 38px;
+        margin-bottom: 30px;
+      }
 
       form {
-        .separator {
-          display: unset;
-        }
+        padding: 60px 60px 70px;
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-column-gap: 28px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
 
-        .division {
-          all: unset;
-          width: 80%;
-
-          select {
-            width: 100%;
-            max-width: 48%;
-          }
-        }
-
-        .personal {
-          display: grid;
-          grid-template-columns: 1fr 20px 1fr;
-          grid-template-rows: auto auto;
-          grid-template-areas:
-            'firstName separator lastName'
-            'email email email';
+        .wrapper-input {
           margin-bottom: 32px;
-
-          .divFirstName {
-            grid-area: firstName;
-          }
-          .separator {
-            grid-area: separator;
-          }
-          .divLastName {
-            grid-area: lastName;
-          }
-          .divEmail {
-            grid-area: email;
-          }
         }
 
-        .business {
-          display: grid;
-          grid-template-columns: 1fr 20px 1fr;
-          grid-template-rows: auto;
-          grid-template-areas: 'divCompany separator divSite';
-          margin-bottom: 32px;
-
-          & > div {
-            margin-bottom: 0;
-          }
-
-          .divCompany {
-            grid-area: divCompany;
-          }
-          .separator {
-            grid-area: separator;
-          }
-          .divSite {
-            grid-area: divSite;
-          }
+        .project-idea {
+          grid-column-start: span 2;
+          grid-column-end: span 2;
+          grid-row-start: span 1;
+          grid-row-end: span 1;
         }
+      }
+    }
+  }
+}
 
-        .divButton {
-          width: 80%;
-          height: auto;
-          margin-top: 20px;
-          display: flex;
-          justify-content: flex-end;
+@media screen and (min-width: 992px) {
+  .contact-form {
+    .container-default {
+      h2 {
+        margin-bottom: 30px;
+      }
 
-          button[type='submit'] {
-            width: fit-content;
-            font-size: 1rem;
-          }
-        }
+      form {
+        padding: 64px 73px 74px;
       }
     }
   }
