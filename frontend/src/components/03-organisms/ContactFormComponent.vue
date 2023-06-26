@@ -148,6 +148,9 @@ export default {
       required: true,
     },
   },
+
+  components: {},
+
   data() {
     return {
       contactForm: reactive({
@@ -208,7 +211,9 @@ export default {
   //   },
   // },
   setup() {
-    const { executeRecaptcha, recaptchaLoaded } = useReCaptcha()
+    const { executeRecaptcha, recaptchaLoaded } = useReCaptcha(
+      '6LdwfzUmAAAAAH4ZK5NtLDhW_apfE1-oef2Ky0Ta'
+    )
     const v$ = useVuelidate()
 
     const recaptcha = async () => {
@@ -289,7 +294,7 @@ export default {
 
     const moveGrecaptchaBadge = () => {
       let grecaptchaBadge = document.querySelector('.grecaptcha-badge')
-      let containerWrapper = document.querySelector('.wrapperForm')
+      let containerWrapper = document.querySelector('.contact-form')
 
       if (grecaptchaBadge && containerWrapper) {
         containerWrapper.appendChild(grecaptchaBadge)
@@ -323,6 +328,7 @@ export default {
     max-width: 1257px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 30px;
     padding-left: 16px;
     padding-right: 16px;
 

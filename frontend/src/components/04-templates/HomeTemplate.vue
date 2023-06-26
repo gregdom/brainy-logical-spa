@@ -15,7 +15,6 @@
       <projects-component />
       <divider-horizontal />
       <testimonial-component />
-      <!-- <contact-form-component mainTitle="A Brainy Faz Seu Projeto" /> -->
     </main>
     <footer-component />
   </div>
@@ -30,7 +29,6 @@ import {
   AboutComponent,
   ProjectsComponent,
   TestimonialComponent,
-  // ContactFormComponent,
   FooterComponent,
 } from '../03-organisms'
 
@@ -43,7 +41,6 @@ export default {
     ProjectsComponent,
     TestimonialComponent,
     DividerHorizontal,
-    // ContactFormComponent,
     FooterComponent,
   },
 }

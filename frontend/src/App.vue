@@ -65,6 +65,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.grecaptcha-badge {
+  right: -1000px !important;
+}
+
 @media (min-width: 1280px) {
   .buttonScrollTop {
     right: calc(50vw - 624px);
