@@ -75,7 +75,7 @@
         <div class="project-idea wrapper-input">
           <div class="wrapper-inputSelect wrapper-input">
             <label class="labelInit" for="project-type"
-              >Tipo de Projeto<small>*</small>
+              >Tipo de projeto<small>*</small>
             </label>
             <select id="project-type" v-model="contactForm.projectType">
               <option disabled value="">-- Selecione</option>
@@ -139,7 +139,7 @@ import {
 } from '@vuelidate/validators'
 import DOMPurify from 'dompurify'
 import axios from 'axios'
-import { mapState } from 'vuex'
+// import { mapState } from 'vuex'
 
 export default {
   props: {
@@ -161,6 +161,11 @@ export default {
       }),
       recaptchaToken: '',
       submitSituation: false,
+      categoriesArr: [
+        { name: 'Extensão para Navegador' },
+        { name: 'Criação de Websites' },
+        { name: 'Criação de Landing Pages' },
+      ],
     }
   },
   validations: {
@@ -193,15 +198,15 @@ export default {
       },
     },
   },
-  computed: {
-    ...mapState(['categories']),
-    categoriesArr() {
-      if (this.categories.length > 0) {
-        return this.categories
-      }
-      return ''
-    },
-  },
+  // computed: {
+  //   ...mapState(['categories']),
+  //   categoriesArr() {
+  //     if (this.categories.length > 0) {
+  //       return this.categories
+  //     }
+  //     return ''
+  //   },
+  // },
   setup() {
     const { executeRecaptcha, recaptchaLoaded } = useReCaptcha()
     const v$ = useVuelidate()
@@ -385,6 +390,22 @@ export default {
           }
         }
 
+        select {
+          padding: 16px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #f6f8fb;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px 0 rgba(44, 143, 255, 0.01),
+            0 1px 3px 0 rgba(7, 16, 33, 0.06);
+          -webkit-transition: border-color 350ms ease, color 350ms ease;
+          transition: border-color 350ms ease, color 350ms ease;
+          color: #46526b;
+          font-size: 16px;
+          font-weight: 500;
+          background: #fff;
+        }
+
         textarea {
           width: 100%;
           min-height: 200px;
@@ -403,6 +424,31 @@ export default {
           font-size: 16px;
           font-weight: 500;
           outline: none;
+        }
+      }
+
+      button {
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        padding: 18px 35px;
+        border-radius: 10px;
+        transition: transform 350ms ease, box-shadow 350ms ease,
+          background-color 350ms ease, -webkit-transform 350ms ease;
+        line-height: 1em;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        border: none;
+        color: #fff;
+        background: $color-branding;
+
+        &:hover {
+          background: darken($color-branding, 20%);
+          box-shadow: 0 0 0 0 rgba(48, 44, 255, 0.1);
+          -webkit-transform: scale3d(0.95, 0.95, 1.01);
+          transform: scale3d(0.95, 0.95, 1.01);
+          color: #fff;
         }
       }
     }
@@ -438,6 +484,8 @@ export default {
 @media screen and (min-width: 768px) {
   .contact-form {
     .container-default {
+      max-width: 90%;
+
       div.subtitle {
         margin-bottom: 16px;
       }
@@ -473,6 +521,8 @@ export default {
 @media screen and (min-width: 992px) {
   .contact-form {
     .container-default {
+      max-width: 70%;
+
       h2 {
         margin-bottom: 30px;
       }
