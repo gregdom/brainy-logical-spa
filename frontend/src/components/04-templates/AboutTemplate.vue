@@ -1,9 +1,12 @@
 <template>
   <div>
     <header-component />
+    <divider-horizontal />
+    <hero-about titleHero="Code is a development agency like no other" />
     <main>
-      <section class="about-page">
-        <div class="wrapper">
+      <about-component />
+      <!-- <section class="section about-page">
+        <div class="container-default">
           <h4></h4>
           <p>
             A Brainy Logical é uma empresa de desenvolvimento de softwares, web
@@ -58,20 +61,31 @@
             ideias e iniciar uma jornada tecnológica emocionante!
           </p>
         </div>
-      </section>
+      </section> -->
     </main>
-
+    <testimonial-component />
     <footer-component />
   </div>
 </template>
 
 <script>
-import { HeaderComponent, FooterComponent } from '../03-organisms'
+import { DividerHorizontal } from '../01-atoms'
+import {
+  HeaderComponent,
+  HeroAbout,
+  AboutComponent,
+  TestimonialComponent,
+  FooterComponent,
+} from '../03-organisms'
 
 export default {
   name: 'AboutTemplate',
   components: {
+    DividerHorizontal,
     HeaderComponent,
+    HeroAbout,
+    AboutComponent,
+    TestimonialComponent,
     FooterComponent,
   },
   mounted() {},
@@ -81,48 +95,46 @@ export default {
 <style lang="scss" scoped>
 .about-page {
   width: 100%;
-  max-width: 1400px;
   height: auto;
   margin: 0 auto;
-  padding: 64px 0 64px 0;
-  background: #fff;
+  padding-top: 30px;
+  padding-bottom: 60px;
 
-  .wrapper {
-    width: calc(100% - 48px);
-    height: auto;
-    margin: 0 auto;
+  .container-default {
+    max-width: 1257px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     p {
-      margin-bottom: 20px;
-      font-size: $font-size-base;
-      line-height: $general-line-height;
-      color: $color-general-text;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      max-width: none;
+      margin-bottom: 16px;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.687em;
+      letter-spacing: -0.01em;
+      color: #46526b;
     }
   }
 }
 
-@media (min-width: 600px) {
-  .about-page {
-    .wrapper {
-      width: 500px;
-    }
-  }
-}
+// @media (min-width: 600px) {
+//   .about-page {
+//     .wrapper {
+//       width: 500px;
+//     }
+//   }
+// }
 
-@media (min-width: 768px) {
-  .about-page {
-    .wrapper {
-      width: 90%;
-      max-width: 940px;
-    }
-  }
-}
+// @media (min-width: 768px) {
+//   .about-page {
+//     .wrapper {
+//       width: 90%;
+//       max-width: 940px;
+//     }
+//   }
+// }
 </style>
