@@ -9,6 +9,7 @@
       />
       <services-component
         titleServices="We are development experts on all technologies & platforms."
+        routeName="home-services"
       />
       <about-component />
       <projects-component />

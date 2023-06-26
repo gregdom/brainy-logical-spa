@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-component />
-    <!-- <divider-horizontal /> -->
+    <divider-horizontal />
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />
@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import {} from '../01-atoms'
+import { DividerHorizontal } from '../01-atoms'
 import { HeaderComponent, FooterComponent } from '../03-organisms'
 
 export default {
   name: 'ServicesTemplate',
   components: {
-    // DividerHorizontal,
+    DividerHorizontal,
     HeaderComponent,
     FooterComponent,
   },
