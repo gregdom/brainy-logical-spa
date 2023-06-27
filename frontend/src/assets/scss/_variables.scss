@@ -1,11 +1,16 @@
 // Font variables
 $font-size-base: 1rem;
 
+// Border
+$border-default: 1px solid #cecddd;
+$border-hover: 1px solid #2763e4;
+
 // colors
 $color-branding: #2763e4;
 $color-branding-dark: darken($color-branding, 20%);
 $color-branding-extra-dark: darken($color-branding, 40%);
-$color-general-text-bglight: darken($color-branding, 80%);
+$color-general-text-bglight: #555f75;
 $color-general-text-bgdark: lighten($color-branding, 30%);
 $color-general-headers: #071221;
 $color-general-headers-bgdark: #fafafa;
+$color-white: #fff;

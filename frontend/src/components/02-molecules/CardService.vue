@@ -58,10 +58,10 @@ export default {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   text-align: left;
-  border: 1px solid #cecddd;
+  border: $border-default;
   border-radius: 23px;
   box-shadow: 0 3px 12px 0 rgba(44, 118, 255, 0.05);
-  background-color: #fff;
+  background-color: $color-white;
   transition: transform 350ms ease;
 
   &:hover {
@@ -69,7 +69,7 @@ export default {
     transform: scale3d(0.95, 0.95, 1.01);
 
     a.button-secondary {
-      color: #fff;
+      color: $color-white;
       background: $color-branding;
     }
   }
@@ -92,7 +92,7 @@ export default {
   h3 {
     margin-top: 0px;
     margin-bottom: 11px;
-    color: #071221;
+    color: $color-general-headers;
     font-size: 20px;
     line-height: 1.416em;
     font-weight: 700;
@@ -107,7 +107,7 @@ export default {
     font-weight: 500;
     line-height: 1.687em;
     letter-spacing: -0.01em;
-    color: #46526b;
+    color: $color-general-text-bglight;
   }
 
   a.button-secondary {

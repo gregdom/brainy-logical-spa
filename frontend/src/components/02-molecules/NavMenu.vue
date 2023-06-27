@@ -116,7 +116,7 @@ export default {
         text-decoration: none;
         font-size: 28px;
         font-weight: 500;
-        color: #000;
+        color: $color-general-headers;
         transition: color 0.3s ease;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
@@ -166,7 +166,7 @@ export default {
               a.nav-link {
                 display: block;
                 font-size: 16px;
-                color: #566688;
+                color: $color-general-text-bglight;
                 transition: color 0.3s ease;
 
                 // Actions
@@ -258,11 +258,11 @@ export default {
 
             &:hover {
               &:hover {
-                background: darken($color-branding, 20%);
+                background: $color-branding-dark;
                 box-shadow: 0 0 0 0 rgba(48, 44, 255, 0.1);
                 -webkit-transform: scale3d(0.95, 0.95, 1.01);
                 transform: scale3d(0.95, 0.95, 1.01);
-                color: #fff;
+                color: $color-white;
               }
             }
           }
@@ -286,15 +286,13 @@ export default {
             max-height: fit-content;
             padding: 8px 24px;
             border-radius: 25px;
-            border-style: solid;
-            border-width: 0.5px;
-            border-color: #cecddd;
+            border: $border-default;
             position: absolute;
             top: 50px;
             left: -50px;
             z-index: 1000;
             overflow: hidden;
-            background: #fff;
+            background: $color-white;
             pointer-events: none;
 
             ul.sub-list {

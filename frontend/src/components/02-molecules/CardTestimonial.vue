@@ -56,10 +56,10 @@ export default {
 <style lang="scss" scoped>
 .card-testimonial {
   padding: 40px 20px;
-  border: 1px solid #cecddd;
+  border: $border-default;
   border-radius: 23px;
   box-shadow: 0 3px 12px 0 rgba(44, 118, 255, 0.05);
-  background-color: #fff;
+  background-color: $color-white;
   transition: transform 350ms ease;
 
   .card-content {
@@ -81,7 +81,7 @@ export default {
       font-weight: 500;
       line-height: 32px;
       letter-spacing: -0.01em;
-      color: #46526b;
+      color: $color-general-text-bglight;
     }
   }
 
@@ -103,7 +103,7 @@ export default {
 
     p.name {
       margin-bottom: 5px;
-      color: #071221;
+      color: $color-general-headers;
     }
 
     p.work {
