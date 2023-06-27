@@ -116,7 +116,7 @@ export default {
       font-weight: 500;
       line-height: 1.687em;
       letter-spacing: -0.01em;
-      color: #46526b;
+      color: $color-general-text-bglight;
     }
   }
 }
