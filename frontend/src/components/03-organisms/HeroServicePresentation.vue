@@ -18,7 +18,7 @@
       </div>
 
       <div class="service-presentation-hero-image">
-        <img src="../../assets/images/static-website-cuate.svg" alt="Image" />
+        <img src="../../assets/images/extension.svg" alt="Image" />
       </div>
     </div>
   </section>
@@ -50,6 +50,7 @@ export default {
 
     .service-presentation-hero-content {
       width: 100%;
+      max-width: 754px;
       margin-bottom: 20px;
 
       div.subtitle {
@@ -97,6 +98,9 @@ export default {
     .service-presentation-hero-image {
       img {
         width: 100%;
+        max-width: 500px;
+        display: block;
+        margin: 0 auto;
       }
     }
   }
@@ -189,7 +193,6 @@ export default {
 
       .service-presentation-hero-image {
         width: 100%;
-        overflow: hidden;
         display: flex;
         justify-content: flex-end;
 
@@ -205,12 +208,12 @@ export default {
 
 @media screen and (min-width: 992px) {
   .service-presentation-hero {
-    padding-top: 94px;
+    padding-top: 120px;
     padding-bottom: 50px;
 
     .container-default {
       display: grid;
-      grid-template-columns: 520px auto;
+      grid-template-columns: 1fr 1fr;
       justify-content: space-between;
 
       .service-presentation-hero-content {
@@ -229,13 +232,13 @@ export default {
 
       .service-presentation-hero-image {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
 
-        img {
-          width: 700px;
-          margin-top: -30px;
-          margin-right: -40px;
-          display: block;
+        svg {
+          width: 100%;
+          margin-top: 0;
+          margin-right: 0;
         }
       }
     }
