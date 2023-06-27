@@ -82,10 +82,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba($color-branding, 0.5);
+    background: rgba($color-branding, 0.11);
 
     img {
-      width: 70%;
+      width: 90%;
     }
   }
 
@@ -118,8 +118,8 @@ export default {
 @media screen and (min-width: 480px) {
   .card-service {
     .icon-container {
-      width: 105px;
-      height: 105px;
+      width: 115px;
+      height: 115px;
       margin-bottom: 20px;
     }
 
@@ -139,6 +139,13 @@ export default {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     text-align: center;
+
+    .icon-container {
+      width: 138px;
+      height: 138px;
+      margin-bottom: 20px;
+      border-radius: 35px;
+    }
 
     h3 {
       font-size: 24px;

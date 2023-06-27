@@ -42,6 +42,7 @@ export default {
   position: fixed;
   bottom: 16px;
   right: 16px;
+  z-index: 9999;
   cursor: pointer;
   font-size: 1rem;
   color: #fff;

@@ -69,7 +69,19 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+
+  scrollBehavior() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        resolve();
+      }, 900);
+    });
+  },
 })
 
 export default router

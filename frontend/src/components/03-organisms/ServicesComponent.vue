@@ -64,7 +64,7 @@ export default {
     return {
       services: [
         {
-          icon: 'puzzle-64.png',
+          icon: 'extension.svg',
           title: 'Extensão para Browsers',
           description_short:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id integer ut faucibus sem risus. Praesent sagittis, ut diam diam odio faucibus lorem. Sollicitudin faucibus.',
@@ -72,7 +72,7 @@ export default {
           name: 'extension',
         },
         {
-          icon: 'website-statistics-64.png',
+          icon: 'website-statistics-64.svg',
           title: 'Criação de Sites',
           description_short:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id integer ut faucibus sem risus. Praesent sagittis, ut diam diam odio faucibus lorem. Sollicitudin faucibus.',
@@ -80,7 +80,7 @@ export default {
           name: 'sites',
         },
         {
-          icon: 'landing-page-64-black.png',
+          icon: 'landing-page.svg',
           title: 'Landing Pages',
           description_short:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id integer ut faucibus sem risus. Praesent sagittis, ut diam diam odio faucibus lorem. Sollicitudin faucibus.',
