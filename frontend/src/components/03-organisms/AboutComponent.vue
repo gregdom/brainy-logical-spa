@@ -60,7 +60,7 @@ export default {
   margin: 0 auto;
   padding-top: 80px;
   padding-bottom: 80px;
-  background: darken($color-branding, 40%);
+  background: $color-branding-extra-dark;
 
   .container-default {
     max-width: 1257px;
@@ -82,7 +82,7 @@ export default {
         font-weight: 500;
         letter-spacing: -0.02em;
         line-height: 1em;
-        color: #cecddd;
+        color: $color-general-headers-bgdark;
       }
 
       h2 {
@@ -93,7 +93,7 @@ export default {
         font-weight: 900;
         letter-spacing: -0.02em;
         text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-        color: #fafafa;
+        color: $color-general-headers-bgdark;
       }
 
       p.paragraph-home-about {
@@ -104,7 +104,7 @@ export default {
         font-weight: 500;
         line-height: 1.687em;
         letter-spacing: -0.01em;
-        color: #9daed5;
+        color: $color-general-text-bgdark;
       }
 
       .buttons-wrapper {
@@ -117,8 +117,8 @@ export default {
         }
 
         a.button-secondary {
-          color: #fafafa;
-          border-color: #fafafa;
+          color: $color-general-headers-bgdark;
+          border-color: $color-general-headers-bgdark;
 
           &:hover {
             border-color: $color-branding;

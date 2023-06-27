@@ -54,7 +54,7 @@ export default {
   padding-top: 40px;
   padding-bottom: 20px;
   border-top: 10px solid $color-branding;
-  background: darken($color-branding, 40%);
+  background: $color-branding-extra-dark;
 
   .container-default {
     max-width: 1257px;
@@ -73,11 +73,11 @@ export default {
         font-size: 16px;
         font-weight: 800;
         border-radius: 0;
-        color: #fff;
+        color: $color-general-headers-bgdark;
         z-index: 1000;
 
         span {
-          color: lighten($color-branding, 30%);
+          color: $color-general-text-bgdark;
         }
       }
 
@@ -88,7 +88,7 @@ export default {
 
         h3 {
           margin-bottom: 20px;
-          color: #fafafd;
+          color: $color-general-headers-bgdark;
           font-size: 18px;
           font-weight: 700;
           line-height: 1em;
@@ -99,7 +99,7 @@ export default {
           text-decoration: none;
           font-size: 1rem;
           font-weight: 500;
-          color: lighten($color-branding, 30%);
+          color: $color-general-text-bgdark;
           transition: color 350ms ease;
 
           &:hover {
@@ -126,11 +126,11 @@ export default {
           border-radius: 25px;
           transition: transform 350ms ease, background-color 350ms ease,
             -webkit-transform 350ms ease;
-          background: lighten(#071738, 20%);
+          background: $color-branding;
 
           &:hover {
             transform: scale3d(0.9, 0.9, 1.01);
-            background: $color-branding;
+            background: $color-branding-dark;
           }
 
           img {
@@ -146,7 +146,7 @@ export default {
           font-weight: 500;
           line-height: 1.687em;
           letter-spacing: -0.01em;
-          color: lighten($color-branding, 30%);
+          color: $color-general-text-bgdark;
         }
       }
     }

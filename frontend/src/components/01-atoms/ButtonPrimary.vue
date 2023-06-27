@@ -37,7 +37,7 @@ export default {
     background: $color-branding;
 
     &:hover {
-      background: darken($color-branding, 20%);
+      background: $color-branding-dark;
       box-shadow: 0 0 0 0 rgba(48, 44, 255, 0.1);
       -webkit-transform: scale3d(0.95, 0.95, 1.01);
       transform: scale3d(0.95, 0.95, 1.01);

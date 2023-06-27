@@ -43,7 +43,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: $color-branding-gradient;
+  background: $color-branding;
 
   .wrapper {
     width: 100%;
@@ -71,7 +71,7 @@ export default {
       width: fit-content;
       padding: 0 20px;
       color: #33373b;
-      background: $color-highlight;
+      background: blue;
     }
   }
 }

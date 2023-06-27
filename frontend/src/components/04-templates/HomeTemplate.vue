@@ -45,3 +45,17 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+@media screen and (min-width: 992px) {
+  .home-projects {
+    padding-top: 160px;
+    padding-bottom: 130px;
+  }
+
+  .home-testimonials {
+    padding-top: 130px;
+    padding-bottom: 160px;
+  }
+}
+</style>

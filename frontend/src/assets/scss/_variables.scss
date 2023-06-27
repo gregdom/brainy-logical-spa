@@ -1,25 +1,11 @@
 // Font variables
 $font-size-base: 1rem;
-$font-size-base-mobile: 1.25rem;
-$section-title-size: 1.9rem;
-$general-title-size: 1.25rem;
-$general-line-height: 1.7rem;
-
-// Gutter
-$default-spacing: 20px;
-
-%base-wrapper {
-  width: calc(100% - 48px);
-  max-width: 1400px;
-  margin: 0 auto;
-}
 
 // colors
-$color-highlight: #e2fa47;
 $color-branding: #2763e4;
-$color-branding-third: #e3593d;
-$color-branding-gradient: linear-gradient(to right, $color-branding, #4fa8ff);
-$color-bg-light: #f5f5f5;
-$color-text-dark: #000;
-$color-text-light: #fff;
-$color-general-text: #212529;
+$color-branding-dark: darken($color-branding, 20%);
+$color-branding-extra-dark: darken($color-branding, 40%);
+$color-general-text-bglight: darken($color-branding, 80%);
+$color-general-text-bgdark: lighten($color-branding, 30%);
+$color-general-headers: #071221;
+$color-general-headers-bgdark: #fafafa;
