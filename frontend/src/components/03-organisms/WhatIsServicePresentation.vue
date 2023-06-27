@@ -124,7 +124,7 @@ export default {
         font-weight: 800;
         letter-spacing: -0.02em;
         text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-        color: #071221;
+        color: $color-general-headers;
       }
     }
 
@@ -136,7 +136,7 @@ export default {
         font-weight: 500;
         line-height: 1.687em;
         letter-spacing: -0.01em;
-        color: #46526b;
+        color: $color-general-text-bglight;
 
         &.benefits {
           margin-top: 20px;
@@ -157,7 +157,7 @@ export default {
           font-weight: 500;
           line-height: 1.687em;
           letter-spacing: -0.01em;
-          color: #46526b;
+          color: $color-general-text-bglight;
         }
       }
     }
@@ -242,7 +242,7 @@ export default {
           font-weight: 500;
           line-height: 1.687em;
           letter-spacing: -0.01em;
-          color: #46526b;
+          color: $color-general-text-bglight;
         }
 
         ul {
@@ -257,7 +257,7 @@ export default {
             font-weight: 500;
             line-height: 1.687em;
             letter-spacing: -0.01em;
-            color: #46526b;
+            color: $color-general-text-bglight;
           }
         }
       }

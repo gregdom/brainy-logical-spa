@@ -84,7 +84,7 @@ export default {
         font-weight: 900;
         letter-spacing: -0.02em;
         text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-        color: #071221;
+        color: $color-general-headers;
       }
 
       .buttons-wrapper {
@@ -107,7 +107,7 @@ export default {
         font-weight: 500;
         line-height: 32px;
         letter-spacing: -0.01em;
-        color: #46526b;
+        color: $color-general-text-bglight;
       }
     }
   }

@@ -139,7 +139,7 @@ export default {
         font-weight: 800;
         letter-spacing: -0.02em;
         text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-        color: #071221;
+        color: $color-general-headers;
       }
     }
   }

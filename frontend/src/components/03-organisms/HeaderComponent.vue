@@ -102,7 +102,7 @@ export default {
       font-size: 16px;
       font-weight: 800;
       border-radius: 0;
-      color: #071221;
+      color: $color-general-headers;
       z-index: 1000;
 
       span {
@@ -128,7 +128,7 @@ export default {
       min-width: 40px;
       padding: 10px;
       border-radius: 1000px;
-      color: #fff;
+      color: $color-white;
       z-index: 1000;
       transition: transform 0.3s ease;
       outline: none;
@@ -157,7 +157,7 @@ export default {
     left: 0;
     z-index: 900;
     overflow-y: auto;
-    background: #fff;
+    background: $color-white;
     transform: translateX(100%);
     transition: transform 0.3s ease;
 

@@ -37,7 +37,7 @@ export default {
   margin: 0 auto;
   padding-top: 40px;
   padding-bottom: 40px;
-  background: darken($color-branding, 40%);
+  background: $color-branding-extra-dark;
 
   .container-default {
     max-width: 1257px;
@@ -58,7 +58,7 @@ export default {
         font-weight: 500;
         letter-spacing: -0.02em;
         line-height: 1em;
-        color: #9daed5;
+        color: $color-general-headers-bgdark;
       }
 
       h1 {
@@ -69,7 +69,7 @@ export default {
         font-weight: 900;
         letter-spacing: -0.02em;
         text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-        color: #fafafd;
+        color: $color-general-headers-bgdark;
       }
 
       p.paragraph.service-presentation-hero {
@@ -80,7 +80,7 @@ export default {
         font-weight: 500;
         line-height: 1.687em;
         letter-spacing: -0.01em;
-        color: #9daed5;
+        color: $color-general-text-bgdark;
       }
 
       .buttons-wrapper {

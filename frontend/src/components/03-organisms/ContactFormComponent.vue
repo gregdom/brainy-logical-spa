@@ -348,12 +348,12 @@ export default {
       font-weight: 800;
       letter-spacing: -0.02em;
       text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-      color: #071221;
+      color: $color-general-headers;
     }
 
     form {
       padding: 30px 20px 40px;
-      border: 1px solid #cecdcc;
+      border: $border-default;
       border-radius: 28px;
       display: grid;
       grid-auto-columns: 1fr;
@@ -368,7 +368,7 @@ export default {
           display: block;
           margin-bottom: 10px;
           font-weight: 600;
-          color: #071221;
+          color: $color-general-headers;
         }
 
         input {
@@ -392,7 +392,7 @@ export default {
           outline: none;
 
           &:hover {
-            border: 1px solid $color-branding;
+            border: $border-hover;
           }
         }
 
@@ -409,7 +409,7 @@ export default {
           color: #46526b;
           font-size: 16px;
           font-weight: 500;
-          background: #fff;
+          background: $color-white;
         }
 
         textarea {
@@ -446,15 +446,15 @@ export default {
         font-size: 1rem;
         font-weight: 500;
         border: none;
-        color: #fff;
+        color: $color-white;
         background: $color-branding;
 
         &:hover {
-          background: darken($color-branding, 20%);
+          background: $color-branding-dark;
           box-shadow: 0 0 0 0 rgba(48, 44, 255, 0.1);
           -webkit-transform: scale3d(0.95, 0.95, 1.01);
           transform: scale3d(0.95, 0.95, 1.01);
-          color: #fff;
+          color: $color-white;
         }
       }
     }
