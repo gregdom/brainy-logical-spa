@@ -1,6 +1,6 @@
 <template>
   <section class="contact contact-form">
-    <div v-show="!submitSituation" class="container-default">
+    <div class="container-default">
       <div class="subtitle">Queremos ouvir você</div>
 
       <h2>{{ mainTitle }}</h2>
@@ -118,25 +118,17 @@
           <button type="submit">Enviar</button>
         </div>
 
-        <div class="formNotification">
-          <div class="container-wrapper">
-            <div
-              class="text-status-submit"
-              :class="{ active: submitSituation.statusCode !== 200 }"
-            >
-              {{ submitSituation.message }}
-            </div>
-          </div>
-        </div>
+        <div class="overlay-form" v-show="overlayForm"></div>
       </form>
 
+      <notification-item :submitSituation="submitSituation" />
       <loading-item :showLoader="showLoader" />
     </div>
   </section>
 </template>
 
 <script>
-import { LoadingItem } from '../01-atoms'
+import { LoadingItem, NotificationItem } from '../01-atoms'
 import { useReCaptcha } from 'vue-recaptcha-v3'
 import { reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
@@ -159,7 +151,7 @@ export default {
     },
   },
 
-  components: { LoadingItem },
+  components: { LoadingItem, NotificationItem },
 
   data() {
     return {
@@ -173,7 +165,11 @@ export default {
         projectDetails: '',
       }),
       recaptchaToken: '',
-      submitSituation: false,
+      overlayForm: false,
+      submitSituation: {
+        statusCode: 200,
+        message: 'A sua mensagem foi enviada!',
+      },
       showLoader: false,
       categoriesArr: [
         { id: '1', name: 'Extensão para Navegador' },
@@ -251,11 +247,13 @@ export default {
     },
 
     submitForm() {
+      this.overlayForm = true
+      this.showLoader = true
+
       this.v$.$touch()
       if (!this.v$.$invalid) {
         this.recaptcha().then((token) => {
           this.recaptchaToken = token
-          this.showLoader = true
           this.sendForm()
         })
       } else {
@@ -374,7 +372,8 @@ export default {
       grid-template-rows: auto;
       font-family: 'Plus Jakarta Sans', sans-serif;
 
-      .formNotification {
+      .overlay-form {
+        display: none;
         position: absolute;
         z-index: 2000;
         top: 0;
@@ -382,7 +381,11 @@ export default {
         width: 100%;
         height: 100%;
         border-radius: 28px;
-        background: #ffffffb6;
+        background: rgba(255, 255, 255, 0.7);
+
+        &.active {
+          display: block;
+        }
       }
 
       .wrapper-input {
