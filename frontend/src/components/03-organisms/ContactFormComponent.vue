@@ -174,7 +174,7 @@ export default {
       }),
       recaptchaToken: '',
       submitSituation: false,
-      showLoader: true,
+      showLoader: false,
       categoriesArr: [
         { id: '1', name: 'Extensão para Navegador' },
         { id: '2', name: 'Criação de Websites' },
@@ -490,19 +490,6 @@ export default {
           transform: scale3d(0.95, 0.95, 1.01);
           color: $color-white;
         }
-      }
-    }
-
-    // Loader component
-    .loader {
-      position: fixed;
-      bottom: -300px;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: bottom 0.3s ease-out;
-
-      &.active {
-        bottom: 32px;
       }
     }
   }
