@@ -77,7 +77,11 @@
             <label class="labelInit" for="project-type"
               >Tipo de projeto<small>*</small>
             </label>
-            <select id="project-type" v-model="contactForm.projectType">
+            <select
+              id="project-type"
+              :class="{ error: v$.contactForm.projectType.$error }"
+              v-model="contactForm.projectType"
+            >
               <option disabled value="">-- Selecione</option>
               <option
                 v-for="(category, index) in categoriesArr"
@@ -87,6 +91,7 @@
                 {{ category.name }}
               </option>
             </select>
+            <br />
             <span v-if="v$.contactForm.projectType.$error">
               {{ v$.contactForm.projectType.$errors[0].$message }}
             </span>
@@ -98,6 +103,7 @@
             </label>
             <textarea
               id="project-details"
+              :class="{ error: v$.contactForm.projectDetails.$error }"
               v-model="contactForm.projectDetails"
               placeholder="Digite sua mensagem aqui..."
             ></textarea>
@@ -111,22 +117,26 @@
         <div class="divButton">
           <button type="submit">Enviar</button>
         </div>
-      </form>
-    </div>
-    <div v-show="submitSituation" class="formNotification">
-      <div class="container-wrapper">
-        <div
-          class="text-status-submit"
-          :class="{ active: submitSituation.statusCode !== 200 }"
-        >
-          {{ submitSituation.message }}
+
+        <div class="formNotification">
+          <div class="container-wrapper">
+            <div
+              class="text-status-submit"
+              :class="{ active: submitSituation.statusCode !== 200 }"
+            >
+              {{ submitSituation.message }}
+            </div>
+          </div>
         </div>
-      </div>
+      </form>
+
+      <loading-item :showLoader="showLoader" />
     </div>
   </section>
 </template>
 
 <script>
+import { LoadingItem } from '../01-atoms'
 import { useReCaptcha } from 'vue-recaptcha-v3'
 import { reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
@@ -149,7 +159,7 @@ export default {
     },
   },
 
-  components: {},
+  components: { LoadingItem },
 
   data() {
     return {
@@ -164,10 +174,12 @@ export default {
       }),
       recaptchaToken: '',
       submitSituation: false,
+      showLoader: true,
       categoriesArr: [
-        { name: 'Extensão para Navegador' },
-        { name: 'Criação de Websites' },
-        { name: 'Criação de Landing Pages' },
+        { id: '1', name: 'Extensão para Navegador' },
+        { id: '2', name: 'Criação de Websites' },
+        { id: '3', name: 'Criação de Landing Pages' },
+        { id: '4', name: 'Outro' },
       ],
     }
   },
@@ -211,9 +223,7 @@ export default {
   //   },
   // },
   setup() {
-    const { executeRecaptcha, recaptchaLoaded } = useReCaptcha(
-      '6LdwfzUmAAAAAH4ZK5NtLDhW_apfE1-oef2Ky0Ta'
-    )
+    const { executeRecaptcha, recaptchaLoaded } = useReCaptcha()
     const v$ = useVuelidate()
 
     const recaptcha = async () => {
@@ -245,6 +255,7 @@ export default {
       if (!this.v$.$invalid) {
         this.recaptcha().then((token) => {
           this.recaptchaToken = token
+          this.showLoader = true
           this.sendForm()
         })
       } else {
@@ -283,6 +294,8 @@ export default {
             statusCode: 400,
           }
           this.submitSituation = responseData
+        } finally {
+          this.showLoader = false
         }
       }
 
@@ -314,7 +327,7 @@ export default {
 
 <style lang="scss" scoped>
 .error {
-  border-bottom: 1px solid #bb3838 !important;
+  border: 1px solid #f53434 !important;
 }
 
 .contact-form {
@@ -352,6 +365,7 @@ export default {
     }
 
     form {
+      position: relative;
       padding: 30px 20px 40px;
       border: $border-default;
       border-radius: 28px;
@@ -359,6 +373,17 @@ export default {
       grid-auto-columns: 1fr;
       grid-template-rows: auto;
       font-family: 'Plus Jakarta Sans', sans-serif;
+
+      .formNotification {
+        position: absolute;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 28px;
+        background: #ffffffb6;
+      }
 
       .wrapper-input {
         width: 100%;
@@ -375,7 +400,7 @@ export default {
           width: 100%;
           height: 62px;
           font-family: 'Plus Jakarta Sans', sans-serif;
-          margin-bottom: 0px;
+          margin-bottom: 5px;
           padding-right: 16px;
           padding-left: 16px;
           border-style: solid;
@@ -416,7 +441,7 @@ export default {
           width: 100%;
           min-height: 200px;
           font-family: 'Plus Jakarta Sans', sans-serif;
-          margin-bottom: 0px;
+          margin-bottom: 5px;
           padding: 16px;
           border-style: solid;
           border-width: 1px;
@@ -430,6 +455,15 @@ export default {
           font-size: 16px;
           font-weight: 500;
           outline: none;
+        }
+
+        span {
+          padding: 3px 5px;
+          font-size: 13px;
+          font-weight: 500;
+          border-radius: 5px;
+          color: $color-white;
+          background: #e42727;
         }
       }
 
@@ -456,6 +490,19 @@ export default {
           transform: scale3d(0.95, 0.95, 1.01);
           color: $color-white;
         }
+      }
+    }
+
+    // Loader component
+    .loader {
+      position: fixed;
+      bottom: -300px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: bottom 0.3s ease-out;
+
+      &.active {
+        bottom: 32px;
       }
     }
   }

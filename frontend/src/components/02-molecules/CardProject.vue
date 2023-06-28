@@ -4,7 +4,7 @@
       :style="{ backgroundImage: 'url(' + imageSrc + ')' }"
       class="image-container"
     >
-      <div class="overlay-card-project">{{ title }}</div>
+      <div class="overlay-card-project"></div>
     </div>
 
     <div class="details">
@@ -103,7 +103,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: $color-branding;
+      // background: $color-branding;
       // background: rgba($color-branding, 0.9);
     }
   }
