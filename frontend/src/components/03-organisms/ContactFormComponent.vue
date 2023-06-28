@@ -122,6 +122,7 @@
       </form>
 
       <notification-item
+        v-if="situation"
         :situation="situation"
         :submitSituation="submitSituation"
         @progress-complete="handleProgressComplete"
@@ -170,7 +171,7 @@ export default {
       }),
       recaptchaToken: '',
       overlayForm: false,
-      situation: true,
+      situation: false,
       submitSituation: {},
       showLoader: false,
       categoriesArr: [
