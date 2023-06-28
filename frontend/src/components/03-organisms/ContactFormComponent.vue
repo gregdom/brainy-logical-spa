@@ -121,7 +121,11 @@
         <div class="overlay-form" v-show="overlayForm"></div>
       </form>
 
-      <notification-item :submitSituation="submitSituation" />
+      <notification-item
+        :situation="situation"
+        :submitSituation="submitSituation"
+        @progress-complete="handleProgressComplete"
+      />
       <loading-item :showLoader="showLoader" />
     </div>
   </section>
@@ -166,10 +170,8 @@ export default {
       }),
       recaptchaToken: '',
       overlayForm: false,
-      submitSituation: {
-        statusCode: 200,
-        message: 'A sua mensagem foi enviada!',
-      },
+      situation: true,
+      submitSituation: {},
       showLoader: false,
       categoriesArr: [
         { id: '1', name: 'Extensão para Navegador' },
@@ -247,9 +249,6 @@ export default {
     },
 
     submitForm() {
-      this.overlayForm = true
-      this.showLoader = true
-
       this.v$.$touch()
       if (!this.v$.$invalid) {
         this.recaptcha().then((token) => {
@@ -276,6 +275,8 @@ export default {
 
       const execute = async (formData, token) => {
         try {
+          this.overlayForm = true
+          this.showLoader = true
           const response = await axios.post('/api/contact-projects', {
             formData,
             token,
@@ -283,21 +284,41 @@ export default {
 
           // Resposta recebida com sucesso
           const responseData = response.data
-          this.submitSituation = responseData
+          if (responseData) {
+            this.submitSituation = {
+              title: 'Sucesso',
+              message: 'Sua mensagem foi enviada com sucesso!',
+              statusCode: 200,
+              notificationType: 'success',
+            }
+          }
+          console.log('try')
           this.reset()
         } catch {
           const responseData = {
+            title: 'Erro',
             message:
-              'Houve um erro! Tente enviar sua mensagem através do chat online se o erro persistir!',
+              'Houve um erro interno! Envie sua mensagem através do chat online se o erro persistir!',
             statusCode: 400,
+            notificationType: 'error',
           }
+          console.log('catch')
+          this.overlayForm = true
           this.submitSituation = responseData
+          this.situation = true
         } finally {
           this.showLoader = false
+          console.log('finaly')
         }
       }
 
       execute(formData, token)
+    },
+
+    handleProgressComplete(value) {
+      // Lógica a ser executada quando a barra de progresso chegar a zero
+      console.log('Progress complete:', value)
+      this.situation = false
     },
   },
   mounted() {
@@ -373,7 +394,6 @@ export default {
       font-family: 'Plus Jakarta Sans', sans-serif;
 
       .overlay-form {
-        display: none;
         position: absolute;
         z-index: 2000;
         top: 0;
