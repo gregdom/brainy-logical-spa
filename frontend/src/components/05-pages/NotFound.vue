@@ -1,33 +1,32 @@
 <template>
   <section class="notFound">
     <div class="wrapper">
-      <h2>404</h2>
-      <h3>Você procurou algo que não existe no site!</h3>
-      <!-- <button-call-to-action link="/" :buttonText="'Voltar ao Início'" /> -->
+      <img src="../../assets/images/404-not-found.svg" alt="Icon" />
+      <button-primary link="/" :buttonText="'Voltar ao Início'" />
     </div>
   </section>
 </template>
 
 <script>
-// import { ButtonCallToAction } from '../01-atoms'
+import { ButtonPrimary } from '../01-atoms'
 
 export default {
-  // components: { ButtonCallToAction },
-  // mounted() {
-  //   let attemptsCaptcha = 0
-  //   const hideCaptcha = () => {
-  //     let grecaptchaBadge = document.querySelector('.grecaptcha-badge')
-  //     if (grecaptchaBadge) {
-  //       grecaptchaBadge.style.display = 'none'
-  //     } else {
-  //       attemptsCaptcha++
-  //       if (attemptsCaptcha < 10) {
-  //         setTimeout(hideCaptcha, 1000)
-  //       }
-  //     }
-  //   }
-  //   hideCaptcha()
-  // },
+  components: { ButtonPrimary },
+  mounted() {
+    let attemptsCaptcha = 0
+    const hideCaptcha = () => {
+      let grecaptchaBadge = document.querySelector('.grecaptcha-badge')
+      if (grecaptchaBadge) {
+        grecaptchaBadge.style.display = 'none'
+      } else {
+        attemptsCaptcha++
+        if (attemptsCaptcha < 10) {
+          setTimeout(hideCaptcha, 1000)
+        }
+      }
+    }
+    hideCaptcha()
+  },
 }
 </script>
 
@@ -43,7 +42,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: $color-branding;
+  background: $color-white;
 
   .wrapper {
     width: 100%;
@@ -57,21 +56,14 @@ export default {
     color: #fff;
 
     h2 {
-      font-size: 8rem;
-      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-    }
-
-    h3 {
-      font-size: 2rem;
-      margin-bottom: 32px;
-      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-    }
-
-    .call-to-action {
-      width: fit-content;
-      padding: 0 20px;
-      color: #33373b;
-      background: blue;
+      margin-top: 0px;
+      margin-bottom: 25px;
+      font-size: 16px;
+      line-height: 1.368em;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
+      color: $color-general-headers;
     }
   }
 }

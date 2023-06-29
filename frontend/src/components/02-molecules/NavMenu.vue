@@ -164,8 +164,9 @@ export default {
 
             li.sub-nav-item {
               a.nav-link {
+                margin-bottom: 5px;
                 display: block;
-                font-size: 16px;
+                font-size: 19px;
                 color: $color-general-text-bglight;
                 transition: color 0.3s ease;
 
