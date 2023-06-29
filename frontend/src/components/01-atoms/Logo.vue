@@ -18,9 +18,9 @@ export default {
     },
   },
   methods: {
-    closeMenu() {
-      this.$store.commit('updateIsMenuOpen', false)
-    },
+    // closeMenu() {
+    //   this.$store.commit('updateIsMenuOpen', false)
+    // },
   },
 }
 </script>

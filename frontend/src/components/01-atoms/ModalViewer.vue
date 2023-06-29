@@ -3,15 +3,15 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+// import { mapMutations } from 'vuex'
 
 export default {
   methods: {
-    ...mapMutations(['toggleMenu']),
-    closeMenu() {
-      this.toggleMenu()
-      this.$store.commit('updateIsMenuOpen', false)
-    },
+    // ...mapMutations(['toggleMenu']),
+    // closeMenu() {
+    //   this.toggleMenu()
+    //   this.$store.commit('updateIsMenuOpen', false)
+    // },
   },
 }
 </script>

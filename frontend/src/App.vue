@@ -10,17 +10,17 @@
 
 <script>
 import { ButtonScrollToTop, ModalViewer } from './components/01-atoms'
-import { mapState } from 'vuex'
+// import { mapState } from 'vuex'
 
 export default {
   name: 'App',
   components: { ButtonScrollToTop, ModalViewer },
 
-  computed: {
-    ...mapState({
-      isMenuOpen: (state) => state.isMenuOpen,
-    }),
-  },
+  // computed: {
+  //   ...mapState({
+  //     isMenuOpen: (state) => state.isMenuOpen,
+  //   }),
+  // },
 
   mounted() {
     window.addEventListener('resize', this.handleResize)
@@ -32,9 +32,9 @@ export default {
 
   methods: {
     handleResize() {
-      if (window.innerWidth >= 768) {
-        this.$store.commit('updateIsMenuOpen', false)
-      }
+      // if (window.innerWidth >= 768) {
+      //   this.$store.commit('updateIsMenuOpen', false)
+      // }
     },
   },
 }

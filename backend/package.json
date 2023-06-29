@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "pm2 start ./shared/http/server.js",
+    "start": "nodemon ./shared/http/server.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
