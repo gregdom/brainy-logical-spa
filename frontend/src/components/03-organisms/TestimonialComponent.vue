@@ -2,8 +2,8 @@
   <section class="section home-testimonials">
     <div class="container-default">
       <div class="top">
-        <div class="subtitle">Testimonials</div>
-        <h2>Don’t take our word for it. See what our past clients say.</h2>
+        <div class="subtitle">Exemplos de sucesso</div>
+        <h2>Cases de clientes satisfeitos através do nosso trabalho.</h2>
       </div>
 
       <div class="slide-testimonials">

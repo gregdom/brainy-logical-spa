@@ -4,7 +4,7 @@ import axios from 'axios'
 const actions = {
   async fetchDataFromServer({ commit }) {
     try {
-      axios.get(BACKEND_API).then(response => {
+      await axios.get(BACKEND_API).then(response => {
         const data = response.data
         commit('SET_STATE', data)
         console.log('depois do SET_STATE')

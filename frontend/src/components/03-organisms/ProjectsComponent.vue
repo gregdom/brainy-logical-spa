@@ -2,10 +2,10 @@
   <section class="section home-projects">
     <div class="container-default">
       <div class="top">
-        <div class="subtitle">Projetos Recentes</div>
+        <div class="subtitle">Portfólio</div>
 
         <div class="main-title">
-          <h2>Discover how we had helped world class companies in the past</h2>
+          <h2>Confira projetos recentes que amamos construir</h2>
         </div>
       </div>
 

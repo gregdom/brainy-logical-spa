@@ -2,79 +2,48 @@
 import { query } from "../../../config/db/conn.js"
 
 class HomeModel {
-  async getHome(result) {
-    const homeData = {}
+  async getHome() {
+    const dataHome = {}
 
     // Buscar informações da tabela "about"
-    await query(
-      `SELECT about.description, image_about.path FROM about
-      JOIN image_about ON about.id = image_about.fk_about_id`, (err, aboutResults) => {
-      if (err) {
-        result(err, null)
-      } else {
-        homeData.about = aboutResults
+    const aboutResults = await query(`
+    SELECT about.description, image_about.path
+    FROM about
+    JOIN image_about ON about.id = image_about.fk_about_id
+  `)
+    dataHome.about = aboutResults
 
-        // Buscar informações da tabela "services"
-        query("SELECT * FROM services", (err, servicesResults) => {
-          if (err) {
-            result(err, null)
-          } else {
-            homeData.services = servicesResults
+    // Buscar informações da tabela "services"
+    const servicesResults = await query("SELECT * FROM services")
+    dataHome.services = servicesResults
 
-            // Buscar informações da tabela "portfolio"
-            query(
-              `SELECT portfolio.title, portfolio.description, image_portfolio.path FROM portfolio
-                JOIN image_portfolio ON portfolio.id = image_portfolio.fk_portfolio_id`, (err, portfolioResults) => {
-              if (err) {
-                result(err, null)
-              } else {
-                homeData.portfolio = portfolioResults
+    // Buscar informações da tabela "portfolio"
+    const portfolioResults = await query(`
+    SELECT portfolio.title, portfolio.description, image_portfolio.path
+    FROM portfolio
+    JOIN image_portfolio ON portfolio.id = image_portfolio.fk_portfolio_id
+  `)
+    dataHome.portfolio = portfolioResults
 
-                // Buscar informações da tabela "testimonials"
-                query(
-                  `SELECT testimonials.title, testimonials.description, testimonials.name, testimonials.image_path FROM testimonials`, (err, testimonialsResults) => {
-                    if (err) {
-                      result(err, null)
-                    } else {
-                      homeData.testimonials = testimonialsResults
+    // Buscar informações da tabela "testimonials"
+    const testimonialsResults = await query(`
+    SELECT testimonials.title, testimonials.description, testimonials.name, testimonials.image_path
+    FROM testimonials
+  `)
+    dataHome.testimonials = testimonialsResults
 
-                      // Buscar informações da tabela "portfolio"
-                      query(
-                        `SELECT portfolio.title, portfolio.description, image_portfolio.path FROM portfolio
-                JOIN image_portfolio ON portfolio.id = image_portfolio.fk_portfolio_id`, (err, portfolioResults) => {
-                        if (err) {
-                          result(err, null)
-                        } else {
-                          homeData.portfolio = portfolioResults
+    // Buscar informações da tabela "categories"
+    const categoriesResults = await query("SELECT * FROM categories")
+    dataHome.categories = categoriesResults
 
-                          // Buscar informações da tabela "categories"
-                          query(
-                            `SELECT * FROM categories`, (err, categoriesResults) => {
-                              if (err) {
-                                result(err, null)
-                              } else {
-                                homeData.categories = categoriesResults
-                                result(null, homeData)
-                              }
-                            }
-                          )
-
-                        }
-                      }
-                      )
-                    }
-                  }
-                )
-
-              }
-            }
-            )
-
-          }
-        })
-      }
+    // Retornar os dados apenas se todos os arrays estiverem preenchidos
+    if (
+      Object.values(dataHome).some((value) => Array.isArray(value) && value.length === 0)
+    ) {
+      throw new Error('Um ou mais arrays de resultados estão vazios');
     }
-    )
+
+    return dataHome;
   }
 
   async saveFormSQL(formData) {

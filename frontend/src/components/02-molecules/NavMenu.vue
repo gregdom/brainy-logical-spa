@@ -2,13 +2,15 @@
   <nav class="nav">
     <ul class="main-list">
       <li class="nav-item">
-        <router-link class="nav-link" :to="{ name: 'home' }">Home</router-link>
+        <router-link class="nav-link" :to="{ name: 'home' }"
+          >Início</router-link
+        >
       </li>
       <li class="nav-item item-container-sub-menu">
         <div>
           <div class="fake-link-item" @click="toggleSubMenu">
             <div class="bold-link" :class="{ bold: isServicesRoute }">
-              Services
+              Serviços
             </div>
           </div>
           <span
@@ -28,10 +30,10 @@
                 <router-link
                   class="nav-link"
                   :to="{ name: 'browser-extension' }"
-                  >Extensão Chrome e Firefox
+                  >Extensão de Browser
                 </router-link>
                 <router-link class="nav-link" :to="{ name: 'business-website' }"
-                  >Site Empresarial
+                  >Criação de Sites
                 </router-link>
                 <router-link
                   class="nav-link"
@@ -45,17 +47,17 @@
       </li>
       <li class="nav-item">
         <router-link class="nav-link" :to="{ name: 'about' }"
-          >About</router-link
+          >Sobre</router-link
         >
       </li>
       <li class="nav-item">
         <router-link class="nav-link" :to="{ name: 'projects' }"
-          >Projects</router-link
+          >Portfólio</router-link
         >
       </li>
       <li class="nav-item nav-item-contact">
         <router-link class="nav-link nav-link-contact" :to="{ name: 'contact' }"
-          >Contact us</router-link
+          >Contato</router-link
         >
       </li>
     </ul>

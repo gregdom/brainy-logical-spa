@@ -6,14 +6,11 @@ import axios from 'axios';
 class HomeController {
 
   async index(req, res) {
-    const model = new HomeModel();
-    await model.getHome((err, results) => {
-      if (err) {
-        res.send(err);
-      } else {
-        res.json(results);
-      }
-    });
+    const model = new HomeModel()
+    const result = await model.getHome()
+
+    console.log('controller', result)
+    return res.json(result)
   }
 
   async saveForm(req, res) {

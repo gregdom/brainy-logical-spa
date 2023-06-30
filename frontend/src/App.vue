@@ -23,9 +23,9 @@ export default {
   //   }),
   // },
 
-  async created() {
+  created() {
     try {
-      await this.$store.dispatch('fetchDataFromServer')
+      this.$store.dispatch('fetchDataFromServer')
     } catch (error) {
       console.log('erro teste')
     }

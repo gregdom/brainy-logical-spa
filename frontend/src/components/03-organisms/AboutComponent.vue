@@ -2,14 +2,16 @@
   <section class="section home-about">
     <div class="container-default">
       <div class="home-about-content">
-        <div class="subtitle">About Us</div>
-        <h2>We are a team of talented and passionate developers.</h2>
+        <div class="subtitle">Sobre Nós</div>
+        <h2>Uma equipe apaixonada por criar soluções tecnológicas.</h2>
         <p class="paragraph-home-about">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan
-          mauris vestibulum arcu a. Nibh lorem blandit commodo blandit. Tortor,
-          odio ipsum sapien, faucibus ut scelerisque vel in morbi. Cras orci
-          fringilla velit non ac tempor. Aliquet urna diam non enim.
-          Pellentesque non sed mattis cum neque.
+          A Brainy Logical é uma empresa de tecnologia que se dedica a fornecer
+          soluções inovadoras e de alta qualidade para todos. A empresa se
+          destaca pela excelência em seus serviços e pela atenção aos detalhes
+          em cada projeto. Com uma visão voltada para o futuro, a Brainy Logical
+          está sempre em busca das mais recentes tecnologias e tendências de
+          mercado para garantir que seus clientes obtenham o máximo de sucesso
+          em seus negócios.
         </p>
 
         <div class="buttons-wrapper">
