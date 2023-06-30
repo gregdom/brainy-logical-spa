@@ -5,22 +5,31 @@
     </transition>
   </router-view>
   <button-scroll-to-top />
-  <modal-viewer v-if="isMenuOpen" />
+  <!-- <modal-viewer v-if="isMenuOpen" /> -->
 </template>
 
 <script>
-import { ButtonScrollToTop, ModalViewer } from './components/01-atoms'
+import { ButtonScrollToTop } from './components/01-atoms'
+
 // import { mapState } from 'vuex'
 
 export default {
   name: 'App',
-  components: { ButtonScrollToTop, ModalViewer },
+  components: { ButtonScrollToTop },
 
   // computed: {
   //   ...mapState({
   //     isMenuOpen: (state) => state.isMenuOpen,
   //   }),
   // },
+
+  async created() {
+    try {
+      await this.$store.dispatch('fetchDataFromServer')
+    } catch (error) {
+      console.log('erro teste')
+    }
+  },
 
   mounted() {
     window.addEventListener('resize', this.handleResize)

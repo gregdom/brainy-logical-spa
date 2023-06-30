@@ -1,0 +1,1 @@
+export const BACKEND_API = "http://" + window.location.hostname.toString() + ":3000"
