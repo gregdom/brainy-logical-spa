@@ -50,7 +50,7 @@ export default {
           subtitleH: 'Website',
           descriptionH: `Personalize sua experiência de navegação com Extensões para Chrome e
           Firefox, tornando seu dia online mais produtivo.`,
-          pathH: 'website-service.svg',
+          pathH: 'business-service.svg',
         }
       } else if (routePath === '/services/landing-page-website') {
         return {

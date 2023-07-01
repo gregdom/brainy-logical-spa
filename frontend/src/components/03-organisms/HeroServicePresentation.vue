@@ -16,7 +16,7 @@
       </div>
 
       <div class="service-presentation-hero-image">
-        <img src="../../assets/images/hero-img.svg" alt="Image" />
+        <img :src="imageSrc" alt="Icon" />
       </div>
     </div>
   </section>
@@ -33,6 +33,12 @@ export default {
     heroContent: {
       type: Object,
       required: true,
+    },
+  },
+
+  computed: {
+    imageSrc() {
+      return require(`../../assets/images/${this.heroContent.pathH}`)
     },
   },
 }

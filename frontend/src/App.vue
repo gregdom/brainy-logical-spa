@@ -22,21 +22,11 @@ export default {
     }
   },
 
-  // mounted() {
-  //   window.addEventListener('resize', this.handleResize)
-  // },
-
-  // beforeUnmount() {
-  //   window.removeEventListener('resize', this.handleResize)
-  // },
-
-  // methods: {
-  //   handleResize() {
-  //     if (window.innerWidth >= 768) {
-  //       this.$store.commit('updateIsMenuOpen', false)
-  //     }
-  //   },
-  // },
+  watch: {
+    $route() {
+      this.$store.commit('TOGGLE_OVERLAY_MENU', true)
+    },
+  },
 }
 </script>
 

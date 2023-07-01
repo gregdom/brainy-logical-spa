@@ -28,7 +28,13 @@ const store = createStore({
     },
 
     // Dados do menu
-    TOGGLE_OVERLAY_MENU(state) {
+    TOGGLE_OVERLAY_MENU(state, payload) {
+      if (payload === true) {
+        state.isOverlayMenuOpen = false
+        state.isSubMenuOpen = false
+        return
+      }
+
       state.isOverlayMenuOpen = !state.isOverlayMenuOpen
 
       if (!state.isOverlayMenuOpen) {
