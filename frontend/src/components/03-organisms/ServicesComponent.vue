@@ -36,13 +36,16 @@
 <script>
 import {} from '../01-atoms'
 import { CardService } from '../02-molecules'
-import { Swiper, SwiperSlide } from 'swiper/vue'
 
+// Vuex
+import { mapState } from 'vuex'
+
+// Swiper
+import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import '../../assets/styles/style-swiper.css'
-
 import { Pagination, Navigation } from 'swiper'
 
 export default {
@@ -60,35 +63,10 @@ export default {
     },
   },
 
-  data() {
-    return {
-      services: [
-        {
-          icon: 'extension.svg',
-          title: 'Extensão para Browsers',
-          description_short:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id integer ut faucibus sem risus. Praesent sagittis, ut diam diam odio faucibus lorem. Sollicitudin faucibus.',
-          link: 'browser-extension',
-          name: 'extension',
-        },
-        {
-          icon: 'website-statistics-64.svg',
-          title: 'Criação de Sites',
-          description_short:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id integer ut faucibus sem risus. Praesent sagittis, ut diam diam odio faucibus lorem. Sollicitudin faucibus.',
-          link: 'business-website',
-          name: 'sites',
-        },
-        {
-          icon: 'landing-page.svg',
-          title: 'Landing Pages',
-          description_short:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id integer ut faucibus sem risus. Praesent sagittis, ut diam diam odio faucibus lorem. Sollicitudin faucibus.',
-          link: 'landing-page-website',
-          name: 'landing-pages',
-        },
-      ],
-    }
+  computed: {
+    ...mapState({
+      services: (state) => state.data.services,
+    }),
   },
 
   setup() {
@@ -96,8 +74,6 @@ export default {
       modules: [Pagination, Navigation],
     }
   },
-
-  methods: {},
 }
 </script>
 

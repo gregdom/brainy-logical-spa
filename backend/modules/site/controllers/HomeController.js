@@ -8,8 +8,6 @@ class HomeController {
   async index(req, res) {
     const model = new HomeModel()
     const result = await model.getHome()
-
-    console.log('controller', result)
     return res.json(result)
   }
 

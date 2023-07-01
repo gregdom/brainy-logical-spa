@@ -9,41 +9,34 @@
 
 <script>
 import { ButtonScrollToTop } from './components/01-atoms'
-// import { mapState } from 'vuex'
 
 export default {
   name: 'App',
   components: { ButtonScrollToTop },
 
-  // computed: {
-  //   ...mapState({
-  //     isMenuOpen: (state) => state.isMenuOpen,
-  //   }),
-  // },
-
   created() {
     try {
-      this.$store.dispatch('fetchDataFromServer')
+      this.$store.dispatch('queryDataFromServer')
     } catch (error) {
       console.log('erro teste')
     }
   },
 
-  mounted() {
-    window.addEventListener('resize', this.handleResize)
-  },
+  // mounted() {
+  //   window.addEventListener('resize', this.handleResize)
+  // },
 
-  beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize)
-  },
+  // beforeUnmount() {
+  //   window.removeEventListener('resize', this.handleResize)
+  // },
 
-  methods: {
-    handleResize() {
-      // if (window.innerWidth >= 768) {
-      //   this.$store.commit('updateIsMenuOpen', false)
-      // }
-    },
-  },
+  // methods: {
+  //   handleResize() {
+  //     if (window.innerWidth >= 768) {
+  //       this.$store.commit('updateIsMenuOpen', false)
+  //     }
+  //   },
+  // },
 }
 </script>
 
