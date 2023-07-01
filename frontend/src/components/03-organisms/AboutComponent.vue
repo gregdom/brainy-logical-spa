@@ -3,17 +3,7 @@
     <div class="container-default">
       <div class="home-about-content">
         <div class="subtitle">Sobre Nós</div>
-        <h2>Uma equipe apaixonada por criar soluções tecnológicas.</h2>
-        <p class="paragraph-home-about">
-          A Brainy Logical é uma empresa de tecnologia que se dedica a fornecer
-          soluções inovadoras e de alta qualidade para todos. A empresa se
-          destaca pela excelência em seus serviços e pela atenção aos detalhes
-          em cada projeto. Com uma visão voltada para o futuro, a Brainy está
-          sempre em busca das mais recentes tecnologias e tendências de mercado
-          para garantir que seus clientes obtenham o máximo de sucesso em seus
-          negócios.
-        </p>
-
+        <div v-html="textAbout"></div>
         <div class="buttons-wrapper">
           <button-primary link="/contact" buttonText="Fale Conosco" />
           <div class="inner-space"></div>
@@ -30,28 +20,28 @@
 
 <script>
 import { ButtonPrimary, ButtonSecondary } from '../01-atoms'
-// import DOMPurify from 'dompurify'
-// import { mapState } from 'vuex'
+import DOMPurify from 'dompurify'
+
+// Vuex
+import { mapState } from 'vuex'
 
 export default {
   name: 'AboutComponent',
   components: { ButtonPrimary, ButtonSecondary },
-  // computed: {
-  //   ...mapState(['about']),
-  //   text() {
-  //     if (this.about.length > 0) {
-  //       return DOMPurify.sanitize(this.about[0].description)
-  //     }
-  //     return ''
-  //   },
-  //   imageSrc() {
-  //     if (this.about.length > 0) {
-  //       return require(`../../assets/images/${this.about[0].path}`)
-  //     }
-  //     return ''
-  //   },
-  // },
-  methods: {},
+
+  computed: {
+    ...mapState({
+      about: (state) => state.data.about[0],
+    }),
+
+    textAbout() {
+      return DOMPurify.sanitize(this.about.description)
+    },
+
+    imageSrc() {
+      return require(`../../assets/images/${this.about.path}`)
+    },
+  },
 }
 </script>
 

@@ -19,7 +19,7 @@ class HomeModel {
 
     // Buscar informações da tabela "portfolio"
     const portfolioResults = await query(`
-    SELECT portfolio.title, portfolio.description, image_portfolio.path
+    SELECT portfolio.title, portfolio.link, portfolio.description, image_portfolio.path
     FROM portfolio
     JOIN image_portfolio ON portfolio.id = image_portfolio.fk_portfolio_id
   `)

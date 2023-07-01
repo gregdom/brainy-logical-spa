@@ -26,39 +26,38 @@
 
 <script>
 import { CardProject } from '../02-molecules'
-// import { mapState } from 'vuex'
+
+// Vuex
+import { mapState } from 'vuex'
 
 export default {
   name: 'ProjectsComponent',
   components: { CardProject },
-  // computed: {
-  //   ...mapState(['projects']),
-  //   projectsArr() {
-  //     if (this.projects.length > 0) {
-  //       return this.projects.slice(0, 4)
-  //     }
-  //     return ''
-  //   },
-  // },
+
+  computed: {
+    ...mapState({
+      projectsArr: (state) => state.data.portfolio.slice(0, 2),
+    }),
+  },
 
   data() {
     return {
-      projectsArr: [
-        {
-          path: 'gamestore-projects-brainy-logical.png',
-          title: 'GameStore',
-          link: '/projects/gamestore',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
-        },
-        {
-          path: 'blog-santa-catarina-projects-brainy-logical.png',
-          title: 'SCViagens',
-          link: '/projects/scviagens',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
-        },
-      ],
+      // projectsArr: [
+      //   {
+      //     path: 'gamestore-projects-brainy-logical.png',
+      //     title: 'GameStore',
+      //     link: '/projects/gamestore',
+      //     description:
+      //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
+      //   },
+      //   {
+      //     path: 'blog-santa-catarina-projects-brainy-logical.png',
+      //     title: 'SCViagens',
+      //     link: '/projects/scviagens',
+      //     description:
+      //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et tortor. Dignissim eu faucibus et, congue.',
+      //   },
+      // ],
     }
   },
 }

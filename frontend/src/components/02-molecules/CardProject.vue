@@ -21,6 +21,7 @@ import { ButtonSecondary } from '../01-atoms'
 export default {
   name: 'CardProject',
   components: { ButtonSecondary },
+
   props: {
     image: {
       type: String,
@@ -39,6 +40,7 @@ export default {
       required: true,
     },
   },
+
   computed: {
     imageSrc() {
       return require(`../../assets/images/${this.image}`)
