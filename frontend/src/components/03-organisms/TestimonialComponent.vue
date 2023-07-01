@@ -39,8 +39,12 @@
 <script>
 import {} from '../01-atoms'
 import { CardTestimonial } from '../02-molecules'
-import { Swiper, SwiperSlide } from 'swiper/vue'
 
+// Vuex
+import { mapState } from 'vuex'
+
+// Swiper
+import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
@@ -55,24 +59,6 @@ export default {
   data() {
     return {
       slidesPerView: 1,
-      testimonials: [
-        {
-          path: 'testimonial-face-1.png',
-          highlight: '“Best Development Agency”',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et erile tortor. Dignissim eu faucibus et, congue. Tempus commodo vitae consequat eget et quis non tincidunt idert.',
-          name: 'John Carter',
-          work: 'Head of Product',
-        },
-        {
-          path: 'testimonial-face-2.png',
-          highlight: '“Best Development Agency”',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor urna, ullamcorper feugiat elementum non et erile tortor. Dignissim eu faucibus et, congue. Tempus commodo vitae consequat eget et quis non tincidunt idert.',
-          name: 'Will Spark',
-          work: 'Engineering VP at Google',
-        },
-      ],
     }
   },
 
@@ -80,6 +66,12 @@ export default {
     return {
       modules: [Pagination, Navigation],
     }
+  },
+
+  computed: {
+    ...mapState({
+      testimonials: (state) => state.data.testimonials,
+    }),
   },
 
   mounted() {

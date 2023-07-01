@@ -27,7 +27,7 @@ class HomeModel {
 
     // Buscar informações da tabela "testimonials"
     const testimonialsResults = await query(`
-    SELECT testimonials.title, testimonials.description, testimonials.name, testimonials.image_path
+    SELECT testimonials.name, testimonials.work, testimonials.highlight, testimonials.description, testimonials.path
     FROM testimonials
   `)
     dataHome.testimonials = testimonialsResults

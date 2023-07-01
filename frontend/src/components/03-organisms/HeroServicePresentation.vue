@@ -2,19 +2,18 @@
   <section class="section service-presentation-hero">
     <div class="container-default">
       <div class="service-presentation-hero-content">
-        <div class="subtitle">Jobs</div>
-        <h1>How we ran a video marketing campaign for Webflow</h1>
+        <div class="subtitle">Extensão</div>
+        <h1>Desenvolvemos Extensões para Chrome e Firefox</h1>
         <p class="paragraph service-presentation-hero">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non dolor
-          urna, ullamcorper feugiat elementum non et tortor. Dignissim eu
-          faucibus et, congue.
+          Personalize sua experiência de navegação com Extensões para Chrome e
+          Firefox, tornando seu dia online mais produtivo.
         </p>
 
-        <!-- <div class="buttons-wrapper">
+        <div class="buttons-wrapper">
           <button-primary link="/contact" buttonText="Fale Conosco" />
           <div class="inner-space"></div>
           <button-secondary link="/services" buttonText="Nossos Serviços" />
-        </div> -->
+        </div>
       </div>
 
       <div class="service-presentation-hero-image">
@@ -25,8 +24,11 @@
 </template>
 
 <script>
+import { ButtonPrimary, ButtonSecondary } from '../01-atoms'
+
 export default {
   name: 'HeroServicePresentation',
+  components: { ButtonPrimary, ButtonSecondary },
 }
 </script>
 
@@ -91,6 +93,15 @@ export default {
         .inner-space {
           width: 27px;
           height: 20px;
+        }
+
+        a.button-secondary {
+          color: $color-general-headers-bgdark;
+          border-color: $color-general-headers-bgdark;
+
+          &:hover {
+            border-color: $color-branding;
+          }
         }
       }
     }
