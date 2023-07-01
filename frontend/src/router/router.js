@@ -8,7 +8,7 @@ const NotFoundPage = () => import(/* webpackChunkName: "NotFound" */ '@/componen
 
 // Views Principais
 const ServicesView = () => import(/* webpackChunkName: "ServicesView" */ '@/components/04-templates/views/ServicesView.vue')
-const ServicePresentation = () => import(/* webpackChunkName: "ServicePresentation" */ '@/components/04-templates/views/ServicePresentation.vue')
+// const ServicePresentation = () => import(/* webpackChunkName: "ServicePresentation" */ '@/components/04-templates/views/ServicePresentation.vue')
 
 const routes = [
   {
@@ -26,20 +26,11 @@ const routes = [
         component: ServicesView
       },
       {
-        path: 'browser-extension',
-        name: 'browser-extension',
-        component: ServicePresentation
+        path: ':service',
+        name: 'service',
+        props: true,
+        component: ServicesView
       },
-      {
-        path: 'business-website',
-        name: 'business-website',
-        component: ServicePresentation
-      },
-      {
-        path: 'landing-page-website',
-        name: 'landing-page-website',
-        component: ServicePresentation
-      }
     ]
   },
   {

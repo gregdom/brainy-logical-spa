@@ -29,15 +29,26 @@
                 </router-link>
                 <router-link
                   class="nav-link"
-                  :to="{ name: 'browser-extension' }"
+                  :to="{
+                    name: 'service',
+                    params: { service: 'browser-extension' },
+                  }"
                   >Extensão de Browser
                 </router-link>
-                <router-link class="nav-link" :to="{ name: 'business-website' }"
+                <router-link
+                  class="nav-link"
+                  :to="{
+                    name: 'service',
+                    params: { service: 'business-website' },
+                  }"
                   >Criação de Sites
                 </router-link>
                 <router-link
                   class="nav-link"
-                  :to="{ name: 'landing-page-website' }"
+                  :to="{
+                    name: 'service',
+                    params: { service: 'landing-page-website' },
+                  }"
                   >Landing Pages
                 </router-link>
               </li>
