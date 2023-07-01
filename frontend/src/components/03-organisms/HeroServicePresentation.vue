@@ -2,11 +2,10 @@
   <section class="section service-presentation-hero">
     <div class="container-default">
       <div class="service-presentation-hero-content">
-        <div class="subtitle">Extensão</div>
-        <h1>Desenvolvemos Extensões para Chrome e Firefox</h1>
+        <div class="subtitle">{{ heroContent.subtitleH }}</div>
+        <h1>{{ heroContent.titleH }}</h1>
         <p class="paragraph service-presentation-hero">
-          Personalize sua experiência de navegação com Extensões para Chrome e
-          Firefox, tornando seu dia online mais produtivo.
+          {{ heroContent.descriptionH }}
         </p>
 
         <div class="buttons-wrapper">
@@ -17,7 +16,7 @@
       </div>
 
       <div class="service-presentation-hero-image">
-        <img src="../../assets/images/extension.svg" alt="Image" />
+        <img src="../../assets/images/hero-img.svg" alt="Image" />
       </div>
     </div>
   </section>
@@ -29,6 +28,13 @@ import { ButtonPrimary, ButtonSecondary } from '../01-atoms'
 export default {
   name: 'HeroServicePresentation',
   components: { ButtonPrimary, ButtonSecondary },
+
+  props: {
+    heroContent: {
+      type: Object,
+      required: true,
+    },
+  },
 }
 </script>
 

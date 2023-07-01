@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{ active: isMenuOpen }">
+  <header class="header" :class="{ active: isOverlayMenuOpen }">
     <div class="container-header">
       <router-link to="/" class="logo">
         <div></div>
@@ -8,14 +8,14 @@
 
       <span
         class="material-symbols-outlined header-menu-button"
-        :class="{ open: isMenuOpen }"
-        @click="toggleMenu"
+        :class="{ open: isOverlayMenuOpen }"
+        @click="toggleOverlayMenu"
       >
-        {{ isMenuOpen ? 'close' : 'menu' }}
+        {{ isOverlayMenuOpen ? 'close' : 'menu' }}
       </span>
     </div>
 
-    <div class="nav-overlay" :class="{ open: isMenuOpen }">
+    <div class="nav-overlay" :class="{ open: isOverlayMenuOpen }">
       <nav-menu />
     </div>
   </header>
@@ -24,18 +24,26 @@
 <script>
 import { NavMenu } from '../02-molecules'
 
+// Vuex
+import { mapState, mapMutations } from 'vuex'
+
 export default {
   name: 'HeaderComponent',
   components: { NavMenu },
+
   data() {
     return {
-      isMenuOpen: false,
       sizeWidth: null,
     }
   },
 
+  computed: {
+    ...mapState({
+      isOverlayMenuOpen: (state) => state.isOverlayMenuOpen,
+    }),
+  },
+
   created() {
-    this.isMenuOpen = false
     window.addEventListener('resize', this.handleResize)
   },
 
@@ -52,16 +60,16 @@ export default {
   },
 
   methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
+    ...mapMutations(['TOGGLE_OVERLAY_MENU']),
+
+    toggleOverlayMenu() {
+      this.TOGGLE_OVERLAY_MENU()
     },
 
     handleResize() {
       this.sizeWidth = window.innerWidth >= 992
 
       if (this.sizeWidth) {
-        this.isMenuOpen = false
-
         let navOverlay = document.querySelector('.nav-overlay')
         let containerHeader = document.querySelector('.container-header')
         containerHeader.appendChild(navOverlay)

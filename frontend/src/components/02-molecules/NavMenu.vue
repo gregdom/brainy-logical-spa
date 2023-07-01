@@ -65,20 +65,22 @@
 </template>
 
 <script>
-// import { mapState, mapMutations } from 'vuex'
-// import { ButtonPrimary } from '../01-atoms'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'NavMenu',
-  components: {},
 
-  data() {
-    return {
-      isSubMenuOpen: false,
-    }
-  },
+  // data() {
+  //   return {
+  //     isSubMenuOpen: false,
+  //   }
+  // },
 
   computed: {
+    ...mapState({
+      isSubMenuOpen: (state) => state.isSubMenuOpen,
+    }),
+
     isServicesRoute() {
       const currentRoute = this.$route
       return currentRoute.matched.some((record) =>
@@ -87,11 +89,11 @@ export default {
     },
   },
 
-  mounted() {},
-
   methods: {
+    ...mapMutations(['TOGGLE_SUB_MENU']),
+
     toggleSubMenu() {
-      this.isSubMenuOpen = !this.isSubMenuOpen
+      this.TOGGLE_SUB_MENU()
     },
   },
 }

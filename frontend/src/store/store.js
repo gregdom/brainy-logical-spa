@@ -5,8 +5,8 @@ import { BACKEND_API } from '@/baseUrl'
 
 const store = createStore({
   state: {
-    isMenuOpen: false,
-    isSubmenuOpen: false,
+    isOverlayMenuOpen: false,
+    isSubMenuOpen: false,
   },
 
   actions: {
@@ -22,22 +22,23 @@ const store = createStore({
   },
 
   mutations: {
+    // Dados iniciais da store
     SET_STATE(state, payload) {
       state.data = payload
     },
-    // toggleMenu(state) {
-    //   state.isMenuOpen = !state.isMenuOpen
-    //   if (!state.isMenuOpen) {
-    //     state.isSubmenuOpen = false
-    //   }
-    // },
-    // updateIsMenuOpen(state, isOpen) {
-    //   state.isMenuOpen = isOpen
-    //   state.isSubmenuOpen = isOpen
-    // },
-    // updateIsSubmenuOpen(state) {
-    //   state.isSubmenuOpen = !state.isSubmenuOpen
-    // },
+
+    // Dados do menu
+    TOGGLE_OVERLAY_MENU(state) {
+      state.isOverlayMenuOpen = !state.isOverlayMenuOpen
+
+      if (!state.isOverlayMenuOpen) {
+        state.isSubMenuOpen = false
+      }
+    },
+
+    TOGGLE_SUB_MENU(state) {
+      state.isSubMenuOpen = !state.isSubMenuOpen
+    },
   },
 
   getters: {

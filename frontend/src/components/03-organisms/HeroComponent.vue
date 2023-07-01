@@ -14,7 +14,7 @@
       </div>
 
       <div class="home-hero-image">
-        <img src="../../assets/images/static-website-cuate.svg" alt="Image" />
+        <img src="../../assets/images/hero-img.svg" alt="Image" />
       </div>
     </div>
   </section>
