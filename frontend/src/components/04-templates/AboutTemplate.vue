@@ -2,7 +2,7 @@
   <div>
     <header-component />
     <divider-horizontal />
-    <hero-about titleHero="Code is a development agency like no other" />
+    <hero-about titleHero="Qualidade e comprometimento" />
     <main>
       <about-component />
       <!-- <section class="section about-page">

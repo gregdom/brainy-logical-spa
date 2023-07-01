@@ -1,7 +1,7 @@
 <template>
   <div>
     <services-component
-      titleServices="We are development experts on all technologies & platforms."
+      titleServices="Desenvolvimento sob medida para atender você"
       routeName="services"
     />
     <divider-horizontal />

@@ -2,7 +2,7 @@
   <section class="section hero-about-us">
     <div class="container-default">
       <div class="hero-about-us-content">
-        <div class="subtitle">About Us</div>
+        <div class="subtitle">Nossa essência</div>
         <h1>{{ titleHero }}</h1>
 
         <div class="buttons-wrapper">
@@ -14,16 +14,16 @@
 
       <div class="hero-about-us-desc">
         <p class="paragraph hero-about-us">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim, orci
-          eget nec cursus in maecenas. Interdum enim, consectetur erat morbi
-          volutpat. Cras feugiat amet rutrum proin pharetra ac aliquet turpis
-          sapien lorem ipsum dolor is amet.
+          Nosso amor pelo trabalho é evidente em cada linha de código que
+          escrevemos. Estamos comprometidos em criar soluções inovadoras e
+          transformadoras, impulsionando negócios e criando experiências
+          digitais excepcionais.
         </p>
         <p class="paragraph hero-about-us">
-          Accumsan consectetur et orci, id placerat rutrum. Sagittis at eu
-          posuere arcu lectus. Tortor augue et ullamcorper lacus cursus tellus
-          tellus consectetur mauris. Nisi et nibh bibendum blandit. Nullam nisi
-          egestas lorem ipsum dolor sit amet.
+          Acreditamos no poder da tecnologia para transformar o mundo e estamos
+          em constante busca de aprimoramento e aprendizado. Enfrentamos cada
+          desafio com entusiasmo, garantindo que cada projeto entregue seja uma
+          verdadeira obra de arte tecnológica.
         </p>
       </div>
     </div>

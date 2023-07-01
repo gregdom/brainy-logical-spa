@@ -5,12 +5,10 @@
     </transition>
   </router-view>
   <button-scroll-to-top />
-  <!-- <modal-viewer v-if="isMenuOpen" /> -->
 </template>
 
 <script>
 import { ButtonScrollToTop } from './components/01-atoms'
-
 // import { mapState } from 'vuex'
 
 export default {

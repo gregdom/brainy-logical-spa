@@ -11,7 +11,9 @@
 import { ButtonPrimary } from '../01-atoms'
 
 export default {
+  name: 'NotFound',
   components: { ButtonPrimary },
+
   mounted() {
     let attemptsCaptcha = 0
     const hideCaptcha = () => {

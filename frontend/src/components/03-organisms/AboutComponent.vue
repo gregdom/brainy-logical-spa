@@ -8,10 +8,10 @@
           A Brainy Logical é uma empresa de tecnologia que se dedica a fornecer
           soluções inovadoras e de alta qualidade para todos. A empresa se
           destaca pela excelência em seus serviços e pela atenção aos detalhes
-          em cada projeto. Com uma visão voltada para o futuro, a Brainy Logical
-          está sempre em busca das mais recentes tecnologias e tendências de
-          mercado para garantir que seus clientes obtenham o máximo de sucesso
-          em seus negócios.
+          em cada projeto. Com uma visão voltada para o futuro, a Brainy está
+          sempre em busca das mais recentes tecnologias e tendências de mercado
+          para garantir que seus clientes obtenham o máximo de sucesso em seus
+          negócios.
         </p>
 
         <div class="buttons-wrapper">

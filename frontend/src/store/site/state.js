@@ -1,3 +1,5 @@
 export default {
-  data: []
+  data: [],
+  navMenu: false,
+  subNavMenu: false,
 }
