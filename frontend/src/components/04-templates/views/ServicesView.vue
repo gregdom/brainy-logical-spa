@@ -55,16 +55,14 @@ export default {
         return {
           title: 'Desenvolvemos sites exclusivos e funcionais',
           subtitle: 'Website',
-          description: `Personalize sua experiência de navegação com Extensões para Chrome e
-          Firefox, tornando seu dia online mais produtivo.`,
+          description: `Design atraente e responsivo para seu site, que engaja e encanta seus clientes. Crie uma presença online forte.`,
           path: 'business-service.svg',
         }
       } else if (routePath === '/services/landing-page-website') {
         return {
           title: 'Criamos Landing Pages que geram resultados',
           subtitle: 'Landing Page',
-          description: `Personalize sua experiência de navegação com Extensões para Chrome e
-          Firefox, tornando seu dia online mais produtivo.`,
+          description: `Aumente suas conversões com uma Landing Page otimizada, para gerar mais leads e vendas para seu negócio.`,
           path: 'landing-page-service.svg',
         }
       }
