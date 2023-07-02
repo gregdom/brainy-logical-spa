@@ -47,11 +47,10 @@ class HomeModel {
   }
 
   async saveFormSQL(formData) {
-    const sql_query = 'INSERT INTO brainylogicaldb.visitors (id, name, lastname, email, business, website, descriptionProject, addressIP, created_at, fk_visitor_status_id, fk_category_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)'
+    const sql_query = 'INSERT INTO brainylogicaldb.visitors (id, name, email, business, website, descriptionProject, addressIP, created_at, fk_visitor_status_id, fk_category_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)'
 
     const values = [
       formData.firstName,
-      formData.lastName !== '' ? formData.lastName : null,
       formData.email,
       formData.companyName !== '' ? formData.companyName : null,
       formData.companySite !== '' ? formData.companySite : null,

@@ -134,8 +134,10 @@
 
 <script>
 import { LoadingItem, NotificationItem } from '../01-atoms'
-import { useReCaptcha } from 'vue-recaptcha-v3'
 import { reactive } from 'vue'
+
+// ReCAPTCHA, Validadores e link da API
+import { useReCaptcha } from 'vue-recaptcha-v3'
 import { useVuelidate } from '@vuelidate/core'
 import {
   required,
@@ -146,7 +148,7 @@ import {
 } from '@vuelidate/validators'
 import DOMPurify from 'dompurify'
 import axios from 'axios'
-// import { mapState } from 'vuex'
+import { BACKEND_API } from '../../baseUrl'
 
 export default {
   props: {
@@ -162,7 +164,6 @@ export default {
     return {
       contactForm: reactive({
         firstName: '',
-        lastName: '',
         email: '',
         companyName: '',
         companySite: '',
@@ -174,12 +175,6 @@ export default {
       situation: false,
       submitSituation: {},
       showLoader: false,
-      categoriesArr: [
-        { id: '1', name: 'Extensão para Navegador' },
-        { id: '2', name: 'Criação de Websites' },
-        { id: '3', name: 'Criação de Landing Pages' },
-        { id: '4', name: 'Outro' },
-      ],
     }
   },
   validations: {
@@ -187,9 +182,6 @@ export default {
       firstName: {
         required: helpers.withMessage('Não pode estar vazio', required),
         maxLength: helpers.withMessage('Max. 25 caracteres', maxLength(25)),
-      },
-      lastName: {
-        maxLength: helpers.withMessage('Max. 45 caracteres', maxLength(45)),
       },
       email: {
         required: helpers.withMessage('Não pode estar vazio', required),
@@ -212,15 +204,15 @@ export default {
       },
     },
   },
-  // computed: {
-  //   ...mapState(['categories']),
-  //   categoriesArr() {
-  //     if (this.categories.length > 0) {
-  //       return this.categories
-  //     }
-  //     return ''
-  //   },
-  // },
+
+  computed: {
+    categoriesArr() {
+      return this.$store.state.data.categories.filter((category) =>
+        [1, 4, 5, 11].includes(category.id)
+      )
+    },
+  },
+
   setup() {
     const { executeRecaptcha, recaptchaLoaded } = useReCaptcha()
     const v$ = useVuelidate()
@@ -240,7 +232,6 @@ export default {
   methods: {
     reset() {
       this.contactForm.firstName = ''
-      this.contactForm.lastName = ''
       this.contactForm.email = ''
       this.contactForm.companyName = ''
       this.contactForm.companySite = ''
@@ -252,6 +243,8 @@ export default {
     submitForm() {
       this.v$.$touch()
       if (!this.v$.$invalid) {
+        this.overlayForm = true
+        this.showLoader = true
         this.recaptcha().then((token) => {
           this.recaptchaToken = token
           this.sendForm()
@@ -264,7 +257,6 @@ export default {
     sendForm() {
       const formData = {
         firstName: DOMPurify.sanitize(this.contactForm.firstName),
-        lastName: DOMPurify.sanitize(this.contactForm.lastName),
         email: DOMPurify.sanitize(this.contactForm.email),
         companyName: DOMPurify.sanitize(this.contactForm.companyName),
         companySite: DOMPurify.sanitize(this.contactForm.companySite),
@@ -276,9 +268,7 @@ export default {
 
       const execute = async (formData, token) => {
         try {
-          this.overlayForm = true
-          this.showLoader = true
-          const response = await axios.post('/api/contact-projects', {
+          const response = await axios.post(`${BACKEND_API}/contact-projects`, {
             formData,
             token,
           })
@@ -294,7 +284,7 @@ export default {
             }
           }
           console.log('try')
-          this.reset()
+          this.situation = true
         } catch {
           const responseData = {
             title: 'Erro',

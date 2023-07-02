@@ -41,7 +41,6 @@ class HomeController {
             body('formData.firstName')
               .notEmpty().withMessage('Não pode estar vazio')
               .isLength({ max: 25 }).withMessage('Max. 25 caracteres'),
-            body('formData.lastName').isLength({ max: 45 }).withMessage('Max. 45 caracteres'),
             body('formData.email')
               .notEmpty().withMessage('Não pode estar vazio')
               .isEmail().withMessage('Não parece um email válido')
@@ -68,7 +67,6 @@ class HomeController {
 
           const sanitizedFormData = {
             firstName: formData.firstName ? validator.escape(formData.firstName) : '',
-            lastName: formData.lastName ? validator.escape(formData.lastName) : '',
             email: formData.email ? validator.normalizeEmail(formData.email) : '',
             companyName: formData.companyName ? validator.escape(formData.companyName) : '',
             companySite: formData.companySite ? validator.escape(formData.companySite) : '',
