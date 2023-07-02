@@ -3,74 +3,10 @@
     <div class="container-default">
       <div class="top">
         <div class="subtitle">Definição</div>
-        <h2>Veja o que é uma Extensão de Navegador</h2>
+        <h2>{{ serviceObject.title }}</h2>
       </div>
 
-      <div class="bottom">
-        <p>
-          Uma extensão de navegador é um pequeno programa ou complemento que
-          adiciona funcionalidades extras ao navegador web. Ela pode alterar a
-          aparência, adicionar recursos e melhorar a produtividade do usuário
-          durante a navegação na internet.
-        </p>
-
-        <p>
-          As extensões podem ser desenvolvidas para navegadores populares, como
-          Chrome, Firefox e Safari, e oferecem uma maneira conveniente de
-          personalizar a experiência de uso.
-        </p>
-
-        <p>
-          Ter uma extensão personalizada pode trazer uma série de benefícios
-          para empresas e pessoas, proporcionando uma experiência de navegação
-          mais eficiente e adaptada às necessidades específicas.
-        </p>
-
-        <p class="benefits">Benefícios</p>
-
-        <ul>
-          <li>
-            <b>Produtividade aprimorada:</b> Uma extensão pode adicionar
-            recursos e ferramentas que ajudam a automatizar tarefas, simplificar
-            processos e economizar tempo.
-          </li>
-          <li>
-            <b>Customização:</b> Uma extensão permite personalizar a aparência e
-            o comportamento do navegador de acordo com as preferências
-            individuais.
-          </li>
-          <li>
-            <b>Segurança reforçada:</b> Extensões podem fornecer recursos de
-            segurança adicionais, como bloqueadores de anúncios, antivírus e
-            gerenciadores de senhas.
-          </li>
-          <li>
-            <b>Acesso rápido a informações:</b> Com uma extensão, é possível ter
-            acesso instantâneo a dados relevantes, como previsão do tempo,
-            cotações de ações ou traduções.
-          </li>
-          <li>
-            <b>Integração com serviços:</b> Extensões podem ser desenvolvidas
-            para se conectar a serviços online, facilitando o acesso e o
-            gerenciamento de contas.
-          </li>
-          <li>
-            <b>Aumento da eficiência:</b> Ao adicionar recursos específicos, uma
-            extensão pode otimizar fluxos de trabalho e facilitar a realização
-            de tarefas diárias.
-          </li>
-          <li>
-            <b>Personalização de conteúdo:</b> Com uma extensão, é possível
-            filtrar e personalizar o conteúdo da web de acordo com interesses e
-            preferências.
-          </li>
-          <li>
-            <b>Melhoria da experiência do usuário:</b> Extensões podem melhorar
-            a usabilidade de sites e aplicativos, tornando a navegação mais
-            intuitiva e fluida.
-          </li>
-        </ul>
-      </div>
+      <div class="bottom" v-html="serviceObject.description_long"></div>
     </div>
   </section>
 </template>
@@ -78,13 +14,27 @@
 <script>
 export default {
   name: 'WhatIsServicePresentation',
-  components: {},
 
-  data() {
-    return {}
+  props: {
+    currentRoute: {
+      type: String,
+      required: true,
+    },
   },
 
-  methods: {},
+  computed: {
+    serviceObject() {
+      return this.$store.getters.getServiceByName(
+        this.getServiceNameFromRoute(this.currentRoute)
+      )
+    },
+  },
+
+  methods: {
+    getServiceNameFromRoute(route) {
+      return route.replace('/services/', '')
+    },
+  },
 }
 </script>
 

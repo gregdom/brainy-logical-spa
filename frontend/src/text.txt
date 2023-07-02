@@ -1,10 +1,114 @@
-.home-about {
+<template>
+  <section class="section what-is-services">
+    <div class="container-default">
+      <div class="top">
+        <div class="subtitle">Definição</div>
+        <h2>Veja o que é uma Extensão de Navegador</h2>
+      </div>
+
+      <div class="bottom" v-html="serviceObject.description_long">
+        <p>
+          Uma extensão de navegador é um pequeno programa ou complemento que
+          adiciona funcionalidades extras ao navegador web. Ela pode alterar a
+          aparência, adicionar recursos e melhorar a produtividade do usuário
+          durante a navegação na internet.
+        </p>
+
+        <p>
+          As extensões podem ser desenvolvidas para navegadores populares, como
+          Chrome, Firefox e Safari, e oferecem uma maneira conveniente de
+          personalizar a experiência de uso.
+        </p>
+
+        <p>
+          Ter uma extensão personalizada pode trazer uma série de benefícios
+          para empresas e pessoas, proporcionando uma experiência de navegação
+          mais eficiente e adaptada às necessidades específicas.
+        </p>
+
+        <p class="benefits">Benefícios</p>
+
+        <ul>
+          <li>
+            <b>Produtividade aprimorada:</b> Uma extensão pode adicionar
+            recursos e ferramentas que ajudam a automatizar tarefas, simplificar
+            processos e economizar tempo.
+          </li>
+          <li>
+            <b>Customização:</b> Uma extensão permite personalizar a aparência e
+            o comportamento do navegador de acordo com as preferências
+            individuais.
+          </li>
+          <li>
+            <b>Segurança reforçada:</b> Extensões podem fornecer recursos de
+            segurança adicionais, como bloqueadores de anúncios, antivírus e
+            gerenciadores de senhas.
+          </li>
+          <li>
+            <b>Acesso rápido a informações:</b> Com uma extensão, é possível ter
+            acesso instantâneo a dados relevantes, como previsão do tempo,
+            cotações de ações ou traduções.
+          </li>
+          <li>
+            <b>Integração com serviços:</b> Extensões podem ser desenvolvidas
+            para se conectar a serviços online, facilitando o acesso e o
+            gerenciamento de contas.
+          </li>
+          <li>
+            <b>Aumento da eficiência:</b> Ao adicionar recursos específicos, uma
+            extensão pode otimizar fluxos de trabalho e facilitar a realização
+            de tarefas diárias.
+          </li>
+          <li>
+            <b>Personalização de conteúdo:</b> Com uma extensão, é possível
+            filtrar e personalizar o conteúdo da web de acordo com interesses e
+            preferências.
+          </li>
+          <li>
+            <b>Melhoria da experiência do usuário:</b> Extensões podem melhorar
+            a usabilidade de sites e aplicativos, tornando a navegação mais
+            intuitiva e fluida.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'WhatIsServicePresentation',
+
+  props: {
+    currentRoute: {
+      type: String,
+      required: true,
+    },
+  },
+
+  computed: {
+    serviceObject() {
+      return this.$store.getters.getServiceByName(
+        this.getServiceNameFromRoute(this.currentRoute)
+      )
+    },
+  },
+
+  methods: {
+    getServiceNameFromRoute(route) {
+      return route.replace('/services/', '')
+    },
+  },
+}
+</script>
+
+<style lang="scss">
+.what-is-services {
   width: 100%;
   height: auto;
   margin: 0 auto;
   padding-top: 80px;
   padding-bottom: 80px;
-  background: darken($color-branding, 40%);
 
   .container-default {
     max-width: 1257px;
@@ -12,11 +116,8 @@
     margin-left: auto;
     padding-left: 16px;
     padding-right: 16px;
-    display: flex;
-    flex-direction: column;
 
-    .home-about-content {
-      width: 100%;
+    .top {
       max-width: 575px;
       margin-bottom: 20px;
 
@@ -26,7 +127,7 @@
         font-weight: 500;
         letter-spacing: -0.02em;
         line-height: 1em;
-        color: #cecddd;
+        color: $color-branding;
       }
 
       h2 {
@@ -34,56 +135,54 @@
         margin-bottom: 25px;
         font-size: 26px;
         line-height: 1.368em;
-        font-weight: 900;
+        font-weight: 800;
         letter-spacing: -0.02em;
         text-shadow: 0 3px 6px rgba(39, 99, 228, 0.11);
-        color: #fafafa;
+        color: $color-general-headers;
       }
+    }
 
-      p.paragraph-home-about {
+    .bottom {
+      p {
         max-width: none;
-        margin-bottom: 30px;
-        padding: 0;
+        margin-bottom: 16px;
         font-size: 1rem;
         font-weight: 500;
         line-height: 1.687em;
         letter-spacing: -0.01em;
-        color: #9daed5;
-      }
+        color: $color-general-text-bglight;
 
-      .buttons-wrapper {
-        display: flex;
-        flex-direction: column;
-
-        .inner-space {
-          width: 27px;
-          height: 20px;
-        }
-
-        a.button-secondary {
-          color: #fafafa;
-          border-color: #fafafa;
-
-          &:hover {
-            border-color: $color-branding;
-          }
+        &.benefits {
+          margin-top: 20px;
+          margin-bottom: 5px;
+          font-size: 18px;
+          color: $color-branding;
         }
       }
-    }
 
-    .home-about-image {
-      margin-top: 10px;
+      ul {
+        list-style: none;
 
-      img {
-        width: 100%;
-        border-radius: 20px;
+        li {
+          max-width: none;
+          margin-bottom: 16px;
+          padding: 0;
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 1.687em;
+          letter-spacing: -0.01em;
+          color: $color-general-text-bglight;
+        }
       }
     }
   }
 }
 
 @media screen and (min-width: 480px) {
-  .home-about {
+  .what-is-services {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
     padding-top: 100px;
     padding-bottom: 100px;
 
@@ -91,7 +190,10 @@
       padding-left: 24px;
       padding-right: 24px;
 
-      .home-about-content {
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
+
         div.subtitle {
           margin-bottom: 10px;
         }
@@ -99,63 +201,30 @@
         h2 {
           font-size: 31px;
         }
-
-        .buttons-wrapper {
-          display: flex;
-          flex-direction: row;
-
-          .inner-space {
-            width: 27px;
-            height: 20px;
-          }
-        }
-      }
-
-      .home-about-image {
-        img {
-          width: 100%;
-          margin-top: 20px;
-        }
       }
     }
   }
 }
 
 @media screen and (min-width: 768px) {
-  .home-about {
+  .what-is-services {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
     padding-top: 120px;
     padding-bottom: 120px;
 
     .container-default {
-      .home-about-content {
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
 
         div.subtitle {
           margin-bottom: 16px;
-          text-align: center;
         }
 
         h2 {
           font-size: 38px;
-          text-align: center;
-        }
-
-        p.paragraph-home-about {
-          max-width: none;
-          margin-bottom: 39px;
-          text-align: center;
-        }
-
-        .buttons-wrapper {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-        }
-      }
-
-      .home-about-image {
-        img {
-          margin-top: 35px;
-          width: 700px;
         }
       }
     }
@@ -163,23 +232,50 @@
 }
 
 @media screen and (min-width: 992px) {
-  .home-about {
-    padding-top: 160px;
-    padding-bottom: 160px;
+  .what-is-services {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 130px;
+    padding-bottom: 120px;
 
     .container-default {
-      .home-about-content {
-        justify-content: flex-start;
-        }
+      .top {
+        max-width: 575px;
+        margin-bottom: 20px;
       }
 
-      .home-about-image {
-        margin-right: 40px;
+      .bottom {
+        column-count: 2;
 
-        img {
-          
+        p {
+          max-width: none;
+          margin-bottom: 16px;
+          padding-right: 24px;
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 1.687em;
+          letter-spacing: -0.01em;
+          color: $color-general-text-bglight;
+        }
+
+        ul {
+          list-style: none;
+          padding-right: 24px;
+
+          li {
+            max-width: none;
+            margin-bottom: 16px;
+            padding: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.687em;
+            letter-spacing: -0.01em;
+            color: $color-general-text-bglight;
+          }
         }
       }
     }
   }
 }
+</style>

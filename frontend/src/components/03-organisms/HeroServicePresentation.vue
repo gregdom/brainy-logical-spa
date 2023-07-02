@@ -2,10 +2,10 @@
   <section class="section service-presentation-hero">
     <div class="container-default">
       <div class="service-presentation-hero-content">
-        <div class="subtitle">{{ heroContent.subtitleH }}</div>
-        <h1>{{ heroContent.titleH }}</h1>
+        <div class="subtitle">{{ heroContent.subtitle }}</div>
+        <h1>{{ heroContent.title }}</h1>
         <p class="paragraph service-presentation-hero">
-          {{ heroContent.descriptionH }}
+          {{ heroContent.description }}
         </p>
 
         <div class="buttons-wrapper">
@@ -38,7 +38,7 @@ export default {
 
   computed: {
     imageSrc() {
-      return require(`../../assets/images/${this.heroContent.pathH}`)
+      return require(`../../assets/images/${this.heroContent.path}`)
     },
   },
 }

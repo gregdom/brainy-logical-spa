@@ -50,7 +50,11 @@ const store = createStore({
   getters: {
     getServiceByLink: (state) => (link) => {
       return state.services.find((service) => service.link === link)
-    }
+    },
+
+    getServiceByName: (state) => (serviceName) => {
+      return state.data.services.find(service => service.name === serviceName);
+    },
   }
 })
 console.log(store.state)
