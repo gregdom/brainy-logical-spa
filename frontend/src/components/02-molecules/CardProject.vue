@@ -1,5 +1,10 @@
 <template>
-  <router-link class="card-project" :to="`/projects/${link}`">
+  <a
+    :href="`/projects/${link}`"
+    class="card-project"
+    ref="linkRef"
+    @click="handleLinkClick"
+  >
     <div
       :style="{ backgroundImage: 'url(' + imageSrc + ')' }"
       class="image-container"
@@ -12,11 +17,14 @@
       <p>{{ description }}</p>
       <button-secondary :link="`/projects/${link}`" buttonText="Ver projeto" />
     </div>
-  </router-link>
+  </a>
 </template>
 
 <script>
 import { ButtonSecondary } from '../01-atoms'
+
+// Vuex
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'CardProject',
@@ -44,6 +52,17 @@ export default {
   computed: {
     imageSrc() {
       return require(`../../assets/images/${this.image}`)
+    },
+  },
+
+  methods: {
+    ...mapMutations(['TOGGLE_MODAL_GALLERY']),
+
+    handleLinkClick(event) {
+      event.preventDefault()
+      const href = this.$refs.linkRef.href
+      const linkValue = href.substring(href.lastIndexOf('/') + 1)
+      this.TOGGLE_MODAL_GALLERY(linkValue)
     },
   },
 }

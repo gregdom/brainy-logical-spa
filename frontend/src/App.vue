@@ -13,6 +13,7 @@
     </div>
   </div>
   <button-scroll-to-top />
+  <modal-gallery />
 </template>
 
 <script>
@@ -21,7 +22,8 @@ import {
   DividerHorizontal,
   ButtonScrollToTop,
 } from './components/01-atoms'
-import { HeaderComponent } from './components/03-organisms'
+
+import { ModalGallery } from './components/03-organisms'
 
 // Vuex
 import { mapState } from 'vuex'
@@ -32,7 +34,7 @@ export default {
     LoadingIndicatorApp,
     DividerHorizontal,
     ButtonScrollToTop,
-    HeaderComponent,
+    ModalGallery,
   },
 
   computed: {

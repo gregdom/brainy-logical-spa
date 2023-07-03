@@ -9,6 +9,8 @@ const store = createStore({
     isOverlayMenuOpen: false,
     isSubMenuOpen: false,
     isLoadingApp: true,
+    showModalGallery: false,
+    modalGalleryImage: '',
   },
 
   actions: {
@@ -27,6 +29,11 @@ const store = createStore({
   mutations: {
     SET_LOADING_APP(state, isLoadingApp) {
       state.isLoadingApp = isLoadingApp;
+    },
+
+    TOGGLE_MODAL_GALLERY(state, payload) {
+      state.modalGalleryImage = payload
+      state.showModalGallery = !state.showModalGallery
     },
 
     // Dados iniciais da store
