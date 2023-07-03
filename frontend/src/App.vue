@@ -1,18 +1,43 @@
 <template>
-  <router-view v-slot="{ Component }">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </router-view>
+  <div>
+    <div v-if="isLoadingApp">
+      <loading-indicator-app />
+    </div>
+
+    <div v-else>
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </div>
+  </div>
   <button-scroll-to-top />
 </template>
 
 <script>
-import { ButtonScrollToTop } from './components/01-atoms'
+import {
+  LoadingIndicatorApp,
+  DividerHorizontal,
+  ButtonScrollToTop,
+} from './components/01-atoms'
+import { HeaderComponent } from './components/03-organisms'
+
+// Vuex
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
-  components: { ButtonScrollToTop },
+  components: {
+    LoadingIndicatorApp,
+    DividerHorizontal,
+    ButtonScrollToTop,
+    HeaderComponent,
+  },
+
+  computed: {
+    ...mapState(['isLoadingApp']),
+  },
 
   created() {
     try {

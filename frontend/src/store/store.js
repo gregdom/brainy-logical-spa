@@ -5,8 +5,10 @@ import { BACKEND_API } from '@/baseUrl'
 
 const store = createStore({
   state: {
+    data: null,
     isOverlayMenuOpen: false,
     isSubMenuOpen: false,
+    isLoadingApp: true,
   },
 
   actions: {
@@ -14,6 +16,7 @@ const store = createStore({
       await axios.get(BACKEND_API)
         .then(function (response) {
           commit("SET_STATE", response.data);
+          commit('SET_LOADING_APP', false)
         })
         .catch(function (error) {
           return error
@@ -22,6 +25,10 @@ const store = createStore({
   },
 
   mutations: {
+    SET_LOADING_APP(state, isLoadingApp) {
+      state.isLoadingApp = isLoadingApp;
+    },
+
     // Dados iniciais da store
     SET_STATE(state, payload) {
       state.data = payload
