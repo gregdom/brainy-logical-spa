@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="fade" mode="out-in">
-      <div v-if="service" :key="service">
+      <div v-if="service && isValidService(service)" :key="service">
         <hero-service-presentation :heroContent="heroContent" />
         <what-is-service-presentation :currentRoute="currentRoute" />
         <divider-horizontal />
@@ -28,6 +28,9 @@ import {
   TestimonialComponent,
 } from '../../03-organisms'
 
+// Vue Router
+import { useRouter } from 'vue-router'
+
 export default {
   name: 'ServicesView',
   components: {
@@ -39,6 +42,13 @@ export default {
   },
 
   props: ['service'],
+
+  created() {
+    if (this.service && !this.isValidService(this.service)) {
+      const router = useRouter()
+      router.push('/notfound')
+    }
+  },
 
   computed: {
     heroContent() {
@@ -77,6 +87,16 @@ export default {
 
     defaultKey() {
       return 'default'
+    },
+  },
+
+  methods: {
+    isValidService(service) {
+      return (
+        service === 'browser-extension' ||
+        service === 'business-website' ||
+        service === 'landing-page-website'
+      )
     },
   },
 }

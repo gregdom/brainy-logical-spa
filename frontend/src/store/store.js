@@ -15,7 +15,7 @@ const store = createStore({
 
   actions: {
     async queryDataFromServer({ commit }) {
-      await axios.get(BACKEND_API)
+      await axios.get(`${BACKEND_API}/api`)
         .then(function (response) {
           commit("SET_STATE", response.data);
           commit('SET_LOADING_APP', false)

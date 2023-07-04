@@ -268,10 +268,13 @@ export default {
 
       const execute = async (formData, token) => {
         try {
-          const response = await axios.post(`${BACKEND_API}/contact-projects`, {
-            formData,
-            token,
-          })
+          const response = await axios.post(
+            `${BACKEND_API}/api/contact-projects`,
+            {
+              formData,
+              token,
+            }
+          )
 
           // Resposta recebida com sucesso
           const responseData = response.data
