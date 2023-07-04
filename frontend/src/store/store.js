@@ -71,5 +71,5 @@ const store = createStore({
     },
   }
 })
-console.log(store.state)
+
 export default store

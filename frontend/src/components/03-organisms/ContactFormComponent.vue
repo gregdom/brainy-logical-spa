@@ -283,7 +283,7 @@ export default {
               notificationType: 'success',
             }
           }
-          console.log('try')
+
           this.situation = true
         } catch {
           const responseData = {
@@ -293,22 +293,19 @@ export default {
             statusCode: 400,
             notificationType: 'error',
           }
-          console.log('catch')
+
           this.overlayForm = true
           this.submitSituation = responseData
           this.situation = true
         } finally {
           this.showLoader = false
-          console.log('finaly')
         }
       }
 
       execute(formData, token)
     },
 
-    handleProgressComplete(value) {
-      // Lógica a ser executada quando a barra de progresso chegar a zero
-      console.log('Progress complete:', value)
+    handleProgressComplete() {
       this.situation = false
     },
   },
@@ -325,7 +322,7 @@ export default {
         attempts++
 
         if (attempts < 10) {
-          setTimeout(moveGrecaptchaBadge, 1000) // Tenta novamente após 1 segundo
+          setTimeout(moveGrecaptchaBadge, 1000)
         }
       }
     }

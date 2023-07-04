@@ -45,7 +45,7 @@ export default {
     try {
       this.$store.dispatch('queryDataFromServer')
     } catch (error) {
-      console.log('erro teste')
+      return
     }
   },
 
