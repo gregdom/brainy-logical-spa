@@ -47,7 +47,7 @@ class HomeModel {
   }
 
   async saveFormSQL(formData) {
-    const sql_query = 'INSERT INTO brainylogicaldb.visitors (id, name, email, business, website, descriptionProject, addressIP, created_at, fk_visitor_status_id, fk_category_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)'
+    const sql_query = 'INSERT INTO ttahvh_brainydb.visitors (id, name, email, business, website, descriptionProject, addressIP, created_at, fk_visitor_status_id, fk_category_id) VALUES (NULL, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)'
 
     const values = [
       formData.firstName,
@@ -69,7 +69,7 @@ class HomeModel {
   }
 
   async findIP(addressIP) {
-    const sql_query = `SELECT created_at FROM brainylogicaldb.visitors WHERE addressIP = ? ORDER BY created_at DESC LIMIT 1`
+    const sql_query = `SELECT created_at FROM ttahvh_brainydb.visitors WHERE addressIP = ? ORDER BY created_at DESC LIMIT 1`
 
     try {
       const result = await query(sql_query, [addressIP])
