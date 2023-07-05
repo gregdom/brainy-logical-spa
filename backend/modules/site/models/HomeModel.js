@@ -1,5 +1,5 @@
 // import connection
-import { query } from "../../../config/db/conn.js"
+import { query } from "../../../config/db/DBConnect.js"
 
 class HomeModel {
   async getHome() {
