@@ -45,5 +45,3 @@ WEBSITE: [https://brainylogical.com/](https://brainylogical.com/)
 
 - [Linkedin](https://www.linkedin.com/in/gregorydom/)
 - [Github](https://github.com/gregdom)
-<br/>
-- <a href="mailto:gregory_dom@hotmail.com">Email</a>
