@@ -1,18 +1,28 @@
-<div align="center" style="padding-top: 20px;">
-  <img src="./assets/logo-icon-white-brainy-logical-68x68.png" style="width: 45px; height: 45px; margin-right: 8px;">
-  <h1 style="margin-bottom: 0; padding: 16px 0 0 0; border-bottom:none;">Brainy Logical</h1>
-  <h2 style="padding: 0 0 32px 0; font-weight:normal;">Web Development Agency</h2>
-</div>
+<h1 style="padding-top: 20px; padding-bottom: 20px;">
+  <img style="margin-right:16px" src="./assets/logo-full-white-brainy-logical.png">
+  <p style="font-size: 17px;"> (Web Development Agency) </p>
+</h1>
 
-<h2 style="border-bottom:none;">About</h2>
+<h2 style="border-bottom:none;">ABOUT 📘</h2>
 
-<p>
-**Brainy Logical** is a technology company dedicated to providing innovative and high-quality solutions for everyone. The company stands out for its excellence in services and attention to detail in each project.
+<p style="padding-bottom: 16px;">
+Brainy Logical is a technology company dedicated to providing innovative and high-quality solutions for everyone. The purpose of creating the site is to present my projects and offer Web Development services.
 </p>
 
-<img src="./assets/brainy-logical-image-hero-home.png">
+<h2 style="border-bottom:none;">LIVE PREVIEW 👁‍🗨</h2>
 
-<h2 style="border-bottom:none;">Tools</h2>
+WEBSITE: [https://brainylogical.com/](https://brainylogical.com/)
+
+<h2 style="border-bottom:none; padding-top: 16px;">SCREENSHOTS #️⃣</h2>
+
+<p>Desktop</p>
+
+<img style="margin-bottom:16px; width:100%; max-width:1360px;" src="./assets/brainy-logical-image-hero-home.png">
+
+<p>Mobile</p>
+<img style="width:100%; max-width:992px;" src="./assets/brainy-logical-mobile.png">
+
+<h2 style="border-bottom:none;">TECHNOLOGIES AND TOOLS 🔨👨‍💻</h2>
 
 <h3>- Frontend</h3>
 
@@ -31,12 +41,8 @@
 
 - [Conteige Cloud](https://conteige.cloud/)
 
-<h2 style="border-bottom:none;">Visit the Brainy Logical website:</h2>
-
-[https://brainylogical.com/](https://brainylogical.com/)
-
-<h2>My social medias</h2>
+<h2>CONTACT ME 📩</h2>
 
 - [Linkedin](https://www.linkedin.com/in/gregorydom/)
-- [Email](gregory_dom@hotmail.com)
 - [Github](https://github.com/gregdom)
+- [Email](gregory_dom@hotmail.com)
