@@ -1,1 +1,0 @@
-export const BACKEND_API = "https://" + window.location.hostname.toString()

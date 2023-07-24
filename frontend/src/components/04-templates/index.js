@@ -1,6 +1,0 @@
-export { default as AboutTemplate } from './AboutTemplate.vue'
-export { default as ContactTemplate } from './ContactTemplate.vue'
-export { default as HomeTemplate } from './HomeTemplate.vue'
-export { default as ProjectsTemplate } from './ProjectsTemplate.vue'
-export { default as ServicesTemplate } from './ServicesTemplate.vue'
-export { default as ServicesView } from './views/ServicesView.vue'
