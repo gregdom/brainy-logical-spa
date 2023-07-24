@@ -1,6 +1,5 @@
 <h1 style="padding-top: 20px; padding-bottom: 20px;">
-  <img style="margin-right:16px" src="./assets/logo-full-white-brainy-logical.png">
-  <p style="font-size: 17px;"> (Web Development Agency) </p>
+  <p style="font-size: 17px;">Brainy Logical | Web Development Agency</p>
 </h1>
 
 <h2 style="border-bottom:none;">About 📘</h2>
